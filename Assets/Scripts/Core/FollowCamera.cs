@@ -8,8 +8,10 @@ public class FollowCamera : MonoBehaviour
 
     Camera playerCamera;
     
-    void Update()
+    void LateUpdate()
     {
-        transform.position = target.position;
-    }
+        {
+            transform.position = target.position;
+        }
+    }    
 }
