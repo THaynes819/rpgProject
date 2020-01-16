@@ -5,6 +5,7 @@ using RPG.Movement;
 using System;
 using RPG.Combat;
 
+
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
@@ -18,7 +19,7 @@ namespace RPG.Control
         {
             
             if (InteractWithCombat()) return;
-            InteractWithMovement();
+            if (InteractWithMovement()) return;
             print("Nothing To Do");
         }
 
@@ -40,23 +41,22 @@ namespace RPG.Control
             return false;
         }
 
-        private void InteractWithMovement()
-        {
-            if (Input.GetButton("Fire1"))
-            {
-                MoveToCursor();
-            }
-        }
-
-        private void MoveToCursor()
+        private bool InteractWithMovement()
         {
             RaycastHit hit;
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
             if (hasHit)
             {
-                GetComponent<Mover>().MoveTo(hit.point);
+                if (Input.GetButton("Fire1"))
+                {
+                    GetComponent<Mover>().MoveTo(hit.point);
+                }
+                return true;
             }
+            return false;
         }
+            
+       
 
         private Ray GetMouseRay()
         {
