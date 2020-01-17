@@ -49,7 +49,7 @@ namespace RPG.Control
             {
                 if (Input.GetButton("Fire1"))
                 {
-                    GetComponent<Mover>().MoveTo(hit.point);
+                    GetComponent<Mover>().MoveTo(hit.point);                    
                 }
                 return true;
             }
