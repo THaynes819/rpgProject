@@ -13,7 +13,7 @@ namespace RPG.Control
 
         Camera playerCamera;
         Combat.Fighter attack;
-
+        Fighter fighter;
         
         void Update()
         {
@@ -29,12 +29,14 @@ namespace RPG.Control
             
             foreach (RaycastHit hit in hits)
             {
-                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) continue;
-                
+                fighter = GetComponent<Fighter>();
+                CombatTarget target = hit.transform.GetComponent<CombatTarget>();    
+                if (target == null) continue;  
+                                         
+                if (!fighter.CanAttack(target.gameObject)) continue;                
                 if (Input.GetButton("Fire1"))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
                 return true;
             }
