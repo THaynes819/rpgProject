@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using RPG.Movement;
 using RPG.Core;
 
@@ -11,17 +10,17 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 2f;
 
-        Health target;
-        float timeSinceLastAttack = 0;
+        Health target;        
+        float timeSinceLastAttack = Mathf.Infinity;
         
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
-            //print("The target is dead" + health.GetIsDead());
+            
 
-            if (target == null ) return;
-            if (target.GetIsDead()) return;
-
+            if (target == null) { return; }
+            if (target.IsDead()) { return; }
+            
             if (!GetIsInRange())
             {                
                 GetComponent<Mover>().MoveTo(target.transform.position);
@@ -33,36 +32,14 @@ namespace RPG.Combat
             }
         }
 
-        private bool GetIsInRange()
-        {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
-        }
-
-        public bool CanAttack(GameObject combatTarget)
-        {
-            if (combatTarget == null) { return false; } 
-            Health targetToTest = combatTarget.GetComponent<Health>();
-            return targetToTest != null && !targetToTest.GetIsDead();
-        }
-
-        public void Attack(GameObject combatTarget)
-        {
-            GetComponent<ActionScheduler>().StartAction(this);
-            target = combatTarget.GetComponent<Health>();
-        }
-
-        
-
         private void AttackBehaviour()
-        {            
+        {
             transform.LookAt(target.transform);
-            if (timeSinceLastAttack > timeBetweenAttacks ) // if attack cooldown is up
+            if (timeSinceLastAttack > timeBetweenAttacks) // if attack cooldown is up
             {
-                TriggerAttack();
+                TriggerAttack(); //triggers hit event
                 timeSinceLastAttack = 0;
-
             }
-
         }
 
         private void TriggerAttack()
@@ -74,10 +51,27 @@ namespace RPG.Combat
         // Animation Event
         void Hit()
         {
-            if(target == null) { return; }
+            if (target == null) { return; }
             target.TakeDamage(weaponDamage);
         }
-       
+
+        private bool GetIsInRange()
+        {
+            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+        }
+
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if (combatTarget == null) { return false; } 
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
+        }
+
+        public void Attack(GameObject combatTarget)
+        {
+            GetComponent<ActionScheduler>().StartAction(this);
+            target = combatTarget.GetComponent<Health>();
+        }
 
         public void Cancel()
         {
