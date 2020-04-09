@@ -53,6 +53,10 @@ namespace RPG.Movement
             float speed = localVelocity.z;
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
         }
-    
+
+        internal void StartMoveAction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

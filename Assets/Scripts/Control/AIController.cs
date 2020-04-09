@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System;
 
 namespace RPG.Control    
  {   
@@ -13,12 +14,15 @@ namespace RPG.Control
 
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 3f;
+        [SerializeField] PatrolPath patrolPath;
+        [SerializeField] float wayPointTolerance = 1f;
 
         GameObject player;
         Fighter fighter;
         Health health;
         Mover mover;
         float distaceToPlayer;
+        int currentWaypointIndex = 0;
 
         Vector3 guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
@@ -52,13 +56,40 @@ namespace RPG.Control
             }
             else
             {
-                GuardBehaviour();
+                PatrolBehaviour();
             }
         }
 
-        private void GuardBehaviour()
+        private void PatrolBehaviour()
         {
-            mover.StartMoveAction(guardPosition);
+            Vector3 nextPostiion = guardPosition;            
+
+            if (patrolPath != null)
+            {
+                if (AtWaypoint())
+                {
+                    CycleWaypoint();
+                }
+                nextPostiion = CetCurrentWaypoint();
+            }
+            
+            mover.StartMoveAction(nextPostiion);
+        }
+
+        private bool AtWaypoint()
+        {
+            float distanceToWaypoint = Vector3.Distance(transform.position, CetCurrentWaypoint());
+            return distanceToWaypoint < wayPointTolerance;
+        }
+
+        private void CycleWaypoint()
+        {
+            currentWaypointIndex = patrolPath.GetNextindex(currentWaypointIndex);
+        }
+
+        private Vector3 CetCurrentWaypoint()        
+        {
+            return patrolPath.GetWaypoint(currentWaypointIndex);
         }
 
         private void SuspicionBehaviour()
