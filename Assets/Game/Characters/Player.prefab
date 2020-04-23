@@ -80,15 +80,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+    - target: {fileID: 910900260297009628, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
-      propertyPath: m_Name
-      value: Player
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+    - target: {fileID: 910900260297260842, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
-      propertyPath: m_TagString
-      value: Player
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -145,7 +145,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 208663512476334254, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
 --- !u!1 &4749071111288693219 stripped
 GameObject:
