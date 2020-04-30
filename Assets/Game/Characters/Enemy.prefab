@@ -17,7 +17,21 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   wayPointTolerance: 1.5
   waypointDwellTime: 3
+  patrolSpeedFraction: 0.2
   timeSinceArrivedAtWaypoint: Infinity
+--- !u!114 &6740353472161007012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9006e8b8f50beff4c998b81e4f050a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 40
 --- !u!1001 &2173215540172669004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,7 +41,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 780713628, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
       propertyPath: m_Speed
-      value: 2
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434191508820709910, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434191508820709910, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -89,7 +113,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
 --- !u!1 &7616387723425787865 stripped
 GameObject:
