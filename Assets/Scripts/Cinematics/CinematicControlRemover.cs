@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace RPG.Cinematics
 {   
@@ -7,17 +8,18 @@ namespace RPG.Cinematics
 
         private void Start() 
         {
-            
+            GetComponent<PlayableDirector>().played += DisableControl;
+            GetComponent<PlayableDirector>().stopped += EnableControl;
         }
 
-        void DisableControl()
+        void DisableControl(PlayableDirector playableDirector)
         {
-            print("DisableControl")
+            print("DisableControl");
         }
 
-        void EnableControl()
+        void EnableControl(PlayableDirector playableDirector)
         {
-            print("EnableControl")
+            print("EnableControl");
         }
     }
 }
