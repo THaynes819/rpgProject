@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace RPG.SceneManagement
 {
@@ -14,14 +15,23 @@ namespace RPG.SceneManagement
         private void Start()
         {
             player = GameObject.FindWithTag("Player");
+            
         }
 
         private void OnTriggerEnter(Collider other) 
         {
             if (other.gameObject == player)
             {            
-            SceneManager.LoadScene(sceneToLoad);
+                StartCoroutine(Transition());
             }
+        }
+
+        private IEnumerator Transition()
+        {            
+            DontDestroyOnLoad(gameObject);           
+            yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            print("Scene Loaded");
+            Destroy(gameObject);            
         }
     }
 }
