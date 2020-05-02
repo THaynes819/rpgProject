@@ -18,6 +18,9 @@ namespace RPG.SceneManagement
         [SerializeField] Transform spawnPoint;
         [SerializeField] DestinationIdentifier destinationPortal;
         [SerializeField] DestinationIdentifier currentPortal;
+        [SerializeField] float portalFadeOutTime = 3f;
+        [SerializeField] float portalFadeInTime = 1f;
+        [SerializeField] float portalFadeWaitTime = 2f;
 
         
         private void OnTriggerEnter(Collider other) 
@@ -35,11 +38,20 @@ namespace RPG.SceneManagement
                 Debug.LogError("Scene to load not set.");
                 yield break;
             }
-            DontDestroyOnLoad(gameObject);           
-            yield return SceneManager.LoadSceneAsync(sceneToLoad);   
+
+            DontDestroyOnLoad(gameObject);
+            
+            Fader fader = FindObjectOfType<Fader>();
+            
+            yield return fader.FadeOut(portalFadeOutTime);            
+                  
+            yield  return SceneManager.LoadSceneAsync(sceneToLoad);              
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+
+            yield return new WaitForSeconds(portalFadeWaitTime);
+            yield return fader.FadeIn(portalFadeInTime);
 
             Destroy(gameObject);            
         }
