@@ -1,18 +1,16 @@
-﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
-using UnityEngine.AI;
+
 
 namespace RPG.SceneManagement
 {
-    public class SavingWrapper : MonoBehaviour
+    public class SavingWrapperMe : MonoBehaviour
     {
         const string defaultSaveFile = "save";
         float fadeintime = 0.5f;
 
-        IEnumerator Start()         
+        IEnumerator Start()
         {
             Fader fader = FindObjectOfType<Fader>();
             fader.FadeOutImediate();
@@ -39,8 +37,8 @@ namespace RPG.SceneManagement
         }
 
         public void Load()
-        {           
-            GetComponent<SavingSystem>().Load(defaultSaveFile);            
+        {
+            GetComponent<SavingSystem>().Load(defaultSaveFile);
         }
     }
 
