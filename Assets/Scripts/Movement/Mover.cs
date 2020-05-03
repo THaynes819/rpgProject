@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
+using RPG.Saving;
 
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour, IAction
+    public class Mover : MonoBehaviour, IAction, ISaveable
 
     {
 
@@ -57,9 +58,21 @@ namespace RPG.Movement
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
         }
 
-        internal void StartMoveAction()
+        // internal void StartMoveAction()
+        // {
+        //     throw new NotImplementedException();
+        // }
+
+        public object CaptureState()
         {
-            throw new NotImplementedException();
+            return new SerializableVector3(transform.position);
+        }
+
+        public void RestoreState(object state)
+        {
+            SerializableVector3 position = (SerializableVector3)state;
+            GetComponent<NavMeshAgent>().Warp(position.ToVector());
+            transform.position = position.ToVector();
         }
     }
 }
