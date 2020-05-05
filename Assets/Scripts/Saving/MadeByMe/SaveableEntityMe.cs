@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
-
-
+using UnityEngine.AI;
+using RPG.Core;
 
 namespace RPG.Saving
 {
@@ -13,20 +13,26 @@ namespace RPG.Saving
 
         public string GetUniqueIdentifier()
         {
-            return "";
+            return uniqueIdentifier;
         }
 
         public object CaptureState()
         {
             print("Capturing State for " + GetUniqueIdentifier());
-            return null;
+            return new SerializableVector3Me(transform.position);
         }
 
         public void RestoreState(object state)
         {
             print("Restoring state for " + GetUniqueIdentifier());
+            SerializableVector3Me position = (SerializableVector3Me)state;
+            
+            transform.position = position.ToVectorMe();
+            GetComponent<NavMeshAgent>().Warp(position.ToVectorMe());
+            GetComponent<ActionScheduler>().CancelCurrentACtion();        
         }
 
+#if UNITY_EDITOR
         private void Update() 
         {            
             if (Application.isPlaying) return;
@@ -43,6 +49,6 @@ namespace RPG.Saving
             }
                    
         }
-
+#endif
     }
 }
