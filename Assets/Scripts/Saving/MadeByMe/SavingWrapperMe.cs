@@ -10,35 +10,35 @@ namespace RPG.SceneManagement
         const string defaultSaveFile = "save";
         float fadeintime = 0.5f;
 
-        IEnumerator Start()
-        {
-            Fader fader = FindObjectOfType<Fader>();
-            fader.FadeOutImediate();
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-            yield return fader.FadeIn(fadeintime);
-        }
+        // IEnumerator Start()
+        // {
+            // Fader fader = FindObjectOfType<Fader>();
+            // fader.FadeOutImediate();
+            // yield return GetComponent<SavingSystemMe>().LoadLastScene(defaultSaveFile);
+            // yield return fader.FadeIn(fadeintime);
+        //}
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 Load();
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 Save();
             }
         }
 
-        public void Save()
+        private void Save()
         {
-            GetComponent<SavingSystem>().Save(defaultSaveFile);
+            GetComponent<SavingSystemMe>().Save(defaultSaveFile);
         }
 
-        public void Load()
+        private void Load()
         {
-            GetComponent<SavingSystem>().Load(defaultSaveFile);
+            GetComponent<SavingSystemMe>().Load(defaultSaveFile);
         }
     }
 

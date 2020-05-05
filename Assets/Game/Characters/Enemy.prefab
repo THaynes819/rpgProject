@@ -43,6 +43,11 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 489776903157311445, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1434191508820709910, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: timeBetweenAttacks
@@ -115,6 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
+    - {fileID: 6584608405028161295, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}
 --- !u!1 &7616387723425787865 stripped
 GameObject:
