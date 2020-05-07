@@ -12,11 +12,11 @@ namespace RPG.SceneManagement
 
         // IEnumerator Start()
         // {
-            // Fader fader = FindObjectOfType<Fader>();
-            // fader.FadeOutImediate();
-            // yield return GetComponent<SavingSystemMe>().LoadLastScene(defaultSaveFile);
-            // yield return fader.FadeIn(fadeintime);
-        //}
+        //     Fader fader = FindObjectOfType<Fader>();
+        //     fader.FadeOutImediate();
+        //     yield return GetComponent<SavingSystemMe>().LoadLastScene(defaultSaveFile);
+        //     yield return fader.FadeIn(fadeintime);
+        // }
 
         void Update()
         {

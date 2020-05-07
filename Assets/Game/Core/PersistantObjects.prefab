@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 1821540686061313225, guid: edc8db5b73aae8e4a8e86b4f8581e30f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5043643654127827157, guid: edc8db5b73aae8e4a8e86b4f8581e30f,
         type: 3}
@@ -150,6 +150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8053199283492907801}
     m_Modifications:
+    - target: {fileID: 5711317556377543482, guid: d6e8850005b42de4982eaa7c2bea1fd2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5711317556377543484, guid: d6e8850005b42de4982eaa7c2bea1fd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,6 +264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711317556377543487, guid: d6e8850005b42de4982eaa7c2bea1fd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e8850005b42de4982eaa7c2bea1fd2, type: 3}
