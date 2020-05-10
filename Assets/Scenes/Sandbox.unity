@@ -152,6 +152,37 @@ Transform:
   m_Father: {fileID: 367459419}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &29222534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29222535}
+  m_Layer: 0
+  m_Name: Pickups
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &29222535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29222534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.038643, y: -50.9831, z: 43.21005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 565361008}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &38628880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5133474788305343967, guid: 821cd1634b5c08d4ba3289465006faa2,
@@ -1115,7 +1146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436863685}
-  m_LocalRotation: {x: 0.031093564, y: 0.95212394, z: -0.10352676, w: 0.28596398}
+  m_LocalRotation: {x: 0.031093553, y: 0.952124, z: -0.10352672, w: 0.285964}
   m_LocalPosition: {x: 8.188808, y: 51.196133, z: -26.654404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1284,6 +1315,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2849fd453abd0445a702a035f04ac60, type: 3}
+--- !u!1 &565361007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4798473382457712116, guid: 9405e87cee639ee4b8f229d186a22bf0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4376004893280471065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &565361008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4376004893280471065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &565361011
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565361007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &568844548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2182252845924929813, guid: 943752e5f3c19d944adb2ec3df1197f9,
@@ -4506,6 +4565,75 @@ Transform:
   m_Father: {fileID: 46280346}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4376004893280471065
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 29222535}
+    m_Modifications:
+    - target: {fileID: 4798473382457712116, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_Name
+      value: SwordPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50.936
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.551
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -100.614
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -114.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 168.812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5753089
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.36158258
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.28048313
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297676586141241260, guid: 9405e87cee639ee4b8f229d186a22bf0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6779432
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9405e87cee639ee4b8f229d186a22bf0, type: 3}
 --- !u!1001 &4569271356239914428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4513,6 +4641,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1944440974302306719, guid: e310eb573724aa94586f261a5248e7c0,
+        type: 3}
+      propertyPath: defaultweapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1,
+        type: 2}
     - target: {fileID: 4569271355157031804, guid: e310eb573724aa94586f261a5248e7c0,
         type: 3}
       propertyPath: m_LocalPosition.x
