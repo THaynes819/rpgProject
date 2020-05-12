@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RPG.Core;
+using UnityEngine;
 
 namespace RPG.Combat
 {
@@ -10,6 +11,43 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float weaponDamage = 10f;
         [SerializeField] bool isRightHanded = true;
+        [SerializeField] Projectile projectile = null;       
+       
+        public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
+        {
+            if(eqqiuppedPrefab != null)
+            {
+                Transform handtransform = GetHandTransform(rightHand, leftHand);
+                Instantiate(eqqiuppedPrefab, handtransform);
+            }
+
+            if (animatorOverride != null)
+            {
+            animator.runtimeAnimatorController = animatorOverride;
+            }
+        }
+
+        private Transform GetHandTransform(Transform rightHand, Transform leftHand)
+        {
+            Transform handtransform;
+            if (isRightHanded)
+            {
+                handtransform = rightHand;
+            }
+            else handtransform = leftHand;
+            return handtransform;
+        }
+
+        public bool HasProjectile()
+        {
+            return projectile != null;
+        }
+
+        public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target)
+        {
+            Projectile projectileInstance = Instantiate(projectile, GetHandTransform(rightHand, leftHand).position, Quaternion.identity);
+            projectileInstance.SetTarget(target, weaponDamage);
+        }
 
         public float GetWeaponRange()
         {
@@ -19,25 +57,6 @@ namespace RPG.Combat
         public float GetWeaponDamage()
         {
             return weaponDamage;
-        }
-       
-        public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
-        {
-            if(eqqiuppedPrefab != null)
-            {
-                Transform handtransform;
-                if (isRightHanded)
-                {
-                    handtransform = rightHand;
-                }
-                else handtransform = leftHand;
-                Instantiate(eqqiuppedPrefab, handtransform);
-            }
-            
-            if(animatorOverride != null)
-            {
-            animator.runtimeAnimatorController = animatorOverride;
-            }
         }
     }
 }
