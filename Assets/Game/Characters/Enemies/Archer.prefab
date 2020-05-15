@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bfbe2e8b331e2cc42be1591f949c0e41, type: 2}
+    - target: {fileID: 2718131105313669635, guid: 821cd1634b5c08d4ba3289465006faa2,
+        type: 3}
+      propertyPath: chaseDistance
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5133474788305343967, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740353472161007012, guid: 821cd1634b5c08d4ba3289465006faa2,
+        type: 3}
+      propertyPath: healthPoints
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7616387723425787865, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
