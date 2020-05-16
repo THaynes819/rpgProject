@@ -44,8 +44,7 @@ namespace RPG.SceneManagement
             Fader fader = FindObjectOfType<Fader>();
             SavingWrapperMe wrapper = FindObjectOfType<SavingWrapperMe>();
             
-            yield return fader.FadeOut(portalFadeOutTime);            
-
+            yield return fader.FadeOut(portalFadeOutTime); 
             
             wrapper.Save();
             yield  return SceneManager.LoadSceneAsync(sceneToLoad);
@@ -57,9 +56,7 @@ namespace RPG.SceneManagement
             wrapper.Save();
 
             yield return new WaitForSeconds(portalFadeWaitTime);
-            yield return fader.FadeIn(portalFadeInTime);
-
-            
+            yield return fader.FadeIn(portalFadeInTime);           
 
             Destroy(gameObject);            
         }
@@ -73,7 +70,6 @@ namespace RPG.SceneManagement
 
         private Portal GetOtherPortal()
         {
-
             foreach (Portal portal in FindObjectsOfType<Portal>())
             {
                 if (portal == this) continue;
@@ -82,8 +78,7 @@ namespace RPG.SceneManagement
                     print("Leaving Portal " + portal.currentPortal + " and entering Portal " + portal.destinationPortal);
                     return portal;
                 }
-            }
-            
+            }            
             return null;            
         }
     }
