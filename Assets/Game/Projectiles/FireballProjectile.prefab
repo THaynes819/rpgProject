@@ -48,8 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 8
-  projectileDistance: 40
+  maxLifeTime: 10
+  hitEffect: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db,
+    type: 3}
   isHoming: 1
+  destroyDelay: 0.2
+  destroyOnHit:
+  - {fileID: 6489834655909423413}
 --- !u!136 &1567002605442205716
 CapsuleCollider:
   m_ObjectHideFlags: 0

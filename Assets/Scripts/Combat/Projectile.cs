@@ -10,10 +10,14 @@ namespace RPG.Combat
     {
                 
         [SerializeField] float projectileSpeed = 10f;
-        [SerializeField] float projectileDistance = 40f;
+        [SerializeField] float maxLifeTime = 10f;
+        [SerializeField] GameObject hitEffect = null;
         [SerializeField] bool isHoming = false;
+        [SerializeField] float destroyDelay = 0.1f;
+        [SerializeField] GameObject[] destroyOnHit;
         Health target = null;
         float damage = 0f;
+        DestroyAfterEffect destroyEffect = null;
 
         private void Start() 
         {            
@@ -37,6 +41,8 @@ namespace RPG.Combat
         {
             this.target = target;
             this.damage = damage;
+
+            Destroy(gameObject, maxLifeTime);     
         }
 
         private Vector3 GetAimLoacation()
@@ -47,16 +53,52 @@ namespace RPG.Combat
                 return target.transform.position;
             }
             return target.transform.position + Vector3.up * targetCapsule.height / 2;
-        }
+        }        
 
         private void OnTriggerEnter(Collider other)
-        {   
-            if (other.GetComponent<Health>() != target || target.IsDead())
-            {                
+        {
+            if (other.GetComponent<Health>() != target && !target.IsDead())
+            {
                 return;
             }
-            target.TakeDamage(damage); 
-            Destroy(gameObject);
+            if (other.GetComponent<Projectile>())
+            {
+                return;
+            }
+            ErrantProjectile(other);
+
+            if (hitEffect != null && !target.IsDead())
+            {
+                GameObject newHitEffect = Instantiate(hitEffect, GetAimLoacation(), transform.rotation); // Consider changing GetAimLocation to transform.location 
+                print("The new hit effect is " + newHitEffect);
+            }
+            target.TakeDamage(damage);
+            DestroyInSteps();
         }
+
+        private void DestroyInSteps()
+        {
+           foreach (GameObject toDestroy in destroyOnHit)
+           {
+               Destroy(toDestroy);
+           }            
+            Destroy(gameObject, destroyDelay);
+        }
+
+        private void ErrantProjectile(Collider other)
+        {            
+            if (other.GetComponent<Health>() != target && target.IsDead())
+            {                
+                if(other.gameObject != GameObject.FindWithTag("Player"))
+                {
+                    print("Errant Projectile at " + transform.position);
+                    GameObject newHitEffect = Instantiate(hitEffect, transform.position, transform.rotation);
+                }    
+            }
+        }
+
+       
+
+
     }
 }

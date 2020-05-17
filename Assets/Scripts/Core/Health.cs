@@ -9,7 +9,8 @@ namespace RPG.Core
         
         [SerializeField] float healthPoints = 100f;
 
-        bool isDead = false;       
+        bool isDead = false;
+            
 
         public bool IsDead()
         {
@@ -27,9 +28,11 @@ namespace RPG.Core
 
         private void Die()
         {
-            if (isDead)  return; 
-            
+            if (isDead)  return;
+            Collider collider = GetComponent<Collider>();
+            Destroy(collider);
             isDead = true;
+            
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentACtion(); 
         }

@@ -48,6 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 20
+  maxLifeTime: 10
+  hitEffect: {fileID: 5396603986154488170, guid: 6b926e345a85be042bcedc01b04f8e8b,
+    type: 3}
+  isHoming: 0
+  destroyDelay: 0.1
+  destroyOnHit:
+  - {fileID: 5969692264493774609}
 --- !u!136 &1567002605442205716
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -281,6 +288,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}
+--- !u!1 &5969692264493774609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1659504181823486, guid: c7f49c6920d49ba468b083941d79f2c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5971067439391092975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5966599399684745307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4750687242688692, guid: c7f49c6920d49ba468b083941d79f2c0,
