@@ -69,8 +69,7 @@ namespace RPG.Combat
 
             if (hitEffect != null && !target.IsDead())
             {
-                GameObject newHitEffect = Instantiate(hitEffect, GetAimLoacation(), transform.rotation); // Consider changing GetAimLocation to transform.location 
-                print("The new hit effect is " + newHitEffect);
+                GameObject newHitEffect = Instantiate(hitEffect, GetAimLoacation(), transform.rotation);                
             }
             target.TakeDamage(damage);
             DestroyInSteps();
@@ -87,11 +86,10 @@ namespace RPG.Combat
 
         private void ErrantProjectile(Collider other)
         {            
-            if (other.GetComponent<Health>() != target && target.IsDead())
+            if (other.GetComponent<Health>() != target && target.IsDead()) //Get rid of nested if statement
             {                
                 if(other.gameObject != GameObject.FindWithTag("Player"))
-                {
-                    print("Errant Projectile at " + transform.position);
+                {                    
                     GameObject newHitEffect = Instantiate(hitEffect, transform.position, transform.rotation);
                 }    
             }
