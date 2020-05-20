@@ -19,7 +19,5 @@ namespace RPG.Saving
             
             return new Vector3(x, y, z);
         }
-
-    
     }
 }

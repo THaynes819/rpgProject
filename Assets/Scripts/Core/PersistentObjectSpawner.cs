@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace RPG.Core
@@ -15,9 +14,7 @@ namespace RPG.Core
             {
                 return;
             }
-
             SpawnPersistentObject();
-
             hasSpawned = true;
         }
 

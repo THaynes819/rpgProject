@@ -1,9 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
-using RPG.Core;
 using System.Collections.Generic;
-using System;
 
 namespace RPG.Saving
 {
@@ -54,8 +51,7 @@ namespace RPG.Saving
             {
                 property.stringValue = System.Guid.NewGuid().ToString();
                 serializedObject.ApplyModifiedProperties();                
-            }   
-
+            }
             globalLookup[property.stringValue] = this;              
         }
 #endif
@@ -83,8 +79,6 @@ namespace RPG.Saving
             }
 
             return false;
-            
         }
-
     }
 }

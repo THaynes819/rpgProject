@@ -952,6 +952,11 @@ PrefabInstance:
       propertyPath: destinationPortal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5761303535511659612, guid: c76fd6968bc047e45a3472973f655064,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.399
+      objectReference: {fileID: 0}
     - target: {fileID: 6859826610994083267, guid: c76fd6968bc047e45a3472973f655064,
         type: 3}
       propertyPath: m_Name

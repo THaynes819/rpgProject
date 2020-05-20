@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -9,8 +7,7 @@ namespace RPG.Combat
     {
         Fighter fighter;
         [SerializeField] Weapon weapon = null;
-        [SerializeField] float respawnTime = 5f;
-       
+        [SerializeField] float respawnTime = 5f;       
 
         private void OnTriggerEnter(Collider other)
         {

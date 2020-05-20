@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using RPG.Saving;
 
-
 namespace RPG.SceneManagement
 {
     public class SavingWrapperMe : MonoBehaviour
@@ -41,5 +40,4 @@ namespace RPG.SceneManagement
             GetComponent<SavingSystemMe>().Load(defaultSaveFile);
         }
     }
-
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Core
 {
@@ -9,10 +7,8 @@ namespace RPG.Core
         [SerializeField] Transform target;       
 
         void LateUpdate()
-        {
-            {
-                transform.position = target.position;
-            }
+        {            
+        transform.position = target.position;            
         }
     }
 }

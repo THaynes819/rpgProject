@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Resources;
 
 namespace RPG.Movement
 {
     public class Mover : MonoBehaviour, IAction, ISaveableMe
-
     {
-
         [SerializeField] Transform target;
         [SerializeField] float maxSpeed = 6f;
-        
         
         Health  health;
         NavMeshAgent navMeshAgent;
@@ -28,7 +23,6 @@ namespace RPG.Movement
         void Update()
         {
             navMeshAgent.enabled = !health.IsDead();
-
             UpdateAnimator();
         }
 
@@ -71,8 +65,8 @@ namespace RPG.Movement
             data.position = new SerializableVector3Me(transform.position);
             data.rotation = new SerializableVector3Me(transform.eulerAngles);
             return data;            
-        }    
-
+        }
+        
             public void RestoreState(object state)
         {
             MoverSaveData data = (MoverSaveData)state;

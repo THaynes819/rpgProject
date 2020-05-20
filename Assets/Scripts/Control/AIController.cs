@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
-using System;
+using RPG.Resources;
+
 
 namespace RPG.Control    
- {   
+ {
     
     public class AIController : MonoBehaviour
     {
@@ -125,8 +124,7 @@ namespace RPG.Control
             distaceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             return distaceToPlayer <= chaseDistance; 
         }
-
-        // Called by Unity
+        
         private void OnDrawGizmosSelected()         
         {
             Gizmos.color = Color.blue;

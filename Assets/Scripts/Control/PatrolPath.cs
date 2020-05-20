@@ -1,16 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace RPG.Control
 {
     public class PatrolPath : MonoBehaviour 
     {
-    [SerializeField] float waypointRadius = 0.3f;
+        [SerializeField] float waypointRadius = 0.3f;
 
-    
-    
         private void OnDrawGizmos() 
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -35,10 +30,6 @@ namespace RPG.Control
             return transform.GetChild(i).position;
         }
     }
-        
-    
-
-
 }    
 
     

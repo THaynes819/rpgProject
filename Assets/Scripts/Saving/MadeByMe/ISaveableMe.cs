@@ -1,6 +1,4 @@
 ﻿
-using UnityEngine;
-
 namespace RPG.Saving
 {
     public interface ISaveableMe

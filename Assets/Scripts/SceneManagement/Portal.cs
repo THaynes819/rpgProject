@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System;
 using UnityEngine.AI;
 
 namespace RPG.SceneManagement
 {
     public class Portal : MonoBehaviour
     {
-
         enum DestinationIdentifier
         {
             A, B, C, D, E

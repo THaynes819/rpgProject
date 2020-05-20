@@ -1,8 +1,9 @@
 using UnityEngine;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Stats;
 
-namespace RPG.Core
+namespace RPG.Resources
 {
     public class Health : MonoBehaviour, ISaveableMe 
     {
@@ -10,7 +11,12 @@ namespace RPG.Core
         [SerializeField] float healthPoints = 100f;
 
         bool isDead = false;
-            
+
+
+        private void Start() 
+        {
+            healthPoints = GetComponent<BaseStats>().GetHealth();
+        }    
 
         public bool IsDead()
         {
@@ -29,8 +35,8 @@ namespace RPG.Core
         private void Die()
         {
             if (isDead)  return;
-            Collider collider = GetComponent<Collider>();
-            Destroy(collider);
+            // Collider collider = GetComponent<Collider>();
+            // Destroy(collider);
             isDead = true;
             
             GetComponent<Animator>().SetTrigger("die");

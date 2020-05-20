@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using RPG.Movement;
-using System;
 using RPG.Combat;
-using RPG.Core;
+using RPG.Resources;
 
 namespace RPG.Control
 {
@@ -20,7 +19,6 @@ namespace RPG.Control
         private void Update()
         {
             if (health.IsDead()) { return; }
-
             if (InteractWithCombat()) { return; }
             if (InteractWithMovement()) { return; }
         }
@@ -67,5 +65,4 @@ namespace RPG.Control
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
     }
-
 }
