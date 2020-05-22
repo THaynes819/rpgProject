@@ -22,7 +22,8 @@ namespace RPG.Combat
             
             if(target == null)
             {
-                GetComponent<Text>().text = "None";                                
+                GetComponent<Text>().text = "None";
+                return;                             
             }
             else if (target.IsDead())
             {

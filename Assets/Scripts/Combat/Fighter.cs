@@ -17,13 +17,13 @@ namespace RPG.Combat
         float timeSinceLastAttack = Mathf.Infinity;
         Weapon currentWeapon = null;
         
-       private void Start()
-       {           
+        private void Start()
+        {           
             if (currentWeapon == null)
             {        
                 EquipWeapon(defaultWeapon);
             }
-       }
+        }
 
         private void Update()
         {
@@ -78,11 +78,11 @@ namespace RPG.Combat
             if (target == null) { return; }
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);                
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject);                
             }
             else
             {
-                target.TakeDamage(currentWeapon.GetWeaponDamage());
+                target.TakeDamage(gameObject, currentWeapon.GetWeaponDamage());
             }
         }
 
