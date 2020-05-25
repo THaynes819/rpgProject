@@ -2266,7 +2266,7 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   rightHandTransform: {fileID: 484801001123682386}
   leftHandTransform: {fileID: 484801001123625018}
-  defaultWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1, type: 2}
 --- !u!114 &837125863382540853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,7 +2347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee095d94f3c3b2746837a86f3e46b813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLevel: 3
+  stat: 0
+  startingLevel: 1
   characterClass: 0
   progression: {fileID: 11400000, guid: 39c69b2ce8c5f774b8b40f145a2aaa05, type: 2}
 --- !u!114 &5121616093177861297

@@ -44,7 +44,10 @@ namespace RPG.Resources
             if (isDead)  return;
             Collider collider = GetComponent<Collider>();
             Destroy(collider);
-            AwardExperience(instigator);
+            if(instigator != null)
+            {
+                AwardExperience(instigator);
+            }
             isDead = true;
             
             
@@ -59,7 +62,7 @@ namespace RPG.Resources
             {
                 return;
             }
-            
+
             experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
             
         }

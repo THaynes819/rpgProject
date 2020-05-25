@@ -5076,12 +5076,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1,
         type: 2}
-    - target: {fileID: 1944440974302306719, guid: e310eb573724aa94586f261a5248e7c0,
-        type: 3}
-      propertyPath: defaultWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1,
-        type: 2}
     - target: {fileID: 2127656635413315966, guid: e310eb573724aa94586f261a5248e7c0,
         type: 3}
       propertyPath: m_UseGravity
@@ -5091,11 +5085,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2279096506800662453, guid: e310eb573724aa94586f261a5248e7c0,
-        type: 3}
-      propertyPath: uniqueIdentifier
-      value: aa783757-e020-46cd-8133-4bec96d09175
       objectReference: {fileID: 0}
     - target: {fileID: 4569271355157031804, guid: e310eb573724aa94586f261a5248e7c0,
         type: 3}

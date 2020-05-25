@@ -1,14 +1,30 @@
 using UnityEngine;
+using RPG.Saving;
 
 namespace RPG.Resources
 {
-    public class Experience : MonoBehaviour
+    public class Experience : MonoBehaviour, ISaveableMe
     {
-        [SerializeField] float experiencePoints = 0;
+        [SerializeField] float experiencePoints = 0;        
 
         public void GainExperience(float experience)
         {
             experiencePoints += experience;
+        }
+
+        public float GetExperiencePoints()
+        {
+            return experiencePoints;
+        }
+
+        public object CaptureState()
+        {
+            return experiencePoints;
+        }
+
+        public void RestoreState(object state)
+        {
+            experiencePoints = (float)state;
         }
     }
 }

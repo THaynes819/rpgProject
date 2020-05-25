@@ -14,7 +14,7 @@ namespace RPG.Combat
         [SerializeField] Projectile projectile = null;
 
         const string weaponName = "Weapon";
-       
+    
         public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
