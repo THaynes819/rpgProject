@@ -12,11 +12,11 @@ namespace RPG.Resources
 
         bool isDead = false;
         float experienceReward = 0;        
-
+        
 
         private void Start() 
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();            
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);            
         }    
 
         public bool IsDead()
@@ -28,23 +28,23 @@ namespace RPG.Resources
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             if (healthPoints <= 0)
-            {
-                experienceReward = GetComponent<BaseStats>().GetExperienceReward();                
-                Die();
-                AwardExperience(instigator);
+            {                              
+                Die(instigator);
+                
             }            
         }
 
         public float GetPercentage()
         {
-            return 100 * healthPoints / GetComponent<BaseStats>().GetHealth();
+            return 100 * healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health);
         }        
 
-        private void Die()
+        private void Die(GameObject instigator)
         {
             if (isDead)  return;
             Collider collider = GetComponent<Collider>();
             Destroy(collider);
+            AwardExperience(instigator);
             isDead = true;
             
             
@@ -60,9 +60,7 @@ namespace RPG.Resources
                 return;
             }
             
-                Debug.Log("the xp reward is " + experienceReward);
-                Debug.Log("awarded to " + instigator);
-                experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
+            experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
             
         }
 
@@ -73,10 +71,11 @@ namespace RPG.Resources
 
         public void RestoreState(object state)
         {
+            GameObject instigator = null;
             healthPoints = (float)state;            
             if (healthPoints <= 0)
             {
-                Die();
+                Die(instigator);
             }
         }
     }
