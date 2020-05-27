@@ -20,7 +20,7 @@ namespace RPG.Stats
             if(levels.Length < level)
             {
                 return 0;
-            }
+            }            
             return levels[level - 1];
         }
 
@@ -29,6 +29,7 @@ namespace RPG.Stats
             BuildLookup();
             
             float[] levels = lookupTable[characterClass][stat];
+            
             return levels.Length;
         }
 

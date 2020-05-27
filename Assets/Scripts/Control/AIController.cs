@@ -6,7 +6,7 @@ using RPG.Resources;
 
 
 namespace RPG.Control    
- {
+{
     
     public class AIController : MonoBehaviour
     {

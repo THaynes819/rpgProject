@@ -8,7 +8,7 @@ namespace RPG.Resources
     {
         Health health;               
 
-        private void Awake() 
+        private void Start() 
         {
             health = GameObject.FindWithTag("Player").GetComponent<Health>();            
         }

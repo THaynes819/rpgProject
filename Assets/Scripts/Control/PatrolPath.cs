@@ -19,10 +19,10 @@ namespace RPG.Control
         public int GetNextindex(int i)
         {            
             if (i + 1 == transform.childCount)
-           {
+            {
                 return 0;
-           }
-           return i + 1;
+            }
+            return i + 1;
         }
 
         public Vector3 GetWaypoint(int i)

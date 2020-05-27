@@ -9,7 +9,12 @@ namespace RPG.SceneManagement
         const string defaultSaveFile = "save";
         float fadeintime = 0.5f;
 
-        IEnumerator Start()
+        private void Awake()
+        {            
+            StartCoroutine (LoadLastScene());            
+        }
+
+        IEnumerator LoadLastScene()
         {
             Fader fader = FindObjectOfType<Fader>();
             fader.FadeOutImediate();
