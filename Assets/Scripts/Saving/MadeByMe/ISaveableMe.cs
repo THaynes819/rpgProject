@@ -1,0 +1,10 @@
+﻿
+namespace RPG.Saving
+{
+    public interface ISaveableMe
+    {
+        object CaptureState();
+        void RestoreState(object state);
+
+    }
+}
