@@ -30,11 +30,11 @@ namespace RPG.Saving
             Dictionary<string, object> stateDict = (Dictionary<string, object>)state;
             foreach ( ISaveableMe saveable in GetComponents<ISaveableMe>()) 
             {
-               string typeString = saveable.GetType().ToString();
-               if(stateDict.ContainsKey(typeString))
-               {
-                   saveable.RestoreState(stateDict[typeString]);
-               }                
+                string typeString = saveable.GetType().ToString();
+                if(stateDict.ContainsKey(typeString))
+                {
+                    saveable.RestoreState(stateDict[typeString]);
+                }                
             }                   
         }
 

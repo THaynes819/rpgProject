@@ -16,7 +16,8 @@ MonoBehaviour:
   eqqiuppedPrefab: {fileID: 464761475511270896, guid: 13a2de748941b7a479ec31898b56bf2d,
     type: 3}
   weaponRange: 10
-  weaponDamage: 20
+  weaponDamage: 5
+  percentageBonus: 50
   isRightHanded: 0
   projectile: {fileID: 461842104885028522, guid: cb77121d85970f8429571114303383b4,
     type: 3}

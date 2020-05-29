@@ -9,7 +9,8 @@ namespace RPG.Combat
 
     public class EnemyHealthDisplay : MonoBehaviour
     {
-        Fighter fighter;           
+        Fighter fighter;    
+        [SerializeField] bool isDisplayedAsPercent = true;       
 
         private void Awake() 
         {
@@ -30,8 +31,15 @@ namespace RPG.Combat
                 GetComponent<Text>().text = "Dead";
             }
             else
-            {                
-                GetComponent<Text>().text = string.Format("{0:0}%", target.GetPercentage());
+            {   
+                if (isDisplayedAsPercent)
+                {             
+                    GetComponent<Text>().text = string.Format("{0:0}%", target.GetPercentage());
+                }
+                else
+                {
+                    GetComponent<Text>().text = string.Format("{0:0}/{1:0}", target.GetHealthPoints(), target.GetMaxHealthPoints());
+                }
             }         
         }
     }

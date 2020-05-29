@@ -6,7 +6,8 @@ namespace RPG.Resources
 
     public class HealthDisplay : MonoBehaviour
     {
-        Health health;               
+        Health health;
+        [SerializeField] bool isDisplayedAsPercent = true;             
 
         private void Start() 
         {
@@ -15,7 +16,14 @@ namespace RPG.Resources
 
         private void Update() 
         {
-            GetComponent<Text>().text = string.Format("{0:0}%", health.GetPercentage());            
+            if (isDisplayedAsPercent)
+            {
+                GetComponent<Text>().text = string.Format("{0:0}%", health.GetPercentage());
+            }
+            else
+            {
+                GetComponent<Text>().text = string.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
+            }           
         }
     }
 }
