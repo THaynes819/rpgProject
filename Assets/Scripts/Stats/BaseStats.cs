@@ -1,4 +1,5 @@
 ﻿using System;
+using GameDevTV.Utils;
 using UnityEngine;
 
 namespace RPG.Stats {
@@ -13,22 +14,46 @@ namespace RPG.Stats {
 
         public event Action onLevelUp;
 
-        int currentLevel = 0;
+        LazyValue<int> currentLevel;
 
-        private void Start () {
-            currentLevel = CalculateLevel ();
-            Experience experience = GetComponent<Experience> ();
-            if (experience != null) {
+        Experience experience;
+
+        private void Awake() 
+        {
+            experience = GetComponent<Experience>();
+            currentLevel = new LazyValue<int>(CalculateLevel);
+        }
+        
+        private void Start () 
+        {
+            currentLevel.ForceInit();            
+        }
+
+        private void OnEnable() 
+        {
+            if (experience != null)
+            {
                 experience.onExperienceGained += UpdateLevel;
-                //To Do Remember that Events dont require Methods to 
-                //have () to be called! Because is adding the code not calling the method
             }
+        }
+        
+        private void OnDisable() 
+        {
+            if (experience != null)
+            {
+                experience.onExperienceGained -= UpdateLevel;
+            }
+        }
+
+        public int GetLevel()
+        {            
+            return currentLevel.value;
         }
 
         private void UpdateLevel () {
             int newLevel = CalculateLevel ();
-            if (newLevel > currentLevel) {
-                currentLevel = newLevel;
+            if (newLevel > currentLevel.value) {
+                currentLevel.value = newLevel;
                 LevelUpEffect ();
                 onLevelUp ();
             }
@@ -41,22 +66,11 @@ namespace RPG.Stats {
         public float GetStat (Stat stat)
         {
             return (GetBaseStat(stat) + GetAdditiveModifier(stat)) * (1 + GetPercentageModifier(stat)/100);
-        }
-
-        
+        }        
 
         private float GetBaseStat(Stat stat)
         {
             return progression.GetStat(stat, characterClass, GetLevel());
-        }
-
-        private int GetLevel () 
-        {
-            if (currentLevel < 1) 
-            {
-                currentLevel = CalculateLevel ();
-            }
-            return currentLevel;
         }
 
         private float GetAdditiveModifier (Stat stat)

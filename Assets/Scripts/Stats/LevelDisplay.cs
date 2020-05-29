@@ -7,7 +7,7 @@ namespace RPG.Stats
     {
         BaseStats baseStats;
 
-        private void Start() 
+        private void Awake() 
         {
             baseStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
         }

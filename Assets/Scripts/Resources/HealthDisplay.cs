@@ -9,7 +9,7 @@ namespace RPG.Resources
         Health health;
         [SerializeField] bool isDisplayedAsPercent = true;             
 
-        private void Start() 
+        private void Awake() 
         {
             health = GameObject.FindWithTag("Player").GetComponent<Health>();            
         }

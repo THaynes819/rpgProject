@@ -10,11 +10,22 @@ namespace RPG.Cinematics
 
         PlayerController playerController;
 
-        private void Start() 
+        private void Awake() 
+        {            
+            playerController = FindObjectOfType<PlayerController>();
+        }
+
+        
+        void OnEnable()
         {
             GetComponent<PlayableDirector>().played += DisableControl;
             GetComponent<PlayableDirector>().stopped += EnableControl;
-            playerController = FindObjectOfType<PlayerController>();
+        }
+
+        private void OnDisable() 
+        {
+            GetComponent<PlayableDirector>().played -= DisableControl;
+            GetComponent<PlayableDirector>().stopped -= EnableControl;
         }
 
         void DisableControl(PlayableDirector playableDirector)

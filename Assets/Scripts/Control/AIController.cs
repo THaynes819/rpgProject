@@ -3,7 +3,7 @@ using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
 using RPG.Resources;
-
+using GameDevTV.Utils;
 
 namespace RPG.Control    
 {
@@ -23,20 +23,29 @@ namespace RPG.Control
         Health health;
         Mover mover;        
         float distaceToPlayer;        
-        int currentWaypointIndex = 0;
-
-        Vector3 guardPosition;
+        int currentWaypointIndex = 0;        
         float timeSinceLastSawPlayer = Mathf.Infinity;
-        public float timeSinceArrivedAtWaypoint = Mathf.Infinity;     
+        public float timeSinceArrivedAtWaypoint = Mathf.Infinity;
 
-        private void Start() 
+        LazyValue<Vector3> guardPosition;
+
+        private void Awake() 
         {
             player = GameObject.FindWithTag("Player");
             fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
-            mover= GetComponent<Mover>();
+            mover = GetComponent<Mover>();
+            guardPosition = new LazyValue<Vector3>(GetInitialGuardPosition);
+        }
 
-            guardPosition = transform.position;
+        private Vector3 GetInitialGuardPosition()
+        {
+            return transform.position;
+        }
+
+        private void Start() 
+        {
+            guardPosition.ForceInit();
         }
 
         private void Update()
@@ -72,7 +81,7 @@ namespace RPG.Control
         private void PatrolBehaviour()
         {         
             
-            Vector3 nextPostiion = guardPosition; 
+            Vector3 nextPostiion = guardPosition.value; 
 
             if (patrolPath != null)
             {
@@ -131,4 +140,4 @@ namespace RPG.Control
             Gizmos.DrawWireSphere(transform.position, chaseDistance);            
         }
     }
- }
+}
