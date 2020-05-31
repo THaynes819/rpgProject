@@ -13,36 +13,28 @@ namespace RPG.Control
         Health health;
         Fighter fighter;
 
-        enum CursorType
-        {
-            None,
-            Movement,
-            Combat,
-            UI
-        }
-
         [System.Serializable]
         struct CursorMapping
-        {            
+        {
             public CursorType type;
             public Texture2D cursorTexture;
-            public Vector2 hotSpot;     
+            public Vector2 hotSpot;
         }
 
         [SerializeField] CursorMapping[] cursorMappings = null;
-        
-        
-        private void Awake() 
+
+
+        private void Awake()
         {
-            health = GetComponent<Health>();            
+            health = GetComponent<Health>();
         }
 
         private void Update()
         {
-            if (InteractWithUI()) 
+            if (InteractWithUI())
             {
                 SetGameCursor(CursorType.UI);
-                return; 
+                return;
             }
             if (health.IsDead())
             {
@@ -50,15 +42,15 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithComponent()) { return; }            
+            if (InteractWithComponent()) { return; }
             if (InteractWithMovement()) { return; }
 
             SetGameCursor(CursorType.None);
         }
-        
+
 
         private bool InteractWithUI()
-        {            
+        {
             return EventSystem.current.IsPointerOverGameObject(); //gameobject means UI gameobject
         }
 
@@ -78,9 +70,9 @@ namespace RPG.Control
                 }
             }
             return false;
-        }     
+        }
 
-        
+
         private bool InteractWithMovement()
         {
             RaycastHit hit;
@@ -89,7 +81,7 @@ namespace RPG.Control
             {
                 if (Input.GetMouseButton(0))
                 {
-                    GetComponent<Mover>().StartMoveAction(hit.point, 1f);                    
+                    GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                 }
                 SetGameCursor(CursorType.Movement);
                 return true;
