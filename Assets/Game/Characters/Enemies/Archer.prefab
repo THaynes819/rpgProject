@@ -1,18 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5111534157604203121
+--- !u!1001 &1352135304751325678
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 995178493135950426, guid: 821cd1634b5c08d4ba3289465006faa2,
-        type: 3}
-      propertyPath: defaultweapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 69547ac3c6f27a74d84580d3477f229f,
-        type: 2}
     - target: {fileID: 995178493135950426, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
       propertyPath: defaultWeapon
@@ -32,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 2718131105313669635, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
       propertyPath: chaseDistance
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5133474788305343967, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
