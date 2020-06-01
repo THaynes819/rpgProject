@@ -41,7 +41,7 @@ namespace RPG.Combat {
             return true;
         }
 
-        public CursorType GetCursorType (CursorType cursorType)
+        public CursorType GetCursorType ()
         {
             return CursorType.WeaponPickup;
         }

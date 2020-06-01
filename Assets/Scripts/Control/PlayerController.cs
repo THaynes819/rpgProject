@@ -64,7 +64,7 @@ namespace RPG.Control
                 {
                     if (raycastable.HandleRaycast(this))
                     {
-                        SetGameCursor(CursorType.Combat);
+                        SetGameCursor(raycastable.GetCursorType());
                         return true;
                     }
                 }
@@ -111,5 +111,8 @@ namespace RPG.Control
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
+
+
     }
+
 }
