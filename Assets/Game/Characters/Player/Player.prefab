@@ -2322,6 +2322,8 @@ MonoBehaviour:
   - type: 4
     cursorTexture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotSpot: {x: 0, y: 0}
+  raycastMaxDistance: 1
+  maxPathLength: 30
 --- !u!114 &2362606552416459338
 MonoBehaviour:
   m_ObjectHideFlags: 0
