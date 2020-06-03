@@ -1,20 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using RPG.Resources;
 
 namespace RPG.UI.DamageText
 {
     public class DamageText : MonoBehaviour
     {
+        [SerializeField] Text damageText = null;
 
-        private void Start ()
+        public void DestroyText ()
         {
-            //float damage = GetComponent<Health>().TakeDamage();
-            //GetComponentInChildren<Text> ().text = string.Format ("{0:0}/{1:0}");
+            Destroy (gameObject);
+        }
 
+        public void SetValue (float amount)
+        {
+            damageText.text = string.Format ("{0:0}", amount);
+            //string.Format ("{0:0}/{1:0}", amount);
 
         }
+
     }
 }

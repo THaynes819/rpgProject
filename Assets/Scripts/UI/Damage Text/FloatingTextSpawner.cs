@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.UI.DamageText
 {
@@ -8,10 +9,10 @@ namespace RPG.UI.DamageText
 
 		[SerializeField] DamageText damageTextPrefab = null;
 
-
 		public void Spawn (float damage)
 		{
 			DamageText damageTextInstance = Instantiate<DamageText> (damageTextPrefab, transform);
+			damageTextInstance.SetValue(damage);
 		}
 	}
 }
