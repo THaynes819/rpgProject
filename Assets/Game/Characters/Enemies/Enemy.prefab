@@ -48,6 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelUpHealthPercent: 90
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2674994850131457748}
+        m_MethodName: Spawn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 13
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2173215540172669004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +126,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1,
         type: 2}
+    - target: {fileID: 2166288055829276072, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -167,6 +186,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7521698536890940325, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7555797315091595089, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_IsTrigger
@@ -193,6 +217,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2173215540172669004}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2674994850131457748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267070082150856344, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2173215540172669004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e94974d871f534db3b99c41c1ef75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2396295059179152682
 PrefabInstance:
   m_ObjectHideFlags: 0
