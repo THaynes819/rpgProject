@@ -9,22 +9,26 @@ namespace RPG.Attributes
 
         [SerializeField] RectTransform foreground = null;
         [SerializeField] Health healthComponent = null;
+        [SerializeField] Canvas rootCanvas = null;
 
         float healthFraction;
         float foregroundXScale;
 
-
+        private void Start ()
+        {
+            rootCanvas.enabled = false;
+        }
 
         void Update ()
         {
-            if (healthComponent != healthComponent.IsDead())
+            if (Mathf.Approximately (healthComponent.GetFraction (), 1) || healthComponent.IsDead())
             {
-            foreground.localScale = new Vector3 (healthComponent.GetFraction(), 1, 1);
+                rootCanvas.enabled = false;
+                return;
             }
-            else
-            {
-                Destroy(this.gameObject);
-            }
+            rootCanvas.enabled = true;
+            foreground.localScale = new Vector3 (healthComponent.GetFraction (), 1, 1);
+
 
         }
 
