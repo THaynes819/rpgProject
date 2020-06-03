@@ -6,7 +6,7 @@ using RPG.UI.DamageText;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RPG.Resources
+namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveableMe
     {
@@ -16,8 +16,7 @@ namespace RPG.Resources
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float>
-        {
-        }
+        { }
 
         LazyValue<float> healthPoints;
 
@@ -57,8 +56,6 @@ namespace RPG.Resources
 
         public void TakeDamage (GameObject instigator, float damage)
         {
-            print (gameObject.name + " took " + damage + " damage");
-
             healthPoints.value = Mathf.Max (healthPoints.value - damage, 0);
 
             if (healthPoints.value <= 0)
@@ -73,7 +70,12 @@ namespace RPG.Resources
 
         public float GetPercentage ()
         {
-            return 100 * healthPoints.value / GetComponent<BaseStats> ().GetStat (Stat.Health);
+            return 100 * GetFraction();
+        }
+
+        public float GetFraction ()
+        {
+            return healthPoints.value / GetComponent<BaseStats> ().GetStat (Stat.Health);
         }
 
         public float GetHealthPoints ()

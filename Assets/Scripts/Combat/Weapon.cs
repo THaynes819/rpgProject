@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using RPG.Resources;
+using RPG.Attributes;
 
 namespace RPG.Combat
 {
@@ -15,11 +15,11 @@ namespace RPG.Combat
         [SerializeField] Projectile projectile = null;
 
         const string weaponName = "Weapon";
-    
+
         public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
-            
+
             if(eqqiuppedPrefab != null)
             {
                 Transform handtransform = GetHandTransform(rightHand, leftHand);
@@ -29,12 +29,12 @@ namespace RPG.Combat
 
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
             if (animatorOverride != null)
-            {                
+            {
                 animator.runtimeAnimatorController = animatorOverride;
             }
             else if (overrideController != null)
-            { 
-                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;                
+            {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
         }
 

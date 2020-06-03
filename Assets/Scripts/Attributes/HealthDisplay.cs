@@ -1,20 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.Resources
+namespace RPG.Attributes
 {
 
     public class HealthDisplay : MonoBehaviour
     {
         Health health;
-        [SerializeField] bool isDisplayedAsPercent = true;             
+        [SerializeField] bool isDisplayedAsPercent = true;
 
-        private void Awake() 
+        private void Awake()
         {
-            health = GameObject.FindWithTag("Player").GetComponent<Health>();            
+            health = GameObject.FindWithTag("Player").GetComponent<Health>();
         }
 
-        private void Update() 
+        private void Update()
         {
             if (isDisplayedAsPercent)
             {
@@ -23,7 +23,7 @@ namespace RPG.Resources
             else
             {
                 GetComponent<Text>().text = string.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
-            }           
+            }
         }
     }
 }

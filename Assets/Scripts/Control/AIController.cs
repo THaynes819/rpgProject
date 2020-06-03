@@ -2,12 +2,12 @@
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
-using RPG.Resources;
+using RPG.Attributes;
 using GameDevTV.Utils;
 
-namespace RPG.Control    
+namespace RPG.Control
 {
-    
+
     public class AIController : MonoBehaviour
     {
 
@@ -21,15 +21,15 @@ namespace RPG.Control
         GameObject player;
         Fighter fighter;
         Health health;
-        Mover mover;        
-        float distaceToPlayer;        
-        int currentWaypointIndex = 0;        
+        Mover mover;
+        float distaceToPlayer;
+        int currentWaypointIndex = 0;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         public float timeSinceArrivedAtWaypoint = Mathf.Infinity;
 
         LazyValue<Vector3> guardPosition;
 
-        private void Awake() 
+        private void Awake()
         {
             player = GameObject.FindWithTag("Player");
             fighter = GetComponent<Fighter>();
@@ -43,17 +43,17 @@ namespace RPG.Control
             return transform.position;
         }
 
-        private void Start() 
+        private void Start()
         {
             guardPosition.ForceInit();
         }
 
         private void Update()
         {
-            if (health.IsDead()) { return; }            
+            if (health.IsDead()) { return; }
             ChaseBehaviour();
             UpdateTimers();
-            
+
         }
 
         private void UpdateTimers()
@@ -63,10 +63,10 @@ namespace RPG.Control
         }
 
         private void ChaseBehaviour()
-        {                        
+        {
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
-                AttackBehaviour();                
+                AttackBehaviour();
             }
             else if (!InAttackRangeOfPlayer() && timeSinceLastSawPlayer < suspicionTime)
             {
@@ -79,30 +79,30 @@ namespace RPG.Control
         }
 
         private void PatrolBehaviour()
-        {         
-            
-            Vector3 nextPostiion = guardPosition.value; 
+        {
+
+            Vector3 nextPostiion = guardPosition.value;
 
             if (patrolPath != null)
             {
-                if (AtWaypoint())   
-                {                    
+                if (AtWaypoint())
+                {
                     timeSinceArrivedAtWaypoint = 0;
                     CycleWaypoint();
                 }
                 nextPostiion = CetCurrentWaypoint();
             }
-            
+
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
                 mover.StartMoveAction(nextPostiion, patrolSpeedFraction);
             }
-            
-        }          
+
+        }
 
         private bool AtWaypoint()
         {
-            float distanceToWaypoint = Vector3.Distance(transform.position, CetCurrentWaypoint());            
+            float distanceToWaypoint = Vector3.Distance(transform.position, CetCurrentWaypoint());
             return distanceToWaypoint < wayPointTolerance;
         }
 
@@ -111,7 +111,7 @@ namespace RPG.Control
             currentWaypointIndex = patrolPath.GetNextindex(currentWaypointIndex);
         }
 
-        private Vector3 CetCurrentWaypoint()        
+        private Vector3 CetCurrentWaypoint()
         {
             return patrolPath.GetWaypoint(currentWaypointIndex);
         }
@@ -119,7 +119,7 @@ namespace RPG.Control
         private void SuspicionBehaviour()
         {
             GetComponent<ActionScheduler>().CancelCurrentACtion();
-            
+
         }
 
         private void AttackBehaviour()
@@ -131,13 +131,13 @@ namespace RPG.Control
         private bool InAttackRangeOfPlayer()
         {
             distaceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-            return distaceToPlayer <= chaseDistance; 
+            return distaceToPlayer <= chaseDistance;
         }
-        
-        private void OnDrawGizmosSelected()         
+
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, chaseDistance);            
+            Gizmos.DrawWireSphere(transform.position, chaseDistance);
         }
     }
 }

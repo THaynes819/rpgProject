@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 using RPG.Core;
 using RPG.Saving;
-using RPG.Resources;
+using RPG.Attributes;
 
 namespace RPG.Movement
 {
@@ -10,7 +10,7 @@ namespace RPG.Movement
     {
         [SerializeField] Transform target;
         [SerializeField] float maxSpeed = 6f;
-        
+
         Health  health;
         NavMeshAgent navMeshAgent;
 
@@ -30,19 +30,19 @@ namespace RPG.Movement
         {
             GetComponent<ActionScheduler>().StartAction(this);
             MoveTo(destination, speedFraction);
-        }        
-        
+        }
+
         public void MoveTo(Vector3 destination, float speedFraction)
-        {            
-            navMeshAgent.destination = destination;   
+        {
+            navMeshAgent.destination = destination;
             navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
-            navMeshAgent.isStopped = false;            
+            navMeshAgent.isStopped = false;
         }
 
         public void Cancel()
         {
             navMeshAgent.isStopped = true;
-        }        
+        }
 
         private void UpdateAnimator()
         {
@@ -64,15 +64,15 @@ namespace RPG.Movement
             MoverSaveData data = new MoverSaveData();
             data.position = new SerializableVector3Me(transform.position);
             data.rotation = new SerializableVector3Me(transform.eulerAngles);
-            return data;            
+            return data;
         }
-        
+
             public void RestoreState(object state)
         {
             MoverSaveData data = (MoverSaveData)state;
             transform.position = data.position.ToVectorMe();
             transform.eulerAngles = data.rotation.ToVectorMe();
-            GetComponent<NavMeshAgent>().Warp(data.position.ToVectorMe());             
+            GetComponent<NavMeshAgent>().Warp(data.position.ToVectorMe());
         }
     }
 }
