@@ -110,5 +110,5 @@ MonoBehaviour:
   destinationPortal: 0
   currentPortal: 0
   portalFadeOutTime: 0.5
-  portalFadeInTime: 1
+  portalFadeInTime: 2
   portalFadeWaitTime: 0.5
