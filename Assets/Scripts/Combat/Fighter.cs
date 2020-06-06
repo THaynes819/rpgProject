@@ -1,11 +1,11 @@
-using UnityEngine;
-using RPG.Movement;
-using RPG.Core;
-using RPG.Saving;
-using RPG.Attributes;
-using RPG.Stats;
 using System.Collections.Generic;
 using GameDevTV.Utils;
+using RPG.Attributes;
+using RPG.Core;
+using RPG.Movement;
+using RPG.Saving;
+using RPG.Stats;
+using UnityEngine;
 
 namespace RPG.Combat
 {
@@ -16,159 +16,164 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
+
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
+        WeaponConfig currentWeaponConfig;
+        LazyValue<Weapon> currentWeapon;
 
-        LazyValue<WeaponConfig> currentWeapon = null;
-
-        private void Awake()
+        private void Awake ()
         {
-            currentWeapon = new LazyValue<WeaponConfig>(SetDefaultWeapon);
+            currentWeaponConfig = defaultWeapon;
+            currentWeapon = new LazyValue<Weapon> (SetupDefaultWeapon);
         }
 
-        private WeaponConfig SetDefaultWeapon()
+        private Weapon SetupDefaultWeapon ()
         {
-            AttachWeapon(defaultWeapon);
-            return defaultWeapon;
+            return AttachWeapon (defaultWeapon);
         }
 
-        private void Start()
+        private void Start ()
         {
             currentWeapon.ForceInit();
         }
 
-
-
-        private void Update()
+        private void Update ()
         {
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null) { return; }
-            if (target.IsDead()) { return; }
+            if (target.IsDead ()) { return; }
 
-            if (!GetIsInRange())
+            if (!GetIsInRange ())
             {
-                GetComponent<Mover>().MoveTo(target.transform.position, 1f);
+                GetComponent<Mover> ().MoveTo (target.transform.position, 1f);
             }
             else
             {
-                GetComponent<Mover>().Cancel();
-                AttackBehaviour();
+                GetComponent<Mover> ().Cancel ();
+                AttackBehaviour ();
             }
         }
 
-        public void EquipWeapon(WeaponConfig weapon)
+        public void EquipWeapon (WeaponConfig weapon)
         {
-            currentWeapon.value = weapon;
-            AttachWeapon(weapon);
+            currentWeaponConfig = weapon;
+            currentWeapon.value = AttachWeapon (weapon);
         }
 
-        private void AttachWeapon(WeaponConfig weapon)
+        private Weapon AttachWeapon (WeaponConfig weapon)
         {
-            Animator animator = GetComponent<Animator>();
-            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
+            Animator animator = GetComponent<Animator> ();
+            return weapon.Spawn (rightHandTransform, leftHandTransform, animator);
         }
 
-        public Health GetTarget()
+        public Health GetTarget ()
         {
             return target;
         }
 
-        private void AttackBehaviour()
+        private void AttackBehaviour ()
         {
-            transform.LookAt(target.transform);
+            transform.LookAt (target.transform);
             if (timeSinceLastAttack > timeBetweenAttacks) // if attack cooldown is up
             {
-                TriggerAttack(); //triggers hit event
+                TriggerAttack (); //triggers hit event
                 timeSinceLastAttack = 0;
             }
         }
 
-        private void TriggerAttack()
+        private void TriggerAttack ()
         {
-            GetComponent<Animator>().ResetTrigger("stopAttack");
-            GetComponent<Animator>().SetTrigger("attack"); //triggers animation event
+            GetComponent<Animator> ().ResetTrigger ("stopAttack");
+            GetComponent<Animator> ().SetTrigger ("attack"); //triggers animation event
         }
 
         // Animation Event
-        void Hit()
+        void Hit ()
         {
             if (target == null) { return; }
 
-            float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
-            if (currentWeapon.value.HasProjectile())
+            float damage = GetComponent<BaseStats> ().GetStat (Stat.Damage);
+
+            if (currentWeapon.value != null)
             {
-                currentWeapon.value.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject, damage);
+                currentWeapon.value.OnHit();
+            }
+
+            if (currentWeaponConfig.HasProjectile ())
+            {
+                currentWeaponConfig.LaunchProjectile (rightHandTransform, leftHandTransform, target, gameObject, damage);
             }
             else
             {
-                target.TakeDamage(gameObject, damage);
+                target.TakeDamage (gameObject, damage);
             }
         }
 
-        void Shoot()
+        void Shoot ()
         {
-            Hit();
+            Hit ();
         }
 
-        private bool GetIsInRange()
+        private bool GetIsInRange ()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.value.GetWeaponRange();
+            return Vector3.Distance (transform.position, target.transform.position) < currentWeaponConfig.GetWeaponRange ();
         }
 
-        public bool CanAttack(GameObject combatTarget)
+        public bool CanAttack (GameObject combatTarget)
         {
             if (combatTarget == null) { return false; }
-            Health targetToTest = combatTarget.GetComponent<Health>();
-            return targetToTest != null && !targetToTest.IsDead();
+            Health targetToTest = combatTarget.GetComponent<Health> ();
+            return targetToTest != null && !targetToTest.IsDead ();
         }
 
-        public void Attack(GameObject combatTarget)
+        public void Attack (GameObject combatTarget)
         {
-            GetComponent<ActionScheduler>().StartAction(this);
-            target = combatTarget.GetComponent<Health>();
+            GetComponent<ActionScheduler> ().StartAction (this);
+            target = combatTarget.GetComponent<Health> ();
         }
 
-        public void Cancel()
+        public void Cancel ()
         {
-            StopAttack();
+            StopAttack ();
             target = null;
-            GetComponent<Mover>().Cancel();
+            GetComponent<Mover> ().Cancel ();
 
         }
 
-        private void StopAttack()
+        private void StopAttack ()
         {
-            GetComponent<Animator>().ResetTrigger("attack");
-            GetComponent<Animator>().SetTrigger("stopAttack");
+            GetComponent<Animator> ().ResetTrigger ("attack");
+            GetComponent<Animator> ().SetTrigger ("stopAttack");
         }
 
-        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeapon.value.GetWeaponDamage();
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        public IEnumerable<float> GetAdditiveModifiers (Stat stat)
         {
             if (stat == Stat.Damage)
             {
-            yield return currentWeapon.value.GetPercentageBonus();
+                yield return currentWeaponConfig.GetWeaponDamage ();
             }
         }
 
-        public object CaptureState()
+        public IEnumerable<float> GetPercentageModifiers (Stat stat)
         {
-            return currentWeapon.value.name;
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeaponConfig.GetPercentageBonus ();
+            }
         }
 
-        public void RestoreState(object state)
+        public object CaptureState ()
         {
-            string weaponName = (string)state;
-            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
-            EquipWeapon(weapon);
+            return currentWeaponConfig.name;
+        }
+
+        public void RestoreState (object state)
+        {
+            string weaponName = (string) state;
+            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig> (weaponName);
+            EquipWeapon (weapon);
         }
     }
 }

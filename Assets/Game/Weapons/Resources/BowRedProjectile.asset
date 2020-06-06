@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BowRedProjectile
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 22100000, guid: e4151cc68c08f6c4ab26d82d0a82e797, type: 2}
-  eqqiuppedPrefab: {fileID: 5953299871622508879, guid: 6db2c864ff0fa894ab63ff6549173100,
+  eqqiuppedPrefab: {fileID: 4311022340090929531, guid: 6db2c864ff0fa894ab63ff6549173100,
     type: 3}
   weaponRange: 10
   weaponDamage: 4
