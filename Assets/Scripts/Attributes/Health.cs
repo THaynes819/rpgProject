@@ -13,10 +13,10 @@ namespace RPG.Attributes
         [Range (1, 100)]
         [SerializeField] float levelUpHealthPercent = 90f;
         [SerializeField] TakeDamageEvent takeDamage;
+        [SerializeField] UnityEvent deathEvent;
 
         [System.Serializable]
-        public class TakeDamageEvent : UnityEvent<float>
-        { }
+        public class TakeDamageEvent : UnityEvent<float> { }
 
         LazyValue<float> healthPoints;
 
@@ -60,7 +60,9 @@ namespace RPG.Attributes
 
             if (healthPoints.value <= 0)
             {
-                Die (instigator);
+                deathEvent.Invoke ();
+                Die ();
+                AwardExperience (instigator);
             }
             else
             {
@@ -70,7 +72,7 @@ namespace RPG.Attributes
 
         public float GetPercentage ()
         {
-            return 100 * GetFraction();
+            return 100 * GetFraction ();
         }
 
         public float GetFraction ()
@@ -88,17 +90,12 @@ namespace RPG.Attributes
             return GetComponent<BaseStats> ().GetStat (Stat.Health);
         }
 
-        private void Die (GameObject instigator)
+        private void Die ()
         {
             if (isDead) return;
             Collider collider = GetComponent<Collider> ();
             Destroy (collider);
-            if (instigator != null)
-            {
-                AwardExperience (instigator);
-            }
             isDead = true;
-
             GetComponent<Animator> ().SetTrigger ("die");
             GetComponent<ActionScheduler> ().CancelCurrentACtion ();
         }
@@ -127,11 +124,10 @@ namespace RPG.Attributes
 
         public void RestoreState (object state)
         {
-            GameObject instigator = null;
             healthPoints.value = (float) state;
             if (healthPoints.value <= 0)
             {
-                Die (instigator);
+                Die ();
             }
         }
     }

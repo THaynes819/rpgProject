@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8843267095814656310}
   - component: {fileID: 7673498936402573261}
   - component: {fileID: 2408241292185734690}
+  - component: {fileID: 1698642672281549139}
   m_Layer: 0
   m_Name: EquippedFireball
   m_TagString: Untagged
@@ -64,6 +65,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1698642672281549139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464761475511270896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124cd61eec5417948ae15161d79a1391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8518115218334896309
 GameObject:
   m_ObjectHideFlags: 0
