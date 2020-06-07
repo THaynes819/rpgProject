@@ -1,3 +1,4 @@
+using System;
 using GameDevTV.Utils;
 using RPG.Core;
 using RPG.Saving;
@@ -68,6 +69,11 @@ namespace RPG.Attributes
             {
                 takeDamage.Invoke (damage);
             }
+        }
+
+        public void Heal (float healthToRestore)
+        {
+            healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetMaxHealthPoints());
         }
 
         public float GetPercentage ()
