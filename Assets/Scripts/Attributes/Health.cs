@@ -59,7 +59,7 @@ namespace RPG.Attributes
         {
             healthPoints.value = Mathf.Max (healthPoints.value - damage, 0);
 
-            if (healthPoints.value <= 0)
+            if (Mathf.Approximately (healthPoints.value, 0))
             {
                 deathEvent.Invoke ();
                 Die ();
@@ -73,7 +73,8 @@ namespace RPG.Attributes
 
         public void Heal (float healthToRestore)
         {
-            healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetMaxHealthPoints());
+
+            healthPoints.value = Mathf.Min (healthPoints.value + healthToRestore, GetMaxHealthPoints ());
         }
 
         public float GetPercentage ()
@@ -131,7 +132,7 @@ namespace RPG.Attributes
         public void RestoreState (object state)
         {
             healthPoints.value = (float) state;
-            if (healthPoints.value <= 0)
+            if (Mathf.Approximately (healthPoints.value, 0))
             {
                 Die ();
             }
