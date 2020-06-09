@@ -34,7 +34,10 @@ MonoBehaviour:
   wayPointTolerance: 1.5
   waypointDwellTime: 3
   patrolSpeedFraction: 0.2
+  aggroCooldownTime: 5
+  helpMeDistance: 5
   timeSinceArrivedAtWaypoint: Infinity
+  timeSinceAggravated: Infinity
 --- !u!1001 &2173215540172669004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -168,6 +171,21 @@ PrefabInstance:
         type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2718131105313669635}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Aggravate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}

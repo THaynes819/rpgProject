@@ -61,7 +61,7 @@ namespace RPG.Attributes
 
             if (Mathf.Approximately (healthPoints.value, 0))
             {
-                deathEvent.Invoke ();
+                deathEvent.Invoke (); //TODO fix this so that the SFX doesn't instantiate on dead mobs
                 Die ();
                 AwardExperience (instigator);
             }
@@ -96,6 +96,11 @@ namespace RPG.Attributes
         {
             return GetComponent<BaseStats> ().GetStat (Stat.Health);
         }
+
+        // public GameObject GetInstigator(GameObject instigator)
+        // {
+        //     return instigator;
+        // }
 
         private void Die ()
         {

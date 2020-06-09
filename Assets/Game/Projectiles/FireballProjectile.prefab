@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d40cf68871da1b43b1c05e899f6f9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 8
+  projectileSpeed: 6
   maxLifeTime: 10
   hitEffect: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db,
     type: 3}
   isHoming: 1
-  destroyDelay: 0.2
+  destroyDelay: 0.4
   destroyOnHit:
   - {fileID: 6489834655909423413}
   hitEnemyEvent:
@@ -4980,6 +4980,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7927791097217053969, guid: e8460a3a1e710d5409ed6a9492806c58,
+        type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927791097217053969, guid: e8460a3a1e710d5409ed6a9492806c58,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927791097217053969, guid: e8460a3a1e710d5409ed6a9492806c58,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b58fa8783b46ccf47bce520207b2454b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8460a3a1e710d5409ed6a9492806c58, type: 3}
 --- !u!4 &1352271308294920514 stripped
@@ -5137,6 +5152,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6186478730913186700, guid: dcaec5c138d8e664491d94aaf1a18db1,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: da0093ebe4323b846a8f67e40229df09, type: 3}
     - target: {fileID: 8574587246487892875, guid: dcaec5c138d8e664491d94aaf1a18db1,
         type: 3}
       propertyPath: m_Name

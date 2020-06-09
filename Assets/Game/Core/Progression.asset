@@ -80,7 +80,6 @@ MonoBehaviour:
       - 306000
       - 342000
       - 380000
-      - 420000
   - characterClass: 1
     stats:
     - stat: 0

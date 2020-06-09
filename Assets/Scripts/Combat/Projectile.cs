@@ -48,6 +48,7 @@ namespace RPG.Combat
             Destroy (gameObject, maxLifeTime);
         }
 
+
         private Vector3 GetAimLoacation ()
         {
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider> ();
@@ -68,35 +69,39 @@ namespace RPG.Combat
             {
                 return;
             }
+            if (other == instigator.GetComponent<Collider>())
+            {
+                return;
+            }
             ErrantProjectile (other);
 
             if (hitEffect != null && !target.IsDead ())
             {
                 GameObject newHitEffect = Instantiate (hitEffect, GetAimLoacation (), transform.rotation);
             }
-            hitEnemyEvent.Invoke();
+            hitEnemyEvent.Invoke ();
             target.TakeDamage (instigator, damage);
             DestroyInSteps ();
-        }
+    }
 
-        private void DestroyInSteps ()
+    private void DestroyInSteps ()
+    {
+        foreach (GameObject toDestroy in destroyOnHit)
         {
-            foreach (GameObject toDestroy in destroyOnHit)
-            {
-                Destroy (toDestroy);
-            }
-            Destroy (gameObject, destroyDelay);
+            Destroy (toDestroy);
         }
+        Destroy (gameObject, destroyDelay);
+    }
 
-        private void ErrantProjectile (Collider other)
+    private void ErrantProjectile (Collider other)
+    {
+        if (other.GetComponent<Health> () != target && target.IsDead ()) //Get rid of nested if statement
         {
-            if (other.GetComponent<Health> () != target && target.IsDead ()) //Get rid of nested if statement
+            if (other.gameObject != GameObject.FindWithTag ("Player"))
             {
-                if (other.gameObject != GameObject.FindWithTag ("Player"))
-                {
-                    GameObject newHitEffect = Instantiate (hitEffect, transform.position, transform.rotation);
-                }
+                GameObject newHitEffect = Instantiate (hitEffect, transform.position, transform.rotation);
             }
         }
     }
+}
 }

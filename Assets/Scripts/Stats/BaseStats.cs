@@ -18,26 +18,26 @@ namespace RPG.Stats {
 
         Experience experience;
 
-        private void Awake() 
+        private void Awake()
         {
             experience = GetComponent<Experience>();
             currentLevel = new LazyValue<int>(CalculateLevel);
         }
-        
-        private void Start () 
+
+        private void Start ()
         {
-            currentLevel.ForceInit();            
+            currentLevel.ForceInit();
         }
 
-        private void OnEnable() 
+        private void OnEnable()
         {
             if (experience != null)
             {
                 experience.onExperienceGained += UpdateLevel;
             }
         }
-        
-        private void OnDisable() 
+
+        private void OnDisable()
         {
             if (experience != null)
             {
@@ -46,7 +46,7 @@ namespace RPG.Stats {
         }
 
         public int GetLevel()
-        {            
+        {
             return currentLevel.value;
         }
 
@@ -66,7 +66,7 @@ namespace RPG.Stats {
         public float GetStat (Stat stat)
         {
             return (GetBaseStat(stat) + GetAdditiveModifier(stat)) * (1 + GetPercentageModifier(stat)/100);
-        }        
+        }
 
         private float GetBaseStat(Stat stat)
         {
@@ -79,7 +79,7 @@ namespace RPG.Stats {
             {
                 return 0;
             }
-            
+
             float total = 0;
             foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
             {
@@ -123,7 +123,7 @@ namespace RPG.Stats {
                 return penultimateLevel + 1;
             } else {
                 return startingLevel;
-                //TO DO Set a bool to set enemys to either have level calculated or set in inspector
+                //TODO Set a bool to set enemys to either have level calculated or set in inspector
             }
         }
     }
