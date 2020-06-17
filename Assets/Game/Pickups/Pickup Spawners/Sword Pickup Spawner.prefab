@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3898472684507137548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3309526818764109988, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706,
+        type: 2}
+    - target: {fileID: 3636767547302570092, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword Pickup Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681819332257395491, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 6b014edf-0b92-464a-bf12-d1439dba3e9d
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25d2ea5bb5934294e901ad6f5a44da91, type: 3}

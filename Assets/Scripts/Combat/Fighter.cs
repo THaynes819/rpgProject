@@ -1,15 +1,16 @@
 using System.Collections.Generic;
+using GameDevTV.Inventories;
+using GameDevTV.Saving;
 using GameDevTV.Utils;
 using RPG.Attributes;
 using RPG.Core;
 using RPG.Movement;
-using RPG.Saving;
 using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveableMe, IModifierProvider
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
 
         [SerializeField] float timeBetweenAttacks = 1f;
@@ -18,6 +19,8 @@ namespace RPG.Combat
         [SerializeField] WeaponConfig defaultWeapon = null;
 
         Health target;
+
+        Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;
         WeaponConfig currentWeaponConfig;
         LazyValue<Weapon> currentWeapon;
@@ -26,6 +29,25 @@ namespace RPG.Combat
         {
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon> (SetupDefaultWeapon);
+            equipment = GetComponent<Equipment> ();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
+        }
+
+        private void UpdateWeapon ()
+        {
+            var weapon = equipment.GetItemInSlot (EquipLocation.Weapon) as WeaponConfig;
+
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
+            else
+            {
+                EquipWeapon (weapon);
+            }
         }
 
         private Weapon SetupDefaultWeapon ()
@@ -35,7 +57,7 @@ namespace RPG.Combat
 
         private void Start ()
         {
-            currentWeapon.ForceInit();
+            currentWeapon.ForceInit ();
         }
 
         private void Update ()
@@ -98,7 +120,7 @@ namespace RPG.Combat
 
             if (currentWeapon.value != null)
             {
-                currentWeapon.value.OnHit();
+                currentWeapon.value.OnHit ();
             }
 
             if (currentWeaponConfig.HasProjectile ())
@@ -124,7 +146,7 @@ namespace RPG.Combat
         public bool CanAttack (GameObject combatTarget)
         {
             if (combatTarget == null) { return false; }
-            if (!GetComponent<Mover>().CanMoveTo(combatTarget.transform.position) && !GetIsInRange(combatTarget.transform)) { return false; }
+            if (!GetComponent<Mover> ().CanMoveTo (combatTarget.transform.position) && !GetIsInRange (combatTarget.transform)) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health> ();
             return targetToTest != null && !targetToTest.IsDead ();
         }
@@ -147,22 +169,6 @@ namespace RPG.Combat
         {
             GetComponent<Animator> ().ResetTrigger ("attack");
             GetComponent<Animator> ().SetTrigger ("stopAttack");
-        }
-
-        public IEnumerable<float> GetAdditiveModifiers (Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetWeaponDamage ();
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers (Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetPercentageBonus ();
-            }
         }
 
         public object CaptureState ()

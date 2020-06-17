@@ -51,7 +51,7 @@ namespace RPG.SceneManagement
             DontDestroyOnLoad (gameObject);
 
             Fader fader = FindObjectOfType<Fader> ();
-            SavingWrapperMe wrapper = FindObjectOfType<SavingWrapperMe> ();
+            SavingWrapper wrapper = FindObjectOfType<SavingWrapper> ();
             PlayerController playerController = GameObject.FindWithTag ("Player").GetComponent<PlayerController> ();
 
             playerController.enabled = false;

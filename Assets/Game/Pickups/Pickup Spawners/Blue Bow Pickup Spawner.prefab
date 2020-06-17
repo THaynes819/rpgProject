@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1705183738176912186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3309526818764109988, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b76d58560445bf44aca5d95fdbfbab2,
+        type: 2}
+    - target: {fileID: 3636767547302570092, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_Name
+      value: Blue Bow Pickup Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636767547302570092, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.008726558
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492624315889642001, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681819332257395491, guid: 25d2ea5bb5934294e901ad6f5a44da91,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 77bcd336-828c-4693-859a-69dff44a91f5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25d2ea5bb5934294e901ad6f5a44da91, type: 3}

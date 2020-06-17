@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
+using RPG.Attributes;
 using RPG.Combat;
 using RPG.Movement;
-using RPG.Attributes;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -27,6 +27,7 @@ namespace RPG.Control
         [SerializeField] float raycastMaxDistance = 1;
         [SerializeField] float rayCastradius = 1;
 
+        bool isDraggingUI = false;
 
         private void Awake ()
         {
@@ -54,7 +55,24 @@ namespace RPG.Control
 
         private bool InteractWithUI ()
         {
-            return EventSystem.current.IsPointerOverGameObject (); //gameobject means UI gameobject
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDraggingUI = false;
+            }
+            if (EventSystem.current.IsPointerOverGameObject ())
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        isDraggingUI = true;
+                    }
+                    SetGameCursor (CursorType.UI); //gameobject means UI gameobject
+                    return true;
+                }
+                if (isDraggingUI)
+                {
+                    return true;
+                }
+            return false;
         }
 
         private bool InteractWithComponent ()
@@ -94,7 +112,7 @@ namespace RPG.Control
             bool hasHit = RaycsatNavmesh (out target);
             if (hasHit)
             {
-                if (!GetComponent<Mover>().CanMoveTo(target)) return false;
+                if (!GetComponent<Mover> ().CanMoveTo (target)) return false;
 
                 if (Input.GetMouseButton (0))
                 {
@@ -122,8 +140,6 @@ namespace RPG.Control
 
             return true;
         }
-
-
 
         private void SetGameCursor (CursorType type)
         {

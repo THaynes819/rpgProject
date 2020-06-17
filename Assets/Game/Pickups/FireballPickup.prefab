@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7297676586141241260}
   - component: {fileID: 1902517774303665142}
-  - component: {fileID: 7501169774217430559}
+  - component: {fileID: -7669622397807783302}
+  - component: {fileID: 3120204616552133422}
   m_Layer: 0
   m_Name: FireballPickup
   m_TagString: Untagged
@@ -46,7 +47,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.18, z: 0}
---- !u!114 &7501169774217430559
+--- !u!114 &-7669622397807783302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +56,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4798473382457712116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9116c541bb9f749bc7696bdad79a16, type: 3}
+  m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 1d33eaf25709c4545abbc576f072b550, type: 2}
-  respawnTime: 5
+--- !u!114 &3120204616552133422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798473382457712116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eec878f4d74164d8a9d6ce66901260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4119578352487861536
 PrefabInstance:
   m_ObjectHideFlags: 0

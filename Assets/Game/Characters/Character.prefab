@@ -50,8 +50,8 @@ GameObject:
   - component: {fileID: 1434191508820709910}
   - component: {fileID: 4461957587208940611}
   - component: {fileID: 780713627}
-  - component: {fileID: 489776903157311445}
   - component: {fileID: 173583202909125739}
+  - component: {fileID: 6817268603826896026}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -275,19 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   maxSpeed: 6
---- !u!114 &489776903157311445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618209920550530965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd2bf34fb45b9249be073612b2e0c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  maxPathLength: 40
 --- !u!114 &173583202909125739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +294,19 @@ MonoBehaviour:
   progression: {fileID: 11400000, guid: 39c69b2ce8c5f774b8b40f145a2aaa05, type: 2}
   levelupEffect: {fileID: 0}
   shouldUseModifiers: 0
+--- !u!114 &6817268603826896026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618209920550530965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084b858c7f7148f41a152bc969965183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1001 &69095735640359147
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System;
 using GameDevTV.Utils;
 using RPG.Core;
-using RPG.Saving;
+using GameDevTV.Saving;
 using RPG.Stats;
 using RPG.UI.DamageText;
 using UnityEngine;
@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 namespace RPG.Attributes
 {
-    public class Health : MonoBehaviour, ISaveableMe
+    public class Health : MonoBehaviour, ISaveable
     {
         [Range (1, 100)]
         [SerializeField] float levelUpHealthPercent = 90f;
