@@ -1,0 +1,15 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/Asset Packs/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Game/VFX/Images/HealthOrb/HealthFroth.tpsheet
+- Assets/Game/VFX/Images/HealthOrb/HealthOrb.tpsheet
+textureFileNames:
+- Assets/Asset Packs/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Game/VFX/Images/HealthOrb/HealthFroth.png
+- Assets/Game/VFX/Images/HealthOrb/HealthOrb.png
+normalmapFileNames:
+- Assets/Asset Packs/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+enableDebugOutput: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 0fd48ee5-10cc-4beb-a5dd-d502c1efe372
   displayName: Bow
   description: It's a bow
-  icon: {fileID: 21300000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
+  icon: {fileID: 21300000, guid: 37967dc110c38fa438adb4cf1319b92c, type: 3}
   pickup: {fileID: 3066388765608355628, guid: 4c6f3c501e3aa6f499b634b95f7a54fd, type: 3}
   stackable: 0
   allowedEquipLocation: 5

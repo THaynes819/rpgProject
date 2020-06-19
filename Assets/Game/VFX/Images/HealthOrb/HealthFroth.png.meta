@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: 9331a869ae4105b4eaa723cea89e51dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1164320442545325873
+    second: HealthFroth_00000
+  - first:
+      213: 2617082860117420452
+    second: HealthFroth_00001
+  - first:
+      213: 6486866203273057875
+    second: HealthFroth_00002
+  - first:
+      213: 8507669218054358959
+    second: HealthFroth_00003
+  - first:
+      213: 8604288923322224054
+    second: HealthFroth_00004
+  - first:
+      213: 8044918257039636646
+    second: HealthFroth_00005
+  - first:
+      213: -386314303102510833
+    second: HealthFroth_00006
+  - first:
+      213: 4105586785711913829
+    second: HealthFroth_00007
+  - first:
+      213: 5410450872478980557
+    second: HealthFroth_00008
+  - first:
+      213: -1943176601026672976
+    second: HealthFroth_00009
+  - first:
+      213: -9157329877650026284
+    second: HealthFroth_00010
+  - first:
+      213: -5721192907003413485
+    second: HealthFroth_00011
+  - first:
+      213: -8031817189622356745
+    second: HealthFroth_00012
+  - first:
+      213: -6077398735937694049
+    second: HealthFroth_00013
+  - first:
+      213: 1265646188195966451
+    second: HealthFroth_00014
+  - first:
+      213: -1207077131408168849
+    second: HealthFroth_00015
+  - first:
+      213: 4999366472691866417
+    second: HealthFroth_00016
+  - first:
+      213: -3420238747235724330
+    second: HealthFroth_00017
+  - first:
+      213: -5764248309944020104
+    second: HealthFroth_00018
+  - first:
+      213: 4489194735667818162
+    second: HealthFroth_00019
+  - first:
+      213: 2302109045734287269
+    second: HealthFroth_00020
+  - first:
+      213: 6760975006737736449
+    second: HealthFroth_00021
+  - first:
+      213: 8351886777924221684
+    second: HealthFroth_00022
+  - first:
+      213: -5262547277459609572
+    second: HealthFroth_00023
+  - first:
+      213: -9059735342874832218
+    second: HealthFroth_00024
+  - first:
+      213: 1780942131386502391
+    second: HealthFroth_00025
+  - first:
+      213: -2985665478265720450
+    second: HealthFroth_00026
+  - first:
+      213: 3592289769034822095
+    second: HealthFroth_00027
+  - first:
+      213: 7684160086341130742
+    second: HealthFroth_00028
+  - first:
+      213: -3883048220458438309
+    second: HealthFroth_00029
+  - first:
+      213: 8459729638553513094
+    second: HealthFroth_00030
+  - first:
+      213: -3590106860504981524
+    second: HealthFroth_00031
+  - first:
+      213: 8812767960375389336
+    second: HealthFroth_00032
+  - first:
+      213: 4662815620723087223
+    second: HealthFroth_00033
+  - first:
+      213: 7882415054599847988
+    second: HealthFroth_00034
+  - first:
+      213: -7273553051867399431
+    second: HealthFroth_00035
+  - first:
+      213: 2998934933151264547
+    second: HealthFroth_00036
+  - first:
+      213: 5890257796998409303
+    second: HealthFroth_00037
+  - first:
+      213: -512355650079177004
+    second: HealthFroth_00038
+  - first:
+      213: 1809431554904897342
+    second: HealthFroth_00039
+  - first:
+      213: 7143756878920441232
+    second: HealthFroth_00040
+  - first:
+      213: 3777510493277943312
+    second: HealthFroth_00041
+  - first:
+      213: -4726438281654479701
+    second: HealthFroth_00042
+  - first:
+      213: 1898831073658330792
+    second: HealthFroth_00043
+  - first:
+      213: 3855951731799143187
+    second: HealthFroth_00044
+  - first:
+      213: -7135709726077849641
+    second: HealthFroth_00045
+  - first:
+      213: 9040477204207745205
+    second: HealthFroth_00046
+  - first:
+      213: 1245724512842447998
+    second: HealthFroth_00047
+  - first:
+      213: 2372615542633404638
+    second: HealthFroth_00048
+  - first:
+      213: -4651769279274354477
+    second: HealthFroth_00049
+  - first:
+      213: 1579671895893548830
+    second: HealthFroth_00050
+  - first:
+      213: -5933330007741228954
+    second: HealthFroth_00051
+  - first:
+      213: 8447121077547015150
+    second: HealthFroth_00052
+  - first:
+      213: 3843607120850827684
+    second: HealthFroth_00053
+  - first:
+      213: 4596333857237178292
+    second: HealthFroth_00054
+  - first:
+      213: 384780289734868616
+    second: HealthFroth_00055
+  - first:
+      213: 5929053436895448587
+    second: HealthFroth_00056
+  - first:
+      213: 4399174326353916151
+    second: HealthFroth_00057
+  - first:
+      213: -1867165761589122449
+    second: HealthFroth_00058
+  - first:
+      213: 1673681000345916618
+    second: HealthFroth_00059
+  - first:
+      213: 4291555222157675301
+    second: HealthFroth_00060
+  - first:
+      213: 8090166432037063303
+    second: HealthFroth_00061
+  - first:
+      213: 2744342525988514988
+    second: HealthFroth_00062
+  - first:
+      213: -6181079875005374981
+    second: HealthFroth_00063
+  - first:
+      213: 3245659001464195632
+    second: HealthFroth_00064
+  - first:
+      213: 161915571781693751
+    second: HealthFroth_00065
+  - first:
+      213: -8685736586370134607
+    second: HealthFroth_00066
+  - first:
+      213: -7600720175494359846
+    second: HealthFroth_00067
+  - first:
+      213: -3388831494550052007
+    second: HealthFroth_00068
+  - first:
+      213: -7331083412868709613
+    second: HealthFroth_00069
+  - first:
+      213: 4777884446228732329
+    second: HealthFroth_00070
+  - first:
+      213: -1079624998181692069
+    second: HealthFroth_00071
+  - first:
+      213: -1997056608509115656
+    second: HealthFroth_00072
+  - first:
+      213: 4425538569724135229
+    second: HealthFroth_00073
+  - first:
+      213: 2267125874467964225
+    second: HealthFroth_00074
+  - first:
+      213: 2294632899755510275
+    second: HealthFroth_00075
+  - first:
+      213: -6578771197085722457
+    second: HealthFroth_00076
+  - first:
+      213: -8758148132448261290
+    second: HealthFroth_00077
+  - first:
+      213: 2341148437215468348
+    second: HealthFroth_00078
+  - first:
+      213: 401227369674333515
+    second: HealthFroth_00079
+  - first:
+      213: -799529740820597580
+    second: HealthFroth_00080
+  - first:
+      213: -3846086872112584291
+    second: HealthFroth_00081
+  - first:
+      213: -7435014039459431457
+    second: HealthFroth_00082
+  - first:
+      213: -8370029768105803714
+    second: HealthFroth_00083
+  - first:
+      213: 2467023267595651327
+    second: HealthFroth_00084
+  - first:
+      213: -1710236019561788795
+    second: HealthFroth_00085
+  - first:
+      213: 3748068253042948106
+    second: HealthFroth_00086
+  - first:
+      213: -1213286815021624502
+    second: HealthFroth_00087
+  - first:
+      213: -3319076108072593105
+    second: HealthFroth_00088
+  - first:
+      213: 3289448168664565898
+    second: HealthFroth_00089
+  - first:
+      213: 6309564964264860577
+    second: HealthFroth_00090
+  - first:
+      213: 4263518466229558283
+    second: HealthFroth_00091
+  - first:
+      213: -5068911511122593718
+    second: HealthFroth_00092
+  - first:
+      213: -6782127142797729888
+    second: HealthFroth_00093
+  - first:
+      213: 8992934500327584192
+    second: HealthFroth_00094
+  - first:
+      213: -100818226658244467
+    second: HealthFroth_00095
+  - first:
+      213: 4315158767477012588
+    second: HealthFroth_00096
+  - first:
+      213: -8690639126165852203
+    second: HealthFroth_00097
+  - first:
+      213: 4479830148226026756
+    second: HealthFroth_00098
+  - first:
+      213: -8016396182016106892
+    second: HealthFroth_00099
+  - first:
+      213: 5743531166217199983
+    second: HealthFroth_00100
+  - first:
+      213: 7654287924689215587
+    second: HealthFroth_00101
+  - first:
+      213: -8955270003962988985
+    second: HealthFroth_00102
+  - first:
+      213: 8339501246948329358
+    second: HealthFroth_00103
+  - first:
+      213: 9046847866229568427
+    second: HealthFroth_00104
+  - first:
+      213: 5419871995841274967
+    second: HealthFroth_00105
+  - first:
+      213: -4488522869759271059
+    second: HealthFroth_00106
+  - first:
+      213: -7132641058028880358
+    second: HealthFroth_00107
+  - first:
+      213: 6323813800753655947
+    second: HealthFroth_00108
+  - first:
+      213: -1766042335831697255
+    second: HealthFroth_00109
+  - first:
+      213: -2576753533989229852
+    second: HealthFroth_00110
+  - first:
+      213: 8542887832752654666
+    second: HealthFroth_00111
+  - first:
+      213: -6375534870748778824
+    second: HealthFroth_00112
+  - first:
+      213: 5295283966397775813
+    second: HealthFroth_00113
+  - first:
+      213: 3330602833761816147
+    second: HealthFroth_00114
+  - first:
+      213: 542461926940089522
+    second: HealthFroth_00115
+  - first:
+      213: 4928429577605250919
+    second: HealthFroth_00116
+  - first:
+      213: 5281294675501438768
+    second: HealthFroth_00117
+  - first:
+      213: -4107844626633547416
+    second: HealthFroth_00118
+  - first:
+      213: 359513224123365015
+    second: HealthFroth_00119
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HealthFroth_00000
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1997
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137c3ae064f782010800000000000000
+      internalID: 1164320442545325873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00001
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1997
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9ef01defeb15420800000000000000
+      internalID: 2617082860117420452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00002
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1997
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356d397617af50a50800000000000000
+      internalID: 6486866203273057875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00003
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1997
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7c7a80410511670800000000000000
+      internalID: 8507669218054358959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00004
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1997
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd03733033986770800000000000000
+      internalID: 8604288923322224054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00005
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1945
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8f6ede78a45af60800000000000000
+      internalID: 8044918257039636646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00006
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1945
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f091ce7203983aaf0800000000000000
+      internalID: -386314303102510833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00007
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1945
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b75e4ed69f9f830800000000000000
+      internalID: 4105586785711913829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00008
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1945
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9dfc81768c51b40800000000000000
+      internalID: 5410450872478980557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00009
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1945
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b644ff3d237805e0800000000000000
+      internalID: -1943176601026672976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00010
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1893
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0599f6ef0aae080800000000000000
+      internalID: -9157329877650026284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00011
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1893
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cb39efc5d3a90b0800000000000000
+      internalID: -5721192907003413485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00012
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1893
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4eea702d0498090800000000000000
+      internalID: -8031817189622356745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00013
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1893
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9696029c0eb8aba0800000000000000
+      internalID: -6077398735937694049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00014
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1893
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd6fb2a08a709110800000000000000
+      internalID: 1265646188195966451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00015
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1841
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f682bed8eb99f3fe0800000000000000
+      internalID: -1207077131408168849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00016
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1841
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13bdbc2b151516540800000000000000
+      internalID: 4999366472691866417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00017
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1841
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d3dcf70bfed880d0800000000000000
+      internalID: -3420238747235724330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00018
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1841
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87314a0d3b64100b0800000000000000
+      internalID: -5764248309944020104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00019
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1841
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bea80bc3d2dc4e30800000000000000
+      internalID: 4489194735667818162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00020
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1789
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a7a431eafbb2ff10800000000000000
+      internalID: 2302109045734287269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00021
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1789
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103a5eb82fec3dd50800000000000000
+      internalID: 6760975006737736449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00022
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1789
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa747a36ccd7e370800000000000000
+      internalID: 8351886777924221684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00023
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1789
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c182251222da7f6b0800000000000000
+      internalID: -5262547277459609572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00024
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1789
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2d4e8c4ba554280800000000000000
+      internalID: -9059735342874832218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00025
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1737
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fcc1d2ce6d27b810800000000000000
+      internalID: 1780942131386502391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00026
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1737
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7133d5f019c096d0800000000000000
+      internalID: -2985665478265720450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00027
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1737
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1379d13806ad130800000000000000
+      internalID: 3592289769034822095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00028
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1737
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f91997d2ee93aa60800000000000000
+      internalID: 7684160086341130742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00029
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1737
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51bcdd7734ac1ac0800000000000000
+      internalID: -3883048220458438309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00030
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1685
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c63d1e84ff66570800000000000000
+      internalID: 8459729638553513094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00031
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1685
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef58e1e4d06d2ec0800000000000000
+      internalID: -3590106860504981524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00032
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1685
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c6e1694cd3d4a70800000000000000
+      internalID: 8812767960375389336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00033
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1685
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77797563a16a5b040800000000000000
+      internalID: 4662815620723087223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00034
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1685
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4308d95bab6f36d60800000000000000
+      internalID: 7882415054599847988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00035
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1633
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa3c7849062f0b90800000000000000
+      internalID: -7273553051867399431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00036
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1633
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32fadf2ce6b5e9920800000000000000
+      internalID: 2998934933151264547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00037
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1633
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ca09922466eb150800000000000000
+      internalID: 5890257796998409303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00038
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1633
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6cd56304fb3e8f0800000000000000
+      internalID: -512355650079177004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00039
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1633
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e373d7399646c1910800000000000000
+      internalID: 1809431554904897342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00040
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1581
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d5ec93809b32360800000000000000
+      internalID: 7143756878920441232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00041
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1581
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016742f87c96c6430800000000000000
+      internalID: 3777510493277943312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00042
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1581
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba45d21bc61586eb0800000000000000
+      internalID: -4726438281654479701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00043
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1581
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aed0e11dc00a5a10800000000000000
+      internalID: 1898831073658330792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00044
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1581
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313b0fc9ba7138530800000000000000
+      internalID: 3855951731799143187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00045
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1529
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df64dc8fcdd8fc90800000000000000
+      internalID: -7135709726077849641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00046
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1529
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8b1d46e1a367d70800000000000000
+      internalID: 9040477204207745205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00047
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1529
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c78f328d3b94110800000000000000
+      internalID: 1245724512842447998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00048
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1529
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed81c3fe3493de020800000000000000
+      internalID: 2372615542633404638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00049
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1529
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8f6c39c78917fb0800000000000000
+      internalID: -4651769279274354477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00050
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1477
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f1768483f1ce510800000000000000
+      internalID: 1579671895893548830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00051
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1477
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6681b694bc398ada0800000000000000
+      internalID: -5933330007741228954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00052
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1477
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb97e18dd33a3570800000000000000
+      internalID: 8447121077547015150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00053
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1477
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9b976ef4c375530800000000000000
+      internalID: 3843607120850827684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00054
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1477
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b719bd6a4579cf30800000000000000
+      internalID: 4596333857237178292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00055
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1425
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ef73682a3075500800000000000000
+      internalID: 384780289734868616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00056
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1425
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e4678ffaa384250800000000000000
+      internalID: 5929053436895448587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00057
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1425
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0f753fdb10d0d30800000000000000
+      internalID: 4399174326353916151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00058
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1425
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a65bbe1ae7616e0800000000000000
+      internalID: -1867165761589122449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00059
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1425
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac450f4900c1a3710800000000000000
+      internalID: 1673681000345916618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00060
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1373
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b4ea6acbaae8b30800000000000000
+      internalID: 4291555222157675301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00061
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1373
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78acb53a18b064070800000000000000
+      internalID: 8090166432037063303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00062
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1373
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac2b8bbcfcd51620800000000000000
+      internalID: 2744342525988514988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00063
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1373
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd1df93a94683aa0800000000000000
+      internalID: -6181079875005374981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00064
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1373
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a82546aa5ea0d20800000000000000
+      internalID: 3245659001464195632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00065
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1321
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731f6abca5d3f3200800000000000000
+      internalID: 161915571781693751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00066
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1321
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd4bccf790167780800000000000000
+      internalID: -8685736586370134607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00067
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1321
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4938e4541d48690800000000000000
+      internalID: -7600720175494359846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00068
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1321
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95320b3e5b378f0d0800000000000000
+      internalID: -3388831494550052007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00069
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1321
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313c33d4a72c24a90800000000000000
+      internalID: -7331083412868709613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00070
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1269
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9d35be6947e4240800000000000000
+      internalID: 4777884446228732329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00071
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1269
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d9fb4c8c66401f0800000000000000
+      internalID: -1079624998181692069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00072
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1269
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2c77d68970944e0800000000000000
+      internalID: -1997056608509115656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00073
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1269
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d378234b1ebaa6d30800000000000000
+      internalID: 4425538569724135229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00074
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1269
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14582c898f2767f10800000000000000
+      internalID: 2267125874467964225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00075
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1217
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a0adff67c28df10800000000000000
+      internalID: 2294632899755510275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00076
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1217
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8522bb37283b4a0800000000000000
+      internalID: -6578771197085722457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00077
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1217
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65bab2b1daec47680800000000000000
+      internalID: -8758148132448261290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00078
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1217
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b50b6891e6d7020800000000000000
+      internalID: 2341148437215468348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00079
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1217
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d5a9bba22719500800000000000000
+      internalID: 401227369674333515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00080
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1165
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b43703dfef77e4f0800000000000000
+      internalID: -799529740820597580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00081
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1165
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99af640e54ff9ac0800000000000000
+      internalID: -3846086872112584291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00082
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1165
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb7afd9f1681d890800000000000000
+      internalID: -7435014039459431457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00083
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1165
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30cb90b54ea7db80800000000000000
+      internalID: -8370029768105803714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00084
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1165
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff889ad4790ac3220800000000000000
+      internalID: 2467023267595651327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00085
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1113
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a01f3c6650448e0800000000000000
+      internalID: -1710236019561788795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00086
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1113
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a083b80d730d30430800000000000000
+      internalID: 3748068253042948106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00087
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1113
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4398fbe11a892fe0800000000000000
+      internalID: -1213286815021624502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00088
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1113
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29d8db6dd540f1d0800000000000000
+      internalID: -3319076108072593105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00089
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1113
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a888f406ea776ad20800000000000000
+      internalID: 3289448168664565898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00090
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1061
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abd14ec7e3109750800000000000000
+      internalID: 6309564964264860577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00091
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1061
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c5ee8b47f0b2b30800000000000000
+      internalID: 4263518466229558283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00092
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1061
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4836ad36db97a9b0800000000000000
+      internalID: -5068911511122593718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00093
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1061
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af91000c4b01e1a0800000000000000
+      internalID: -6782127142797729888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00094
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1061
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1716c08425dcc70800000000000000
+      internalID: 8992934500327584192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00095
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1009
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8886256b52d99ef0800000000000000
+      internalID: -100818226658244467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00096
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1009
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6831ec490682eb30800000000000000
+      internalID: 4315158767477012588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00097
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1009
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfe5cd72c5a46780800000000000000
+      internalID: -8690639126165852203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00098
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1009
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d091fd8cd8b2e30800000000000000
+      internalID: 4479830148226026756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00099
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1009
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ed128252a00c090800000000000000
+      internalID: -8016396182016106892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00100
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 957
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61e2c64a2f15bf40800000000000000
+      internalID: 5743531166217199983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00101
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 957
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360a9a7305e793a60800000000000000
+      internalID: 7654287924689215587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00102
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 957
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7463312e06d78b380800000000000000
+      internalID: -8955270003962988985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00103
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 957
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e874844133cdbb370800000000000000
+      internalID: 8339501246948329358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00104
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 957
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba33d9bb33cdc8d70800000000000000
+      internalID: 9046847866229568427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00105
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 905
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754e4305dd0473b40800000000000000
+      internalID: 5419871995841274967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00106
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 905
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f18cd2b3095b1c0800000000000000
+      internalID: -4488522869759271059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00107
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 905
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e72d18fb4c30d90800000000000000
+      internalID: -7132641058028880358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00108
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 905
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8072a39523b2c750800000000000000
+      internalID: 6323813800753655947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00109
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 905
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998537a3ad1cd77e0800000000000000
+      internalID: -1766042335831697255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00110
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 853
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eae6d420588d3cd0800000000000000
+      internalID: -2576753533989229852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00111
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 853
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a498a33c83f6e8670800000000000000
+      internalID: 8542887832752654666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00112
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 853
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be27e760dc8587a0800000000000000
+      internalID: -6375534870748778824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00113
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 853
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cff5f936b0ac7940800000000000000
+      internalID: 5295283966397775813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00114
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 853
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e484a81ada83e20800000000000000
+      internalID: 3330602833761816147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00115
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 801
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc107b9f36378700800000000000000
+      internalID: 542461926940089522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00116
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 801
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f70b1c69c456440800000000000000
+      internalID: 4928429577605250919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00117
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 801
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037dc6f968dea4940800000000000000
+      internalID: 5281294675501438768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00118
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 801
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861a20d83110ef6c0800000000000000
+      internalID: -4107844626633547416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthFroth_00119
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 801
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796bdef5f5f3df400800000000000000
+      internalID: 359513224123365015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
