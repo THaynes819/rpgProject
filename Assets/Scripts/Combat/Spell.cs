@@ -21,7 +21,6 @@ namespace RPG.Combat
         [SerializeField] Projectile projectile = null;
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Transform preCastFXLocation = null;
-        [SerializeField] GameObject preCastAnimation = null;
 
         Health target;
         ResourcePool pool;
@@ -50,25 +49,7 @@ namespace RPG.Combat
             return spellLookupCache[spellID];
         }
 
-        public void SpellAnimator (Transform source, Animator animator)
-        {
 
-            if (preCastAnimation != null)
-            {
-                preCastAnimation.GetComponent<Animator>().enabled = true;
-            }
-
-
-            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
-            if (animatorOverride != null)
-            {
-                animator.runtimeAnimatorController = animatorOverride;
-            }
-            else if (overrideController != null)
-            {
-                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
-            }
-        }
 
         public float GetSpellCost ()
         {
@@ -103,6 +84,11 @@ namespace RPG.Combat
         public Projectile GetProjectile ()
         {
             return projectile;
+        }
+
+        public AnimatorOverrideController GetOverrideController()
+        {
+            return animatorOverride;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize ()

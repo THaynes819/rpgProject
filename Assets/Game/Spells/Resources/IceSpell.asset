@@ -15,10 +15,12 @@ MonoBehaviour:
   spellCost: 5
   castTime: 1
   spellDamage: 10
-  spellCoolDown: 1
+  spellRange: 15
+  spellCoolDown: 2
   spellID: fcce4eff-c653-4b88-8b4c-c2b515c33336
-  icon: {fileID: 0}
-  spellVFXSource: {fileID: 0}
-  projectile: {fileID: 0}
-  resourcePool: {fileID: 0}
-  timeSinceLastCast: Infinity
+  icon: {fileID: 21300000, guid: 95112a5b18dd78e4fbf90e76022057e8, type: 3}
+  isRightHanded: 0
+  projectile: {fileID: 1785003238811767341, guid: 950ae11156a4a994c930348034950628,
+    type: 3}
+  animatorOverride: {fileID: 22100000, guid: ed82471b49b6ddd40961df00b5320227, type: 2}
+  preCastFXLocation: {fileID: 0}

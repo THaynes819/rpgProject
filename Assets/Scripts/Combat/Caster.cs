@@ -13,10 +13,22 @@ namespace RPG.Combat
         [SerializeField] GameObject spellCaster;
         [SerializeField] Spell spell = null;
         [SerializeField] Transform spellOrigin = null;
+        [SerializeField] GameObject preCastAnimation = null;
 
         public float timeSinceLastCast = Mathf.Infinity;
 
+        Animator animator;
         Health target;
+
+        void Awake ()
+        {
+            animator = GetComponent<Animator> ();
+        }
+
+        void Start ()
+        {
+            SpellAnimator ();
+        }
 
         void Update ()
         {
@@ -32,9 +44,7 @@ namespace RPG.Combat
             else
             {
                 GetComponent<Mover> ().Cancel ();
-
-                var instigator = gameObject;
-                CastAttack (spellOrigin, target, instigator);
+                CastingBehaviour ();
             }
 
         }
@@ -47,7 +57,7 @@ namespace RPG.Combat
         public bool CanCast ()
         {
             float resourcePoints = spellCaster.GetComponent<ResourcePool> ().GetCurrentResourcePoints ();
-
+            if (timeSinceLastCast < spell.GetSpellCoolDown ()) return false;
             if (spell.GetSpellCost () > resourcePoints) return false;
             if (target == null) return false;
             if (target.IsDead ()) return false;
@@ -58,8 +68,9 @@ namespace RPG.Combat
         private void CastingBehaviour ()
         {
             transform.LookAt (target.transform);
-            if (timeSinceLastCast > spell.GetSpellCoolDown ())
+            if (CanCast ())
             {
+                Debug.Log ("Casting Behaviour is past CanCast");
                 TriggerSpell ();
                 timeSinceLastCast = 0;
             }
@@ -68,18 +79,39 @@ namespace RPG.Combat
 
         private void TriggerSpell ()
         {
+            Debug.Log ("Trigger Spell is Being Called");
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
             GetComponent<Animator> ().SetTrigger ("attack");
         }
 
         //Animation Event???
-        void CastAttack (Transform spellOrigin, Health target, GameObject instigator)
+        void Shoot ()
         {
-            if (CanCast ())
+            Debug.Log ("Shoot is being Called");
+            Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
+            spellInstance.SetTarget (target, gameObject, spell.GetSpellDamage ());
+
+        }
+
+        public AnimatorOverrideController SpellAnimator ()
+        {
+            var animatorOverride = spell.GetOverrideController ();
+
+            if (preCastAnimation != null)
             {
-                Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
-                spellInstance.SetTarget (target, instigator, spell.GetSpellDamage ());
+                preCastAnimation.GetComponent<Animator> ().enabled = true;
             }
+
+            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
+            if (animatorOverride != null)
+            {
+                animator.runtimeAnimatorController = animatorOverride;
+            }
+            else if (overrideController != null)
+            {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
+            }
+            return animatorOverride;
         }
 
         public void Cast (GameObject combatTarget)

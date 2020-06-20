@@ -80,6 +80,19 @@ MonoBehaviour:
       - 306000
       - 342000
       - 380000
+    resourcePools:
+    - pool: 0
+      levels:
+      - 10
+      - 20
+      - 30
+      - 40
+      - 50
+      - 60
+      - 70
+      - 80
+      - 90
+      - 100
   - characterClass: 1
     stats:
     - stat: 0
@@ -148,6 +161,7 @@ MonoBehaviour:
       - 760
       - 800
       - 840
+    resourcePools: []
   - characterClass: 2
     stats:
     - stat: 0
@@ -216,6 +230,7 @@ MonoBehaviour:
       - 608
       - 640
       - 672
+    resourcePools: []
   - characterClass: 3
     stats:
     - stat: 0
@@ -228,3 +243,17 @@ MonoBehaviour:
     - stat: 1
       levels:
       - 30
+    resourcePools: []
+  - characterClass: 3
+    stats:
+    - stat: 0
+      levels:
+      - 30
+      - 60
+      - 120
+      - 225
+      - 400
+    - stat: 1
+      levels:
+      - 30
+    resourcePools: []
