@@ -3,8 +3,10 @@ using GameDevTV.Utils;
 using UnityEngine;
 
 namespace RPG.Stats {
-    public class BaseStats : MonoBehaviour {
+    public class BaseStats : MonoBehaviour
+    {
         [SerializeField] Stat stat;
+        [SerializeField] Pool pool;
         [Range (1, 99)]
         [SerializeField] int startingLevel = 1;
         [SerializeField] CharacterClass characterClass;
@@ -71,6 +73,16 @@ namespace RPG.Stats {
         private float GetBaseStat(Stat stat)
         {
             return progression.GetStat(stat, characterClass, GetLevel());
+        }
+
+        public float GetPool(Pool pool)
+        {
+            return GetBasePool(pool);
+        }
+
+        private float GetBasePool(Pool pool)
+        {
+            return progression.GetPool(pool, characterClass, GetLevel());
         }
 
         private float GetAdditiveModifier (Stat stat)

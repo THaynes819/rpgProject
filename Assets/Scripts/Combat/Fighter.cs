@@ -17,6 +17,7 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
+        [SerializeField] Spell testSpell = null;
 
         Health target;
 
@@ -27,6 +28,7 @@ namespace RPG.Combat
 
         private void Awake ()
         {
+
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon> (SetupDefaultWeapon);
             equipment = GetComponent<Equipment> ();
@@ -42,7 +44,7 @@ namespace RPG.Combat
 
             if (weapon == null)
             {
-                EquipWeapon(defaultWeapon);
+                EquipWeapon (defaultWeapon);
             }
             else
             {
@@ -76,6 +78,7 @@ namespace RPG.Combat
                 GetComponent<Mover> ().Cancel ();
                 AttackBehaviour ();
             }
+
         }
 
         public void EquipWeapon (WeaponConfig weapon)
@@ -127,6 +130,7 @@ namespace RPG.Combat
             {
                 currentWeaponConfig.LaunchProjectile (rightHandTransform, leftHandTransform, target, gameObject, damage);
             }
+
             else
             {
                 target.TakeDamage (gameObject, damage);

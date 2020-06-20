@@ -18,6 +18,11 @@ namespace RPG.Combat {
             if (Input.GetMouseButtonDown (0)) {
                 callingController.GetComponent<Fighter> ().Attack (gameObject);
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                callingController.GetComponent<Caster>().Cast (gameObject);
+            }
             return true;
         }
     }

@@ -62,7 +62,6 @@ namespace RPG.Control
 
         public void Aggravate ()
         {
-            Debug.Log ("I am aggro'd! Is aggravated = " + IsAggravated ());
             timeSinceAggravated = 0f;
         }
 
@@ -108,7 +107,6 @@ namespace RPG.Control
             {
                 mover.StartMoveAction (nextPostiion, patrolSpeedFraction);
             }
-
         }
 
         private bool AtWaypoint ()
@@ -130,7 +128,6 @@ namespace RPG.Control
         private void SuspicionBehaviour ()
         {
             GetComponent<ActionScheduler> ().CancelCurrentACtion ();
-
         }
 
         private void AttackBehaviour ()
