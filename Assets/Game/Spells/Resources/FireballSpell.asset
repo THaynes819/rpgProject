@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 015967c2d133c41468aea8d9923f5520, type: 3}
-  m_Name: IceSpell
+  m_Name: FireballSpell
   m_EditorClassIdentifier: 
   spellCost: 5
   castTime: 1
   spellDamage: 10
   spellRange: 15
-  spellCoolDown: 2
-  spellID: fcce4eff-c653-4b88-8b4c-c2b515c33336
-  icon: {fileID: 21300000, guid: 95112a5b18dd78e4fbf90e76022057e8, type: 3}
+  spellCoolDown: 1
+  spellID: 5a38e045-4d46-4fc3-90ce-cde3b50da91a
+  icon: {fileID: 21300000, guid: c289b67aac6646a46ba5acdcdfbf2ecf, type: 3}
   isRightHanded: 0
-  projectile: {fileID: 6367142206497978049, guid: 0925224638f7d83478d5994c785df2b2,
+  projectile: {fileID: 461842104885028522, guid: cb77121d85970f8429571114303383b4,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: ed82471b49b6ddd40961df00b5320227, type: 2}
   preCastFXLocation: {fileID: 0}

@@ -83,6 +83,7 @@ namespace RPG.Combat
 
         public void EquipWeapon (WeaponConfig weapon)
         {
+
             currentWeaponConfig = weapon;
             currentWeapon.value = AttachWeapon (weapon);
         }
@@ -100,9 +101,11 @@ namespace RPG.Combat
 
         private void AttackBehaviour ()
         {
+            Animator animator = GetComponent<Animator> ();
             transform.LookAt (target.transform);
             if (timeSinceLastAttack > timeBetweenAttacks) // if attack cooldown is up
             {
+                currentWeaponConfig.GetWeaponOverrideController (animator);
                 TriggerAttack (); //triggers hit event
                 timeSinceLastAttack = 0;
             }
@@ -110,6 +113,7 @@ namespace RPG.Combat
 
         private void TriggerAttack ()
         {
+
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
             GetComponent<Animator> ().SetTrigger ("attack"); //triggers animation event
         }

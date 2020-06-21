@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Attributes;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -10,7 +11,10 @@ namespace RPG.Combat
     public class Spell : ScriptableObject, ISerializationCallbackReceiver
     {
 
+
+
         [SerializeField] float spellCost = 5f;
+        [SerializeField] float spellResourceGeneration = 1f;
         [SerializeField] float castTime = 1f;
         [SerializeField] float spellDamage = 10f;
         [SerializeField] float spellRange = 15f;
@@ -22,8 +26,12 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Transform preCastFXLocation = null;
 
+        public Pool resourceType;
+
+        public bool isPoolGenerating = false;
+
         Health target;
-        ResourcePool pool;
+
 
         static Dictionary<string, Spell> spellLookupCache;
 
@@ -49,11 +57,24 @@ namespace RPG.Combat
             return spellLookupCache[spellID];
         }
 
-
+        public Pool GetResourceType()
+        {
+            return resourceType;
+        }
 
         public float GetSpellCost ()
         {
             return spellCost;
+        }
+
+        public bool GesDoesSpellGenerate()
+        {
+            return isPoolGenerating;
+        }
+
+        public float GetSpellResourceGeneration()
+        {
+            return spellResourceGeneration;
         }
 
         public float GetCastTime ()

@@ -14,15 +14,18 @@ namespace RPG.Combat
         [SerializeField] Spell spell = null;
         [SerializeField] Transform spellOrigin = null;
         [SerializeField] GameObject preCastAnimation = null;
+        public bool hasProjectile = true;
 
         public float timeSinceLastCast = Mathf.Infinity;
 
+        ResourcePool resourcePool;
         Animator animator;
         Health target;
 
         void Awake ()
         {
             animator = GetComponent<Animator> ();
+
         }
 
         void Start ()
@@ -70,7 +73,7 @@ namespace RPG.Combat
             transform.LookAt (target.transform);
             if (CanCast ())
             {
-                Debug.Log ("Casting Behaviour is past CanCast");
+                SpellAnimator ();
                 TriggerSpell ();
                 timeSinceLastCast = 0;
             }
@@ -79,17 +82,34 @@ namespace RPG.Combat
 
         private void TriggerSpell ()
         {
-            Debug.Log ("Trigger Spell is Being Called");
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
             GetComponent<Animator> ().SetTrigger ("attack");
         }
 
-        //Animation Event???
-        void Shoot ()
+        //Animation Event
+        void CastSpell ()
         {
-            Debug.Log ("Shoot is being Called");
-            Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
-            spellInstance.SetTarget (target, gameObject, spell.GetSpellDamage ());
+            // var resourcePoints = spell.GetResourceType ().GetCurrentResourcePoints ();
+
+            // if (target == null) return;
+            // if (spell.isPoolGenerating)
+            // {
+            //     resourcePoints += spell.GetSpellResourceGeneration ();
+            // }
+            // if (!spell.isPoolGenerating)
+            // {
+            //     resourcePoints -= spell.GetSpellCost ();
+            // }
+            // if (hasProjectile)
+            // {
+
+            //     Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
+            //     spellInstance.SetTarget (target, gameObject, spell.GetSpellDamage ());
+            // }
+            // else
+            // {
+            //     target.TakeDamage (gameObject, spell.GetSpellDamage ());
+            // }
 
         }
 

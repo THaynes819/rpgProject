@@ -402,10 +402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellCaster: {fileID: 4749071111288693219}
-  spellProjectile: {fileID: 461842104885028522, guid: cb77121d85970f8429571114303383b4,
-    type: 3}
-  spell: {fileID: 11400000, guid: 9cd3aaa60814625499091d4819ce86f1, type: 2}
+  spell: {fileID: 11400000, guid: eaf0aeff8f29a394bb4f666a8657328a, type: 2}
   spellOrigin: {fileID: 761995594630208003}
+  preCastAnimation: {fileID: 0}
   timeSinceLastCast: Infinity
 --- !u!1 &5707783629349445781
 GameObject:

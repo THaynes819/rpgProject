@@ -13,39 +13,32 @@ namespace RPG.Combat
         [SerializeField] float regenerationRate = 0.1f;
         [SerializeField] bool doesRegeneratePassively = true;
 
+        [SerializeField] Pool[] resourcePools = null;
+
         LazyValue<float> resourcePoints;
 
         void Awake ()
         {
-
             resourcePoints = new LazyValue<float> (GetInitialPool);
         }
 
         private float GetInitialPool ()
         {
-            return GetComponent<BaseStats> ().GetPool (Pool.Mana); //TODO Set pool through Character class selection or UI or something later
+            // foreach (var pool in resourcePools)
+            // {
+            //     if (Spell.res) Select Class in UI - Class will select the resource and so on...
+            // }
+            return GetComponent<BaseStats> ().GetPool (Pool.Mana);
         }
 
         void Start ()
         {
             resourcePoints.ForceInit ();
-
-            //Debug.Log ("The pool amount is " + resourcePoints.value);
         }
 
         void Update ()
         {
-            // Debug.Log ("The mana fraction is " + GetPoolFraction ());
-            // Debug.Log ("The pool amount is " + resourcePoints.value);
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     resourcePoints.value -= 1;
-            //     doesRegeneratePassively = false;
-            // }
-            if (Input.GetMouseButtonDown (1))
-            {
-                doesRegeneratePassively = true;
-            }
+
             RegenerateResource ();
         }
 
@@ -53,8 +46,6 @@ namespace RPG.Combat
         {
             return resourcePoints.value;
         }
-
-
 
         public bool IsRegenerating ()
         {
@@ -75,6 +66,5 @@ namespace RPG.Combat
                 resourcePoints.value += (regenerationRate * Time.deltaTime);
             }
         }
-
     }
 }

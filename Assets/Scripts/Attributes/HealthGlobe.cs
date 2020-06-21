@@ -9,17 +9,17 @@ namespace RPG.Attributes
     {
 
         [SerializeField] Slider slider = null;
-        [SerializeField] Health player = null;
+
+        GameObject player;
 
         void Awake ()
         {
-
+            player = GameObject.FindGameObjectWithTag ("Player");
         }
 
-        // Update is called once per frame
         void Update ()
         {
-            slider.value = player.GetFraction();
+            slider.value = player.GetComponent<Health> ().GetFraction ();
         }
     }
 }
