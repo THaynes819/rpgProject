@@ -17,6 +17,8 @@ namespace GameDevTV.Inventories
         [Tooltip("Does an instance of this item get consumed every time it's used.")]
         [SerializeField] bool consumable = false;
 
+
+
         // PUBLIC
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace GameDevTV.Inventories
         public virtual void Use(GameObject user)
         {
             Debug.Log("Using action: " + this);
+
         }
 
         public bool isConsumable()

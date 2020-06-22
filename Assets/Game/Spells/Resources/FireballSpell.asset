@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireballSpell
   m_EditorClassIdentifier: 
   spellCost: 5
+  spellResourceGeneration: 1
   castTime: 1
   spellDamage: 10
   spellRange: 15
@@ -24,3 +25,5 @@ MonoBehaviour:
     type: 3}
   animatorOverride: {fileID: 22100000, guid: ed82471b49b6ddd40961df00b5320227, type: 2}
   preCastFXLocation: {fileID: 0}
+  resourceType: 5
+  isPoolGenerating: 0

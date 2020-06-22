@@ -10,7 +10,6 @@ namespace RPG.Stats
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
 
         Dictionary<CharacterClass, Dictionary<Stat, float[]>> lookupTable = null;
-        Dictionary<CharacterClass, Dictionary<Pool, float[]>> lookupPoolTable = null;
 
         public float GetStat (Stat stat, CharacterClass characterClass, int level)
         {
@@ -25,19 +24,7 @@ namespace RPG.Stats
             return levels[level - 1];
         }
 
-        public float GetPool (Pool pool, CharacterClass characterClass, int level)
-        {
-            BuildPoolLookup ();
 
-            float[] levels = lookupPoolTable[characterClass][pool];
-
-            if (levels.Length < level)
-            {
-                return 0;
-            }
-            return levels[level - 1];
-
-        }
 
         public int GetLevels (Stat stat, CharacterClass characterClass)
         {
@@ -70,35 +57,14 @@ namespace RPG.Stats
 
         }
 
-        private void BuildPoolLookup ()
-        {
-            if (lookupPoolTable != null)
-            {
-                return;
-            }
 
-            lookupPoolTable = new Dictionary<CharacterClass, Dictionary<Pool, float[]>> ();
-
-            foreach (ProgressionCharacterClass progressionClass in characterClasses)
-            {
-                var poolLookupTable = new Dictionary<Pool, float[]> ();
-                foreach (ProgressionPool progressionPool in progressionClass.resourcePools)
-                {
-                    poolLookupTable[progressionPool.pool] = progressionPool.levels;
-                }
-
-                lookupPoolTable[progressionClass.characterClass] = poolLookupTable;
-            }
-
-        }
 
         [System.Serializable]
         public class ProgressionCharacterClass
         {
             public CharacterClass characterClass;
+            public PlayerClass playerClass;
             public ProgressionStat[] stats;
-            public ProgressionPool[] resourcePools;
-
         }
 
         [System.Serializable]

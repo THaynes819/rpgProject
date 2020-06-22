@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 55118136827415719}
   - component: {fileID: 8152132153960752120}
   - component: {fileID: 2665441604261473864}
+  - component: {fileID: 4631781389628393406}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -405,7 +406,20 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: eaf0aeff8f29a394bb4f666a8657328a, type: 2}
   spellOrigin: {fileID: 761995594630208003}
   preCastAnimation: {fileID: 0}
+  hasProjectile: 1
   timeSinceLastCast: Infinity
+--- !u!114 &4631781389628393406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06808a64164f0d48b8aca46fd3f73aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0

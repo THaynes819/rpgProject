@@ -63,7 +63,7 @@ namespace GameDevTV.Inventories
             if (itemID == null || !itemLookupCache.ContainsKey(itemID)) return null;
             return itemLookupCache[itemID];
         }
-        
+
         /// <summary>
         /// Spawn the pickup gameobject into the world.
         /// </summary>
@@ -92,7 +92,7 @@ namespace GameDevTV.Inventories
         {
             return stackable;
         }
-        
+
         public string GetDisplayName()
         {
             return displayName;
@@ -104,7 +104,7 @@ namespace GameDevTV.Inventories
         }
 
         // PRIVATE
-        
+
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             // Generate and save a new UUID if this is blank.

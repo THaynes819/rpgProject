@@ -26,7 +26,7 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] Transform preCastFXLocation = null;
 
-        public Pool resourceType;
+        public Stat resourceType;
 
         public bool isPoolGenerating = false;
 
@@ -57,7 +57,7 @@ namespace RPG.Combat
             return spellLookupCache[spellID];
         }
 
-        public Pool GetResourceType()
+        public Stat GetResourceType()
         {
             return resourceType;
         }

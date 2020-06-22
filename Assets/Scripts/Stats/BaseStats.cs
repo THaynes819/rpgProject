@@ -75,16 +75,6 @@ namespace RPG.Stats {
             return progression.GetStat(stat, characterClass, GetLevel());
         }
 
-        public float GetPool(Pool pool)
-        {
-            return GetBasePool(pool);
-        }
-
-        private float GetBasePool(Pool pool)
-        {
-            return progression.GetPool(pool, characterClass, GetLevel());
-        }
-
         private float GetAdditiveModifier (Stat stat)
         {
             if (!shouldUseModifiers)

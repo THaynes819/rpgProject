@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RPG.Attributes;
 using RPG.Core;
 using RPG.Movement;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -21,6 +22,8 @@ namespace RPG.Combat
         ResourcePool resourcePool;
         Animator animator;
         Health target;
+        Stat playerPool;
+        bool isCorrectClass = true;
 
         void Awake ()
         {
@@ -30,16 +33,21 @@ namespace RPG.Combat
 
         void Start ()
         {
+
             SpellAnimator ();
         }
 
         void Update ()
         {
+            playerPool = spellCaster.GetComponent<ResourcePool> ().GetCurrentPool (); // Remove after UI Creation is setup or use Observer Method
             UpdateTimers ();
 
             if (target == null) return;
-
+            Debug.Log ("The Player Pool is " + playerPool + " and the spell Resource Type is " + spell.resourceType);
             if (target.IsDead ()) return;
+            if (spell.GetResourceType () != playerPool) { Debug.Log ("You cannot cast that"); isCorrectClass = false; }
+            if (spell.GetResourceType () == playerPool) { Debug.Log ("You Have the correct resource"); isCorrectClass = true; }
+
             if (!GetIsInRange (target.transform))
             {
                 GetComponent<Mover> ().MoveTo (target.transform.position, 1f);
@@ -59,9 +67,14 @@ namespace RPG.Combat
 
         public bool CanCast ()
         {
+
             float resourcePoints = spellCaster.GetComponent<ResourcePool> ().GetCurrentResourcePoints ();
             if (timeSinceLastCast < spell.GetSpellCoolDown ()) return false;
             if (spell.GetSpellCost () > resourcePoints) return false;
+            Debug.Log ("Spel Cost is " + spell.GetSpellCost () + " Resource Points are " + resourcePoints);
+            //Debug.Log ("Got past Spell Cost");
+            if (!isCorrectClass) return false;
+            //Debug.Log ("Got Past Correct Class!");
             if (target == null) return false;
             if (target.IsDead ()) return false;
 
@@ -89,27 +102,28 @@ namespace RPG.Combat
         //Animation Event
         void CastSpell ()
         {
-            // var resourcePoints = spell.GetResourceType ().GetCurrentResourcePoints ();
 
-            // if (target == null) return;
-            // if (spell.isPoolGenerating)
-            // {
-            //     resourcePoints += spell.GetSpellResourceGeneration ();
-            // }
-            // if (!spell.isPoolGenerating)
-            // {
-            //     resourcePoints -= spell.GetSpellCost ();
-            // }
-            // if (hasProjectile)
-            // {
+            var resourcePool = spellCaster.GetComponent<ResourcePool> ();
 
-            //     Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
-            //     spellInstance.SetTarget (target, gameObject, spell.GetSpellDamage ());
-            // }
-            // else
-            // {
-            //     target.TakeDamage (gameObject, spell.GetSpellDamage ());
-            // }
+            if (target == null) return;
+            if (spell.isPoolGenerating)
+            {
+                //resourcePoints += spell.GetSpellResourceGeneration ();
+                resourcePool.SetCurrentResourcePoints (spell.GetSpellResourceGeneration ());
+            }
+            if (!spell.isPoolGenerating)
+            {
+                resourcePool.SetCurrentResourcePoints (-spell.GetSpellCost ());
+            }
+            if (hasProjectile)
+            {
+                Projectile spellInstance = Instantiate (spell.GetProjectile (), spellOrigin.position, Quaternion.identity);
+                spellInstance.SetTarget (target, gameObject, spell.GetSpellDamage ());
+            }
+            else
+            {
+                target.TakeDamage (gameObject, spell.GetSpellDamage ());
+            }
 
         }
 

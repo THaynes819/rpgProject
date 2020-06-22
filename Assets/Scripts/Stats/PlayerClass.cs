@@ -1,7 +1,6 @@
-﻿
-namespace RPG.Attributes
+﻿namespace RPG.Stats
 {
-    public enum CharacterClasses
+    public enum PlayerClass
     {
         Fighter,
         Caster,

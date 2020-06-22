@@ -12,11 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40096ac57f0b8254fa87dddc7ac5e68e, type: 3}
   m_Name: Default Enemy Drops
   m_EditorClassIdentifier: 
-  dropChancepercentage:
-  - 50
-  - 90
-  minDrops: 0300000006000000
-  maxDrops: 060000000c000000
   potentialDrops:
   - item: {fileID: 11400000, guid: 1346de7e2a4ce3f45a9d773289cc4889, type: 2}
     relativeChance:
@@ -24,15 +19,26 @@ MonoBehaviour:
     - 15
     minNumber: 0100000002000000
     maxNumber: 0200000003000000
-  - item: {fileID: 11400000, guid: 1d33eaf25709c4545abbc576f072b550, type: 2}
+  - item: {fileID: 11400000, guid: 42db475bb0e9df94fae0b0251a7aa4e5, type: 2}
     relativeChance:
-    - 6
-    - 12
-    minNumber: 0100000001000000
-    maxNumber: 0100000001000000
+    - 30
+    - 30
+    minNumber: 1e0000001e000000
+    maxNumber: 1e0000001e000000
   - item: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706, type: 2}
     relativeChance:
     - 20
     - 15
     minNumber: 0100000002000000
     maxNumber: 0200000003000000
+  - item: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706, type: 2}
+    relativeChance:
+    - 20
+    - 15
+    minNumber: 0100000002000000
+    maxNumber: 0200000003000000
+  dropChancepercentage:
+  - 50
+  - 90
+  minDrops: 0300000006000000
+  maxDrops: 060000000c000000

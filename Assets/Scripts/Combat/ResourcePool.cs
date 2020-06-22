@@ -13,33 +13,31 @@ namespace RPG.Combat
         [SerializeField] float regenerationRate = 0.1f;
         [SerializeField] bool doesRegeneratePassively = true;
 
-        [SerializeField] Pool[] resourcePools = null;
+        Stat currenResourcePool;
+        PlayerClass playerClass;
 
         LazyValue<float> resourcePoints;
 
         void Awake ()
         {
-            resourcePoints = new LazyValue<float> (GetInitialPool);
+            resourcePoints = new LazyValue<float> (GetInitialResource);
         }
 
-        private float GetInitialPool ()
+        private float GetInitialResource ()
         {
-            // foreach (var pool in resourcePools)
-            // {
-            //     if (Spell.res) Select Class in UI - Class will select the resource and so on...
-            // }
-            return GetComponent<BaseStats> ().GetPool (Pool.Mana);
+            return GetComponent<BaseStats> ().GetStat (currenResourcePool);
         }
 
         void Start ()
         {
+            InitialPool ();
             resourcePoints.ForceInit ();
         }
 
-        void Update ()
+        public float SetCurrentResourcePoints(float pointsChange)
         {
-
-            RegenerateResource ();
+            resourcePoints.value += pointsChange;
+            return resourcePoints.value;
         }
 
         public float GetCurrentResourcePoints ()
@@ -55,12 +53,52 @@ namespace RPG.Combat
 
         public float GetPoolFraction ()
         {
-            return resourcePoints.value / GetComponent<BaseStats> ().GetPool (Pool.Mana);
+            return resourcePoints.value / GetComponent<BaseStats> ().GetStat (currenResourcePool);
+        }
+
+        private Stat InitialPool ()
+        {
+            playerClass = GetComponent<CharacterCreator> ().GetPlayerClass ();
+            if (playerClass == PlayerClass.Fighter)
+            {
+                currenResourcePool = Stat.Rage;
+                return currenResourcePool;
+            }
+            if (playerClass == PlayerClass.Caster)
+            {
+                currenResourcePool = Stat.Mana;
+                return currenResourcePool;
+            }
+            if (playerClass == PlayerClass.Archer)
+            {
+                currenResourcePool = Stat.Fixation;
+                return currenResourcePool;
+            }
+            currenResourcePool = Stat.None;
+
+            return currenResourcePool;
+
+        }
+
+        void Update ()
+        {
+            InitialPool (); // Remove after Character Selection Proccess is Complete!!!
+            GetCurrentPool(); // Also to be removed
+            RegenerateResource ();
+            //Debug.Log ("Current Resource Pool is " + currenResourcePool);
+            //Debug.Log ("Current Resource Amount is " + resourcePoints.value + " " + currenResourcePool);
+        }
+
+        public Stat GetCurrentPool ()
+        {
+            currenResourcePool = InitialPool ();
+            //Debug.Log ("GetCurrentPool says the current Pool is " + currenResourcePool);
+            return currenResourcePool;
         }
 
         private void RegenerateResource ()
         {
-            float maxPool = GetComponent<BaseStats> ().GetPool (Pool.Mana);
+            float maxPool = GetComponent<BaseStats> ().GetStat (currenResourcePool);
             if (IsRegenerating () && resourcePoints.value < maxPool)
             {
                 resourcePoints.value += (regenerationRate * Time.deltaTime);

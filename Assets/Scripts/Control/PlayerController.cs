@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using GameDevTV.Inventories;
 using RPG.Attributes;
 using RPG.Combat;
 using RPG.Movement;
@@ -36,6 +37,7 @@ namespace RPG.Control
 
         private void Update ()
         {
+            CheckSpecialAbilityKeys ();
             if (InteractWithUI ())
             {
                 SetGameCursor (CursorType.UI);
@@ -53,25 +55,54 @@ namespace RPG.Control
             SetGameCursor (CursorType.None);
         }
 
+        private void CheckSpecialAbilityKeys ()
+        {
+            var actionStore = GetComponent<ActionStore> ();
+            if (Input.GetKeyUp (KeyCode.Alpha1))
+            {
+                actionStore.Use (0, gameObject);
+            }
+            if (Input.GetKeyUp (KeyCode.Alpha2))
+            {
+                actionStore.Use (1, gameObject);
+            }
+            if (Input.GetKeyUp (KeyCode.Alpha3))
+            {
+                actionStore.Use (2, gameObject);
+            }
+            if (Input.GetKeyUp (KeyCode.Alpha4))
+            {
+                actionStore.Use (3, gameObject);
+            }
+            if (Input.GetKeyUp (KeyCode.Alpha5))
+            {
+                actionStore.Use (4, gameObject);
+            }
+            if (Input.GetKeyUp (KeyCode.Alpha6))
+            {
+                actionStore.Use (5, gameObject);
+            }
+        }
+
         private bool InteractWithUI ()
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp (0))
             {
                 isDraggingUI = false;
             }
             if (EventSystem.current.IsPointerOverGameObject ())
+            {
+                if (Input.GetMouseButtonDown (0))
                 {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        isDraggingUI = true;
-                    }
-                    SetGameCursor (CursorType.UI); //gameobject means UI gameobject
-                    return true;
+                    isDraggingUI = true;
                 }
-                if (isDraggingUI)
-                {
-                    return true;
-                }
+                SetGameCursor (CursorType.UI); //gameobject means UI gameobject
+                return true;
+            }
+            if (isDraggingUI)
+            {
+                return true;
+            }
             return false;
         }
 

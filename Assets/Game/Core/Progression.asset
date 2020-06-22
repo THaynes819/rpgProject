@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterClasses:
   - characterClass: 0
+    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -80,8 +81,7 @@ MonoBehaviour:
       - 306000
       - 342000
       - 380000
-    resourcePools:
-    - pool: 0
+    - stat: 4
       levels:
       - 10
       - 20
@@ -93,7 +93,80 @@ MonoBehaviour:
       - 80
       - 90
       - 100
+      - 110
+      - 120
+      - 130
+      - 140
+      - 150
+      - 160
+      - 170
+      - 180
+      - 190
+    - stat: 5
+      levels:
+      - 10
+      - 20
+      - 30
+      - 40
+      - 50
+      - 60
+      - 70
+      - 80
+      - 90
+      - 100
+      - 110
+      - 120
+      - 130
+      - 140
+      - 150
+      - 160
+      - 170
+      - 180
+      - 190
+    - stat: 6
+      levels:
+      - 2000
+      - 6000
+      - 12000
+      - 20000
+      - 30000
+      - 42000
+      - 56000
+      - 72000
+      - 90000
+      - 110000
+      - 132000
+      - 156000
+      - 182000
+      - 210000
+      - 240000
+      - 272000
+      - 306000
+      - 342000
+      - 380000
+    - stat: 7
+      levels:
+      - 2000
+      - 6000
+      - 12000
+      - 20000
+      - 30000
+      - 42000
+      - 56000
+      - 72000
+      - 90000
+      - 110000
+      - 132000
+      - 156000
+      - 182000
+      - 210000
+      - 240000
+      - 272000
+      - 306000
+      - 342000
+      - 380000
   - characterClass: 1
+    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -161,8 +234,8 @@ MonoBehaviour:
       - 760
       - 800
       - 840
-    resourcePools: []
   - characterClass: 2
+    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -230,8 +303,8 @@ MonoBehaviour:
       - 608
       - 640
       - 672
-    resourcePools: []
   - characterClass: 3
+    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -243,8 +316,8 @@ MonoBehaviour:
     - stat: 1
       levels:
       - 30
-    resourcePools: []
   - characterClass: 3
+    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -256,4 +329,3 @@ MonoBehaviour:
     - stat: 1
       levels:
       - 30
-    resourcePools: []

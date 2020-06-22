@@ -2,7 +2,10 @@
 {
     public enum Pool
     {
-        Mana,
+
         Rage,
+        Mana,
+        Scent,
+        None,
     }
 }
