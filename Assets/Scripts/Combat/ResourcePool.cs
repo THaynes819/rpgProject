@@ -58,7 +58,7 @@ namespace RPG.Combat
 
         private Stat InitialPool ()
         {
-            playerClass = GetComponent<CharacterCreator> ().GetPlayerClass ();
+            playerClass = GetComponent<BaseStats>().GetPlayerClass();
             if (playerClass == PlayerClass.Fighter)
             {
                 currenResourcePool = Stat.Rage;

@@ -26,7 +26,7 @@ namespace RPG.Stats
             }
         }
 
-        public PlayerClass GetPlayerClass ()
+        public PlayerClass GetInitialPlayerClass ()
         {
             return playerClass;
         }

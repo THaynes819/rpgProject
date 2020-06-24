@@ -65,6 +65,12 @@ namespace RPG.Stats {
             GameObject newlevelUpEffect = Instantiate (levelupEffect, transform);
         }
 
+        public PlayerClass GetPlayerClass()
+        {
+            PlayerClass playerClass = GetComponent<CharacterCreator>().GetInitialPlayerClass();
+            return playerClass;
+        }
+
         public float GetStat (Stat stat)
         {
             return (GetBaseStat(stat) + GetAdditiveModifier(stat)) * (1 + GetPercentageModifier(stat)/100);

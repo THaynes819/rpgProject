@@ -11,7 +11,7 @@ namespace RPG.Combat
     public class Caster : MonoBehaviour, IAction
     {
 
-        [SerializeField] GameObject spellCaster;
+        [SerializeField] GameObject player;
         [SerializeField] Spell spell = null;
         [SerializeField] Transform spellOrigin = null;
         [SerializeField] GameObject preCastAnimation = null;
@@ -23,23 +23,26 @@ namespace RPG.Combat
         Animator animator;
         Health target;
         Stat playerPool;
+        float resourcePoints;
+        ActionSkill actionSkill;
         bool isCorrectClass = true;
+        bool canTryskill;
 
         void Awake ()
         {
             animator = GetComponent<Animator> ();
-
         }
 
         void Start ()
         {
-
+            resourcePoints = player.GetComponent<ResourcePool> ().GetCurrentResourcePoints ();
             SpellAnimator ();
         }
 
         void Update ()
         {
-            playerPool = spellCaster.GetComponent<ResourcePool> ().GetCurrentPool (); // Remove after UI Creation is setup or use Observer Method
+            playerPool = player.GetComponent<ResourcePool> ().GetCurrentPool (); // Remove after UI Creation is setup or use Observer Method
+
             UpdateTimers ();
 
             if (target == null) return;
@@ -60,17 +63,42 @@ namespace RPG.Combat
 
         }
 
+        public void HandleSkill (ActionSkill skill)
+        {
+            if (timeSinceLastCast <= skill.GetSkillCooldown () && skill.GetSkillCost () <= resourcePoints)
+            {
+                canTryskill = true;
+            }
+            if (timeSinceLastCast > skill.GetSkillCooldown () && skill.GetSkillCost () > resourcePoints)
+            {
+                canTryskill = false;
+            }
+
+            if (skill.GetisGenerating ())
+            {
+                resourcePoints += skill.GetSkillRegeneration ();
+            }
+
+        }
+
         private void UpdateTimers ()
         {
-            timeSinceLastCast += Time.deltaTime;
+            timeSinceLastCast += Time.deltaTime; //this might be a global CD...Test it OUt later
+        }
+
+        public bool CanTrySpell ()
+        {
+
+            if (timeSinceLastCast < spell.GetSpellCoolDown ()) return false;
+            if (spell.GetSpellCost () > resourcePoints) return false;
+
+            return true;
         }
 
         public bool CanCast ()
         {
-
-            float resourcePoints = spellCaster.GetComponent<ResourcePool> ().GetCurrentResourcePoints ();
-            if (timeSinceLastCast < spell.GetSpellCoolDown ()) return false;
-            if (spell.GetSpellCost () > resourcePoints) return false;
+            if (!CanTrySpell ()) return false;
+            if (!canTryskill) return false;
             Debug.Log ("Spel Cost is " + spell.GetSpellCost () + " Resource Points are " + resourcePoints);
             //Debug.Log ("Got past Spell Cost");
             if (!isCorrectClass) return false;
@@ -93,6 +121,11 @@ namespace RPG.Combat
 
         }
 
+        private void CastingSkillBehaviour()
+        {
+
+        }
+
         private void TriggerSpell ()
         {
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
@@ -102,8 +135,7 @@ namespace RPG.Combat
         //Animation Event
         void CastSpell ()
         {
-
-            var resourcePool = spellCaster.GetComponent<ResourcePool> ();
+            var resourcePool = player.GetComponent<ResourcePool> ();
 
             if (target == null) return;
             if (spell.isPoolGenerating)
