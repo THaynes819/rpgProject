@@ -1,5 +1,6 @@
 ﻿using GameDevTV.Core.UI.Dragging;
 using GameDevTV.Inventories;
+using GameDevTV.UI.Inventories;
 using RPG.Combat;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace RPG.UI
 {
-    public class ActionSkillSlotUI : MonoBehaviour //, IItemHolder, IDragContainer<InventoryItem>
+    public class ActionSkillSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
     {
         // CONFIG DATA
         [SerializeField] ActionSkillIcon icon = null;
@@ -16,11 +17,10 @@ namespace RPG.UI
         int index;
         ActionSkill skill;
         SkillTree skillTree;
-        ActionStore store;
 
         void Awake ()
         {
-            store = GameObject.FindGameObjectWithTag ("Player").GetComponent<ActionStore> ();
+
         }
 
         // PUBLIC
@@ -29,32 +29,32 @@ namespace RPG.UI
         {
             this.skillTree = skillTree;
             this.index = index;
-            //icon.SetItem (skillTree.GetItemInSlot (index));
+            icon.SetItem (skillTree.GetSkillInSlot(index)); // Write this Method in SkillTree
         }
 
-        public int MaxAcceptable (ActionSkill skill)
+        public int MaxAcceptable (InventoryItem skillAsItem)
         {
-            return store.MaxAcceptable (skill, index);
+            return 1;
         }
 
-        public void AddItems (ActionSkill actionSkill, int number) //Add to Store
+        public void AddItems (InventoryItem skillAsItem, int number) //Add to Store
         {
-            store.AddAction (actionSkill, index, number);
+            skillTree.AddSkillToSlot (index, skillAsItem as ActionSkill);
         }
 
         public InventoryItem GetItem () // May need to Cast?
         {
-            return store.GetAction (index);
+            return skillTree.GetSkillInSlot (index);
         }
 
         public int GetNumber () // Use Store
         {
-            return store.GetNumber (index);
+            return 1;
         }
 
         public void RemoveItems (int number) //Remove From Store
         {
-            store.RemoveItems (index, number);
+            skillTree.RemoveFromSlot (index, number);
         }
     }
 }

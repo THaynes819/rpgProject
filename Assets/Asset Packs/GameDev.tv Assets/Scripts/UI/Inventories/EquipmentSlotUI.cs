@@ -21,15 +21,15 @@ namespace GameDevTV.UI.Inventories
         Equipment playerEquipment;
 
         // LIFECYCLE METHODS
-       
-        private void Awake() 
+
+        private void Awake()
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += RedrawUI;
         }
 
-        private void Start() 
+        private void Start()
         {
             RedrawUI();
         }

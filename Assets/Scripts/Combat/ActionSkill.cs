@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Attributes;
 using RPG.Stats;
@@ -12,7 +10,8 @@ namespace RPG.Combat
     [CreateAssetMenu (menuName = ("RPG/Skills/Action Skill"))]
     public class ActionSkill : ActionItem, IModifierProvider
     {
-
+        [SerializeField] int levelToLearn = 1;
+        [SerializeField] PlayerClass skillClass;
         [SerializeField] float healingAmount = 20f;
         [SerializeField] float skillDamage = 15f;
         [SerializeField] float skillRange = 10f;
@@ -23,7 +22,7 @@ namespace RPG.Combat
         [SerializeField] Stat statToBuff = Stat.Health;
         [SerializeField] float buff = 1f;
         [SerializeField] Health targetToDamage = null;
-
+        [SerializeField] int skillTreeSlot = 1;
 
         public bool hasActiveTime = false;
         public bool isHealing = false;
@@ -65,34 +64,49 @@ namespace RPG.Combat
             }
         }
 
-        public float GetSkillRange()
+        public int GetLevelRequired ()
+        {
+            return levelToLearn;
+        }
+
+        public PlayerClass GetSkillClass()
+        {
+            return skillClass;
+        }
+
+        public float GetSkillRange ()
         {
             return skillRange;
         }
 
-        public float GetSkillDamage()
+        public float GetSkillDamage ()
         {
             return skillDamage;
         }
 
-        public float GetSkillCost()
+        public float GetSkillCost ()
         {
             return skillCost;
         }
 
-        public float GetSkillRegeneration()
+        public float GetSkillRegeneration ()
         {
             return skillRegeneration;
         }
 
-        public float GetSkillCooldown()
+        public float GetSkillCooldown ()
         {
             return skillCooldown;
         }
 
-        public bool GetisGenerating()
+        public bool GetisGenerating ()
         {
             return isPoolGenerating;
+        }
+
+        public int GetSlot ()
+        {
+            return skillTreeSlot;
         }
 
         public IEnumerable<float> GetAdditiveModifiers (Stat stat)

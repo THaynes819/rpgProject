@@ -441,8 +441,12 @@ MonoBehaviour:
     actionSkill: {fileID: 11400000, guid: 790b098792df2c44a9437f537b9d745d, type: 2}
     levelRequired: 1
   - skillClass: 0
+    actionSkill: {fileID: 11400000, guid: 2d356fdbac7222f4b9db8e6f086f282b, type: 2}
+    levelRequired: 0
+  - skillClass: 0
     actionSkill: {fileID: 0}
     levelRequired: 1
+  skillTreeSize: 12
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0

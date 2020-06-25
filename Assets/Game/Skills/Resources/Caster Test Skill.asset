@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Caster Test Skill
   m_EditorClassIdentifier: 
   itemID: d6cf9d3d-0d7a-4be5-a8f6-c3ffe0a8dad9
-  displayName: 
+  displayName: Caster Test Spell
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 196a9b842c2d46b4cbcde1f5eb031394, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
+  levelToLearn: 1
+  skillClass: 1
   healingAmount: 20
   skillDamage: 15
   skillRange: 10
@@ -26,10 +28,11 @@ MonoBehaviour:
   skillRegeneration: 5
   skillCooldown: 5
   timeActive: 10
-  statToBuff: 0
+  statToBuff: 7
   buff: 1
   targetToDamage: {fileID: 0}
+  skillTreeSlot: 4
   hasActiveTime: 0
   isHealing: 0
-  isDamaging: 0
+  isDamaging: 1
   isPoolGenerating: 0

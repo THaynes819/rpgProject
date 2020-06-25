@@ -4,6 +4,7 @@ using RPG.Combat;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static RPG.Combat.SkillTree;
 
 namespace RPG.UI
 {
@@ -28,7 +29,7 @@ namespace RPG.UI
             else
             {
                 iconImage.enabled = true;
-                iconImage.sprite = actionSkill.GetIcon ();
+                iconImage.sprite = actionSkill.GetIcon();
             }
 
             if (itemNumber)
