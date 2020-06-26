@@ -12,31 +12,26 @@ namespace RPG.Combat
     public class SkillTree : MonoBehaviour
     {
 
-        bool canLearn = false;
         GameObject player;
         int playerLevel;
+        int index;
         BaseStats playerStats;
         ActionSkill actionSkill;
         PlayerClass playerClass;
+        Dictionary<int, DockedItemSlot> allSkills = null;
+        //List<ActionSkill> skillBook;
 
-        [SerializeField] ActionSkill[] slots = null; // Current availablr Skills
+        [SerializeField] ActionSkill[] slots = null; // Current available Skills
         [SerializeField] int skillTreeSize = 16;
 
-        //public SkillStruct slot;
+        Dictionary<int, DockedItemSlot> skillBook = new Dictionary<int, DockedItemSlot> ();
+        public class DockedItemSlot
+        {
+            public ActionSkill item;
+            public int number;
+        }
 
-        // [System.Serializable]
-        // public struct SkillStruct
-        // {
-        //     public PlayerClass skillClass;
-        //     public ActionSkill skill;
-        //     public int levelRequired;
-        //     public Sprite icon;
-        //     public int number;
-
-        // }
-
-        // Makke it a true tree so a skill has prerquisites???
-        // TODO Make Get all class skills Method
+        // Make it a true tree so a skill has prerquisites???
 
         public event Action skillTreeUpdated;
 
@@ -46,52 +41,67 @@ namespace RPG.Combat
             return player.GetComponent<SkillTree> ();
         }
 
-        public bool AddSkillToSlot (int slot, ActionSkill skill)
+        void Awake ()
         {
-            if (slots[slot] != null)
-            {
-                return AddToAssignedSlot (skill, 1);
-            }
-
-            slots[slot] = actionSkill;
-            if (skillTreeUpdated != null)
-            {
-                skillTreeUpdated ();
-            }
-            return true;
+            player = GameObject.FindGameObjectWithTag ("Player");
+            slots = player.GetComponent<SkillTree> ().slots;
+            playerClass = player.GetComponent<BaseStats> ().GetPlayerClass ();
+            BuildAllSkills ();
         }
 
-        public ActionSkill GetSkillInSlot (int slot)
+        void Start ()
         {
-            return slots[slot];
+            playerLevel = player.GetComponent<BaseStats> ().GetLevel ();
+            PopulateSkillBook ();
         }
 
-        public void RemoveFromSlot (int slot, int number)
+        public void StoreInSlot (InventoryItem item, int index)
         {
-            if (slots[slot] != null)
-            {
 
-                slots[slot] = null;
-            }
-            if (skillTreeUpdated != null)
+            if (!skillBook.ContainsKey (index))
             {
-                skillTreeUpdated ();
-            }
-        }
-
-        public bool AddToAssignedSlot (ActionSkill skill, int number)
-        {
-            var assignedSlot = skill.GetSlot ();
-            for (int i = 0; i < slots.Length; i++)
-            {
-                if (slots[i].GetSlot () != assignedSlot) return false;
+                var slot = new DockedItemSlot ();
+                slot.item = item as ActionSkill;
+                skillBook[index] = slot;
             }
 
             if (skillTreeUpdated != null)
             {
                 skillTreeUpdated ();
             }
-            return true;
+        }
+
+        public void RemoveFromSlot (int index)
+        {
+            Debug.Log("Skill Tree Removed an item");
+            if (skillBook.ContainsKey (index))
+            {
+                skillBook.Remove (index);
+            }
+            if (skillTreeUpdated != null)
+            {
+                skillTreeUpdated ();
+            }
+        }
+
+        public int MaxAcceptable (InventoryItem item, int index)
+        {
+            if (!actionSkill) return 0;
+            if (skillBook.ContainsKey (index) && !object.ReferenceEquals (item, skillBook[index].item))
+            {
+                return 0;
+            }
+            if (skillBook.ContainsKey (index))
+            {
+                return 0;
+            }
+
+            return 1;
+        }
+
+        public Dictionary<int, DockedItemSlot> GetAllslots ()
+        {
+            return allSkills;
         }
 
         public int GetTreeSize ()
@@ -99,89 +109,77 @@ namespace RPG.Combat
             return skillTreeSize;
         }
 
-        void Awake ()
+        public InventoryItem GetSkillinSlot (int index)
         {
-            player = GameObject.FindGameObjectWithTag ("Player");
-            slots = player.GetComponent<SkillTree>().slots;
-            playerClass = player.GetComponent<BaseStats> ().GetPlayerClass ();
-        }
-
-        void Start ()
-        {
-            playerLevel = player.GetComponent<BaseStats> ().GetLevel ();
-        }
-
-        private bool CanLearn ()
-        {
-            var skillList = slots;
-            foreach (var skill in skillList)
+            if (skillBook.ContainsKey (index))
             {
-                int skillLevel = skill.GetLevelRequired ();
-
-                if (playerLevel < skillLevel) return false;
-
-                Debug.Log (skill.name + "  The Player level is " + playerLevel + " and the Skill level is " + skill.GetLevelRequired ());
-                Debug.Log ("made it past level rquired");
-                if (playerClass != skill.GetSkillClass ()) return false;
-                Debug.Log ("The player Class is " + playerClass + " and the Skill class is " + skill.GetSkillClass ());
-                if (playerLevel >= skill.GetLevelRequired ()) return true;
-                if (playerClass == skill.GetSkillClass ()) return true;
-
+                return skillBook[index].item;
             }
-            return true;
+            return null;
+        }
+
+        public int GetNumberInSlot(int index)
+        {
+            if (skillBook.ContainsKey (index))
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private void BuildAllSkills ()
+        {
+
+            if (allSkills != null)
+            {
+                return;
+            }
+
+            allSkills = new Dictionary<int, DockedItemSlot> ();
+            foreach (var slot in slots)
+            {
+                DockedItemSlot docked = new DockedItemSlot();
+                docked.item = slot;
+                docked.number = 1;
+                allSkills.Add(slot.GetSlot(), docked);
+
+                // Debug.Log("The skill is " + docked.item);
+                // Debug.Log ("The slot is " + slot.GetSlot());
+
+                // Debug.Log ("the Get level in Skills are " + slot.GetLevelRequired());
+            }
+
+            if (skillTreeUpdated != null)
+            {
+                skillTreeUpdated ();
+            }
         }
 
         private void LearnSkill ()
         {
-            if (!CanLearn ())
-            {
-                Debug.Log ("Did not learn a Skill");
-            }
-            foreach (var i in LearnableSkills ())
-            {
-                Debug.Log ("Learned a skill " + i.GetDisplayName ());
-                if (skillTreeUpdated != null)
-                {
-                    Debug.Log ("skillTreeUpdated was called");
-                    skillTreeUpdated ();
-                }
-            }
-
+            PopulateSkillBook ();
         }
 
-        public List<ActionSkill> GetAvailableSkills ()
+        private void PopulateSkillBook ()
         {
-            return LearnableSkills ();
-        }
-
-        private List<ActionSkill> LearnableSkills ()
-        {
-            List<ActionSkill> learnableSkills = new List<ActionSkill> ();
-            var skillList = Resources.LoadAll<ActionSkill> ("");
-
-            foreach (ActionSkill skill in skillList)
+            foreach (var skill in allSkills)
             {
-                if (CanLearn ())
+                var skillLevel = skill.Value.item.GetLevelRequired();
+                var skillClass = skill.Value.item.GetSkillClass();
+                if (playerLevel >= skillLevel && playerClass == skillClass)
                 {
-                    learnableSkills.Add (skill);
+                    skillBook.Add(skill.Key, skill.Value);
                 }
-                Debug.Log ("LearnableSkills is this long " + learnableSkills.Count);
-                return learnableSkills;
             }
-            if (skillTreeUpdated != null)
-            {
-                Debug.Log ("skillTreeUpdated was called");
-                skillTreeUpdated ();
-            }
-            Debug.Log ("The learnable Skills list is this long after SkillTreeUpdated" + learnableSkills.Count);
-            return learnableSkills;
         }
 
         private void OnEnable ()
         {
             GetComponent<BaseStats> ().onLevelUp += LearnSkill;
         }
-
         private void OnDisable ()
         {
             GetComponent<BaseStats> ().onLevelUp -= LearnSkill;

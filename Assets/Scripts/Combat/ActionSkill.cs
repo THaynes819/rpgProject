@@ -32,7 +32,7 @@ namespace RPG.Combat
         GameObject player;
         TemporaryBuff temporaryBuff;
 
-        void Start ()
+        void Awake ()
         {
             player = GameObject.FindGameObjectWithTag ("Player");
         }

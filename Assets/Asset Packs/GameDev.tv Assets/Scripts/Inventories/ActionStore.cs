@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameDevTV.Saving;
+using RPG.Combat;
 using UnityEngine;
 
 namespace GameDevTV.Inventories
@@ -13,6 +14,7 @@ namespace GameDevTV.Inventories
     /// </summary>
     public class ActionStore : MonoBehaviour, ISaveable
     {
+        [SerializeField] bool isActionSkill = false;
         // STATE
         Dictionary<int, DockedItemSlot> dockedItems = new Dictionary<int, DockedItemSlot> ();
         private class DockedItemSlot
@@ -64,6 +66,7 @@ namespace GameDevTV.Inventories
         /// <param name="number">How many items to add.</param>
         public void AddAction (InventoryItem item, int index, int number)
         {
+            Debug.Log ("Action Store is trying to add");
             if (dockedItems.ContainsKey (index))
             {
                 if (object.ReferenceEquals (item, dockedItems[index].item))
@@ -73,10 +76,20 @@ namespace GameDevTV.Inventories
             }
             else
             {
-                var slot = new DockedItemSlot ();
-                slot.item = item as ActionItem;
-                slot.number = number;
-                dockedItems[index] = slot;
+                if (isActionSkill)
+                {
+                    var skillSlot = new DockedItemSlot ();
+                    skillSlot.item = item as ActionSkill;
+                    skillSlot.number = 1;
+                    dockedItems[index] = skillSlot;
+                }
+                else
+                {
+                    var slot = new DockedItemSlot ();
+                    slot.item = item as ActionItem;
+                    slot.number = number;
+                    dockedItems[index] = slot;
+                }
             }
             if (storeUpdated != null)
             {
@@ -134,8 +147,17 @@ namespace GameDevTV.Inventories
         /// <returns>Will return int.MaxValue when there is not effective bound.</returns>
         public int MaxAcceptable (InventoryItem item, int index)
         {
+
             var actionItem = item as ActionItem;
-            if (!actionItem) return 0;
+            var actionSkill = item as ActionSkill;
+            if (isActionSkill)
+            {
+                if (!actionSkill) return 0;
+            }
+            if (!isActionSkill)
+            {
+                if (!actionItem) return 0;
+            }
 
             if (dockedItems.ContainsKey (index) && !object.ReferenceEquals (item, dockedItems[index].item))
             {

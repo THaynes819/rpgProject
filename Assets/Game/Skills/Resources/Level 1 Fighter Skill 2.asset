@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2f9245ceb47c28428c9769609a9cc98, type: 3}
-  m_Name: New Fighter Test
+  m_Name: Level 1 Fighter Skill 2
   m_EditorClassIdentifier: 
   itemID: bad4a45c-9f3a-42c8-97cb-48ddf287b7c2
-  displayName: New Fighter Test
+  displayName: Level 1 Fighter Skill 2
   description: 
   icon: {fileID: 21300000, guid: fa63e43951f5e85469df53a44d509547, type: 3}
   pickup: {fileID: 0}
@@ -31,7 +31,7 @@ MonoBehaviour:
   statToBuff: 7
   buff: 1
   targetToDamage: {fileID: 0}
-  skillTreeSlot: 1
+  skillTreeSlot: 5
   hasActiveTime: 0
   isHealing: 0
   isDamaging: 1

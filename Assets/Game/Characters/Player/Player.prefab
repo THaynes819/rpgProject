@@ -433,19 +433,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca491dbb3a535cc4b8fbfe3c6cf3f9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillTable:
-  - skillClass: 0
-    actionSkill: {fileID: 11400000, guid: a48f310bed525b04a8baf6864672b806, type: 2}
-    levelRequired: 1
-  - skillClass: 1
-    actionSkill: {fileID: 11400000, guid: 790b098792df2c44a9437f537b9d745d, type: 2}
-    levelRequired: 1
-  - skillClass: 0
-    actionSkill: {fileID: 11400000, guid: 2d356fdbac7222f4b9db8e6f086f282b, type: 2}
-    levelRequired: 0
-  - skillClass: 0
-    actionSkill: {fileID: 0}
-    levelRequired: 1
+  slots:
+  - {fileID: 11400000, guid: 790b098792df2c44a9437f537b9d745d, type: 2}
+  - {fileID: 11400000, guid: a48f310bed525b04a8baf6864672b806, type: 2}
+  - {fileID: 11400000, guid: 2d356fdbac7222f4b9db8e6f086f282b, type: 2}
+  - {fileID: 11400000, guid: b0904fd109fa0214c8cf840f33349f88, type: 2}
+  - {fileID: 11400000, guid: f38669dc281617140a5f80e53821dc53, type: 2}
   skillTreeSize: 12
 --- !u!1 &5707783629349445781
 GameObject:

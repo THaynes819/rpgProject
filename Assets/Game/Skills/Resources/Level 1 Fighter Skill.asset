@@ -19,7 +19,7 @@ MonoBehaviour:
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
-  levelToLearn: 1
+  levelToLearn: 0
   skillClass: 0
   healingAmount: 20
   skillDamage: 15

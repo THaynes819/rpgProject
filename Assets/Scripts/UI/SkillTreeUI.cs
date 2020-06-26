@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
 using GameDevTV.Core.UI.Dragging;
 using GameDevTV.UI.Inventories;
 using RPG.Combat;
@@ -15,13 +15,13 @@ namespace RPG.UI
         // CACHE
         ActionSkill actionSkill;
         SkillTree skillTree;
-        ActionSkillIcon skillIcon;
-        List<ActionSkill> availableskills;
+        InventoryItemIcon skillIcon;
+
 
         void Awake ()
         {
             skillTree = SkillTree.GetPlayerSkillTree ();
-            availableskills = skillTree.GetAvailableSkills ();
+
             skillTree.skillTreeUpdated += Redraw;
         }
         private void Start ()
@@ -44,21 +44,6 @@ namespace RPG.UI
             {
                 var skillUI = Instantiate (actionSkillPrefab, transform);
                 skillUI.Setup (skillTree, i);
-            }
-            var skillToDraw = skillTree.GetAvailableSkills();
-            if (skillToDraw != null)
-            {
-                Debug.Log("SkillTreeUI found this many skills in GetAvailablrSkills " + skillToDraw.Count);
-                Debug.Log("The thing it found was ");
-                foreach (var skill in skillToDraw)
-                {
-                    var icon = Instantiate (skill, transform);
-                    skillIcon.SetItem(skill);
-                    Debug.Log("set " + skill.name);
-                    skillTree.AddToAssignedSlot (skill, 1);
-
-                }
-
             }
         }
     }

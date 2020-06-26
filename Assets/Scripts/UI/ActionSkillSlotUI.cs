@@ -1,50 +1,64 @@
-﻿using GameDevTV.Core.UI.Dragging;
+﻿using System.Collections.Generic;
+using GameDevTV.Core.UI.Dragging;
 using GameDevTV.Inventories;
 using GameDevTV.UI.Inventories;
 using RPG.Combat;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static RPG.Combat.SkillTree;
 
 namespace RPG.UI
 {
     public class ActionSkillSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
     {
         // CONFIG DATA
-        [SerializeField] ActionSkillIcon icon = null;
+        [SerializeField] InventoryItemIcon icon = null;
+        [SerializeField] int index = 0;
+        List<ActionSkill> skillBook;
 
         // STATE
-        int index;
-        ActionSkill skill;
+
+        ActionSkill actionSkill;
         SkillTree skillTree;
 
         void Awake ()
         {
+            skillTree = GameObject.FindGameObjectWithTag ("Player").GetComponent<SkillTree> ();
+            //skillBook = skillTree.GetSkillBook ();
+            skillTree.skillTreeUpdated += UpdateIcon;
 
         }
 
-        // PUBLIC
+        void Start ()
+        {
+            Setup (skillTree, index);
+        }
 
         public void Setup (SkillTree skillTree, int index)
         {
+            Debug.Log ("Setup was called");
+
             this.skillTree = skillTree;
             this.index = index;
-            icon.SetItem (skillTree.GetSkillInSlot(index)); // Write this Method in SkillTree
+            icon.SetItem (skillTree.GetSkillinSlot (index), skillTree.GetNumberInSlot (index));
+
         }
 
-        public int MaxAcceptable (InventoryItem skillAsItem)
+        public void AddItems (InventoryItem item, int index) //Add to Store  (
         {
-            return 1;
-        }
-
-        public void AddItems (InventoryItem skillAsItem, int number) //Add to Store
-        {
-            skillTree.AddSkillToSlot (index, skillAsItem as ActionSkill);
+            skillTree.StoreInSlot (item, index);
         }
 
         public InventoryItem GetItem () // May need to Cast?
         {
-            return skillTree.GetSkillInSlot (index);
+            Debug.Log ("GetItem is should be returning an item: " + actionSkill);
+            return skillTree.GetSkillinSlot (index);
+        }
+
+        public int MaxAcceptable (InventoryItem skillAsItem)
+        {
+            return skillTree.MaxAcceptable (skillAsItem, index);
         }
 
         public int GetNumber () // Use Store
@@ -54,7 +68,13 @@ namespace RPG.UI
 
         public void RemoveItems (int number) //Remove From Store
         {
-            skillTree.RemoveFromSlot (index, number);
+            skillTree.RemoveFromSlot (index);
+        }
+
+        void UpdateIcon ()
+        {
+
+            icon.SetItem (GetItem ());
         }
     }
 }
