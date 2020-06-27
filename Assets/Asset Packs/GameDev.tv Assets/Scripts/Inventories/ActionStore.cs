@@ -76,20 +76,10 @@ namespace GameDevTV.Inventories
             }
             else
             {
-                if (isActionSkill)
-                {
-                    var skillSlot = new DockedItemSlot ();
-                    skillSlot.item = item as ActionSkill;
-                    skillSlot.number = 1;
-                    dockedItems[index] = skillSlot;
-                }
-                else
-                {
-                    var slot = new DockedItemSlot ();
-                    slot.item = item as ActionItem;
-                    slot.number = number;
-                    dockedItems[index] = slot;
-                }
+                var slot = new DockedItemSlot ();
+                slot.item = item as ActionItem;
+                slot.number = number;
+                dockedItems[index] = slot;
             }
             if (storeUpdated != null)
             {
@@ -149,15 +139,8 @@ namespace GameDevTV.Inventories
         {
 
             var actionItem = item as ActionItem;
-            var actionSkill = item as ActionSkill;
-            if (isActionSkill)
-            {
-                if (!actionSkill) return 0;
-            }
-            if (!isActionSkill)
-            {
-                if (!actionItem) return 0;
-            }
+
+            if (!actionItem) return 0;
 
             if (dockedItems.ContainsKey (index) && !object.ReferenceEquals (item, dockedItems[index].item))
             {

@@ -4,7 +4,7 @@ using RPG.Attributes;
 using RPG.Stats;
 using UnityEngine;
 
-namespace RPG.Combat
+namespace RPG.Stats
 {
 
     [CreateAssetMenu (menuName = ("RPG/Skills/Action Skill"))]
@@ -56,12 +56,12 @@ namespace RPG.Combat
 
         }
 
-        private void DamageSkill ()
+        private void DamageSkill () //TODO Use interface?
         {
-            if (targetToDamage == null)
-            {
-                player.GetComponent<Caster> ().HandleSkill (this);
-            }
+            // if (targetToDamage == null)
+            // {
+            //     player.GetComponent<Caster> ().HandleSkill (this);
+            // }
         }
 
         public int GetLevelRequired ()

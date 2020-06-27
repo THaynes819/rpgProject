@@ -14,6 +14,7 @@ namespace RPG.Stats {
         [SerializeField] GameObject levelupEffect = null;
         [SerializeField] bool shouldUseModifiers = false;
 
+
         public event Action onLevelUp;
 
         LazyValue<int> currentLevel;
@@ -29,6 +30,7 @@ namespace RPG.Stats {
         private void Start ()
         {
             currentLevel.ForceInit();
+
         }
 
         private void OnEnable()
@@ -67,7 +69,7 @@ namespace RPG.Stats {
 
         public PlayerClass GetPlayerClass()
         {
-            PlayerClass playerClass = GetComponent<CharacterCreator>().GetInitialPlayerClass();
+            PlayerClass playerClass = GetComponent<CharacterCreator>().GetPlayerClass();
             return playerClass;
         }
 

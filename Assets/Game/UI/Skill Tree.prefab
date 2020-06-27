@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2829882021355233589}
   - component: {fileID: 4294483806918049718}
   - component: {fileID: 3929131135305452037}
-  - component: {fileID: 8562211366338817956}
   - component: {fileID: 8740647673234282740}
   m_Layer: 5
   m_Name: Skills
@@ -103,20 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 2
---- !u!114 &8562211366338817956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5593959198440093351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2c76be82316834dae92bfdab774512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionSkillPrefab: {fileID: 1108764119148831044, guid: ed4bc0f972f705242b30288cc6abe3a1,
-    type: 3}
 --- !u!114 &8740647673234282740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +212,6 @@ GameObject:
   - component: {fileID: 4659538483985921118}
   - component: {fileID: 4213018946999995646}
   - component: {fileID: 2612479939772069060}
-  - component: {fileID: 2387365988281899611}
   m_Layer: 5
   m_Name: Skill Tree
   m_TagString: Untagged
@@ -286,22 +270,10 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2387365988281899611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8951136816809050489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e783f7e2c0dd14f994708aa5d690b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &770196041987388782
 PrefabInstance:
   m_ObjectHideFlags: 0

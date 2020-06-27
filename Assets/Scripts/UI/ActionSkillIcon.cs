@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using RPG.Combat;
+using RPG.Stats;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static RPG.Combat.SkillTree;
+using static RPG.Stats.SkillTree;
 
 namespace RPG.UI
 {
