@@ -79,7 +79,7 @@ namespace RPG.Combat
             {
                 GameObject newHitEffect = Instantiate (hitEffect, GetAimLoacation (), transform.rotation);
             }
-            hitEnemyEvent.Invoke ();
+            hitEnemyEvent.Invoke ();  //TODO this is probably why enemy "Dies twice"
             target.TakeDamage (instigator, damage);
             DestroyInSteps ();
     }

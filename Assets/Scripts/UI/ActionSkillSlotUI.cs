@@ -10,83 +10,42 @@ using static RPG.Stats.SkillTree;
 
 namespace RPG.UI
 {
-    public class ActionSkillSlotUI : MonoBehaviour
+    public class ActionSkillSlotUI : MonoBehaviour, IItemHolder
     {
         // CONFIG DATA
-        [SerializeField] InventoryItemIcon icon = null;
-        [SerializeField] int index = 0;
+        [SerializeField] ActionSkillIcon icon = null;
+
         GameObject player;
 
         // STATE
-
+        int index = 0;
         ActionSkill actionSkill;
         SkillTree skillTree;
 
-        void Awake ()
-        {
-
-        }
-
         void Start ()
         {
-            player = GameObject.FindGameObjectWithTag ("Player");
-            skillTree = player.GetComponent<SkillTree> ();
+            //player = GameObject.FindGameObjectWithTag ("Player");
+            //skillTree = player.GetComponent<SkillTree> ().GetSkillTree ();
             Debug.Log ("the skillTree is " + skillTree);
-            Setup ();
 
         }
 
-        public void Setup ()
+        public void Setup (SkillTree skillTree, int index)
         {
             Debug.Log ("Setup was called");
-            //actionSkill = skillTree.GetSkillBook () [index].item;
-            icon.SetItem (actionSkill);
+            this.skillTree = skillTree;
+            this.index = index;
+            icon.SetItem (skillTree.GetSkillInSlot (index), 1);
+            Debug.Log ("Setup is setting this Icon " + icon);
 
         }
 
-        public void OnSkillSelect ()
+        //Makes ToolTips Work
+        public InventoryItem GetItem ()
         {
-            var skillBook = skillTree.GetSkillBook ();
-            foreach (var skill in skillBook)
-            {
-                if (index == skill.GetSlot ())
-                {
-                    Debug.Log ("Selected " + index + " Which should be the same as this: " + skillTree.GetSkillBook ());
-                }
-            }
-
+            return skillTree.GetSkillInSlot (index);
         }
 
-        // public void AddItems (InventoryItem item, int index) //Add to Store  (
-        // {
-        //     skillTree.StoreInSlot (item, index);
-        // }
 
-        // public InventoryItem GetItem () // May need to Cast?
-        // {
-        //     Debug.Log ("GetItem is should be returning an item: " + actionSkill);
-        //     return skillTree.GetSkillinSlot (index);
-        // }
-
-        // public int MaxAcceptable (InventoryItem skillAsItem)
-        // {
-        //     return skillTree.MaxAcceptable (skillAsItem, index);
-        // }
-
-        // public int GetNumber () // Use Store
-        // {
-        //     return 1;
-        // }
-
-        // public void RemoveItems (int number) //Remove From Store
-        // {
-        //     skillTree.RemoveFromSlot (index);
-        // }
-
-        // void UpdateIcon ()
-        // {
-
-        //     icon.SetItem (GetItem ());
-        // }
     }
 }

@@ -63,23 +63,23 @@ namespace RPG.Combat
 
         }
 
-        public void HandleSkill (ActionSkill skill)
-        {
-            if (timeSinceLastCast <= skill.GetSkillCooldown () && skill.GetSkillCost () <= resourcePoints)
-            {
-                canTryskill = true;
-            }
-            if (timeSinceLastCast > skill.GetSkillCooldown () && skill.GetSkillCost () > resourcePoints)
-            {
-                canTryskill = false;
-            }
+        // public void HandleSkill (ActionSkill skill)
+        // {
+        //     if (timeSinceLastCast <= skill.GetSkillCooldown () && skill.GetSkillCost () <= resourcePoints)
+        //     {
+        //         canTryskill = true;
+        //     }
+        //     if (timeSinceLastCast > skill.GetSkillCooldown () && skill.GetSkillCost () > resourcePoints)
+        //     {
+        //         canTryskill = false;
+        //     }
 
-            if (skill.GetisGenerating ())
-            {
-                resourcePoints += skill.GetSkillRegeneration ();
-            }
+        //     if (skill.GetisRegenerating ())
+        //     {
+        //         resourcePoints += skill.GetSkillRegeneration ();
+        //     }
 
-        }
+        // }
 
         private void UpdateTimers ()
         {

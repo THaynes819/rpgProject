@@ -12,24 +12,40 @@ namespace RPG.Stats
 
     {
         GameObject player;
-        BaseStats playerStats;
         ActionSkill actionSkill;
-        PlayerClass playerClass;
+        BaseStats baseStats;
         List<PlayerClassSkill> skillBook = new List<PlayerClassSkill> ();
-        List<ActionSkill> AvailableSkills = new List<ActionSkill>();
+        List<ActionSkill> AvailableSkills = new List<ActionSkill> ();
 
         public List<SkillTrees> skillTrees = new List<SkillTrees> ();
-
         [SerializeField] int skillTreeSize = 16;
-
-        // Make it a true tree so a skill has prerquisites???
 
         public event Action skillTreeUpdated;
 
-        void Start ()
+        void Awake ()
         {
             player = GameObject.FindGameObjectWithTag ("Player");
+            baseStats = player.GetComponent<BaseStats> ();
+        }
+
+        void Start ()
+        {
             FindTree ();
+        }
+
+        private void OnEnable ()
+        {
+            if (baseStats != null)
+            {
+                baseStats.onLevelUp += skillTreeUpdated;
+            }
+        }
+        private void OnDisable ()
+        {
+            if (baseStats != null)
+            {
+                baseStats.onLevelUp -= skillTreeUpdated;
+            }
         }
 
         public int GetTreeSize ()
@@ -39,10 +55,10 @@ namespace RPG.Stats
 
         public SkillTree GetSkillTree ()
         {
-            return this;
+            return player.GetComponent<SkillTree> ();
         }
 
-        public List<ActionSkill> GetSkillBook()
+        public List<ActionSkill> GetSkillBook ()
         {
             return AvailableSkills;
         }
@@ -50,7 +66,7 @@ namespace RPG.Stats
         public void FindTree ()
         {
             var treeList = Resources.LoadAll<PlayerClassSkillTree> ("");
-            playerClass = player.GetComponent<BaseStats> ().GetPlayerClass ();
+            var playerClass = baseStats.GetPlayerClass ();
             foreach (var tree in treeList)
             {
                 if (playerClass == tree.GetTreeClass ())
@@ -65,19 +81,23 @@ namespace RPG.Stats
 
         private void HandleSkillBook ()
         {
-
             foreach (var skill in skillBook)
             {
                 if (CanLearn (skill.skill))
                 {
-                    AvailableSkills.Add(skill.skill);
+                    AvailableSkills.Add (skill.skill);
                 }
             }
+            if (skillTreeUpdated != null)
+            {
+                skillTreeUpdated ();
+            }
+
         }
 
         private bool CanLearn (ActionSkill skill)
         {
-            int playerLevel = player.GetComponent<BaseStats> ().GetLevel ();
+            int playerLevel = baseStats.GetLevel ();
             if (playerLevel < skill.GetLevelRequired ())
             {
                 return false;
@@ -85,13 +105,38 @@ namespace RPG.Stats
             return true;
         }
 
-        // private void OnEnable ()   //TODO Fix Race Condition
-        // {
-        //     player.GetComponent<BaseStats> ().onLevelUp += LearnSkill;
-        // }
-        // private void OnDisable ()
-        // {
-        //     player.GetComponent<BaseStats> ().onLevelUp -= LearnSkill;
-        // }
+        public ActionSkill GetSkillInSlot (int slot)
+        {
+            foreach (var skill in AvailableSkills)
+            {
+                if (skill.GetSlot () == slot)
+                {
+                    return skill;
+                }
+
+            }
+            return null;
+        }
+
+        public void OnSkillSelect (int index, bool toggle)
+        {
+            Debug.Log ("Skill Slot says the index is " + index + " and toggle is " + toggle);
+
+            foreach (var skill in AvailableSkills)
+            {
+                if (index == skill.GetSlot ())
+                {
+                    Debug.Log ("initial Toggle");
+                    toggle = !toggle;
+                }
+            }
+        }
+
+        public void HandleButtonPress (int index, bool toggle)
+        {
+            IToggleable button = GetComponent<IToggleable> ();
+            Debug.Log ("Skill Tree says the index is " + index + " and toggle is " + toggle);
+        }
+
     }
 }

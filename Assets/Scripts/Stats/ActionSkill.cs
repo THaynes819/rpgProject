@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Attributes;
-using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -10,27 +9,28 @@ namespace RPG.Stats
     [CreateAssetMenu (menuName = ("RPG/Skills/Action Skill"))]
     public class ActionSkill : ActionItem, IModifierProvider
     {
+        [Header ("Generic Skill Info")]
         [SerializeField] int levelToLearn = 1;
         [SerializeField] PlayerClass skillClass;
-        [SerializeField] float healingAmount = 20f;
-        [SerializeField] float skillDamage = 15f;
-        [SerializeField] float skillRange = 10f;
-        [SerializeField] float skillCost = 5f;
-        [SerializeField] float skillRegeneration = 5f;
-        [SerializeField] float skillCooldown = 5f;
+        [SerializeField] int skillTreeSlot = 1;
+        [SerializeField] float skillCoolDown;
+
+        [Header ("Skill Type")]
+        public bool hasActiveTime = false;
+        public bool hasCoolDown = false;
+        public bool isPoolRegenerating = false;
+
+        [Header ("Buff Skill info")]
         [SerializeField] float timeActive = 10f;
         [SerializeField] Stat statToBuff = Stat.Health;
-        [SerializeField] float buff = 1f;
-        [SerializeField] Health targetToDamage = null;
-        [SerializeField] int skillTreeSlot = 1;
-
-        public bool hasActiveTime = false;
-        public bool isHealing = false;
-        public bool isDamaging = false;
-        public bool isPoolGenerating = false;
+        [SerializeField] Pool poolToRegenerate;
+        [SerializeField] float regenerationAmount = 0.1f;
+        [SerializeField] float buffAdditiveBonus = 1f;
+        [SerializeField] float buffPercentageBonus = 1f;
 
         GameObject player;
         TemporaryBuff temporaryBuff;
+        bool isActive = false;
 
         void Awake ()
         {
@@ -44,64 +44,71 @@ namespace RPG.Stats
             {
                 temporaryBuff.SetBuffTime (statToBuff, timeActive);
             }
-            if (healingAmount > 0)
+            if (!hasActiveTime)
             {
-                var healthPoints = user.GetComponent<Health> ();
-                healthPoints.Heal (healingAmount);
-            }
-            if (skillDamage > 0)
-            {
-                DamageSkill ();
+                SetPermanentBuff ();
             }
 
         }
 
-        private void DamageSkill () //TODO Use interface?
+        public void ToggleSkill (int index, bool toggle)
         {
-            // if (targetToDamage == null)
-            // {
-            //     player.GetComponent<Caster> ().HandleSkill (this);
-            // }
+            Debug.Log ("Action Skill says the index is " + index + " and toggle is " + toggle);
+            if (skillTreeSlot == index)
+            {
+                isActive = toggle;
+            }
         }
+
+        private void SetPermanentBuff ()
+        {
+            if (!isActive) return;
+            if (buffAdditiveBonus > 0)
+            {
+                Debug.Log ("Adding Stat");
+                GetAdditiveModifiers (statToBuff);
+            }
+            if (buffPercentageBonus > 0)
+            {
+                Debug.Log ("multiplying stat");
+                GetPercentageModifiers (statToBuff);
+            }
+
+        }
+
+        // public void CastAttackSkill (float skillCooldown, )
+        // {
+        //     if (!isCastable) return;
+        //     this.skillCooldown = skillCooldown;
+        //     this.skillRange = skillRange;
+        //     this.skillDamage = skillDamage;
+        //     this.skillRegeneration = skillRegeneration;
+        //     this.isPoolGenerating = isPoolGenerating;
+        // }
 
         public int GetLevelRequired ()
         {
             return levelToLearn;
         }
 
-        public PlayerClass GetSkillClass()
+        public PlayerClass GetSkillClass ()
         {
             return skillClass;
         }
 
-        public float GetSkillRange ()
-        {
-            return skillRange;
-        }
-
-        public float GetSkillDamage ()
-        {
-            return skillDamage;
-        }
-
-        public float GetSkillCost ()
-        {
-            return skillCost;
-        }
-
         public float GetSkillRegeneration ()
         {
-            return skillRegeneration;
+            return regenerationAmount;
         }
 
         public float GetSkillCooldown ()
         {
-            return skillCooldown;
+            return skillCoolDown;
         }
 
-        public bool GetisGenerating ()
+        public bool GetisRegenerating ()
         {
-            return isPoolGenerating;
+            return isPoolRegenerating;
         }
 
         public int GetSlot ()
@@ -111,12 +118,30 @@ namespace RPG.Stats
 
         public IEnumerable<float> GetAdditiveModifiers (Stat stat)
         {
-            throw new System.NotImplementedException ();
+            stat = statToBuff;
+            yield return buffAdditiveBonus;
         }
 
         public IEnumerable<float> GetPercentageModifiers (Stat stat)
         {
-            throw new System.NotImplementedException ();
+            stat = statToBuff;
+            yield return buffPercentageBonus;
+        }
+
+        /// <summary>
+        /// This function is called when the object becomes enabled and active.
+        /// </summary>
+        void OnEnable ()
+        {
+            //Won't Woork for wwhat I want
+        }
+
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled or inactive.
+        /// </summary>
+        void OnDisable ()
+        {
+
         }
     }
 

@@ -10,40 +10,41 @@ namespace RPG.UI
     public class SkillTreeUI : MonoBehaviour
     {
         // CONFIG DATA
-        [SerializeField] ActionSkillSlotUI actionSkillPrefab = null;
+        [SerializeField] ActionSkillSlotUI skillSlotPrefab = null;
 
         // CACHE
-        ActionSkill actionSkill;
-        SkillTree skillTree;
-        InventoryItemIcon skillIcon;
+        SkillTree playerSkillTree;
 
         void Awake ()
         {
 
-            //skillTree.skillTreeUpdated += Redraw; // TODO fix chase Condition
         }
         private void Start ()
         {
-            skillTree = GameObject.FindGameObjectWithTag("Player").GetComponent<SkillTree>().GetSkillTree();
-            //Redraw ();
+            playerSkillTree = GameObject.FindGameObjectWithTag ("Player").GetComponent<SkillTree> ().GetSkillTree ();
+            playerSkillTree.skillTreeUpdated += Redraw;
+            Redraw ();
         }
 
-        // private void Redraw ()
-        // {
-        //     // This is Destroying all Action Skill Slots at Runtime
-        //     foreach (Transform child in transform)
-        //     {
-        //         Destroy (child.gameObject);
-        //     }
+        private void Redraw ()
+        {
+            // This is Destroying all Action Skill Slots at Runtime
+            Debug.Log("Redraw Called");
+            foreach (Transform child in transform)
+            {
+                Destroy (child.gameObject);
+            }
 
-        //     // This is Redrawing all available skills at Runtime
-        //     // Will Later set this to total Class skill size most likely
+            // This is Redrawing all available skills at Runtime
+            // Will Later set this to total Class skill size most likely
 
-        //     for (int i = 0; i < skillTree.GetTreeSize (); i++)
-        //     {
-        //         var skillUI = Instantiate (actionSkillPrefab, transform);
-        //         //skillUI.Setup (skillTree, i);
-        //     }
-        //}
+            for (int i = 0; i < playerSkillTree.GetTreeSize (); i++)
+            {
+                Debug.Log("Setting up Skill Slot");
+                var skillUI = Instantiate (skillSlotPrefab, transform);
+                skillUI.Setup (playerSkillTree, i);
+            }
+            Debug.Log("Calling setup");
+        }
     }
 }

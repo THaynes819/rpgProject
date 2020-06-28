@@ -13,23 +13,27 @@ namespace RPG.UI
 	{
 		// CONFIG DATA
 		[SerializeField] GameObject textContainer = null;
-		Image iconImage;
+		[SerializeField] TextMeshProUGUI skillNumber = null;
+
 		SkillTree skillTree;
 		Dictionary<int, ActionSkill> allSkills;
 
 		public void SetItem (ActionSkill actionSkill)
 		{
+
 			SetItem (actionSkill);
 		}
 		public void SetItem (ActionSkill actionSkill, int index)
 		{
-			if (actionSkill == null)
+			Debug.Log ("Skill Set Item Called");
+			var iconImage = GetComponent<Image> ();
+			if (actionSkill == null) // null check is wrong here ptobably
 			{
 				iconImage.enabled = false;
 			}
 			else
 			{
-				Debug.Log("Icon should be enabled");
+				Debug.Log ("Icon should be enabled");
 				iconImage.enabled = true;
 				iconImage.sprite = actionSkill.GetIcon ();
 			}
