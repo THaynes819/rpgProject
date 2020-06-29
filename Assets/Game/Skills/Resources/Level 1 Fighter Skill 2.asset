@@ -14,25 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: bad4a45c-9f3a-42c8-97cb-48ddf287b7c2
   displayName: Level 1 Fighter Skill 2
-  description: 
+  description: Buffs Damage
   icon: {fileID: 21300000, guid: fa63e43951f5e85469df53a44d509547, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
   levelToLearn: 0
   skillClass: 0
-  healingAmount: 0
-  skillDamage: 15
-  skillRange: 2
-  skillCost: 2
-  skillRegeneration: 0
-  skillCooldown: 5
-  timeActive: 0
-  statToBuff: 7
-  buff: 1
-  targetToDamage: {fileID: 0}
   skillTreeSlot: 5
+  skillCoolDown: 0
   hasActiveTime: 0
-  isHealing: 0
-  isDamaging: 1
-  isPoolGenerating: 0
+  hasCoolDown: 0
+  isPoolRegenerating: 0
+  isPermanent: 1
+  timeActive: 0
+  additiveModifiers:
+  - stat: 3
+    value: 10000
+  percentageModifiers:
+  - stat: 3
+    value: 10000
+  poolToRegenerate: 3
+  regenerationAmount: 0.1
+  defaultBuffAdditiveBonus: 1010
+  defaultBuffPercentageBonus: 10000

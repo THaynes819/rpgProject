@@ -8,7 +8,7 @@ using UnityEngine;
 namespace RPG.Stats
 {
 
-    public class SkillTree : MonoBehaviour
+    public class SkillTree : MonoBehaviour, IModifierProvider
 
     {
         GameObject player;
@@ -16,6 +16,8 @@ namespace RPG.Stats
         BaseStats baseStats;
         List<PlayerClassSkill> skillBook = new List<PlayerClassSkill> ();
         List<ActionSkill> AvailableSkills = new List<ActionSkill> ();
+        ActionSkill.Modifier[] additiveModifiers;
+        ActionSkill.Modifier[] percentModifiers;
 
         public List<SkillTrees> skillTrees = new List<SkillTrees> ();
         [SerializeField] int skillTreeSize = 16;
@@ -75,7 +77,6 @@ namespace RPG.Stats
                     skillBook = tree.GetTreeList ();
                 }
             }
-            Debug.Log ("The Skill Book has " + skillBook.Count);
             HandleSkillBook ();
         }
 
@@ -118,25 +119,56 @@ namespace RPG.Stats
             return null;
         }
 
-        public void OnSkillSelect (int index, bool toggle)
+        public void ToggleSkill (int index, bool toggle)
         {
-            Debug.Log ("Skill Slot says the index is " + index + " and toggle is " + toggle);
 
-            foreach (var skill in AvailableSkills)
+            if (toggle)
             {
-                if (index == skill.GetSlot ())
+                foreach (var skill in AvailableSkills)
                 {
-                    Debug.Log ("initial Toggle");
-                    toggle = !toggle;
+                    Debug.Log ("iterating through skills for buff");
+                    if (index == skill.GetSlot ())
+                    {
+                        additiveModifiers = new ActionSkill.Modifier[skill.GetSkillAddModifiers ().Length];
+                        additiveModifiers = skill.GetSkillAddModifiers ();
+                        percentModifiers = new ActionSkill.Modifier[skill.GetSkillAddModifiers ().Length];
+                        percentModifiers = skill.GetSkillPercentModifiers ();
+                    }
+
+                }
+            }
+            if (!toggle)
+            {
+                Debug.Log ("Toggled off");
+            }
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers (Stat stat)
+        {
+            if (additiveModifiers != null)
+            {
+                foreach (var modifier in additiveModifiers)
+                {
+                    if (modifier.stat == stat)
+                    {
+                        yield return modifier.value;
+                    }
                 }
             }
         }
 
-        public void HandleButtonPress (int index, bool toggle)
+        public IEnumerable<float> GetPercentageModifiers (Stat stat)
         {
-            IToggleable button = GetComponent<IToggleable> ();
-            Debug.Log ("Skill Tree says the index is " + index + " and toggle is " + toggle);
+            if (percentModifiers != null)
+            {
+                foreach (var modifier in percentModifiers)
+                {
+                    if (modifier.stat == stat)
+                    {
+                        yield return modifier.value;
+                    }
+                }
+            }
         }
-
     }
 }

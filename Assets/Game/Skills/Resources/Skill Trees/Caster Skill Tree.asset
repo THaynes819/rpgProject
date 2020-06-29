@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e767663890d1c7b48a4f8c1552526f02, type: 3}
   m_Name: Caster Skill Tree
   m_EditorClassIdentifier: 
-  treeClass: 0
+  treeClass: 1
+  playerClassSkills:
+  - playerClass: 0
+    skill: {fileID: 11400000, guid: 790b098792df2c44a9437f537b9d745d, type: 2}
+    charges: 1

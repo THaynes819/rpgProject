@@ -13,3 +13,16 @@ MonoBehaviour:
   m_Name: Fighter Skill Tree
   m_EditorClassIdentifier: 
   treeClass: 0
+  playerClassSkills:
+  - playerClass: 0
+    skill: {fileID: 11400000, guid: a48f310bed525b04a8baf6864672b806, type: 2}
+    charges: 1
+  - playerClass: 0
+    skill: {fileID: 11400000, guid: 2d356fdbac7222f4b9db8e6f086f282b, type: 2}
+    charges: 1
+  - playerClass: 0
+    skill: {fileID: 11400000, guid: f38669dc281617140a5f80e53821dc53, type: 2}
+    charges: 1
+  - playerClass: 0
+    skill: {fileID: 11400000, guid: b0904fd109fa0214c8cf840f33349f88, type: 2}
+    charges: 1

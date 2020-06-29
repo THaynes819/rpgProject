@@ -14,25 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4a500221-fac8-4659-81a8-57e81630b444
   displayName: Fighter Test Skill
-  description: 
+  description: Adds 10 Health
   icon: {fileID: 21300000, guid: aff477b2fab2d0542be64d8ea903698a, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
   levelToLearn: 0
   skillClass: 0
-  healingAmount: 20
-  skillDamage: 15
-  skillRange: 10
-  skillCost: 5
-  skillRegeneration: 5
-  skillCooldown: 5
-  timeActive: 10
-  statToBuff: 7
-  buff: 1
-  targetToDamage: {fileID: 0}
   skillTreeSlot: 1
+  skillCoolDown: 0
   hasActiveTime: 0
-  isHealing: 0
-  isDamaging: 1
-  isPoolGenerating: 0
+  hasCoolDown: 0
+  isPoolRegenerating: 0
+  timeActive: 10
+  statToBuff: 0
+  poolToRegenerate: 3
+  regenerationAmount: 0
+  buffAdditiveBonus: 10
+  buffPercentageBonus: 0

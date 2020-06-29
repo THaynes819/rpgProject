@@ -4,6 +4,7 @@ using GameDevTV.Inventories;
 using RPG.Attributes;
 using RPG.Combat;
 using RPG.Movement;
+using RPG.Stats;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -15,6 +16,8 @@ namespace RPG.Control
 
         Health health;
         Fighter fighter;
+        GameObject player;
+        SkillTree skillTree;
 
         [System.Serializable]
         struct CursorMapping
@@ -33,6 +36,8 @@ namespace RPG.Control
         private void Awake ()
         {
             health = GetComponent<Health> ();
+            player = GameObject.FindGameObjectWithTag ("Player");
+            skillTree = player.GetComponent<SkillTree>();
         }
 
         private void Update ()
@@ -83,6 +88,12 @@ namespace RPG.Control
                 actionStore.Use (5, gameObject);
             }
         }
+
+        public void OnSkillSelect(int index)
+        {
+            Debug.Log("called from" + index);
+        }
+
 
         private bool InteractWithUI ()
         {

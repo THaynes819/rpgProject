@@ -93,6 +93,7 @@ namespace RPG.Stats {
             float total = 0;
             foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
             {
+                //Debug.Log("found thes providers  " + provider);
                 foreach (float modifier in provider.GetAdditiveModifiers(stat))
                 {
                     total += modifier;

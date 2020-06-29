@@ -29,7 +29,6 @@ namespace RPG.UI
         private void Redraw ()
         {
             // This is Destroying all Action Skill Slots at Runtime
-            Debug.Log("Redraw Called");
             foreach (Transform child in transform)
             {
                 Destroy (child.gameObject);
@@ -40,11 +39,9 @@ namespace RPG.UI
 
             for (int i = 0; i < playerSkillTree.GetTreeSize (); i++)
             {
-                Debug.Log("Setting up Skill Slot");
                 var skillUI = Instantiate (skillSlotPrefab, transform);
                 skillUI.Setup (playerSkillTree, i);
             }
-            Debug.Log("Calling setup");
         }
     }
 }

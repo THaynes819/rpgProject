@@ -14,25 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: e5c0a9a3-22c3-4338-9f65-959090e14bac
   displayName: Level 1 fighter
-  description: 
+  description: Does nothing
   icon: {fileID: 21300000, guid: 206721021e4e7264c98addae467a1a8a, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
   levelToLearn: 0
   skillClass: 0
-  healingAmount: 20
-  skillDamage: 15
-  skillRange: 10
-  skillCost: 5
-  skillRegeneration: 5
-  skillCooldown: 5
+  skillTreeSlot: 2
+  skillCoolDown: 0
+  hasActiveTime: 0
+  hasCoolDown: 0
+  isPoolRegenerating: 0
   timeActive: 10
   statToBuff: 0
-  buff: 1
-  targetToDamage: {fileID: 0}
-  skillTreeSlot: 2
-  hasActiveTime: 0
-  isHealing: 0
-  isDamaging: 1
-  isPoolGenerating: 0
+  poolToRegenerate: 0
+  regenerationAmount: 0.1
+  buffAdditiveBonus: 1
+  buffPercentageBonus: 1

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Attributes;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace RPG.Stats
 {
 
     [CreateAssetMenu (menuName = ("RPG/Skills/Action Skill"))]
-    public class ActionSkill : ActionItem, IModifierProvider
+    public class ActionSkill : ActionItem
     {
         [Header ("Generic Skill Info")]
         [SerializeField] int levelToLearn = 1;
@@ -21,60 +22,46 @@ namespace RPG.Stats
         public bool isPoolRegenerating = false;
 
         [Header ("Buff Skill info")]
+        [SerializeField] bool isPermanent = false;
         [SerializeField] float timeActive = 10f;
-        [SerializeField] Stat statToBuff = Stat.Health;
+        [SerializeField]
+        Modifier[] additiveModifiers;
+        [SerializeField]
+        Modifier[] percentageModifiers;
+
         [SerializeField] Pool poolToRegenerate;
         [SerializeField] float regenerationAmount = 0.1f;
-        [SerializeField] float buffAdditiveBonus = 1f;
-        [SerializeField] float buffPercentageBonus = 1f;
+        [SerializeField] float defaultBuffAdditiveBonus = 1f;
+        [SerializeField] float defaultBuffPercentageBonus = 1f;
 
         GameObject player;
         TemporaryBuff temporaryBuff;
-        bool isActive = false;
+        bool thisToggle = false;
+
+        [System.Serializable]
+        public struct Modifier
+        {
+            public Stat stat;
+            public float value;
+        }
 
         void Awake ()
         {
             player = GameObject.FindGameObjectWithTag ("Player");
+
         }
 
         public override void Use (GameObject user) // Make this more customizable and not just heal
         {
             Debug.Log ("Using action: " + this);
+
             if (hasActiveTime)
             {
-                temporaryBuff.SetBuffTime (statToBuff, timeActive);
-            }
-            if (!hasActiveTime)
-            {
-                SetPermanentBuff ();
+                //temporaryBuff.SetBuffTime (statToBuff, timeActive);
             }
 
         }
 
-        public void ToggleSkill (int index, bool toggle)
-        {
-            Debug.Log ("Action Skill says the index is " + index + " and toggle is " + toggle);
-            if (skillTreeSlot == index)
-            {
-                isActive = toggle;
-            }
-        }
-
-        private void SetPermanentBuff ()
-        {
-            if (!isActive) return;
-            if (buffAdditiveBonus > 0)
-            {
-                Debug.Log ("Adding Stat");
-                GetAdditiveModifiers (statToBuff);
-            }
-            if (buffPercentageBonus > 0)
-            {
-                Debug.Log ("multiplying stat");
-                GetPercentageModifiers (statToBuff);
-            }
-
-        }
 
         // public void CastAttackSkill (float skillCooldown, )
         // {
@@ -116,33 +103,17 @@ namespace RPG.Stats
             return skillTreeSlot;
         }
 
-        public IEnumerable<float> GetAdditiveModifiers (Stat stat)
+        public Modifier[] GetSkillAddModifiers()
         {
-            stat = statToBuff;
-            yield return buffAdditiveBonus;
+            return additiveModifiers;
         }
 
-        public IEnumerable<float> GetPercentageModifiers (Stat stat)
+        public Modifier[] GetSkillPercentModifiers()
         {
-            stat = statToBuff;
-            yield return buffPercentageBonus;
+            return percentageModifiers;
         }
 
-        /// <summary>
-        /// This function is called when the object becomes enabled and active.
-        /// </summary>
-        void OnEnable ()
-        {
-            //Won't Woork for wwhat I want
-        }
 
-        /// <summary>
-        /// This function is called when the behaviour becomes disabled or inactive.
-        /// </summary>
-        void OnDisable ()
-        {
 
-        }
     }
-
 }

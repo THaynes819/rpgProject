@@ -25,7 +25,6 @@ namespace RPG.UI
 		}
 		public void SetItem (ActionSkill actionSkill, int index)
 		{
-			Debug.Log ("Skill Set Item Called");
 			var iconImage = GetComponent<Image> ();
 			if (actionSkill == null) // null check is wrong here ptobably
 			{
@@ -33,7 +32,6 @@ namespace RPG.UI
 			}
 			else
 			{
-				Debug.Log ("Icon should be enabled");
 				iconImage.enabled = true;
 				iconImage.sprite = actionSkill.GetIcon ();
 			}

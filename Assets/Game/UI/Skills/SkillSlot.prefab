@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2904595790592106523}
+  buttonPrefab: {fileID: 1393951448703146325, guid: bef34a359ecd8554289da5e57a7d5007,
+    type: 3}
 --- !u!114 &3842374137019598790
 MonoBehaviour:
   m_ObjectHideFlags: 0
