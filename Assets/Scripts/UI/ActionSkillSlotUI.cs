@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using GameDevTV.Core.UI.Dragging;
-using GameDevTV.Inventories;
+﻿using GameDevTV.Inventories;
 using GameDevTV.UI.Inventories;
 using RPG.Stats;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static RPG.Stats.SkillTree;
 
 namespace RPG.UI
 {
@@ -64,7 +60,5 @@ namespace RPG.UI
             Debug.Log ("button was cklicked. Sending from this index: " + index);
             skillTree.ToggleSkill (index, toggle);
         }
-
-
     }
 }

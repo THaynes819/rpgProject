@@ -30,11 +30,9 @@ MonoBehaviour:
   timeActive: 0
   additiveModifiers:
   - stat: 3
-    value: 10000
+    value: 5
   percentageModifiers:
   - stat: 3
-    value: 10000
+    value: 2
   poolToRegenerate: 3
   regenerationAmount: 0.1
-  defaultBuffAdditiveBonus: 1010
-  defaultBuffPercentageBonus: 10000

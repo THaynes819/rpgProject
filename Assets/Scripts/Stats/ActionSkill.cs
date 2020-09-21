@@ -31,8 +31,6 @@ namespace RPG.Stats
 
         [SerializeField] Pool poolToRegenerate;
         [SerializeField] float regenerationAmount = 0.1f;
-        [SerializeField] float defaultBuffAdditiveBonus = 1f;
-        [SerializeField] float defaultBuffPercentageBonus = 1f;
 
         GameObject player;
         TemporaryBuff temporaryBuff;
