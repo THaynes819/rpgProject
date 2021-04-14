@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: e5c0a9a3-22c3-4338-9f65-959090e14bac
   displayName: Level 1 fighter
   description: Does nothing
-  icon: {fileID: 21300000, guid: 206721021e4e7264c98addae467a1a8a, type: 3}
+  iconSprite: {fileID: 21300000, guid: edeaa69fca431443f97a033d27c63a58, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
@@ -26,9 +26,9 @@ MonoBehaviour:
   hasActiveTime: 0
   hasCoolDown: 0
   isPoolRegenerating: 0
+  isPermanent: 0
   timeActive: 10
-  statToBuff: 0
+  additiveModifiers: []
+  percentageModifiers: []
   poolToRegenerate: 0
   regenerationAmount: 0.1
-  buffAdditiveBonus: 1
-  buffPercentageBonus: 1

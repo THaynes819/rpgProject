@@ -15,10 +15,6 @@ namespace RPG.UI
         // CACHE
         SkillTree playerSkillTree;
 
-        void Awake ()
-        {
-
-        }
         private void Start ()
         {
             playerSkillTree = GameObject.FindGameObjectWithTag ("Player").GetComponent<SkillTree> ().GetSkillTree ();

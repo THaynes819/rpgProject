@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using RPG.Combat;
+﻿using RPG.Combat;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,7 @@ public class ResourceGlobe : MonoBehaviour
 
     GameObject player;
 
-    void Awake ()
+    void Start ()
     {
         player = GameObject.FindGameObjectWithTag ("Player");
     }

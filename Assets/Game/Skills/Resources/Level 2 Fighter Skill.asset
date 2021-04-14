@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 341f5b07-14e3-4072-b1bd-d0615a4f6fcc
   displayName: Level 2 Fighter
   description: nada
-  icon: {fileID: 21300000, guid: b9019a2d74407cc4fa37a579c35a1e79, type: 3}
+  iconSprite: {fileID: 21300000, guid: 7c4272045db356d4191801bf4343dbe3, type: 3}
   pickup: {fileID: 0}
   stackable: 0
   consumable: 0
@@ -32,5 +32,3 @@ MonoBehaviour:
   percentageModifiers: []
   poolToRegenerate: 0
   regenerationAmount: 0.1
-  defaultBuffAdditiveBonus: 1
-  defaultBuffPercentageBonus: 1

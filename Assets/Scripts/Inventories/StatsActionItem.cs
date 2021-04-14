@@ -16,7 +16,7 @@ namespace RPG.Inventories
         public override void Use (GameObject user) // Make this more customizable and not just heal
         {
 
-            Debug.Log ("Using action: " + this);
+            Debug.Log ("Using action: " + this.name);
             var healthPoints = user.GetComponent<Health> ();
             healthPoints.Heal (healingAmount);
 

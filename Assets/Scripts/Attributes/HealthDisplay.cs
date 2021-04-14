@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace RPG.Attributes
 {
@@ -18,11 +17,11 @@ namespace RPG.Attributes
         {
             if (isDisplayedAsPercent)
             {
-                GetComponent<Text>().text = string.Format("{0:0}%", health.GetPercentage());
+                //GetComponent<Text> ().text = string.Format("{0:0}%", health.GetPercentage());
             }
             else
             {
-                GetComponent<Text>().text = string.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
+                //GetComponent<Text>().text = string.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
             }
         }
     }

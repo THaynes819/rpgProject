@@ -2,14 +2,14 @@
 using GameDevTV.UI.Inventories;
 using RPG.Stats;
 using UnityEngine;
-using UnityEngine.UI;
-
+using UnityEngine.UIElements;
 namespace RPG.UI
 {
     public class ActionSkillSlotUI : MonoBehaviour, IItemHolder
     {
         // CONFIG DATA
         [SerializeField] ActionSkillIcon icon = null;
+        [SerializeField] GameObject buttonPrefab = null;
 
         GameObject player;
 
@@ -18,21 +18,21 @@ namespace RPG.UI
         ActionSkill actionSkill;
         SkillTree skillTree;
         bool toggle;
-        [SerializeField] Button buttonPrefab;
 
         void Start ()
         {
-            //player = GameObject.FindGameObjectWithTag ("Player");
-            //skillTree = player.GetComponent<SkillTree> ().GetSkillTree ();
-
-            buttonPrefab = GetComponent<Button> ();
+            player = GameObject.FindGameObjectWithTag ("Player");
+            skillTree = player.GetComponent<SkillTree> ().GetSkillTree ();
         }
 
         public void Setup (SkillTree skillTree, int index)
         {
             this.skillTree = skillTree;
             this.index = index;
-            icon.SetItem (skillTree.GetSkillInSlot (index), 1);
+            if (icon != null)
+            {
+                icon.SetItem (skillTree.GetSkillInSlot (index), 1);
+            }
             SetupButton ();
         }
 
@@ -49,9 +49,11 @@ namespace RPG.UI
 
         private void SetupButton ()
         {
-            var buttonInstance = GetComponent<Button> ();
-            buttonInstance = Instantiate (buttonPrefab, transform);
-            buttonInstance.onClick.AddListener (OnButtonClick);
+            if (buttonPrefab != null)
+            {
+                var buttonInstance = Instantiate(buttonPrefab);
+            //buttonInstance.onClick AddListener (OnButtonClick);
+            }
         }
 
         public void OnButtonClick ()

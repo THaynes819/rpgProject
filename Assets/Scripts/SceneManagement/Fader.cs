@@ -40,6 +40,7 @@ namespace RPG.SceneManagement
 
         private IEnumerator FadeRoutine (float target, float time)
         {
+            Debug.Log("FadeRoutine Called");
             while (!Mathf.Approximately (canvasGroup.alpha, target))
             {
                 canvasGroup.alpha = Mathf.MoveTowards (canvasGroup.alpha, target, Time.deltaTime / time);

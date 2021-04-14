@@ -1,8 +1,11 @@
-﻿using UnityEngine;
-using Boxophobic.StyledGUI;
+﻿using Boxophobic.StyledGUI;
+using UnityEngine;
 
-[StyledMonoHideScriptField]
-public class StyledMonoBehaviour : MonoBehaviour
+namespace Boxophobic.StyledGUI
 {
+  [StyledMonoHideScriptField]
+  public class StyledMonoBehaviour : MonoBehaviour
+  {
 
+  }
 }

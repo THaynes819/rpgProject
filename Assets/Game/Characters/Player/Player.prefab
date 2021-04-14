@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 2665441604261473864}
   - component: {fileID: 4631781389628393406}
   - component: {fileID: 8415500263214838296}
+  - component: {fileID: 5073365420400598414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -88,6 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -112,6 +114,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &635890578764659995
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -194,6 +197,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3697851389127939986}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Spawn
         m_Mode: 0
         m_Arguments:
@@ -205,6 +209,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4656513586518620675}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -442,6 +447,19 @@ MonoBehaviour:
       type: 2}
     skillTreeClass: 1
   skillTreeSize: 16
+--- !u!114 &5073365420400598414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56043c617509b4846b0bc456826cbfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDiaologue: {fileID: 11400000, guid: 5792f3e7e2c60d64b9f74a93f12b6880, type: 2}
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0

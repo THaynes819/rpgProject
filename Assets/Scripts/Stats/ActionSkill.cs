@@ -23,7 +23,7 @@ namespace RPG.Stats
 
         [Header ("Buff Skill info")]
         [SerializeField] bool isPermanent = false;
-        [SerializeField] float timeActive = 10f;
+        [SerializeField] float secondsActive = 10f;
         [SerializeField]
         Modifier[] additiveModifiers;
         [SerializeField]
@@ -55,7 +55,7 @@ namespace RPG.Stats
 
             if (hasActiveTime)
             {
-                //temporaryBuff.SetBuffTime (statToBuff, timeActive);
+                //temporaryBuff.SetBuffTime (statToBuff, secondsActiveActive);
             }
 
         }

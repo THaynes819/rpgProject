@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using GameDevTV.Inventories;
 using RPG.Attributes;
 using RPG.Combat;
@@ -93,7 +92,6 @@ namespace RPG.Control
         {
             Debug.Log("called from" + index);
         }
-
 
         private bool InteractWithUI ()
         {

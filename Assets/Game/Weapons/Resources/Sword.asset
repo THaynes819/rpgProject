@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 1f107bf5-9260-42af-8e8c-5b078592710b
   displayName: Sword
   description: Hack and slash baby
-  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  iconSprite: {fileID: 21300000, guid: e91fc63fcd9bb1c4abf7ffdc0848a328, type: 3}
   pickup: {fileID: 4270175842732200466, guid: 40bb45e7ee3e35c4fa1aacabde78161b, type: 3}
   stackable: 0
   allowedEquipLocation: 5

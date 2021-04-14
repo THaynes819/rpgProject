@@ -22,7 +22,7 @@ namespace GameDevTV.Inventories
         [Tooltip("Item description to be displayed in UI.")]
         [SerializeField][TextArea] string description = null;
         [Tooltip("The UI icon to represent this item in the inventory.")]
-        [SerializeField] Sprite icon = null;
+        [SerializeField] Sprite iconSprite = null;
         [Tooltip("The prefab that should be spawned when this item is dropped.")]
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
@@ -44,6 +44,7 @@ namespace GameDevTV.Inventories
         /// </returns>
         public static InventoryItem GetFromID(string itemID)
         {
+            Debug.Log("GetFromID Called");
             if (itemLookupCache == null)
             {
                 itemLookupCache = new Dictionary<string, InventoryItem>();
@@ -60,7 +61,12 @@ namespace GameDevTV.Inventories
                 }
             }
 
-            if (itemID == null || !itemLookupCache.ContainsKey(itemID)) return null;
+            if (itemID == null || !itemLookupCache.ContainsKey(itemID))
+                {
+                    Debug.Log("itemID is null or key is missing");
+                    Debug.Log("GetFromId itemID is " + itemID);
+                    return null;
+                }
             return itemLookupCache[itemID];
         }
 
@@ -80,7 +86,7 @@ namespace GameDevTV.Inventories
 
         public Sprite GetIcon()
         {
-            return icon;
+            return iconSprite;
         }
 
         public string GetItemID()
