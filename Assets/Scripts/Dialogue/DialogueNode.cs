@@ -16,7 +16,7 @@ namespace RPG.Dialogue
         [SerializeField]
         Rect rect = new Rect (0, 0, 200, 100);
 
-        public bool GetIsPlayer ()
+        public bool IsPlayerSpeaking ()
         {
             return isPlayer;
         }
@@ -38,6 +38,7 @@ namespace RPG.Dialogue
         {
             return text;
         }
+
 
         public List<string> GetChildren ()
         {

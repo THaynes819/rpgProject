@@ -162,7 +162,7 @@ namespace RPG.Dialogue.Editor
         private void DrawNode (DialogueNode node)
         {
             GUIStyle style = defaultNodeStyle;
-            if (node.GetIsPlayer())
+            if (node.IsPlayerSpeaking())
             {
                 style = playerNodeStyle;
             }

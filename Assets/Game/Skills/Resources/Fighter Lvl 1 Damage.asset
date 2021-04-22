@@ -25,9 +25,9 @@ MonoBehaviour:
   skillCoolDown: 0
   hasActiveTime: 0
   hasCoolDown: 0
-  isPoolRegenerating: 0
-  isPermanent: 0
-  secondsActive: 300
+  isPoolRegenerating: 1
+  isPermanent: 1
+  secondsActive: 0
   additiveModifiers:
   - stat: 3
     value: 5

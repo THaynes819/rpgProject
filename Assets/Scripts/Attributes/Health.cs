@@ -106,7 +106,9 @@ namespace RPG.Attributes
         {
             if (isDead) return;
             Collider collider = GetComponent<Collider> ();
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
             Destroy (collider);
+            Destroy (rigidbody);  //TODO make this destroyer after the death animation completes
             isDead = true;
             GetComponent<Animator> ().SetTrigger ("die");
             GetComponent<ActionScheduler> ().CancelCurrentACtion ();

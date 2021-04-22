@@ -266,6 +266,9 @@ MonoBehaviour:
   - type: 4
     cursorTexture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotSpot: {x: 0, y: 0}
+  - type: 7
+    cursorTexture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    hotSpot: {x: 0, y: 0}
   raycastMaxDistance: 1
   rayCastradius: 1
 --- !u!54 &2517411556484234369
@@ -459,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56043c617509b4846b0bc456826cbfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDiaologue: {fileID: 11400000, guid: 5792f3e7e2c60d64b9f74a93f12b6880, type: 2}
+  testDialogue: {fileID: 11400000, guid: 4ed81d1c32ca44549b782a5f7e57ef18, type: 2}
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0

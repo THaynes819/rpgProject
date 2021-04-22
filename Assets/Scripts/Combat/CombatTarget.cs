@@ -25,5 +25,10 @@ namespace RPG.Combat {
             }
             return true;
         }
+
+        private void Start()
+        {
+
+        }
     }
 }

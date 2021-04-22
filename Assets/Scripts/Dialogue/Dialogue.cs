@@ -11,7 +11,7 @@ namespace RPG.Dialogue
     {
         [SerializeField]
         List<DialogueNode> nodes = new List<DialogueNode> ();
-        [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
+        [SerializeField] Vector2 newNodeOffset = new Vector2 (250, 0);
 
         Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode> ();
 
@@ -41,6 +41,30 @@ namespace RPG.Dialogue
                 if (nodeLookup.ContainsKey (childID))
                 {
                     yield return nodeLookup[childID];
+                }
+            }
+        }
+
+        public IEnumerable<DialogueNode> GetPlayerChildren (DialogueNode currentNode)
+        {
+
+            foreach (DialogueNode node in GetAllChildren (currentNode))
+            {
+                if (node.IsPlayerSpeaking ())
+                {
+                    yield return node;
+                }
+            }
+
+        }
+
+        public IEnumerable<DialogueNode> GetAIchildren (DialogueNode currentNode)
+        {
+            foreach (DialogueNode node in GetAllChildren (currentNode))
+            {
+                if (!node.IsPlayerSpeaking ())
+                {
+                    yield return node;
                 }
             }
         }
@@ -76,9 +100,9 @@ namespace RPG.Dialogue
 
             if (parent != null)
             {
-                newNode.SetIsPlayer(!parent.GetIsPlayer());
+                newNode.SetIsPlayer (!parent.IsPlayerSpeaking ());
                 parent.AddChild (newNode.name);
-                newNode.SetPosition(parent.GetRect().position + newNodeOffset);
+                newNode.SetPosition (parent.GetRect ().position + newNodeOffset);
             }
 
             return newNode;
@@ -99,7 +123,7 @@ namespace RPG.Dialogue
             if (nodes.Count == 0)
             {
                 DialogueNode newNode = MakeNode (null);
-                AddNode(newNode);
+                AddNode (newNode);
             }
 
             if (AssetDatabase.GetAssetPath (this) != "")

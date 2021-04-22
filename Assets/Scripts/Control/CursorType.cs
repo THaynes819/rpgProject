@@ -9,5 +9,6 @@ namespace RPG.Control
         WeaponPickup,
         Pickup,
         FullPickup,
+        Dialogue
     }
 }

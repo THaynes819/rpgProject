@@ -1,0 +1,576 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8408724319026045742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 8c1c56a3-e0ff-4f91-a826-8f11163fbb59
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Gretings
+  children:
+  - 95de6ef5-bae6-46fa-9513-50be92a6f84e
+  - 1db05fa5-a2ba-4815-9db5-446e944bdba8
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 129
+    width: 200
+    height: 100
+--- !u!114 &-7367086871048812568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 51a461b0-c7b0-40b9-86cf-81f3e9c66d9f
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Well, you're sure acting like one
+  children:
+  - bf85ff6b-3200-49f7-ac36-95cdc35923c3
+  - 4283c24c-5e22-4446-945f-27b6c4a8a88a
+  rect:
+    serializedVersion: 2
+    x: 1627
+    y: 492
+    width: 200
+    height: 100
+--- !u!114 &-6827095800034041887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 65233071-f4e6-4e3c-a75d-8c5322c1711d
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'll find it
+  children:
+  - 474db990-5e9a-4e29-a030-a1fa6950de1b
+  rect:
+    serializedVersion: 2
+    x: 779
+    y: 389
+    width: 200
+    height: 100
+--- !u!114 &-6388908590387275977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 1db05fa5-a2ba-4815-9db5-446e944bdba8
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Oh no, what do you want
+  children:
+  - 1a91345e-bdd2-49c9-8cae-eb832bde4efa
+  - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
+  rect:
+    serializedVersion: 2
+    x: 240
+    y: 93
+    width: 200
+    height: 100
+--- !u!114 &-5974519443992799619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: f7e000a4-c088-41bd-b114-bf05628267c7
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Nooo!!!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2772
+    y: 213
+    width: 200
+    height: 100
+--- !u!114 &-5489548854370449678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 6496457c-9585-44c9-b71a-22d8c632025a
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Oh, thank you hero!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2772
+    y: 617
+    width: 200
+    height: 100
+--- !u!114 &-5135599321054448516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 4ccdc003-81aa-4fa7-897e-1fb462eaaf07
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: On second thought I need to do something else right now. Goodbye.
+  children:
+  - 5fe83b05-70b3-4a60-9b91-e972b641464d
+  rect:
+    serializedVersion: 2
+    x: 2486
+    y: 303
+    width: 200
+    height: 100
+--- !u!114 &-4743777427602394839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: bf85ff6b-3200-49f7-ac36-95cdc35923c3
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: ok, I'll find your goat
+  children:
+  - 474db990-5e9a-4e29-a030-a1fa6950de1b
+  rect:
+    serializedVersion: 2
+    x: 1962
+    y: 211
+    width: 200
+    height: 100
+--- !u!114 &-4233486643282649907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 5fe83b05-70b3-4a60-9b91-e972b641464d
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Goodbye...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2781
+    y: 95
+    width: 200
+    height: 100
+--- !u!114 &-3855127278497381223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 95de6ef5-bae6-46fa-9513-50be92a6f84e
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Oh Hi!!
+  children:
+  - 861a9cef-aee1-4f08-b697-371fbbedecaf
+  - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
+  rect:
+    serializedVersion: 2
+    x: 247
+    y: 254
+    width: 200
+    height: 100
+--- !u!114 &-2674337787490828237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: dd383fed-6383-4678-8c0c-32148539d00e
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Oh good! will you help me? a group of bandits stole my goat!
+  children:
+  - 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
+  rect:
+    serializedVersion: 2
+    x: 1083
+    y: 702
+    width: 200
+    height: 100
+--- !u!114 &-1941429253044266257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 861a9cef-aee1-4f08-b697-371fbbedecaf
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: you look like a nice feller
+  children:
+  - 24e3c5d4-5916-4eeb-afeb-e8b299e3c457
+  - 67bc4214-8ee6-40be-8ec9-0e3bb96a58c6
+  rect:
+    serializedVersion: 2
+    x: 514
+    y: 591
+    width: 200
+    height: 100
+--- !u!114 &-884393917305138425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 24e3c5d4-5916-4eeb-afeb-e8b299e3c457
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I guess I am
+  children:
+  - dd383fed-6383-4678-8c0c-32148539d00e
+  rect:
+    serializedVersion: 2
+    x: 771
+    y: 742
+    width: 200
+    height: 100
+--- !u!114 &-627429196978896901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 582c184d-bbcb-4608-832c-17c55455c945
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Then be nice to me
+  children:
+  - bf85ff6b-3200-49f7-ac36-95cdc35923c3
+  - 4283c24c-5e22-4446-945f-27b6c4a8a88a
+  rect:
+    serializedVersion: 2
+    x: 1500
+    y: 140
+    width: 200
+    height: 100
+--- !u!114 &-405474396901451090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: d64d0409-873e-41a2-a891-d47367bc1222
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Your goat will be returned or avenged!
+  children:
+  - 6496457c-9585-44c9-b71a-22d8c632025a
+  rect:
+    serializedVersion: 2
+    x: 2501
+    y: 508
+    width: 200
+    height: 100
+--- !u!114 &-262948921550083943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 474db990-5e9a-4e29-a030-a1fa6950de1b
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: The Bandit leader is holding it on the far edge of town.
+  children:
+  - d64d0409-873e-41a2-a891-d47367bc1222
+  - 4ccdc003-81aa-4fa7-897e-1fb462eaaf07
+  rect:
+    serializedVersion: 2
+    x: 2258
+    y: 434
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9927a006834059240b328865fb7f781d, type: 3}
+  m_Name: New First Dialogue
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -8408724319026045742}
+  - {fileID: -3855127278497381223}
+  - {fileID: -6388908590387275977}
+  - {fileID: -1941429253044266257}
+  - {fileID: 6500067975720964532}
+  - {fileID: 7200535601947075716}
+  - {fileID: 4901114848049368365}
+  - {fileID: 4771741619749130594}
+  - {fileID: 8971373359875673336}
+  - {fileID: -6827095800034041887}
+  - {fileID: -884393917305138425}
+  - {fileID: 8922157107343649419}
+  - {fileID: -627429196978896901}
+  - {fileID: -4743777427602394839}
+  - {fileID: 7666051049841959340}
+  - {fileID: -262948921550083943}
+  - {fileID: -2674337787490828237}
+  - {fileID: 531544621196163868}
+  - {fileID: -7367086871048812568}
+  - {fileID: -405474396901451090}
+  - {fileID: -5135599321054448516}
+  - {fileID: -5489548854370449678}
+  - {fileID: -4233486643282649907}
+  - {fileID: -5974519443992799619}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &531544621196163868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'm sorry friend, but I can't help you with this right now. Perhaps later.
+  children:
+  - 5fe83b05-70b3-4a60-9b91-e972b641464d
+  rect:
+    serializedVersion: 2
+    x: 1977
+    y: 103
+    width: 200
+    height: 100
+--- !u!114 &4771741619749130594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 729564d9-57b8-4255-8e2b-ba17f66aec57
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'll show you jerk!
+  children:
+  - f7e000a4-c088-41bd-b114-bf05628267c7
+  rect:
+    serializedVersion: 2
+    x: 1968
+    y: 329
+    width: 200
+    height: 100
+--- !u!114 &4901114848049368365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 05be6b03-fafd-4707-ae5b-2c53de729168
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I am not a jerk.
+  children:
+  - 582c184d-bbcb-4608-832c-17c55455c945
+  - 51a461b0-c7b0-40b9-86cf-81f3e9c66d9f
+  rect:
+    serializedVersion: 2
+    x: 1240
+    y: 341
+    width: 200
+    height: 100
+--- !u!114 &6500067975720964532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 1a91345e-bdd2-49c9-8cae-eb832bde4efa
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Dont be a jerk!
+  children:
+  - 05be6b03-fafd-4707-ae5b-2c53de729168
+  - 729564d9-57b8-4255-8e2b-ba17f66aec57
+  rect:
+    serializedVersion: 2
+    x: 1005
+    y: 226
+    width: 200
+    height: 100
+--- !u!114 &7200535601947075716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: My goat was stolen
+  children:
+  - a28cc0e6-b2c8-4eb9-98bd-1ade0b486a41
+  - 65233071-f4e6-4e3c-a75d-8c5322c1711d
+  - 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
+  rect:
+    serializedVersion: 2
+    x: 477
+    y: -1
+    width: 200
+    height: 100
+--- !u!114 &7666051049841959340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 4283c24c-5e22-4446-945f-27b6c4a8a88a
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Ok, I'm sorry. Good Bye
+  children:
+  - 5fe83b05-70b3-4a60-9b91-e972b641464d
+  rect:
+    serializedVersion: 2
+    x: 1980
+    y: -14
+    width: 200
+    height: 100
+--- !u!114 &8922157107343649419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 67bc4214-8ee6-40be-8ec9-0e3bb96a58c6
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'm really not. You look stupid
+  children:
+  - 1a91345e-bdd2-49c9-8cae-eb832bde4efa
+  rect:
+    serializedVersion: 2
+    x: 766
+    y: 540
+    width: 200
+    height: 100
+--- !u!114 &8971373359875673336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: a28cc0e6-b2c8-4eb9-98bd-1ade0b486a41
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: sucks to be you
+  children:
+  - 1a91345e-bdd2-49c9-8cae-eb832bde4efa
+  rect:
+    serializedVersion: 2
+    x: 796
+    y: 98
+    width: 200
+    height: 100

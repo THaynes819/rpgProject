@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 using RPG.Dialogue;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.UI
 {
@@ -10,19 +13,69 @@ namespace RPG.UI
     {
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
+        [SerializeField] Button quitButton;
+        [SerializeField] Button nextButton;
+        [SerializeField] GameObject aIResponse;
+        [SerializeField] Transform choiceRoot;
+        [SerializeField] GameObject choicePrefab;
 
-
-        // Start is called before the first frame update
         void Start ()
         {
-            playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
-            AIText.text = playerConversant.GetText();
+            playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
+            playerConversant.onConversationUpdated += UpdateUI;
+
+            quitButton.onClick.AddListener (() => playerConversant.Quit ());
+            nextButton.onClick.AddListener (() =>
+            {
+                if (playerConversant.IsChoosing ())
+                {
+                    BuildChoiceList ();
+                }
+                else
+                {
+                    playerConversant.NextHandler ();
+                }
+            });
+            UpdateUI ();
         }
 
-        // Update is called once per frame
-        void Update ()
+        private void BuildChoiceList ()
         {
+            foreach (Transform item in choiceRoot)
+            {
+                Destroy (item.gameObject);
+            }
 
+            foreach (DialogueNode choiceNode in playerConversant.GetChoices ())
+            {
+                GameObject choiceInstance = Instantiate (choicePrefab, choiceRoot);
+                TextMeshProUGUI textInstance = choiceInstance.GetComponentInChildren<TextMeshProUGUI> ();
+                textInstance.text = choiceNode.GetText ();
+                Button button = choiceInstance.GetComponentInChildren<Button> ();
+                button.onClick.AddListener (() =>
+                {
+                    playerConversant.SelectChoice (choiceNode);
+                });
+            }
         }
+
+        void UpdateUI ()
+        {
+            gameObject.SetActive (playerConversant.IsActive ());
+            if (!playerConversant.IsActive ()) return;
+
+            aIResponse.SetActive (!playerConversant.IsChoosing ());
+            choiceRoot.gameObject.SetActive (playerConversant.IsChoosing ());
+            if (playerConversant.IsChoosing ())
+            {
+                BuildChoiceList ();
+            }
+            else
+            {
+                AIText.text = playerConversant.GetText ();
+                nextButton.gameObject.SetActive (playerConversant.HasNext ());
+            }
+        }
+
     }
 }
