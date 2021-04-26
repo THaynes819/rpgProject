@@ -8,7 +8,7 @@ namespace RPG.Dialogue
     public class AIConversant : MonoBehaviour, IRaycastable
     {
 
-        [SerializeField] Dialogue dialogue;
+        [SerializeField] Dialogue dialogue = null;
 
         PlayerConversant playerConversant;
 
@@ -19,10 +19,13 @@ namespace RPG.Dialogue
 
         public bool HandleRaycast (PlayerController callingController)
         {
+            if (dialogue == null)
+            {
+                return false;
+            }
             if (Input.GetMouseButtonDown (0) || Input.GetMouseButtonDown (1))
             {
-                playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
-                playerConversant.StartDialogue(dialogue);
+                callingController.GetComponent<PlayerConversant>().StartDialogue(dialogue);
             }
             return true;
         }

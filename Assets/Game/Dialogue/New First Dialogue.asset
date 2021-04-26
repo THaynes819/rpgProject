@@ -23,6 +23,8 @@ MonoBehaviour:
     y: 129
     width: 200
     height: 100
+  onEnterAction: Test Root Entry
+  onExitAction: 
 --- !u!114 &-7367086871048812568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +48,8 @@ MonoBehaviour:
     y: 492
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-6827095800034041887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,10 +68,12 @@ MonoBehaviour:
   - 474db990-5e9a-4e29-a030-a1fa6950de1b
   rect:
     serializedVersion: 2
-    x: 779
-    y: 389
+    x: 802
+    y: 353
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-6388908590387275977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +93,12 @@ MonoBehaviour:
   - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
   rect:
     serializedVersion: 2
-    x: 240
-    y: 93
+    x: 242
+    y: 92
     width: 200
     height: 100
+  onEnterAction: Test selection Entry
+  onExitAction: 
 --- !u!114 &-5974519443992799619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,13 +113,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   text: Nooo!!!
-  children: []
+  children:
+  - 70dbb3aa-be1f-4e07-9907-0dd8e3925563
   rect:
     serializedVersion: 2
     x: 2772
     y: 213
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-5489548854370449678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,10 +140,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 2772
-    y: 617
+    x: 2771
+    y: 618
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Get Quest
 --- !u!114 &-5135599321054448516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +168,8 @@ MonoBehaviour:
     y: 303
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-4743777427602394839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +192,8 @@ MonoBehaviour:
     y: 211
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-4233486643282649907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,10 +211,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 2781
-    y: 95
+    x: 2783
+    y: 94
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Nothing
 --- !u!114 &-3855127278497381223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,10 +236,12 @@ MonoBehaviour:
   - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
   rect:
     serializedVersion: 2
-    x: 247
-    y: 254
+    x: 255
+    y: 249
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Test Selection Exit
 --- !u!114 &-2674337787490828237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,12 +258,15 @@ MonoBehaviour:
   text: Oh good! will you help me? a group of bandits stole my goat!
   children:
   - 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
+  - c8683e4c-f50d-44df-8c57-183f1f6da421
   rect:
     serializedVersion: 2
-    x: 1083
-    y: 702
+    x: 1098
+    y: 698
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-1941429253044266257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,10 +286,12 @@ MonoBehaviour:
   - 67bc4214-8ee6-40be-8ec9-0e3bb96a58c6
   rect:
     serializedVersion: 2
-    x: 514
+    x: 515
     y: 591
     width: 200
     height: 100
+  onEnterAction: Test AI Enter Action
+  onExitAction: 
 --- !u!114 &-884393917305138425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +314,8 @@ MonoBehaviour:
     y: 742
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-627429196978896901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +339,31 @@ MonoBehaviour:
     y: 140
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-461900045958831569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 133b8988-4713-4f0d-aa95-611a937318ce
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Agghhhh
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 3270
+    y: 214
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Aggros
 --- !u!114 &-405474396901451090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,10 +382,12 @@ MonoBehaviour:
   - 6496457c-9585-44c9-b71a-22d8c632025a
   rect:
     serializedVersion: 2
-    x: 2501
-    y: 508
+    x: 2583
+    y: 492
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-262948921550083943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,10 +407,12 @@ MonoBehaviour:
   - 4ccdc003-81aa-4fa7-897e-1fb462eaaf07
   rect:
     serializedVersion: 2
-    x: 2258
-    y: 434
+    x: 2223
+    y: 422
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +450,36 @@ MonoBehaviour:
   - {fileID: -5489548854370449678}
   - {fileID: -4233486643282649907}
   - {fileID: -5974519443992799619}
+  - {fileID: 334597264857748470}
+  - {fileID: 5706656584942911289}
+  - {fileID: 3169401556270692847}
+  - {fileID: -461900045958831569}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &334597264857748470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: c8683e4c-f50d-44df-8c57-183f1f6da421
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'd be happy to help you. Where can I find these bums?
+  children:
+  - 474db990-5e9a-4e29-a030-a1fa6950de1b
+  - 3d34d29f-d896-4061-a60c-f3424b142053
+  rect:
+    serializedVersion: 2
+    x: 1941
+    y: 578
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &531544621196163868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +502,32 @@ MonoBehaviour:
     y: 103
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &3169401556270692847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 70dbb3aa-be1f-4e07-9907-0dd8e3925563
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Attack
+  children:
+  - 133b8988-4713-4f0d-aa95-611a937318ce
+  rect:
+    serializedVersion: 2
+    x: 3020
+    y: 214
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Attack AI
 --- !u!114 &4771741619749130594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +550,8 @@ MonoBehaviour:
     y: 329
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &4901114848049368365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +575,34 @@ MonoBehaviour:
     y: 341
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5706656584942911289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 3d34d29f-d896-4061-a60c-f3424b142053
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: They ran off toward the other side of town. Be careful, their leader looks
+    dangerous
+  children:
+  - d64d0409-873e-41a2-a891-d47367bc1222
+  - 4ccdc003-81aa-4fa7-897e-1fb462eaaf07
+  rect:
+    serializedVersion: 2
+    x: 2215
+    y: 636
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &6500067975720964532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +626,8 @@ MonoBehaviour:
     y: 226
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &7200535601947075716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,10 +648,12 @@ MonoBehaviour:
   - 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
   rect:
     serializedVersion: 2
-    x: 477
-    y: -1
+    x: 507
+    y: 7
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Test Ai Exit Action
 --- !u!114 &7666051049841959340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +676,8 @@ MonoBehaviour:
     y: -14
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &8922157107343649419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +700,8 @@ MonoBehaviour:
     y: 540
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &8971373359875673336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,3 +724,5 @@ MonoBehaviour:
     y: 98
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 

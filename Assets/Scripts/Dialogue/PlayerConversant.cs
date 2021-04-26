@@ -14,20 +14,21 @@ namespace RPG.Dialogue
 
         public event Action onConversationUpdated;
 
-
         public void StartDialogue (Dialogue newDialogue)
         {
             currentDialogue = newDialogue;
-            currentNode = currentDialogue.GetRootNode();
+            currentNode = currentDialogue.GetRootNode ();
+            TriggerEnterAction ();
             onConversationUpdated ();
         }
 
-        public void Quit()
+        public void Quit ()
         {
             currentDialogue = null;
+            TriggerExitAction ();
             currentNode = null;
             isChoosing = false;
-            onConversationUpdated();
+            onConversationUpdated ();
         }
 
         public bool IsActive ()
@@ -58,6 +59,7 @@ namespace RPG.Dialogue
         public void SelectChoice (DialogueNode chosenNode)
         {
             currentNode = chosenNode;
+            TriggerEnterAction ();
             isChoosing = false;
             NextHandler ();
         }
@@ -69,14 +71,18 @@ namespace RPG.Dialogue
             if (playerResponseChoices > 0)
             {
                 isChoosing = true;
-                onConversationUpdated();
+                TriggerExitAction();
+                onConversationUpdated ();
                 return;
             }
 
             DialogueNode[] children = currentDialogue.GetAllChildren (currentNode).ToArray ();
             int randomResponse = UnityEngine.Random.Range (0, children.Count ());
+
+            TriggerExitAction ();
             currentNode = children[randomResponse];
-            onConversationUpdated();
+            TriggerEnterAction ();
+            onConversationUpdated ();
         }
 
         public bool HasNext ()
@@ -89,7 +95,22 @@ namespace RPG.Dialogue
             {
                 return false;
             }
+        }
 
+        private void TriggerEnterAction ()
+        {
+            if (currentNode != null && currentNode.GetOnEnterAction () != "")
+            {
+                Debug.Log (currentNode.GetOnEnterAction ());
+            }
+        }
+
+        private void TriggerExitAction ()
+        {
+            if (currentNode != null && currentNode.GetOnExitAction () != "")
+            {
+                Debug.Log (currentNode.GetOnExitAction ());
+            }
         }
     }
 }

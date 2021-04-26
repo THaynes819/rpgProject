@@ -100,7 +100,7 @@ namespace RPG.Dialogue
 
             if (parent != null)
             {
-                newNode.SetIsPlayer (!parent.IsPlayerSpeaking ());
+                newNode.SetIsPlayerSpeaking (!parent.IsPlayerSpeaking ());
                 parent.AddChild (newNode.name);
                 newNode.SetPosition (parent.GetRect ().position + newNodeOffset);
             }

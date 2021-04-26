@@ -15,17 +15,12 @@ namespace RPG.Dialogue
         List<string> children = new List<string> ();
         [SerializeField]
         Rect rect = new Rect (0, 0, 200, 100);
+        [SerializeField] string onEnterAction;
+        [SerializeField] string onExitAction;
 
         public bool IsPlayerSpeaking ()
         {
             return isPlayer;
-        }
-
-        public void SetIsPlayer (bool value)
-        {
-            Undo.RecordObject (this, "Change Dialogue Speaker");
-            isPlayer = value;
-            EditorUtility.SetDirty (this);
         }
 
         public Rect GetRect ()
@@ -39,10 +34,19 @@ namespace RPG.Dialogue
             return text;
         }
 
-
         public List<string> GetChildren ()
         {
             return children;
+        }
+
+        public string GetOnEnterAction ()
+        {
+            return onEnterAction;
+        }
+
+        public string GetOnExitAction ()
+        {
+            return onExitAction;
         }
 
 #if UNITY_EDITOR
@@ -50,6 +54,13 @@ namespace RPG.Dialogue
         {
             Undo.RecordObject (this, "Move Dialogue Node");
             rect.position = newPosition;
+            EditorUtility.SetDirty (this);
+        }
+
+        public void SetIsPlayerSpeaking (bool newIsPlayerSpeaking)
+        {
+            Undo.RecordObject (this, "Change Dialogue Speaker");
+            isPlayer = newIsPlayerSpeaking;
             EditorUtility.SetDirty (this);
         }
 
