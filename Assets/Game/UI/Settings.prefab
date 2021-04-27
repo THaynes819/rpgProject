@@ -2864,7 +2864,7 @@ GameObject:
   - component: {fileID: 998046537621167035}
   - component: {fileID: 7458446516026133822}
   m_Layer: 5
-  m_Name: CharacterCreator
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
