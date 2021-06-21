@@ -69,7 +69,6 @@ namespace RPG.Dialogue
             }
         }
 
-#if UNITY_EDITOR
         public void CreateNode (DialogueNode parent)
         {
             DialogueNode newNode = MakeNode (parent);
@@ -115,7 +114,6 @@ namespace RPG.Dialogue
                 node.RemoveChild (nodeToDelete.name);
             }
         }
-#endif
 
         public void OnBeforeSerialize ()
         {

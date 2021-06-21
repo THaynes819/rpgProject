@@ -1,0 +1,368 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7307817118182735512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 73351a92-b534-4480-8093-ffd7a4ceef13
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: We're the brotherhood of goat thieves. We steal goats!
+  children:
+  - 68fafec0-f3a8-4c62-8838-6eb83816a1a7
+  - e19c312a-9432-4a65-97c2-b86994e17fd2
+  rect:
+    serializedVersion: 2
+    x: 893
+    y: 315
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7274133193078697301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: c603eecf-5626-4b70-a1d7-d39b419b979c
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: We devote our lives to it. Meet the boss on the other side of town
+  children:
+  - 0e6b10b0-8ace-4f0a-b8dd-6df4d791e6d3
+  - e2df04cc-433e-4622-a6e0-45f17b647926
+  rect:
+    serializedVersion: 2
+    x: 1721
+    y: 329
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-7093833549325329802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 38d19680-8b21-466f-b760-fd280894bf73
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: It doesn't matter who we are. What do you want!?
+  children:
+  - b118190c-13a9-449d-8e35-41c3d0c3c514
+  rect:
+    serializedVersion: 2
+    x: 952
+    y: 72
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-6277903387956488142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: a7424968-74d1-4704-822c-0062332c56a3
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You'll regret that!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2358
+    y: 528
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Aggro
+--- !u!114 &-6012251521295256646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: b118190c-13a9-449d-8e35-41c3d0c3c514
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Wow you're a jerk,. I think I'll cut you down
+  children:
+  - a7424968-74d1-4704-822c-0062332c56a3
+  rect:
+    serializedVersion: 2
+    x: 1353
+    y: 93
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-4742474305120348371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 68fafec0-f3a8-4c62-8838-6eb83816a1a7
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Stealing goats sounds fun! I'll join right now.
+  children:
+  - 6a4701cc-3662-40e5-b86c-9789a0378010
+  - c603eecf-5626-4b70-a1d7-d39b419b979c
+  rect:
+    serializedVersion: 2
+    x: 1235
+    y: 225
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-4641184306768760360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: b4d97640-2557-4bc2-9dbb-019fa5552f55
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Halt! Are you with us or against us!?
+  children:
+  - 76816e55-e18c-4027-b117-38a71fd75ee4
+  - 0c655756-1cdb-4784-a9a0-8cb9057d7c8a
+  rect:
+    serializedVersion: 2
+    x: 173
+    y: 172
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3204211948178392159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 667f4983-60a3-4628-bb4e-5fa93b10af53
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Disgusting! I kill you now...
+  children:
+  - a7424968-74d1-4704-822c-0062332c56a3
+  rect:
+    serializedVersion: 2
+    x: 2028
+    y: 65
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-3065329711633606530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 0c655756-1cdb-4784-a9a0-8cb9057d7c8a
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: That depends. Who are you?
+  children:
+  - 38d19680-8b21-466f-b760-fd280894bf73
+  - 73351a92-b534-4480-8093-ffd7a4ceef13
+  rect:
+    serializedVersion: 2
+    x: 609
+    y: 256
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9927a006834059240b328865fb7f781d, type: 3}
+  m_Name: First Guard Dialogue
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -4641184306768760360}
+  - {fileID: 4129600373801059371}
+  - {fileID: -3065329711633606530}
+  - {fileID: -6277903387956488142}
+  - {fileID: -7093833549325329802}
+  - {fileID: -7307817118182735512}
+  - {fileID: -4742474305120348371}
+  - {fileID: 760413323041301114}
+  - {fileID: -6012251521295256646}
+  - {fileID: 6962796151682249975}
+  - {fileID: -7274133193078697301}
+  - {fileID: -3204211948178392159}
+  - {fileID: 4831070568614777254}
+  - {fileID: 682075740442567165}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &682075740442567165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: e2df04cc-433e-4622-a6e0-45f17b647926
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Attack
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2357
+    y: 382
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Aggro
+--- !u!114 &760413323041301114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: e19c312a-9432-4a65-97c2-b86994e17fd2
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: You fiends, I'll end you for your goat stealing ways!
+  children:
+  - a7424968-74d1-4704-822c-0062332c56a3
+  rect:
+    serializedVersion: 2
+    x: 1225
+    y: 398
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &4129600373801059371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 76816e55-e18c-4027-b117-38a71fd75ee4
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I'm here to muder everyone of you!
+  children:
+  - a7424968-74d1-4704-822c-0062332c56a3
+  rect:
+    serializedVersion: 2
+    x: 685
+    y: 461
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &4831070568614777254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 0e6b10b0-8ace-4f0a-b8dd-6df4d791e6d3
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Oh I will! Goodbye friend.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2124
+    y: 251
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &6962796151682249975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 6a4701cc-3662-40e5-b86c-9789a0378010
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: It really is. We have all kinds of fun with them.
+  children:
+  - 667f4983-60a3-4628-bb4e-5fa93b10af53
+  rect:
+    serializedVersion: 2
+    x: 1724
+    y: 158
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 

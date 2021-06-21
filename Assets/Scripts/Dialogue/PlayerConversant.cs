@@ -8,14 +8,27 @@ namespace RPG.Dialogue
 {
     public class PlayerConversant : MonoBehaviour
     {
+        [SerializeField] string playerName = null;
+
         Dialogue currentDialogue;
         DialogueNode currentNode = null;
+        AIConversant currentConversant = null;
         bool isChoosing = false;
 
         public event Action onConversationUpdated;
 
-        public void StartDialogue (Dialogue newDialogue)
+        public string GetPlayerName ()
         {
+            if (playerName == null)
+            {
+                playerName = "Player";
+            }
+            return playerName;
+        }
+
+        public void StartDialogue (AIConversant newConversant, Dialogue newDialogue)
+        {
+            currentConversant = newConversant;
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode ();
             TriggerEnterAction ();
@@ -26,6 +39,7 @@ namespace RPG.Dialogue
         {
             currentDialogue = null;
             TriggerExitAction ();
+            currentConversant = null;
             currentNode = null;
             isChoosing = false;
             onConversationUpdated ();
@@ -71,7 +85,7 @@ namespace RPG.Dialogue
             if (playerResponseChoices > 0)
             {
                 isChoosing = true;
-                TriggerExitAction();
+                TriggerExitAction ();
                 onConversationUpdated ();
                 return;
             }
@@ -83,6 +97,18 @@ namespace RPG.Dialogue
             currentNode = children[randomResponse];
             TriggerEnterAction ();
             onConversationUpdated ();
+        }
+
+        public string GetCurrentConversantName ()
+        {
+            if (isChoosing)
+            {
+                return playerName;
+            }
+            else
+            {
+                return currentConversant.GetNPCName ();
+            }
         }
 
         public bool HasNext ()
@@ -99,17 +125,32 @@ namespace RPG.Dialogue
 
         private void TriggerEnterAction ()
         {
-            if (currentNode != null && currentNode.GetOnEnterAction () != "")
+            if (currentNode != null)
             {
-                Debug.Log (currentNode.GetOnEnterAction ());
+                TriggerAction (currentNode.GetOnEnterAction ());
             }
         }
 
         private void TriggerExitAction ()
         {
-            if (currentNode != null && currentNode.GetOnExitAction () != "")
+
+            if (currentNode != null)
             {
-                Debug.Log (currentNode.GetOnExitAction ());
+                TriggerAction (currentNode.GetOnExitAction ());
+            }
+
+        }
+
+        private void TriggerAction (string action)
+        {
+            if (action == "") return;
+
+            foreach (DialogueTrigger trigger in currentConversant.GetComponents<DialogueTrigger> ())
+            {
+                if (trigger != null)
+                {
+                    trigger.Trigger (action);
+                }
             }
         }
     }

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterClasses:
   - characterClass: 0
-    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -40,7 +39,6 @@ MonoBehaviour:
       - 960
     - stat: 3
       levels:
-      - 5
       - 10
       - 15
       - 20
@@ -60,6 +58,7 @@ MonoBehaviour:
       - 90
       - 95
       - 100
+      - 105
     - stat: 2
       levels:
       - 2000
@@ -166,52 +165,51 @@ MonoBehaviour:
       - 342000
       - 380000
   - characterClass: 1
-    playerClass: 0
     stats:
     - stat: 0
       levels:
+      - 10
+      - 20
       - 30
+      - 40
+      - 50
       - 60
+      - 70
+      - 80
       - 90
+      - 100
+      - 110
       - 120
+      - 130
+      - 140
       - 150
+      - 160
+      - 170
       - 180
-      - 210
-      - 240
-      - 270
-      - 300
-      - 330
-      - 360
-      - 390
-      - 420
-      - 450
-      - 480
-      - 510
-      - 540
-      - 570
-      - 600
+      - 190
+      - 200
     - stat: 3
       levels:
+      - 2
+      - 4
+      - 6
       - 8
       - 10
-      - 11
-      - 13
+      - 12
       - 14
       - 16
       - 18
-      - 19
-      - 21
+      - 20
       - 22
       - 24
       - 26
-      - 27
+      - 28
       - 29
       - 30
+      - 31
       - 32
-      - 34
+      - 33
       - 35
-      - 37
-      - 38
     - stat: 1
       levels:
       - 80
@@ -235,7 +233,6 @@ MonoBehaviour:
       - 800
       - 840
   - characterClass: 2
-    playerClass: 0
     stats:
     - stat: 0
       levels:
@@ -304,7 +301,25 @@ MonoBehaviour:
       - 640
       - 672
   - characterClass: 3
-    playerClass: 0
+    stats:
+    - stat: 0
+      levels:
+      - 15
+      - 30
+      - 45
+      - 60
+      - 75
+    - stat: 1
+      levels:
+      - 30
+    - stat: 3
+      levels:
+      - 15
+      - 30
+      - 45
+      - 60
+      - 75
+  - characterClass: 4
     stats:
     - stat: 0
       levels:
@@ -316,8 +331,14 @@ MonoBehaviour:
     - stat: 1
       levels:
       - 30
-  - characterClass: 3
-    playerClass: 0
+    - stat: 3
+      levels:
+      - 30
+      - 30
+      - 30
+      - 30
+      - 30
+  - characterClass: 4
     stats:
     - stat: 0
       levels:

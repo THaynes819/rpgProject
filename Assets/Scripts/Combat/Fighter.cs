@@ -83,7 +83,6 @@ namespace RPG.Combat
 
         public void EquipWeapon (WeaponConfig weapon)
         {
-
             currentWeaponConfig = weapon;
             currentWeapon.value = AttachWeapon (weapon);
         }
@@ -113,7 +112,6 @@ namespace RPG.Combat
 
         private void TriggerAttack ()
         {
-
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
             GetComponent<Animator> ().SetTrigger ("attack"); //triggers animation event
         }
@@ -154,7 +152,8 @@ namespace RPG.Combat
         public bool CanAttack (GameObject combatTarget)
         {
             if (combatTarget == null) { return false; }
-            //if (combatTarget.CompareTag("NPC")) {return false; }
+            if (!combatTarget.GetComponent<Fighter>().enabled) {return false;}
+
             if (!GetComponent<Mover> ().CanMoveTo (combatTarget.transform.position) && !GetIsInRange (combatTarget.transform)) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health> ();
             return targetToTest != null && !targetToTest.IsDead ();

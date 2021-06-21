@@ -54,7 +54,6 @@ namespace RPG.Stats
 
                 lookupTable[progressionClass.characterClass] = statLookupTable;
             }
-
         }
 
 

@@ -401,9 +401,11 @@ GameObject:
   - component: {fileID: 1263253637022408107}
   - component: {fileID: 6562302772259189184}
   - component: {fileID: 6363226170615692691}
+  - component: {fileID: 1085756512}
+  - component: {fileID: 1085756527}
   m_Layer: 0
   m_Name: Peasant NPC
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c0d44466a3bb4ba0c24105b6ddfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 3
   rightHandTransform: {fileID: 4648483526377328981}
   leftHandTransform: {fileID: 4648483526377328931}
   defaultWeapon: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1, type: 2}
@@ -676,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084b858c7f7148f41a152bc969965183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  uniqueIdentifier: dc95ea06-3ec6-4b89-b0c1-33ebfba03227
 --- !u!54 &7131337888404362165
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -740,6 +742,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81f0c7bad2cc4ee4d8a3407b6bee1b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: 4ed81d1c32ca44549b782a5f7e57ef18, type: 2}
+  fighter: {fileID: 4175068004169780722}
+--- !u!114 &1085756512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741220054692081777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: '"Attack"'
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4175068004169780722}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1085756527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741220054692081777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0ae3b1013905246af81e62e9ecde9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6782584822547213269

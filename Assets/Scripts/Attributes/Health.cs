@@ -73,7 +73,6 @@ namespace RPG.Attributes
 
         public void Heal (float healthToRestore)
         {
-
             healthPoints.value = Mathf.Min (healthPoints.value + healthToRestore, GetMaxHealthPoints ());
         }
 
@@ -97,10 +96,10 @@ namespace RPG.Attributes
             return GetComponent<BaseStats> ().GetStat (Stat.Health);
         }
 
-        // public GameObject GetInstigator(GameObject instigator)
-        // {
-        //     return instigator;
-        // }
+        public GameObject GetInstigator(GameObject instigator)
+        {
+            return instigator;
+        }
 
         private void Die ()
         {
@@ -108,7 +107,7 @@ namespace RPG.Attributes
             Collider collider = GetComponent<Collider> ();
             Rigidbody rigidbody = GetComponent<Rigidbody>();
             Destroy (collider);
-            Destroy (rigidbody);  //TODO make this destroyer after the death animation completes
+            Destroy (rigidbody);
             isDead = true;
             GetComponent<Animator> ().SetTrigger ("die");
             GetComponent<ActionScheduler> ().CancelCurrentACtion ();

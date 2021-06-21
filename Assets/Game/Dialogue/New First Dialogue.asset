@@ -358,12 +358,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 3270
+    x: 3269
     y: 214
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Aggros
+  onExitAction: Aggro
 --- !u!114 &-405474396901451090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,12 +522,12 @@ MonoBehaviour:
   - 133b8988-4713-4f0d-aa95-611a937318ce
   rect:
     serializedVersion: 2
-    x: 3020
-    y: 214
+    x: 3028
+    y: 219
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Attack AI
+  onExitAction: 
 --- !u!114 &4771741619749130594
 MonoBehaviour:
   m_ObjectHideFlags: 0

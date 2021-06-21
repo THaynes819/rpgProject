@@ -6,7 +6,7 @@ namespace GameDevTV.Core.UI.Tooltips
     /// <summary>
     /// Abstract base class that handles the spawning of a tooltip prefab at the
     /// correct position on screen relative to a cursor.
-    /// 
+    ///
     /// Override the abstract functions to create a tooltip spawner for your own
     /// data.
     /// </summary>
@@ -27,7 +27,7 @@ namespace GameDevTV.Core.UI.Tooltips
         /// The spawned tooltip prefab for updating.
         /// </param>
         public abstract void UpdateTooltip(GameObject tooltip);
-        
+
         /// <summary>
         /// Return true when the tooltip spawner should be allowed to create a tooltip.
         /// </summary>
