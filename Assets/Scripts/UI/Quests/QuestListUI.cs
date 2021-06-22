@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class QuestListUI : MonoBehaviour
 {
-    [SerializeField] Quest[] tempQuests;
+
     [SerializeField] QuestItemUI questPrefab;
 
     // Start is called before the first frame update
     void Start ()
     {
-        foreach (Quest quest in tempQuests)
+        transform.DetachChildren();
+
+        QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+        foreach (QuestStatus status in questList.GetStatuses())
         {
-            Instantiate (questPrefab);
+            QuestItemUI uiInstance = Instantiate<QuestItemUI>(questPrefab, transform);
+            uiInstance.Setup(status);
         }
     }
 

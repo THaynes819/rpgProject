@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 4631781389628393406}
   - component: {fileID: 8415500263214838296}
   - component: {fileID: 5073365420400598414}
+  - component: {fileID: 4990803316067923125}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -462,7 +463,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56043c617509b4846b0bc456826cbfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testDialogue: {fileID: 11400000, guid: 4ed81d1c32ca44549b782a5f7e57ef18, type: 2}
+  playerName: 
+--- !u!114 &4990803316067923125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bbe477abbefbb4c8251aace5711d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: 7547948f64b68ea40b0339ee5e5d2048, type: 2}
+    completedObjectives:
+    - 
+    - 
+  - quest: {fileID: 11400000, guid: 6ef8c19158feda943a0e6332f80b7b5e, type: 2}
+    completedObjectives:
+    - 
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0

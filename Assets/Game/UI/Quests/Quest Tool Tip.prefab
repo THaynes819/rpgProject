@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1403063015935913739}
   - component: {fileID: 6174884142155193854}
   - component: {fileID: 4162263602608652990}
+  - component: {fileID: 1348024559035929308}
   m_Layer: 5
   m_Name: Quest Tool Tip
   m_TagString: Untagged
@@ -119,6 +120,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1348024559035929308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098127989443092836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49e085db89332c42a76f332f1511127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 644206542661664165}
+  objectiveContainer: {fileID: 2870354902861182443}
+  objectivePrefab: {fileID: 3332457034965777594, guid: 633f39682d9c154468449c90372a478f,
+    type: 3}
+  objectiveIncompletePrefab: {fileID: 5820414988447340270, guid: f5bab57cfc0288242b52b707983b9a1e,
+    type: 3}
 --- !u!1 &3189184119057182060
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,9 +309,9 @@ MonoBehaviour:
     m_Top: 40
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 20
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -562,6 +581,16 @@ PrefabInstance:
     - target: {fileID: 817283371317585271, guid: 633f39682d9c154468449c90372a478f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261305709463989182, guid: 633f39682d9c154468449c90372a478f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2261305709463989182, guid: 633f39682d9c154468449c90372a478f,
+        type: 3}
+      propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3332457034965777594, guid: 633f39682d9c154468449c90372a478f,
