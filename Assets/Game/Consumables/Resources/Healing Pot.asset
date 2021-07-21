@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Healing Pot
   m_EditorClassIdentifier: 
   itemID: 5b10921a-f7c8-4c4a-9779-b634c703f2a8
-  displayName: Health pot
+  displayName: Health potion
   description: heals
   iconSprite: {fileID: 21300000, guid: aba0f700d91d4fc4fa8c724899ab04ab, type: 3}
   pickup: {fileID: 7208306497811156163, guid: 93519f3a2e923d74f939f266e8f73bcb, type: 3}
-  stackable: 0
-  consumable: 0
+  stackable: 1
+  price: 25
+  consumable: 1
   healingAmount: 20

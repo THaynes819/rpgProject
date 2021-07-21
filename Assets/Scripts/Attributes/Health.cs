@@ -1,7 +1,7 @@
 using System;
+using GameDevTV.Saving;
 using GameDevTV.Utils;
 using RPG.Core;
-using GameDevTV.Saving;
 using RPG.Stats;
 using RPG.UI.DamageText;
 using UnityEngine;
@@ -9,15 +9,20 @@ using UnityEngine.Events;
 
 namespace RPG.Attributes
 {
-    public class Health : MonoBehaviour, ISaveable
+    public class Health : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
         [Range (1, 100)]
         [SerializeField] float levelUpHealthPercent = 90f;
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] UnityEvent deathEvent;
+        [SerializeField] bool isMobToKill = false;
+        [SerializeField] string questName;
+        [SerializeField] string questObjective;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float> { }
+
+        [SerializeField] Condition condition;
 
         LazyValue<float> healthPoints;
 
@@ -96,18 +101,35 @@ namespace RPG.Attributes
             return GetComponent<BaseStats> ().GetStat (Stat.Health);
         }
 
-        public GameObject GetInstigator(GameObject instigator)
+        public GameObject GetInstigator (GameObject instigator)
         {
             return instigator;
+        }
+
+        public bool? Evaluate (Predicates predicate, string[] parameters)
+        {
+            if (predicate == Predicates.KillForQuest && parameters[0] == questName)
+            {
+
+                return isMobToKill && IsDead ();
+            }
+
+            return null;
         }
 
         private void Die ()
         {
             if (isDead) return;
+            if (isMobToKill)
+            {
+                var player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
+            }
             Collider collider = GetComponent<Collider> ();
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            Rigidbody rigidbody = GetComponent<Rigidbody> ();
             Destroy (collider);
             Destroy (rigidbody);
+
             isDead = true;
             GetComponent<Animator> ().SetTrigger ("die");
             GetComponent<ActionScheduler> ().CancelCurrentACtion ();
@@ -143,5 +165,6 @@ namespace RPG.Attributes
                 Die ();
             }
         }
+
     }
 }

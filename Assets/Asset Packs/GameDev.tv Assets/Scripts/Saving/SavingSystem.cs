@@ -49,6 +49,8 @@ namespace GameDevTV.Saving
         /// </summary>
         public void Delete (string saveFile)
         {
+            string path = GetPathFromSaveFile (saveFile);
+            Debug.Log ("Deleting file from " + path);
             File.Delete (GetPathFromSaveFile (saveFile));
         }
 

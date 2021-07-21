@@ -23,8 +23,8 @@ MonoBehaviour:
     relativeChance:
     - 30
     - 30
-    minNumber: 1e0000001e000000
-    maxNumber: 1e0000001e000000
+    minNumber: 0100000002000000
+    maxNumber: 0500000005000000
   - item: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706, type: 2}
     relativeChance:
     - 20

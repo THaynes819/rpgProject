@@ -27,6 +27,7 @@ namespace GameDevTV.Inventories
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
+        [SerializeField] float price;
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -44,7 +45,6 @@ namespace GameDevTV.Inventories
         /// </returns>
         public static InventoryItem GetFromID(string itemID)
         {
-            Debug.Log("GetFromID Called");
             if (itemLookupCache == null)
             {
                 itemLookupCache = new Dictionary<string, InventoryItem>();
@@ -63,8 +63,6 @@ namespace GameDevTV.Inventories
 
             if (itemID == null || !itemLookupCache.ContainsKey(itemID))
                 {
-                    Debug.Log("itemID is null or key is missing");
-                    Debug.Log("GetFromId itemID is " + itemID);
                     return null;
                 }
             return itemLookupCache[itemID];
@@ -107,6 +105,11 @@ namespace GameDevTV.Inventories
         public string GetDescription()
         {
             return description;
+        }
+
+        public float GetItemPrice()
+        {
+            return price;
         }
 
         // PRIVATE

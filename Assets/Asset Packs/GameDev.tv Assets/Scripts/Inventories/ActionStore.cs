@@ -35,7 +35,6 @@ namespace GameDevTV.Inventories
         /// </summary>
         public ActionItem GetAction (int index)
         {
-            Debug.Log ("docked items count is " + dockedItems.Count);
             if (dockedItems.ContainsKey (index))
             {
 
@@ -76,14 +75,11 @@ namespace GameDevTV.Inventories
         /// <param name="number">How many items to add.</param>
         public void AddAction (InventoryItem item, int index, int number)
         {
-            Debug.Log ("Action Store is trying to add");
-            Debug.Log ("The item Actions Store is trying to add is " + item.name);
             if (dockedItems.ContainsKey (index))
             {
                 if (object.ReferenceEquals (item, dockedItems[index].item))
                 {
                     dockedItems[index].number += number;
-                    Debug.Log (item.name + "Added to Action Store succesfully!");
                 }
             }
             else
@@ -91,7 +87,6 @@ namespace GameDevTV.Inventories
                 var slot = new DockedItemSlot ();
                 slot.item = item as ActionItem;
                 slot.number = number;
-                Debug.Log (item + "<-- Added to Action Store succesfully! You now have this many: " + number);
                 dockedItems[index] = slot;
             }
             if (storeUpdated != null)
@@ -111,7 +106,6 @@ namespace GameDevTV.Inventories
             if (dockedItems.ContainsKey (index))
             {
                 dockedItems[index].item.Use (user);
-                Debug.Log (dockedItems[index].item + " was used");
                 if (dockedItems[index].item.isConsumable ())
                 {
                     RemoveItems (index, 1);
@@ -189,7 +183,6 @@ namespace GameDevTV.Inventories
                 {
                     var record = new DockedItemRecord ();
                     record.itemID = pair.Value.item.GetItemID ();
-                    Debug.Log ("the CaptureState item ID is " + record.itemID);
                     record.number = pair.Value.number;
                     state[pair.Key] = record;
                 }
@@ -202,7 +195,6 @@ namespace GameDevTV.Inventories
             var stateDict = (Dictionary<int, DockedItemRecord>) state;
             foreach (var pair in stateDict)
             {
-                Debug.Log ("the restored item ID is " + pair.Value.itemID);
                 if (stateDict.Count > 0)
                 {
                     AddAction (InventoryItem.GetFromID (pair.Value.itemID), pair.Key, pair.Value.number);

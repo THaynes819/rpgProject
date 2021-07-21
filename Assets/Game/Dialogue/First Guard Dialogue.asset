@@ -25,6 +25,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-7274133193078697301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,6 +53,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-7093833549325329802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +80,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-6277903387956488142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +106,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: Aggro
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-6012251521295256646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +133,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-4742474305120348371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +161,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-4641184306768760360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,12 +183,15 @@ MonoBehaviour:
   - 0c655756-1cdb-4784-a9a0-8cb9057d7c8a
   rect:
     serializedVersion: 2
-    x: 173
-    y: 172
+    x: 174
+    y: 180
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: First Guard
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-3204211948178392159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +216,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &-3065329711633606530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +244,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +298,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: Aggro
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &760413323041301114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +325,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &4129600373801059371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +352,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &4831070568614777254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +378,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []
 --- !u!114 &6962796151682249975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +405,6 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 0
+    paremeters: []

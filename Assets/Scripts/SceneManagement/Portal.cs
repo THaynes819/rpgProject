@@ -90,7 +90,6 @@ namespace RPG.SceneManagement
                 if (portal == this) continue;
                 if (portal.currentPortal == destinationPortal)
                 {
-                    print ("Leaving Portal " + portal.currentPortal + " and entering Portal " + portal.destinationPortal);
                     return portal;
                 }
             }

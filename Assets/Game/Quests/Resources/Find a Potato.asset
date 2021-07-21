@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edbb8e188de36c3478e55b16266e97ac, type: 3}
-  m_Name: Goat rescue
+  m_Name: Find a Potato
   m_EditorClassIdentifier: 
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 1346de7e2a4ce3f45a9d773289cc4889, type: 2}
   objectives:
-  - talk to the first guard
-  - Locate the goat
-  - Save the goat
-  - Bring the goat back To Fred
+  - reference: Find It
+    description: Find a potato
+  - reference: Give It
+    description: Give the potato to the guard

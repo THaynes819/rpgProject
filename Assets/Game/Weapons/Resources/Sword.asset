@@ -18,6 +18,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: e91fc63fcd9bb1c4abf7ffdc0848a328, type: 3}
   pickup: {fileID: 4270175842732200466, guid: 40bb45e7ee3e35c4fa1aacabde78161b, type: 3}
   stackable: 0
+  price: 100
   allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 54677911631afd341a97f55d3c804e28, type: 2}
   eqqiuppedPrefab: {fileID: 7493916460424933961, guid: 655209b4060084445956403772225dc9,

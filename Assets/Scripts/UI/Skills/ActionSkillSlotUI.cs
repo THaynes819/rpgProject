@@ -59,7 +59,6 @@ namespace RPG.UI
         public void OnButtonClick ()
         {
             toggle = !toggle;
-            Debug.Log ("button was cklicked. Sending from this index: " + index);
             skillTree.ToggleSkill (index, toggle);
         }
     }

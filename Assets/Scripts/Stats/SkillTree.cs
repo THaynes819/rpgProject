@@ -126,7 +126,6 @@ namespace RPG.Stats
             {
                 foreach (var skill in AvailableSkills)
                 {
-                    Debug.Log ("iterating through skills for buff");
                     if (index == skill.GetSlot ())
                     {
                         additiveModifiers = new ActionSkill.Modifier[skill.GetSkillAddModifiers ().Length];

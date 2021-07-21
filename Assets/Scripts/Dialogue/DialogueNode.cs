@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using RPG.Core;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,6 +19,8 @@ namespace RPG.Dialogue
         Rect rect = new Rect (0, 0, 200, 100);
         [SerializeField] string onEnterAction;
         [SerializeField] string onExitAction;
+        [SerializeField] Condition condition;
+        //[SerializeField] Condition condition2;
 
         public bool IsPlayerSpeaking ()
         {
@@ -47,6 +51,20 @@ namespace RPG.Dialogue
         public string GetOnExitAction ()
         {
             return onExitAction;
+        }
+
+        public bool CheckCondition (IEnumerable<IPredicateEvaluator> evaluators)
+        {
+            bool conditionToCheck = condition.Check(evaluators);
+            //bool condition2ToCheck = condition2.Check(evaluators);
+
+
+            if (conditionToCheck == true)
+            {
+                return conditionToCheck;
+            }
+
+            return false;
         }
 
 #if UNITY_EDITOR
@@ -87,6 +105,7 @@ namespace RPG.Dialogue
             children.Remove (childID);
             EditorUtility.SetDirty (this);
         }
+
 #endif
     }
 }

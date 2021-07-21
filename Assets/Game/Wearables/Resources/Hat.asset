@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Hat
   m_EditorClassIdentifier: 
   itemID: 12bce94d-bb9f-4f12-a95b-5f969378901f
-  displayName: 
+  displayName: Hat
   description: This is a hat to make your head dry yo.
   iconSprite: {fileID: 21300000, guid: 7978df3a4d37685469c97ea45893ce11, type: 3}
   pickup: {fileID: 3030589592598308493, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
   stackable: 1
+  price: 25
   allowedEquipLocation: 0

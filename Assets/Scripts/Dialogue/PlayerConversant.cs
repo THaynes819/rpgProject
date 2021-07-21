@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Dialogue
@@ -67,7 +68,7 @@ namespace RPG.Dialogue
 
         public IEnumerable<DialogueNode> GetChoices ()
         {
-            return currentDialogue.GetPlayerChildren (currentNode);
+            return FilterOnCondition (currentDialogue.GetPlayerChildren (currentNode));
         }
 
         public void SelectChoice (DialogueNode chosenNode)
@@ -80,7 +81,7 @@ namespace RPG.Dialogue
 
         public void NextHandler ()
         {
-            int playerResponseChoices = currentDialogue.GetPlayerChildren (currentNode).Count ();
+            int playerResponseChoices = FilterOnCondition (currentDialogue.GetPlayerChildren (currentNode)).Count ();
 
             if (playerResponseChoices > 0)
             {
@@ -90,9 +91,23 @@ namespace RPG.Dialogue
                 return;
             }
 
-            DialogueNode[] children = currentDialogue.GetAllChildren (currentNode).ToArray ();
-            int randomResponse = UnityEngine.Random.Range (0, children.Count ());
+            DialogueNode[] children = FilterOnCondition (currentDialogue.GetAllChildren (currentNode)).ToArray ();
 
+            int randomResponse = 0;
+
+            if (children.Count () > 1)
+            {
+                randomResponse = UnityEngine.Random.Range (0, children.Count ());
+            }
+            if (children.Count() == 0)
+            {
+                Debug.Log("Children Count error occured. child Count is " + children.Count());
+                return;
+            }
+            if (children.Count() == 1)
+            {
+                randomResponse = 0;
+            }
             TriggerExitAction ();
             currentNode = children[randomResponse];
             TriggerEnterAction ();
@@ -113,14 +128,23 @@ namespace RPG.Dialogue
 
         public bool HasNext ()
         {
-            if (currentNode != null)
+            return FilterOnCondition (currentDialogue.GetAllChildren (currentNode)).Count () > 0;
+        }
+
+        private IEnumerable<DialogueNode> FilterOnCondition (IEnumerable<DialogueNode> inputNode)
+        {
+            foreach (var node in inputNode)
             {
-                return currentNode.GetChildren ().Count > 0;
+                if (node.CheckCondition (GetEvaluators ()))
+                {
+                    yield return node;
+                }
             }
-            else
-            {
-                return false;
-            }
+        }
+
+        private IEnumerable<IPredicateEvaluator> GetEvaluators ()
+        {
+            return GetComponents<IPredicateEvaluator> ();
         }
 
         private void TriggerEnterAction ()

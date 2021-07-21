@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GameDevTV.Utils;
 using RPG.Attributes;
 using RPG.Combat;
@@ -143,10 +144,10 @@ namespace RPG.Control
             RaycastHit[] hits = Physics.SphereCastAll (transform.position, helpMeDistance, Vector3.up, 0);
             foreach (RaycastHit hit in hits)
             {
-                AIController ai  = hit.collider.GetComponent<AIController> ();
+                AIController ai = hit.collider.GetComponent<AIController> ();
                 if (ai == null) continue;
 
-                ai.Aggravate();
+                ai.Aggravate ();
             }
         }
 
@@ -161,5 +162,6 @@ namespace RPG.Control
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere (transform.position, chaseDistance);
         }
+
     }
 }

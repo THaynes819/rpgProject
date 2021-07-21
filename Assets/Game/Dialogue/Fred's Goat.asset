@@ -17,14 +17,43 @@ MonoBehaviour:
   children:
   - 95de6ef5-bae6-46fa-9513-50be92a6f84e
   - 1db05fa5-a2ba-4815-9db5-446e944bdba8
+  - f1eac80d-d195-4f09-9ac6-51eeb7f11c9b
   rect:
     serializedVersion: 2
-    x: 0
-    y: 129
+    x: 10
+    y: 128
     width: 200
     height: 100
-  onEnterAction: Test Root Entry
+  onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7889036446832867189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: ce02c42d-62c7-4b10-976b-f725c985e399
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I was happy to help you my friend. Good luck until we meet again!
+  children:
+  - 369add63-b892-4ccd-996f-c1f3a158eda0
+  rect:
+    serializedVersion: 2
+    x: 855
+    y: 1211
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-7367086871048812568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,12 +73,14 @@ MonoBehaviour:
   - 4283c24c-5e22-4446-945f-27b6c4a8a88a
   rect:
     serializedVersion: 2
-    x: 1627
-    y: 492
+    x: 1726
+    y: 459
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-6827095800034041887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,12 +99,14 @@ MonoBehaviour:
   - 474db990-5e9a-4e29-a030-a1fa6950de1b
   rect:
     serializedVersion: 2
-    x: 802
-    y: 353
+    x: 803
+    y: 349
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-6388908590387275977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,36 +126,19 @@ MonoBehaviour:
   - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
   rect:
     serializedVersion: 2
-    x: 242
-    y: 92
-    width: 200
-    height: 100
-  onEnterAction: Test selection Entry
-  onExitAction: 
---- !u!114 &-5974519443992799619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
-  m_Name: f7e000a4-c088-41bd-b114-bf05628267c7
-  m_EditorClassIdentifier: 
-  isPlayer: 0
-  text: Nooo!!!
-  children:
-  - 70dbb3aa-be1f-4e07-9907-0dd8e3925563
-  rect:
-    serializedVersion: 2
-    x: 2772
-    y: 213
+    x: 288
+    y: 65
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Goat Rescue
+        negate: 1
 --- !u!114 &-5489548854370449678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +156,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 2771
-    y: 618
+    x: 2843
+    y: 398
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Get Quest
+  onExitAction: GiveQuest
+  condition:
+    and: []
 --- !u!114 &-5135599321054448516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +188,39 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5036897359156015364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 1b5de3c0-7bbc-4915-941b-df78498f1c2c
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Yes and the bandit leader won't be bothering you any longer my friend.
+  children:
+  - bf047b56-39f0-49ef-82c2-67497ee6165a
+  rect:
+    serializedVersion: 2
+    x: 868
+    y: 735
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 3
+        paremeters:
+        - -df42f4d6353c-4be4-bcb7-df42f4d6353c
+        negate: 0
 --- !u!114 &-4743777427602394839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +245,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-4233486643282649907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +270,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: Nothing
+  condition:
+    and: []
 --- !u!114 &-3855127278497381223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,12 +291,19 @@ MonoBehaviour:
   - bf8c859c-bbe5-4c53-99fa-ff6f6c4e9526
   rect:
     serializedVersion: 2
-    x: 255
-    y: 249
+    x: 284
+    y: 258
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Test Selection Exit
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Goat Rescue
+        negate: 1
 --- !u!114 &-2674337787490828237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,12 +323,40 @@ MonoBehaviour:
   - c8683e4c-f50d-44df-8c57-183f1f6da421
   rect:
     serializedVersion: 2
-    x: 1098
-    y: 698
+    x: 1309
+    y: 615
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2100194144772720006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: bf047b56-39f0-49ef-82c2-67497ee6165a
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Oh thank you hero! I was so afraid I'd never see her again. Here is your
+    reward.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1139
+    y: 740
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: CompleteQuest
+  condition:
+    and: []
 --- !u!114 &-1941429253044266257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,12 +376,14 @@ MonoBehaviour:
   - 67bc4214-8ee6-40be-8ec9-0e3bb96a58c6
   rect:
     serializedVersion: 2
-    x: 515
-    y: 591
+    x: 548
+    y: 419
     width: 200
     height: 100
-  onEnterAction: Test AI Enter Action
+  onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-884393917305138425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,12 +402,14 @@ MonoBehaviour:
   - dd383fed-6383-4678-8c0c-32148539d00e
   rect:
     serializedVersion: 2
-    x: 771
-    y: 742
+    x: 941
+    y: 614
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-627429196978896901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,35 +429,14 @@ MonoBehaviour:
   - 4283c24c-5e22-4446-945f-27b6c4a8a88a
   rect:
     serializedVersion: 2
-    x: 1500
-    y: 140
+    x: 1539
+    y: 166
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &-461900045958831569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
-  m_Name: 133b8988-4713-4f0d-aa95-611a937318ce
-  m_EditorClassIdentifier: 
-  isPlayer: 0
-  text: Agghhhh
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 3269
-    y: 214
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: Aggro
+  condition:
+    and: []
 --- !u!114 &-405474396901451090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,12 +455,14 @@ MonoBehaviour:
   - 6496457c-9585-44c9-b71a-22d8c632025a
   rect:
     serializedVersion: 2
-    x: 2583
-    y: 492
+    x: 2582
+    y: 493
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-262948921550083943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,12 +482,14 @@ MonoBehaviour:
   - 4ccdc003-81aa-4fa7-897e-1fb462eaaf07
   rect:
     serializedVersion: 2
-    x: 2223
-    y: 422
+    x: 2156
+    y: 389
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +500,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9927a006834059240b328865fb7f781d, type: 3}
-  m_Name: New First Dialogue
+  m_Name: Fred's Goat
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -8408724319026045742}
@@ -433,7 +510,6 @@ MonoBehaviour:
   - {fileID: 6500067975720964532}
   - {fileID: 7200535601947075716}
   - {fileID: 4901114848049368365}
-  - {fileID: 4771741619749130594}
   - {fileID: 8971373359875673336}
   - {fileID: -6827095800034041887}
   - {fileID: -884393917305138425}
@@ -449,12 +525,53 @@ MonoBehaviour:
   - {fileID: -5135599321054448516}
   - {fileID: -5489548854370449678}
   - {fileID: -4233486643282649907}
-  - {fileID: -5974519443992799619}
   - {fileID: 334597264857748470}
   - {fileID: 5706656584942911289}
-  - {fileID: 3169401556270692847}
-  - {fileID: -461900045958831569}
+  - {fileID: 6332152009476944130}
+  - {fileID: 7127117909694720627}
+  - {fileID: 6898973000474617665}
+  - {fileID: 2488321108081447991}
+  - {fileID: 187577919286618135}
+  - {fileID: -7889036446832867189}
+  - {fileID: 2802346773157844910}
+  - {fileID: -5036897359156015364}
+  - {fileID: -2100194144772720006}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &187577919286618135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 4b195c6a-7eb4-4616-b636-e0d826c6ec6a
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: I'm so happy to see you again! You will always be my hero!
+  children:
+  - ce02c42d-62c7-4b10-976b-f725c985e399
+  rect:
+    serializedVersion: 2
+    x: 514
+    y: 819
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Goat Rescue
+        negate: 1
+      - predicate: 2
+        paremeters:
+        - Goat Rescue
+        negate: 0
 --- !u!114 &334597264857748470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,12 +591,14 @@ MonoBehaviour:
   - 3d34d29f-d896-4061-a60c-f3424b142053
   rect:
     serializedVersion: 2
-    x: 1941
-    y: 578
+    x: 1762
+    y: 666
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &531544621196163868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,13 +617,15 @@ MonoBehaviour:
   - 5fe83b05-70b3-4a60-9b91-e972b641464d
   rect:
     serializedVersion: 2
-    x: 1977
-    y: 103
+    x: 2102
+    y: 107
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &3169401556270692847
+  condition:
+    and: []
+--- !u!114 &2488321108081447991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -514,21 +635,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
-  m_Name: 70dbb3aa-be1f-4e07-9907-0dd8e3925563
+  m_Name: 378a4e33-6ccc-41fe-bb9d-1b27dedf396f
   m_EditorClassIdentifier: 
-  isPlayer: 1
-  text: Attack
-  children:
-  - 133b8988-4713-4f0d-aa95-611a937318ce
+  isPlayer: 0
+  text: Ok, Please hurry! who knows what terrible things they are doing to her!
+  children: []
   rect:
     serializedVersion: 2
-    x: 3028
-    y: 219
+    x: 1079
+    y: 866
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
---- !u!114 &4771741619749130594
+  condition:
+    and: []
+--- !u!114 &2802346773157844910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -538,20 +660,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
-  m_Name: 729564d9-57b8-4255-8e2b-ba17f66aec57
+  m_Name: 369add63-b892-4ccd-996f-c1f3a158eda0
   m_EditorClassIdentifier: 
-  isPlayer: 1
-  text: I'll show you jerk!
-  children:
-  - f7e000a4-c088-41bd-b114-bf05628267c7
+  isPlayer: 0
+  text: Goodbye my friend!
+  children: []
   rect:
     serializedVersion: 2
-    x: 1968
-    y: 329
+    x: 1121
+    y: 1221
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &4901114848049368365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,12 +694,14 @@ MonoBehaviour:
   - 51a461b0-c7b0-40b9-86cf-81f3e9c66d9f
   rect:
     serializedVersion: 2
-    x: 1240
-    y: 341
+    x: 1364
+    y: 354
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &5706656584942911289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +728,44 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6332152009476944130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: f1eac80d-d195-4f09-9ac6-51eeb7f11c9b
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Hello again!
+  children:
+  - 3fd2050d-b2d0-4aae-a24e-9f6579b353ec
+  - 4b195c6a-7eb4-4616-b636-e0d826c6ec6a
+  rect:
+    serializedVersion: 2
+    x: 248
+    y: 418
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Goat Rescue
+        negate: 0
+      - predicate: 2
+        paremeters:
+        - Goat Rescue
+        negate: 0
 --- !u!114 &6500067975720964532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,15 +782,83 @@ MonoBehaviour:
   text: Dont be a jerk!
   children:
   - 05be6b03-fafd-4707-ae5b-2c53de729168
-  - 729564d9-57b8-4255-8e2b-ba17f66aec57
   rect:
     serializedVersion: 2
-    x: 1005
-    y: 226
+    x: 1091
+    y: 267
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
+--- !u!114 &6898973000474617665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 1d016ba6-98f0-4636-a3f8-c0f018b75346
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Not yet, but I'll be back with it soon!
+  children:
+  - 378a4e33-6ccc-41fe-bb9d-1b27dedf396f
+  rect:
+    serializedVersion: 2
+    x: 836
+    y: 868
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 3
+        paremeters:
+        - -df42f4d6353c-4be4-bcb7-df42f4d6353c
+        negate: 1
+--- !u!114 &7127117909694720627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 3fd2050d-b2d0-4aae-a24e-9f6579b353ec
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Do you have my goat?
+  children:
+  - 1d016ba6-98f0-4636-a3f8-c0f018b75346
+  - 1b5de3c0-7bbc-4915-941b-df78498f1c2c
+  rect:
+    serializedVersion: 2
+    x: 532
+    y: 639
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Goat Rescue
+        negate: 0
+      - predicate: 2
+        paremeters:
+        - Goat Rescue
+        negate: 1
 --- !u!114 &7200535601947075716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,12 +879,14 @@ MonoBehaviour:
   - 22b2cfbc-f08e-4f2a-a7e0-a7c65f140bd9
   rect:
     serializedVersion: 2
-    x: 507
-    y: 7
+    x: 537
+    y: 201
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: Test Ai Exit Action
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &7666051049841959340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,6 +911,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &8922157107343649419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,12 +931,14 @@ MonoBehaviour:
   - 1a91345e-bdd2-49c9-8cae-eb832bde4efa
   rect:
     serializedVersion: 2
-    x: 766
-    y: 540
+    x: 906
+    y: 481
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &8971373359875673336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,3 +963,5 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
