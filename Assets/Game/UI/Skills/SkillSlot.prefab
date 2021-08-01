@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2683034375134152365}
   - component: {fileID: 7648142702728021810}
   - component: {fileID: 7322348369837964885}
-  - component: {fileID: 1108764119148831044}
   - component: {fileID: 3842374137019598790}
   - component: {fileID: 2579335603808813848}
+  - component: {fileID: 1889175899036335397}
   m_Layer: 5
   m_Name: SkillSlot
   m_TagString: Untagged
@@ -79,20 +79,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.3
---- !u!114 &1108764119148831044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106759453444329882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80631f013795ef44888e3c00591e5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 2904595790592106523}
-  buttonPrefab: {fileID: 9106759453444329882}
 --- !u!114 &3842374137019598790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +137,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1108764119148831044}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RPG.UI.ActionSkillSlotUI, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -163,6 +149,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1889175899036335397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106759453444329882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15118cd9b2c3d764eae87df988166d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 5265992963507196876}
+  index: 0
 --- !u!1001 &7551869801838777915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170,55 +170,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2683034375134152365}
     m_Modifications:
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 185737947470591922, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2733978940189714561, guid: c80eebfe7bf71ee4093e69d842bfdee3,
         type: 3}
       propertyPath: m_Name
       value: ActionSkill
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892862749464852886, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_margin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892862749464852886, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892862749464852886, guid: c80eebfe7bf71ee4093e69d842bfdee3,
-        type: 3}
-      propertyPath: m_isRightToLeft
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5803273100221903409, guid: c80eebfe7bf71ee4093e69d842bfdee3,
         type: 3}
@@ -333,15 +288,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7551869801838777915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2904595790592106523 stripped
+--- !u!114 &5265992963507196876 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4648440397470627360, guid: c80eebfe7bf71ee4093e69d842bfdee3,
+  m_CorrespondingSourceObject: {fileID: 2439034694945474039, guid: c80eebfe7bf71ee4093e69d842bfdee3,
     type: 3}
   m_PrefabInstance: {fileID: 7551869801838777915}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c4e35b20ecc5c4abc46716ef81da26, type: 3}
+  m_Script: {fileID: 11500000, guid: 493934aefc2d7c9469174527fc9bf167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

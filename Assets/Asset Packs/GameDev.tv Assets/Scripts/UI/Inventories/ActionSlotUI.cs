@@ -19,44 +19,48 @@ namespace GameDevTV.UI.Inventories
         ActionStore store;
 
         // LIFECYCLE METHODS
-        private void Awake()
+        private void Awake ()
         {
-            store = GameObject.FindGameObjectWithTag("Player").GetComponent<ActionStore>();
+            store = GameObject.FindGameObjectWithTag ("Player").GetComponent<ActionStore> ();
             store.storeUpdated += UpdateIcon;
         }
 
         // PUBLIC
 
-        public void AddItems(InventoryItem item, int number)
+        public void AddItems (InventoryItem item, int number)
         {
-            store.AddAction(item, index, number);
+            store.AddAction (item, index, number);
         }
 
-        public InventoryItem GetItem()
+        public InventoryItem GetItem ()
         {
-            return store.GetAction(index);
+            return store.GetAction (index);
         }
 
-        public int GetNumber()
+        public int GetNumber ()
         {
-            return store.GetNumber(index);
+            return store.GetNumber (index);
         }
 
-        public int MaxAcceptable(InventoryItem item)
+        public int MaxAcceptable (InventoryItem item)
         {
-            return store.MaxAcceptable(item, index);
+            return store.MaxAcceptable (item, index);
         }
 
-        public void RemoveItems(int number)
+        public void RemoveItems (int number)
         {
-            store.RemoveItems(index, number);
+            store.RemoveItems (index, number);
         }
 
         // PRIVATE
 
-        void UpdateIcon()
+        void UpdateIcon ()
         {
-            icon.SetItem(GetItem(), GetNumber());
+            if (icon != null)
+            {
+                icon.SetItem (GetItem (), GetNumber ());
+            }
         }
+
     }
 }

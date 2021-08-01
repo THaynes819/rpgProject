@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Inventories;
 using RPG.Shops;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using RPG.Inventories;
 
 namespace RPG.UI.Shops
 {
@@ -15,8 +15,13 @@ namespace RPG.UI.Shops
         [SerializeField] Button quitButton;
         [SerializeField] Transform listRoot;
         [SerializeField] RowUI rowPrefab;
+        [SerializeField] TextMeshProUGUI quantityField;
         [SerializeField] TextMeshProUGUI totalField;
         [SerializeField] TextMeshProUGUI purseField;
+        [SerializeField] Button confirmButton;
+        [SerializeField] Button modeButton;
+        [SerializeField] TextMeshProUGUI modeButtonText;
+        [SerializeField] GameObject filterParent;
 
         Shopper shopper = null;
         Shop currentShop = null;
@@ -30,7 +35,10 @@ namespace RPG.UI.Shops
             {
                 shopper.activeShopChanged += ShopChanged;
 
+                confirmButton.onClick.AddListener (ConfirmTransaction);
+                modeButton.onClick.AddListener (SwitchMode);
                 quitButton.onClick.AddListener (() => shopper.Quit ());
+
                 ShopChanged ();
             }
             else
@@ -39,11 +47,6 @@ namespace RPG.UI.Shops
                 return;
             }
 
-        }
-
-        public void ConfirmTransaction ()
-        {
-            currentShop.ConfirmTransaction ();
         }
 
         private void ShopChanged ()
@@ -57,6 +60,11 @@ namespace RPG.UI.Shops
             if (currentShop != null)
             {
                 shopNameText.text = shopper.GetActiveShop ().GetShopName ();
+            }
+
+            foreach (FilterButtonUI button in GetComponentsInChildren<FilterButtonUI>())
+            {
+                button.SetShop(currentShop);
             }
 
             gameObject.SetActive (currentShop != null);
@@ -83,6 +91,51 @@ namespace RPG.UI.Shops
 
             purseField.text = $"{shopper.GetComponent <Purse>().GetBalance():N0}";
             totalField.text = $"{currentShop.GetTransactionTotal():N0}";
+
+            confirmButton.interactable = currentShop.CanTransact ();
+
+            if (!currentShop.HasSuccientFunds ())
+            {
+                totalField.color = Color.red;
+            }
+            if (currentShop.HasSuccientFunds ())
+            {
+                totalField.color = Color.white;
+            }
+
+            TextMeshProUGUI confirmText = confirmButton.GetComponentInChildren<TextMeshProUGUI> ();
+
+            if (currentShop.IsBuyingMode ())
+            {
+                modeButtonText.text = "Sell";
+                confirmText.text = "Buy";
+            }
+            else
+            {
+                modeButtonText.text = "Shop";
+                confirmText.text = "Sell";
+            }
+
+            foreach (FilterButtonUI button in filterParent.GetComponentsInChildren<FilterButtonUI>())
+            {
+                button.refreshUI();
+            }
         }
+
+        public void Close ()
+        {
+            shopper.SetActiveShop (null);
+        }
+
+        public void ConfirmTransaction ()
+        {
+            currentShop.ConfirmTransaction ();
+        }
+
+        public void SwitchMode ()
+        {
+            currentShop.SelectMode (!currentShop.IsBuyingMode ());
+        }
+
     }
 }

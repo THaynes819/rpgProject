@@ -16,9 +16,8 @@ namespace RPG.UI.Shops
         [SerializeField] TextMeshProUGUI availabilityField;
         [SerializeField] TextMeshProUGUI priceField;
         [SerializeField] TextMeshProUGUI quantityField;
-        [SerializeField] GameObject quantityTextParent;
-        [SerializeField] TextMeshProUGUI quantityTextPrefab;
-
+        [SerializeField] Button minusButton = null;
+        [SerializeField] Button plusButton = null;
         Shop currentShop = null;
         ShopItem currentItem = null;
 
@@ -32,6 +31,8 @@ namespace RPG.UI.Shops
             currentShop = shop;
             currentItem = item;
 
+            plusButton.interactable = currentShop.HasInventorySpace ();
+
             if (currentShop.GetTransactionQuantity (currentItem.GetInventoryItem ()) <= 0 && currentShop != null)
             {
                 quantityField.text = " ";
@@ -39,49 +40,40 @@ namespace RPG.UI.Shops
             else
             {
                 quantityField.text = currentShop.GetTransactionQuantity (currentItem.GetInventoryItem ()).ToString ();
+                RefreshCount ();
             }
 
-
             currentItem.OnItemChange += RefreshAvailability;
-            Debug.Log("Made it to the end of RowUI Setup");
-
-
+            currentShop.OnChange += RefreshCount;
         }
 
         public void Add ()
         {
             currentShop.AddToTransaction (currentItem.GetInventoryItem (), 1);
-            //RefreshQuantity ();
         }
 
         public void Remove ()
         {
             currentShop.AddToTransaction (currentItem.GetInventoryItem (), -1);
-            //RefreshQuantity ();
         }
 
-        private void RefreshAvailability()
+        private void RefreshAvailability ()
         {
-            Debug.Log("refresh Availability UI called");
-            availabilityField.text = currentItem.GetAvailability().ToString();
+            availabilityField.text = currentItem.GetAvailability ().ToString ();
         }
 
-        // private void RefreshQuantity ()
-        // {
-        //     Destroy (quantityField);
+        private void RefreshCount ()
+        {
 
-        //     TextMeshProUGUI newQuantityField = Instantiate<TextMeshProUGUI> (quantityTextPrefab, quantityTextParent.transform);
-        //     quantityField = newQuantityField;
-        //     if (currentShop.GetTransactionQuantity (currentItem.GetInventoryItem ()) <= 0)
-        //     {
-        //         quantityField.text = " ";
-        //     }
-        //     else
-        //     {
-        //         quantityField.text = currentShop.GetTransactionQuantity (currentItem.GetInventoryItem ()).ToString ();
-        //     }
+            if (!currentShop.HasInventorySpace ())
+            {
+                quantityField.color = Color.red;
+            }
 
-        // }
-
+            if (currentShop.HasInventorySpace ())
+            {
+                quantityField.color = Color.white;
+            }
+        }
     }
 }

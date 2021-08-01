@@ -33,6 +33,16 @@ namespace GameDevTV.Inventories
         /// <summary>
         /// Get the action at the given index.
         /// </summary>
+        ///
+
+        private void Start ()
+        {
+            if (storeUpdated != null)
+            {
+                storeUpdated ();
+            }
+        }
+
         public ActionItem GetAction (int index)
         {
             if (dockedItems.ContainsKey (index))
