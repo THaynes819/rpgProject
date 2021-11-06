@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68326cf3dc16fb94e98b61090f6469d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopName: 
+  stockConfig: []
+  sellingDisadvantage: 0
 --- !u!1001 &1266654306121426514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,6 +55,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShopKeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741220054692081777, guid: 1a63f23248b435d4ba08d02e8a6d14f5,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 8287331075756427895, guid: 1a63f23248b435d4ba08d02e8a6d14f5,
         type: 3}

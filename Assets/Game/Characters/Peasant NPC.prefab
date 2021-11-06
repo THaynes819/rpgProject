@@ -286,6 +286,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2777935954828175522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ GameObject:
   - component: {fileID: 1085756527}
   m_Layer: 0
   m_Name: Peasant NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,6 +633,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isMobToKill: 0
+  questName: 
+  questObjective: 
+  condition:
+    and: []
 --- !u!114 &3033059649852596607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,6 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 4ed81d1c32ca44549b782a5f7e57ef18, type: 2}
   fighter: {fileID: 4175068004169780722}
+  npcName: 
 --- !u!114 &1085756512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0ae3b1013905246af81e62e9ecde9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fighter: {fileID: 0}
 --- !u!1 &6782584822547213269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,6 +1145,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1149,6 +1161,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1159,14 +1175,6 @@ PrefabInstance:
     - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -17,8 +17,9 @@ namespace RPG.Control
         Fighter fighter;
         GameObject player;
         SkillTree skillTree;
+        ActionStore actionStore;
 
-        [System.Serializable]
+            [System.Serializable]
         struct CursorMapping
         {
             public CursorType type;
@@ -29,6 +30,7 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float raycastMaxDistance = 1;
         [SerializeField] float rayCastradius = 1;
+        [SerializeField] int numberOfAbilities = 6;
 
         bool isDraggingUI = false;
 
@@ -36,12 +38,12 @@ namespace RPG.Control
         {
             health = GetComponent<Health> ();
             player = GameObject.FindGameObjectWithTag ("Player");
-            skillTree = player.GetComponent<SkillTree>();
+            skillTree = player.GetComponent<SkillTree> ();
+            actionStore = GetComponent<ActionStore> ();
         }
 
         private void Update ()
         {
-            CheckSpecialAbilityKeys ();
             if (InteractWithUI ())
             {
                 SetGameCursor (CursorType.UI);
@@ -53,44 +55,17 @@ namespace RPG.Control
                 return;
             }
 
+            UseAbilities ();
+
             if (InteractWithComponent ()) { return; }
             if (InteractWithMovement ()) { return; }
 
             SetGameCursor (CursorType.None);
         }
 
-        private void CheckSpecialAbilityKeys ()
+        public void OnSkillSelect (int index)
         {
-            var actionStore = GetComponent<ActionStore> ();
-            if (Input.GetKeyUp (KeyCode.Alpha1))
-            {
-                actionStore.Use (0, gameObject);
-            }
-            if (Input.GetKeyUp (KeyCode.Alpha2))
-            {
-                actionStore.Use (1, gameObject);
-            }
-            if (Input.GetKeyUp (KeyCode.Alpha3))
-            {
-                actionStore.Use (2, gameObject);
-            }
-            if (Input.GetKeyUp (KeyCode.Alpha4))
-            {
-                actionStore.Use (3, gameObject);
-            }
-            if (Input.GetKeyUp (KeyCode.Alpha5))
-            {
-                actionStore.Use (4, gameObject);
-            }
-            if (Input.GetKeyUp (KeyCode.Alpha6))
-            {
-                actionStore.Use (5, gameObject);
-            }
-        }
-
-        public void OnSkillSelect(int index)
-        {
-            Debug.Log("called from" + index);
+            Debug.Log ("called from" + index);
         }
 
         private bool InteractWithUI ()
@@ -113,6 +88,17 @@ namespace RPG.Control
                 return true;
             }
             return false;
+        }
+
+        private void UseAbilities ()
+        {
+            for (int i = 0; i < numberOfAbilities; i++)
+            {
+                if (Input.GetKeyDown (KeyCode.Alpha1 + i))
+                {
+                    actionStore.Use (i, gameObject);
+                }
+            }
         }
 
         private bool InteractWithComponent ()
@@ -199,7 +185,7 @@ namespace RPG.Control
             return cursorMappings[0];
         }
 
-        private static Ray GetMouseRay ()
+        public static Ray GetMouseRay ()
         {
             return Camera.main.ScreenPointToRay (Input.mousePosition);
         }

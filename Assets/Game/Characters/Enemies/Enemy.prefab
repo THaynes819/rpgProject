@@ -14,8 +14,140 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &1166844378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab09c0c84a183d4a9c11d8555ad4a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7547948f64b68ea40b0339ee5e5d2048, type: 2}
+  objectiveToComplete: Kill the bandit Leader
+  condition:
+    and:
+    - or:
+      - predicate: 5
+        paremeters: []
+        negate: 0
+--- !u!114 &1256202475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0ae3b1013905246af81e62e9ecde9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighter: {fileID: 995178493135950426}
+--- !u!114 &1256202481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f0c7bad2cc4ee4d8a3407b6bee1b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: b4295e3129d28bd4dbd0f8dc63e83284, type: 2}
+  fighter: {fileID: 995178493135950426}
+  npcName: Filthy Bandit
+--- !u!114 &1256202482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Aggro
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1256202481}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RPG.Combat.AggroGroup, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1256202484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab09c0c84a183d4a9c11d8555ad4a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 7547948f64b68ea40b0339ee5e5d2048, type: 2}
+  objectiveToComplete: Talk to the first Guard.
+  condition:
+    and: []
+--- !u!114 &1256202485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616387723425787865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: First Guard
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1256202484}
+        m_TargetAssemblyTypeName: RPG.Quests.QuestCompletion, Assembly-CSharp
+        m_MethodName: CompleteObjective
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2718131105313669635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scatterDistance: 1
-  dropLibrary: {fileID: 11400000, guid: a0ff4ff352d155e40a816929369f4978, type: 2}
+  dropLibrary: {fileID: 11400000, guid: 2bfd53707458b064ca5bea9350dd8bc3, type: 2}
   numberOfDrops: 2
 --- !u!1001 &312144139044810908
 PrefabInstance:
@@ -144,6 +276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173583202909125739, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: startingLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 173583202909125739, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: characterClass
       value: 2
       objectReference: {fileID: 0}
@@ -217,6 +354,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: questName
+      value: Goat Rescue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: isMobToKill
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: questObjective
+      value: Kill the bandit Leader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: condition.and.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: condition.and.Array.data[0].or.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -224,6 +386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: condition.and.Array.data[0].or.Array.data[0].predicate
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -297,6 +464,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: condition.and.Array.data[0].or.Array.data[0].paremeters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: condition.and.Array.data[0].or.Array.data[0].paremeters.Array.data[0]
+      value: Goat Rescue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -323,37 +500,37 @@ PrefabInstance:
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 23.14
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.074
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 35.32
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.64376086
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7652268
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -363,12 +540,17 @@ PrefabInstance:
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 99.854
       objectReference: {fileID: 0}
     - target: {fileID: 6419058946325403027, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817268603826896026, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 3e41e8b8-3601-43d8-80ba-8d2461e9319b
       objectReference: {fileID: 0}
     - target: {fileID: 7521698536890940325, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -393,6 +575,11 @@ PrefabInstance:
     - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618209920550530965, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8668689563766875569, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,

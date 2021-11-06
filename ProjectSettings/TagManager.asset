@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - 
