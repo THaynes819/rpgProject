@@ -81,7 +81,6 @@ namespace RPG.Quests
             {
                 if (quest.name == questName)
                 {
-                    Debug.Log("Get By Name returning " + quest.name);
                     return quest;
                 }
             }

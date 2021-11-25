@@ -1,9 +1,9 @@
 using System;
+using System.Collections;
 using GameDevTV.Saving;
 using GameDevTV.Utils;
 using RPG.Core;
 using RPG.Stats;
-using RPG.UI.DamageText;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -117,6 +117,8 @@ namespace RPG.Attributes
             return null;
         }
 
+        
+
         private void Die ()
         {
             if (isDead) return;
@@ -139,6 +141,11 @@ namespace RPG.Attributes
         {
             Experience experience = instigator.GetComponent<Experience> ();
             if (experience == null)
+            {
+                return;
+            }
+            BaseStats baseStats = instigator.GetComponent<BaseStats>();
+            if (baseStats.GetLevel() >= baseStats.GetMaxLevel())
             {
                 return;
             }

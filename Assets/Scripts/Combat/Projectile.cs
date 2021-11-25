@@ -23,6 +23,7 @@ namespace RPG.Combat
 
         private void Start ()
         {
+            Debug.Log("Projectile.cs Started");
             transform.LookAt (GetAimLoacation ());
         }
 

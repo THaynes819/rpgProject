@@ -125,7 +125,6 @@ namespace RPG.Quests
 
         public void DeathAnnounce (string questName, string objective)
         {
-            Debug.Log ("The Boss was killed for " + questName);
             CompleteObjective (Quest.GetByName (questName), objective);
         }
 
@@ -140,7 +139,6 @@ namespace RPG.Quests
             if (predicate == Predicates.QuestCompleted && parameters.Length > 0)
             {
                 Quest questToCheck = Quest.GetByName (parameters[0]);
-                Debug.Log("Quest to check is " + questToCheck);
                 // QuestStatus statusToTest = GetQuestStatus(questToCheck);
                 // Debug.Log("Status to test is " + statusToTest);
                 if (GetActiveQuestStatus(questToCheck) != null)
@@ -149,7 +147,6 @@ namespace RPG.Quests
                 }
                 if (GetActiveQuestStatus(questToCheck) == null)
                 {
-                    Debug.Log("The Status to check is null");
                     return false;
                 }
             }

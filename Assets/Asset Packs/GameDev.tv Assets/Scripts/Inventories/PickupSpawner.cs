@@ -26,9 +26,9 @@ namespace GameDevTV.Inventories
         /// Returns the pickup spawned by this class if it exists.
         /// </summary>
         /// <returns>Returns null if the pickup has been collected.</returns>
-        public Pickup GetPickup() 
+        public RPGPickup GetPickup() 
         { 
-            return GetComponentInChildren<Pickup>();
+            return GetComponentInChildren<RPGPickup>();
         }
 
         /// <summary>

@@ -16,10 +16,11 @@ MonoBehaviour:
   displayName: Hat of the Ocean
   description: You feel more hearty. Your health is increased
   iconSprite: {fileID: 21300000, guid: 133f6f970d80f6848ad70a77cd9ebb89, type: 3}
-  pickup: {fileID: 3030589592598308493, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
+  pickup: {fileID: 8046940882698795307, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
   stackable: 0
   price: 100
   category: 1
+  itemCooldown: 4
   allowedEquipLocation: 0
   additiveModifiers:
   - stat: 0

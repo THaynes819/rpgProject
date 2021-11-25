@@ -1,6 +1,8 @@
-using System.Collections.Generic;
 using GameDevTV.Inventories;
+using RPG.Stats;
+using RPG.Attributes;
 using UnityEngine;
+using RPG.Core;
 
 namespace RPG.Abilities
 {
@@ -10,42 +12,72 @@ namespace RPG.Abilities
         [SerializeField] TargetingStrategy targetingStrategy;
         [SerializeField] FilterStrategy[] filterStrategies;
         [SerializeField] EffectStrategy[] effectStrategies;
+        [SerializeField] Stat abiltyResource;
+        [SerializeField] float resourceCost = 5;
+        
 
         public override void Use (GameObject user) // Make this more customizable and not just heal
-        {
-            Debug.Log ("Using action: " + this);
-            targetingStrategy.StartTargeting (user,
-                (IEnumerable<GameObject> targets) => {
-                    TargetAquired(user, targets);
-                });
-        }
-
-        private void TargetAquired (GameObject user, IEnumerable<GameObject> targets)
-        {
-            TargetEffect (user, targets);
-        }
-
-        private void TargetEffect (GameObject user, IEnumerable<GameObject> targets)
-        {
-            foreach (var filterStrategy in filterStrategies)
+        {   
+            float currentResourcePoints = user.GetComponent<ResourcePool>().GetCurrentResourcePoints();
+            if (resourceCost > currentResourcePoints)
             {
-                targets = filterStrategy.Filter (targets);
+                //add a not enough mana effect?
+                return;
             }
 
-            foreach (var target in targets)
+            CooldownStore cooldownStore = user.GetComponent<CooldownStore>();
+            if (cooldownStore.GetTimeRemaining(this) > 0)
             {
-                Debug.Log ("The target is " + target.name);
+                //add an On CD effect?              
+                return;
+            }
+
+            AbilityData data = new AbilityData(user);
+
+            ActionScheduler actionScheduler = user.GetComponent<ActionScheduler>();
+            actionScheduler.StartAction(data);
+
+            targetingStrategy.StartTargeting (data, 
+                () => {
+                    TargetAquired(data);
+                });            
+        }
+
+        private void TargetAquired (AbilityData data)
+        {   
+            if (data.GetIsCancelled()) return;
+
+            float currentResourcePoints = data.GetUser().GetComponent<ResourcePool>().GetCurrentResourcePoints();
+            if (resourceCost > currentResourcePoints)
+            {
+                //add a not enough mana effect?
+                return;
+            }
+
+            TargetEffect (data);
+        }
+
+        private void TargetEffect (AbilityData data)
+        {
+            var resource = data.GetUser().GetComponent<ResourcePool>();
+            if (!resource.UseResource(resourceCost)) return;
+
+            data.GetUser().GetComponent<CooldownStore>().StartCooldown(this, this.GetItemCooldown());
+            
+            foreach (var filterStrategy in filterStrategies)
+            {
+                data.SetTargets(filterStrategy.Filter (data.GetTargets()));
             }
 
             foreach (var effect in effectStrategies)
             {
-                effect.StartEffect (user, targets, EffectFinished);
+                effect.StartEffect (data, EffectFinished);
             }
         }
 
         private void EffectFinished ()
         {
-
+            
         }
     }
 }

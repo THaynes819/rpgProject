@@ -15,14 +15,24 @@ namespace RPG.Stats
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                float experieceGain = Time.deltaTime * experienceDebugAmount;
-                GainExperience(experieceGain);
+                GainExperience(experienceDebugAmount);
             }
         }
 
-        public void GainExperience (float experience) {
-            experiencePoints += experience;
+        public void GainExperience (float experience) 
+        {
+            var player = GameObject.FindWithTag("Player");
+            BaseStats baseStats = player.GetComponent<BaseStats>();
+            if (baseStats.GetLevel() < baseStats.GetMaxLevel())
+            {
+                experiencePoints += experience;
             onExperienceGained();
+            }
+            
+            else
+            {
+                Debug.Log("Already at Max Level");
+            }
         }
 
         public float GetExperiencePoints () {

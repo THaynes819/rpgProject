@@ -31,7 +31,7 @@ namespace RPG.UI
             this.index = index;
             if (icon != null)
             {
-                icon.SetItem (skillTree.GetSkillInSlot (index), 1);
+                icon.SetItem (skillTree.GetSkillInSlot (index), index);
             }
             SetupButton ();
         }

@@ -16,10 +16,11 @@ MonoBehaviour:
   displayName: Heat seeking Bow
   description: You can't escape!!!
   iconSprite: {fileID: 21300000, guid: 18e24b6864805e64580a0892fbefd1f8, type: 3}
-  pickup: {fileID: 3066388765608355628, guid: 4c6f3c501e3aa6f499b634b95f7a54fd, type: 3}
+  pickup: {fileID: 1560663021371172931, guid: 4c6f3c501e3aa6f499b634b95f7a54fd, type: 3}
   stackable: 0
   price: 1000
   category: 2
+  itemCooldown: 4
   allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: e4151cc68c08f6c4ab26d82d0a82e797, type: 2}
   eqqiuppedPrefab: {fileID: 4311022340090929531, guid: 6db2c864ff0fa894ab63ff6549173100,

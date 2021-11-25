@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace RPG.Control
 {
-    [RequireComponent (typeof (Pickup))]
+    [RequireComponent (typeof (RPGPickup))]
     public class ClickablePickup : MonoBehaviour, IRaycastable
     {
-        Pickup pickup;
+        RPGPickup pickup;
 
         private void Awake ()
         {
-            pickup = GetComponent<Pickup> ();
+            pickup = GetComponent<RPGPickup> ();
         }
 
         public CursorType GetCursorType ()

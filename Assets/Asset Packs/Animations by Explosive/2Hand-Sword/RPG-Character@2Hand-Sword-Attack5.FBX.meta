@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 04cb27dc01c081446ba2c02f2761f01d
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -738,27 +738,15 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tTransform 'Hips' for human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'B_Spine2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftUpperArm
-      average position error 19.1 mm and maximum position error 35.0 mm at time 0:17
-      (47.2%) Frame 17\n\tLeftLowerArm average position error 23.6 mm and maximum
-      position error 36.6 mm at time 0: 7 (19.4%) Frame 7\n\tLeftHand average position
-      error 23.6 mm and maximum position error 33.6 mm at time 0:15 (41.7%) Frame
-      15\n\tRightUpperArm average position error 18.4 mm and maximum position error
-      40.3 mm at time 0:17 (47.2%) Frame 17\n\tRightLowerArm average position error
-      16.5 mm and maximum position error 41.4 mm at time 0:17 (47.2%) Frame 17\n\tRightHand
-      average position error 22.4 mm and maximum position error 41.7 mm at time 0:17
-      (47.2%) Frame 17\n\tHead average position error 53.3 mm and maximum position
-      error 76.0 mm at time 0:17 (47.2%) Frame 17\n"
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -927,11 +915,13 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -941,6 +931,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
@@ -952,7 +945,7 @@ ModelImporter:
     blendShapeNormalImportMode: 2
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human:
@@ -1574,6 +1567,7 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -4,6 +4,7 @@ using GameDevTV.Core.UI.Dragging;
 using GameDevTV.UI.Inventories;
 using RPG.Stats;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.UI
 {

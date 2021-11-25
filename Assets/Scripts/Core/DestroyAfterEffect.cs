@@ -8,7 +8,7 @@ namespace RPG.Core
         
         void Update() 
         {
-            if (!GetComponent<ParticleSystem>().IsAlive())
+            if (!GetComponentInChildren<ParticleSystem>().IsAlive())
             {
                 if (targetToDestroy != null)
                 {

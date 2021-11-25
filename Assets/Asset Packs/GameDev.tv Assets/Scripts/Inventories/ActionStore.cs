@@ -14,7 +14,7 @@ namespace GameDevTV.Inventories
     /// </summary>
     public class ActionStore : MonoBehaviour, ISaveable
     {
-        [SerializeField] bool isActionSkill = false;
+
         // STATE
         Dictionary<int, DockedItemSlot> dockedItems = new Dictionary<int, DockedItemSlot> ();
         private class DockedItemSlot

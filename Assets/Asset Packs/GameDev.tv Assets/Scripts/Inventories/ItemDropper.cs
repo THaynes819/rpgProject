@@ -11,7 +11,7 @@ namespace GameDevTV.Inventories
     public class ItemDropper : MonoBehaviour, ISaveable
     {
         // STATE
-        private List<Pickup> droppedItems = new List<Pickup>();
+        private List<RPGPickup> droppedItems = new List<RPGPickup>();
 
         // PUBLIC
 
@@ -94,7 +94,7 @@ namespace GameDevTV.Inventories
         /// </summary>
         private void RemoveDestroyedDrops()
         {
-            var newList = new List<Pickup>();
+            var newList = new List<RPGPickup>();
             foreach (var item in droppedItems)
             {
                 if (item != null)

@@ -29,15 +29,11 @@ namespace RPG.UI
 		public void SetItem (ActionSkill actionSkill, int index)
 		{
 
-			if (actionSkill != null) // null check is wrong here ptobably
+			if (actionSkill != null) // null check may be unecesarry
 			{
 				iconImage.sprite = actionSkill.GetIcon ();
 				iconImage.enabled = true;
 				ChangeSkillFontText (actionSkill);
-			}
-			else
-			{
-				iconImage.enabled = false;
 			}
 		}
 

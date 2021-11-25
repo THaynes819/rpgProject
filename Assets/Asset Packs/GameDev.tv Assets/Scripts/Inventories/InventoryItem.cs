@@ -24,11 +24,13 @@ namespace GameDevTV.Inventories
         [Tooltip("The UI icon to represent this item in the inventory.")]
         [SerializeField] Sprite iconSprite = null;
         [Tooltip("The prefab that should be spawned when this item is dropped.")]
-        [SerializeField] Pickup pickup = null;
+        [SerializeField] RPGPickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
         [SerializeField] float price;
         [SerializeField] ItemCategory category = ItemCategory.None;
+
+        [SerializeField] float itemCooldown = 4f;
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -75,9 +77,9 @@ namespace GameDevTV.Inventories
         /// <param name="position">Where to spawn the pickup.</param>
         /// <param name="number">How many instances of the item does the pickup represent.</param>
         /// <returns>Reference to the pickup object spawned.</returns>
-        public Pickup SpawnPickup(Vector3 position, int number)
+        public RPGPickup SpawnPickup(Vector3 position, int number)
         {
-            var pickup = Instantiate(this.pickup);
+            RPGPickup pickup = Instantiate(this.pickup);
             pickup.transform.position = position;
             pickup.Setup(this, number);
             return pickup;
@@ -91,6 +93,11 @@ namespace GameDevTV.Inventories
         public string GetItemID()
         {
             return itemID;
+        }
+
+        public float GetItemCooldown()
+        {
+            return itemCooldown;
         }
 
         public bool IsStackable()

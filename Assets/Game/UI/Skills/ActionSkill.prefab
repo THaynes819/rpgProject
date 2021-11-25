@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4168339525718031849}
   - component: {fileID: 2668679052869845167}
   - component: {fileID: 61635384622751340}
-  - component: {fileID: 2439034694945474039}
   m_Layer: 5
   m_Name: ActionSkill
   m_TagString: Untagged
@@ -73,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.25490198}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -90,20 +89,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2439034694945474039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2733978940189714561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 493934aefc2d7c9469174527fc9bf167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textContainer: {fileID: 4482936258075827945}
-  itemNumber: {fileID: 4892862749464852886}
 --- !u!1 &4482936258075827945
 GameObject:
   m_ObjectHideFlags: 0

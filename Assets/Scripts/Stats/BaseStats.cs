@@ -14,6 +14,7 @@ namespace RPG.Stats
         [SerializeField] Progression progression = null;
         [SerializeField] GameObject levelupEffect = null;
         [SerializeField] bool shouldUseModifiers = false;
+        [SerializeField] int maxLevel = 5;
 
         float currentXP;
 
@@ -26,6 +27,11 @@ namespace RPG.Stats
         public int GetLevel ()
         {
             return currentLevel.value;
+        }
+
+        public int GetMaxLevel()
+        {
+            return maxLevel;
         }
 
         public PlayerClass GetPlayerClass ()
@@ -49,25 +55,22 @@ namespace RPG.Stats
             return progression;
         }
 
-        public float GetExperienceFraction ()
+        public float GetCurrentLevelXP()
         {
-            int currentLevel = GetLevel ();
-            float currenTotaltXP = experience.GetExperiencePoints ();
+            Experience experience = GetComponent<Experience> ();
+            
             float pastLevelXP = 0;
             float currentLevelXP = 0;
-            float xPToLevelUp = progression.GetStat (Stat.ExperienceToLevelUp, characterClass, GetLevel ());
-            float currentXPToLevelUp = 0;
+            float currenTotaltXP = experience.GetExperiencePoints();
+            
+            
+            int currentLevel = GetLevel (); 
 
             if (currentLevel > 1)
-            {
-
-                for (var i = 1; i < currentLevel - 1; i++)
-                {
-                    pastLevelXP += progression.GetStat (Stat.ExperienceToLevelUp, characterClass, i);
-                }
-
-                currentLevelXP = currenTotaltXP - pastLevelXP;
-                currentXPToLevelUp = xPToLevelUp - pastLevelXP;
+            {  
+                pastLevelXP = progression.GetStat (Stat.ExperienceToLevelUp, characterClass, currentLevel - 1);
+                currentLevelXP = currenTotaltXP - pastLevelXP; // Calculates the XP earned for the current level
+                
 
                 if (currentLevelXP < 0)
                 {
@@ -77,10 +80,44 @@ namespace RPG.Stats
             else
             {
                 currentLevelXP = experience.GetExperiencePoints ();
-                currentXPToLevelUp = xPToLevelUp;
+                
             }
 
-            float experiencFraction = currentLevelXP / currentXPToLevelUp;
+            float testXP = currenTotaltXP - pastLevelXP;
+            
+            return currentLevelXP;
+
+        }
+
+        public float GetXPToLevelUp()
+        {
+            Experience experience = GetComponent<Experience> ();
+            float totalXP = experience.GetExperiencePoints();
+            float currentXPToLevelUp = 0;
+            float xPToLevelUp = progression.GetStat (Stat.ExperienceToLevelUp, characterClass, GetLevel ());
+            float pastLevelXP = 0;
+            int currentLevel = GetLevel (); 
+
+
+            
+                
+
+                if (currentLevel > 1)
+            {
+                pastLevelXP = progression.GetStat (Stat.ExperienceToLevelUp, characterClass, currentLevel - 1);
+                currentXPToLevelUp = xPToLevelUp - pastLevelXP; // Calculates the XP required to obtain the next level in the context of the current level                
+            }
+            else
+            {
+                currentXPToLevelUp = xPToLevelUp;                
+            }
+
+            return currentXPToLevelUp;            
+        }
+
+        public float GetExperienceFraction ()
+        {
+            float experiencFraction = GetCurrentLevelXP() / GetXPToLevelUp();
 
             return experiencFraction;
         }
@@ -89,6 +126,8 @@ namespace RPG.Stats
         {
             experience = GetComponent<Experience> ();
             currentLevel = new LazyValue<int> (CalculateLevel);
+
+            
         }
 
         private void Start ()

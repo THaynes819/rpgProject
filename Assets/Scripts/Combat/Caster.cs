@@ -41,7 +41,7 @@ namespace RPG.Combat
 
         void Update ()
         {
-            playerPool = player.GetComponent<ResourcePool> ().GetCurrentPool (); // Remove after UI Creation is setup or use Observer Method
+            playerPool = player.GetComponent<ResourcePool> ().GetCurrentPoolType (); // Remove after UI Creation is setup or use Observer Method
 
             UpdateTimers ();
 
@@ -141,11 +141,11 @@ namespace RPG.Combat
             if (spell.isPoolGenerating)
             {
                 //resourcePoints += spell.GetSpellResourceGeneration ();
-                resourcePool.SetCurrentResourcePoints (spell.GetSpellResourceGeneration ());
+                resourcePool.AddResource (spell.GetSpellResourceGeneration ());
             }
             if (!spell.isPoolGenerating)
             {
-                resourcePool.SetCurrentResourcePoints (-spell.GetSpellCost ());
+                resourcePool.UseResource (spell.GetSpellCost ());
             }
             if (hasProjectile)
             {

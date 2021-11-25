@@ -9,6 +9,7 @@ namespace RPG.Stats
         Rage,
         Mana,
         Fixation,
+        ResourceRegenRate,
         None,
     }
 }

@@ -11,7 +11,6 @@ namespace RPG.Abilities.Filters
 
         public override IEnumerable<GameObject> Filter (IEnumerable<GameObject> objectsToFilter)
         {
-
             foreach (var tagToFilter in tagsToFilter)
             {
                 foreach (var filterObject in objectsToFilter)

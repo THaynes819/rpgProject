@@ -20,9 +20,14 @@ MonoBehaviour:
   stackable: 0
   price: 100
   category: 4
+  itemCooldown: 4
   consumable: 0
   targetingStrategy: {fileID: 11400000, guid: 1ffa85931ae9a10458bd4aaa0f47497d, type: 2}
   filterStrategies:
   - {fileID: 11400000, guid: 1713c9a72079c184f97ee720c1b17cb1, type: 2}
   effectStrategies:
-  - {fileID: 11400000, guid: 34bd768f591038c4c9f3604cf03b3319, type: 2}
+  - {fileID: 11400000, guid: e1a27c29834ad7d42afc29e49b72394a, type: 2}
+  - {fileID: 11400000, guid: 024bfc4e00de7a24db14ea7f54f1c62f, type: 2}
+  - {fileID: 11400000, guid: c28bbacce0cc77844899d2049a13ebd8, type: 2}
+  abiltyResource: 4
+  resourceCost: 5

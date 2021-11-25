@@ -19,13 +19,13 @@ namespace RPG.Abilities.Targeting
 
         Transform targetingInstance = null;
 
-        public override void StartTargeting (GameObject user, Action<IEnumerable<GameObject>> finished)
+        public override void StartTargeting (AbilityData data, Action finished)
         {
-            PlayerController playerController = user.GetComponent<PlayerController> ();
-            playerController.StartCoroutine (Targeting (user, playerController, finished));
+            PlayerController playerController = data.GetUser().GetComponent<PlayerController> ();
+            playerController.StartCoroutine (Targeting (data, playerController, finished));
         }
 
-        private IEnumerator Targeting (GameObject user, PlayerController playerController, Action<IEnumerable<GameObject>> finished)
+        private IEnumerator Targeting (AbilityData data, PlayerController playerController, Action finished)
         {
             playerController.enabled = false;
             if (targetingInstance == null)
@@ -37,7 +37,7 @@ namespace RPG.Abilities.Targeting
                 targetingInstance.gameObject.SetActive (true);
             }
             targetingInstance.localScale = new Vector3(areaAffectRadius*2, 1, areaAffectRadius*2);
-            while (true)
+            while (!data.GetIsCancelled())
             {
                 Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.Auto);
                 RaycastHit raycastHit;
@@ -48,21 +48,26 @@ namespace RPG.Abilities.Targeting
 
                     if (Input.GetMouseButtonDown (0))
                     {
-                        // Nested While is to avoid moving to Cast Location - Absorb Whole MouseClick
-                        while (Input.GetMouseButton (0))
-                        {
-                            yield return null;
-                        }
-
-                        playerController.enabled = true;
-                        targetingInstance.gameObject.SetActive (false);
-                        finished (GetGameObjectsInRadius (raycastHit.point));
-                        yield break;
+                        // absorb the whole mouse click
+                        yield return new WaitWhile(() => Input.GetMouseButton(0));
+                        
+                        
+                        data.SetTargetedPoint(raycastHit.point);
+                        data.SetTargets(GetGameObjectsInRadius(raycastHit.point));
+                        
+                        break;
                     }
+                    if (Input.GetMouseButton(1))
+                    {
+                        data.Cancel();
+                        break;
+                    }                    
                     yield return null;
-                }
+                }  
             }
-
+            targetingInstance.gameObject.SetActive (false);
+            playerController.enabled = true;
+            finished ();   
         }
 
         private IEnumerable<GameObject> GetGameObjectsInRadius (Vector3 point)
