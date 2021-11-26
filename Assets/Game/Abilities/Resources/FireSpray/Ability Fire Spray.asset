@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ability Fire Spray
   m_EditorClassIdentifier: 
   itemID: 1b700a1f-b8da-4e0d-9d34-4d23c189af16
-  displayName: 
-  description: 
+  displayName: Fire Spray
+  description: Sprays a Fireball at each target in the area of effect
   iconSprite: {fileID: 21300000, guid: 2476b41f1d9f7084c9eedfd22c919cfa, type: 3}
   pickup: {fileID: 8046940882698795307, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
   stackable: 0

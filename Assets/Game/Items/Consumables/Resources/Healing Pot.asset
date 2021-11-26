@@ -22,4 +22,4 @@ MonoBehaviour:
   category: 3
   itemCooldown: 4
   consumable: 1
-  healingAmount: 20
+  healingAmount: 15

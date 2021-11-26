@@ -35,6 +35,10 @@ namespace RPG.UI
 				iconImage.enabled = true;
 				ChangeSkillFontText (actionSkill);
 			}
+			else
+			{
+				Debug.Log("actionSkill is null");
+			}
 		}
 
 		private void ChangeSkillFontText (ActionSkill actionSkill)

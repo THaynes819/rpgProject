@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de147298afe822f4694d50df5e3918b7, type: 3}
-  m_Name: Health Change Effect
+  m_Script: {fileID: 11500000, guid: 5023cb9b3940bcd4b9383b19c76493c7, type: 3}
+  m_Name: Trigger Animation Effect
   m_EditorClassIdentifier: 
-  isDamageEffect: 0
-  isOverTimeEffect: 1
-  effectTimeSpan: 10
-  healthChangeAmount: 30
+  animationTrigger: 

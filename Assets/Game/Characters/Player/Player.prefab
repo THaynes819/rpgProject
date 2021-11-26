@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 1219070882165676908}
   - component: {fileID: 7614359970217691437}
   - component: {fileID: 55118136827415719}
-  - component: {fileID: 8152132153960752120}
   - component: {fileID: 2665441604261473864}
   - component: {fileID: 4631781389628393406}
   - component: {fileID: 8415500263214838296}
@@ -179,8 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  rightHandTransform: {fileID: 761995594630267445}
-  leftHandTransform: {fileID: 761995594630208003}
+  rightHandTransform: {fileID: 761995594630191175}
+  leftHandTransform: {fileID: 761995594630174821}
   defaultWeapon: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1, type: 2}
   testSpell: {fileID: 11400000, guid: 9cd3aaa60814625499091d4819ce86f1, type: 2}
 --- !u!114 &837125863382540853
@@ -279,6 +278,7 @@ MonoBehaviour:
     hotSpot: {x: 0, y: 0}
   raycastMaxDistance: 1
   rayCastradius: 1
+  numberOfAbilities: 6
 --- !u!54 &2517411556484234369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -315,6 +315,7 @@ MonoBehaviour:
   levelupEffect: {fileID: 4392864513794705257, guid: ee7a85ae61f3c964ba32ca7cb8dcd678,
     type: 3}
   shouldUseModifiers: 1
+  maxLevel: 5
 --- !u!114 &5121616093177861297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experiencePoints: 0
+  experienceDebugAmount: 100
 --- !u!114 &717491267728815476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19ff972ec6859b48870488d7b1e81b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActionSkill: 0
 --- !u!114 &1219070882165676908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,20 +395,6 @@ MonoBehaviour:
   scatterDistance: 1
   dropLibrary: {fileID: 0}
   numberOfDrops: 2
---- !u!114 &8152132153960752120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4749071111288693219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429b2f0dd254fba449cccc9d4607146d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  regenerationRate: 1
-  doesRegeneratePassively: 1
 --- !u!114 &2665441604261473864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,9 +597,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 761995594630606271}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &761995594630267445 stripped
+--- !u!4 &761995594630174821 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 470922, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
+  m_CorrespondingSourceObject: {fileID: 439770, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
+    type: 3}
+  m_PrefabInstance: {fileID: 761995594630606271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &761995594630191175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 456184, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
     type: 3}
   m_PrefabInstance: {fileID: 761995594630606271}
   m_PrefabAsset: {fileID: 0}

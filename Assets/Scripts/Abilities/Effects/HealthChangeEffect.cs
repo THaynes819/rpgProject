@@ -22,12 +22,38 @@ namespace RPG.Abilities.Effects
                 ImediateEffect(data, finished);
             }
             if (isOverTimeEffect)
+                OverTimeEffect(data, finished);
+        }
+
+        private void OverTimeEffect(AbilityData data, Action finished)
+        {       
+            Health targetHealth = data.GetUser().GetComponent<Health>();   
+            float tickVal = healthChangeAmount / effectTimeSpan;            
+
+            for (var i = 0; i < effectTimeSpan; i++)
             {
-                Debug.Log("It is an over time effect. going to CoRoutine");
-                float tickVal = healthChangeAmount / effectTimeSpan;
-                Health health = data.GetUser().GetComponent<Health>();
-                health.StartCoroutine(Tick(isDamageEffect, effectTimeSpan, tickVal, data, finished));                
-            }            
+                foreach (var target in data.GetTargets())
+                {
+                    Debug.Log("Trying to HoT or DoT. i = " + i + " amount of ticks is " + effectTimeSpan + " the tick value is " + tickVal + " The Effect Time Span is " + effectTimeSpan);
+
+                    if (isDamageEffect)
+                    {
+                        Debug.Log("Damaging a Tick");
+                        targetHealth = target.GetComponent<Health>();
+                        bool isHealing = false;
+                        
+                        targetHealth.StartCoroutine(Tick(isDamageEffect, effectTimeSpan, data, targetHealth, isHealing, tickVal, finished));
+                    }
+                    else
+                    {
+                        targetHealth = data.GetUser().GetComponent<Health>();
+                        bool ishealing = true;                            
+                        targetHealth.StartCoroutine(Tick(isDamageEffect, effectTimeSpan, data, targetHealth, ishealing, tickVal, finished));
+                    }
+                    
+                }
+            }
+            finished ();
         }
 
         private void ImediateEffect(AbilityData data, Action finished)
@@ -50,42 +76,39 @@ namespace RPG.Abilities.Effects
             }
             finished ();
         }  
-        public IEnumerator Tick(bool isDamageEffect, float effectTimeSpan, float tickValue, AbilityData data, Action finished) //
+        public IEnumerator Tick(bool isDamageEffect, float effectTimeSpan, AbilityData data, Health health, bool isHealing, float tickVal, Action finished) //
         {
             Debug.Log("Tick CoRoutine Started");
-            float amountOfTicks = effectTimeSpan/tickValue;
-            float timer = 1;
-            
-            for (var i = 0; i < amountOfTicks; i++)
+            float tickTime = 1; // TODO add a haste stat from the character to increase the tick speed        
+            for (var i = 0; i < effectTimeSpan; i++)
             {
-                Debug.Log("Tick Counter Started");
-                foreach (var target in data.GetTargets())
+                if (i == 0)
                 {
-                    var health = target.GetComponent<Health> ();
-                    if (i < amountOfTicks && health)
+                    if (isHealing)
                     {
-                        Debug.Log("Trying to HoT or DoT"); //TODO Make another CoRoutine to make each tick
-                        timer -= Time.deltaTime;
-                        if (timer == 0)
-                        {
-                            Debug.Log("Timer hit 0, applying HoT ot DoT");
-                            if (isDamageEffect)
-                            {
-                                Debug.Log("Damaging a Tick");
-                                health.TakeDamage (data.GetUser(), -tickValue);
-                            }
-                            else
-                            {
-                                Debug.Log("Healing a Tick");
-                                health.Heal(tickValue);
-                            }
-
-                        }
+                        health.Heal(tickVal);
+                    }
+                    if (!isHealing)
+                    {
+                        health.TakeDamage(data.GetUser(), tickVal);
+                    }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(tickTime);
+                    if (isHealing)
+                    {
+                        health.Heal(tickVal);                        
+                    }
+                    if (!isHealing)
+                    {
+                        health.TakeDamage(data.GetUser(), tickVal);
                     }
                 }
             }
-            yield return new WaitForSeconds(effectTimeSpan);
-            finished ();
+            
+            
+            
         }      
     }
 }
