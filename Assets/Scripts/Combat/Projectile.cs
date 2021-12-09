@@ -1,4 +1,4 @@
-﻿using RPG.Attributes;
+﻿using RPG.Pools;
 using RPG.Core;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,7 +16,7 @@ namespace RPG.Combat
         [SerializeField] GameObject[] destroyOnHit;
         [SerializeField] UnityEvent hitEnemyEvent;
 
-        //Health target = null;
+        Health target = null;
         Vector3 targetPoint;
         GameObject instigator = null;
         float damage = 0f;
@@ -24,15 +24,14 @@ namespace RPG.Combat
 
         private void Start ()
         {
-            Debug.Log("Projectile.cs Started");
-            transform.LookAt (GetAimLoacation ());
+            transform.LookAt (GetAimLocation ());
         }
 
         void Update ()
         {
             if (target != null && isHoming && !target.IsDead ())
             {
-                transform.LookAt (GetAimLoacation ());
+                transform.LookAt (GetAimLocation ());
             }
             transform.Translate (Vector3.forward * projectileSpeed * Time.deltaTime);
         }
@@ -58,7 +57,7 @@ namespace RPG.Combat
         }
 
 
-        private Vector3 GetAimLoacation ()
+        private Vector3 GetAimLocation ()
         {
             if (target == null)
             {
@@ -75,29 +74,52 @@ namespace RPG.Combat
 
         private void OnTriggerEnter (Collider other)
         {
+            //Debug.Log("A collider was hit");
             Health health = other.GetComponent<Health>();
-            if (target != null && health != target && !target.IsDead ()) // do not explode if the target exists and is not dead  
-            {                                                            // and the other collider entered has a health component
-                return;
-            }
-            if (other.GetComponent<Projectile> ()) // do not explode if the other collider is also a projectile
-            {
-                return;
-            }
-            if (other == instigator.GetComponent<Collider>()) //do not explode if the projuctile hits the instigator/player
-            {
-                return;
-            }
-            ErrantProjectile (other);
 
-            if (hitEffect != null && !target.IsDead ()) // After getting through the other If's. Explode if the hit effect is not null and the target is alive
+            if (target != null && health != target) // do not explode if the target exists and is not dead 
             {
-                GameObject newHitEffect = Instantiate (hitEffect, GetAimLoacation (), transform.rotation); //Explodes
+                return;
+            } 
+
+            if(target != null && target.IsDead())
+            {
+                return;
             }
-            hitEnemyEvent.Invoke ();  //TODO this is probably why enemy "Dies twice" Is enemy still dting twice?
-            target.TakeDamage (instigator, damage);   // The target takes damage
-            DestroyInSteps ();
-    }
+            if (health == null)  // The projectile will explode on buildings and other Non Health colliders
+            {
+                ErrantProjectile (other);
+            }
+
+            if (health != null && health.IsDead())  // do not explode if the collider if it hits a dead object with a health component. 
+            {
+                ErrantProjectile (other);
+            }
+            if (other == instigator)  //do not explode if the projuctile hits the instigator/player   .GetComponent<Collider>()
+            {
+                return;
+            }
+
+            if (hitEffect != null && other.gameObject != instigator && other.gameObject.GetComponent<Health>() != null) // After getting through the other If's. Explode if the hit effect is not null and the target is alive
+            {
+                GameObject newHitEffect = Instantiate (hitEffect, GetAimLocation (), transform.rotation); //Explodes
+                hitEnemyEvent.Invoke ();  //TODO this is probably why enemy "Dies twice" Is enemy still dying twice?
+                health.TakeDamage (instigator, damage);   // The target's helath takes damage
+                DestroyInSteps ();
+            }
+        }
+        private void ErrantProjectile (Collider other)
+        {
+            if (other.gameObject == instigator)
+            {
+                return;
+            }
+            if (hitEffect != null && other.gameObject.GetComponent<Health>() == null) // continue if the other collider is not the player
+            {
+                GameObject newHitEffect = Instantiate (hitEffect, transform.position, transform.rotation); // Explode
+            }
+            DestroyInSteps ();            
+        }
 
     private void DestroyInSteps ()
     {
@@ -108,15 +130,6 @@ namespace RPG.Combat
         Destroy (gameObject, destroyDelay);
     }
 
-    private void ErrantProjectile (Collider other)
-    {
-        if (other.GetComponent<Health> () != target && target.IsDead ()) // continue if the other collider is not the target and the target is dead
-        {
-            if (other.gameObject != GameObject.FindWithTag ("Player")) // continue if the other collider is not the player
-            {
-                GameObject newHitEffect = Instantiate (hitEffect, transform.position, transform.rotation); // Explode
-            }
-        }
-    }
+    
 }
 }

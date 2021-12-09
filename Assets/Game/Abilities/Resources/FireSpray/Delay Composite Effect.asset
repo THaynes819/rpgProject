@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4806a6c9228d9314e940d9b61e5a6d99, type: 3}
   m_Name: Delay Composite Effect
   m_EditorClassIdentifier: 
-  delay: 0
-  delayedEffects: []
+  delay: 0.49
+  delayedEffects:
+  - {fileID: 11400000, guid: 2e20f0b56d0d03844a80249838cf758e, type: 2}
   abortIfCancelled: 0

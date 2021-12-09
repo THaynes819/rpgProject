@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameDevTV.Utils;
-using RPG.Attributes;
+using RPG.Pools;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;

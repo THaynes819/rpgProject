@@ -1,6 +1,6 @@
 using GameDevTV.Inventories;
 using RPG.Stats;
-using RPG.Attributes;
+using RPG.Pools;
 using UnityEngine;
 using RPG.Core;
 

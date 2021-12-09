@@ -7,9 +7,9 @@ using UnityEngine;
 public class PlayerPortraitUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI playerLevelText = null;
-
     GameObject player;
     BaseStats baseStats;
+    
 
     void Awake() 
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using GameDevTV.Inventories;
-using RPG.Attributes;
+using RPG.Pools;
 using UnityEngine;
 
 namespace RPG.Stats

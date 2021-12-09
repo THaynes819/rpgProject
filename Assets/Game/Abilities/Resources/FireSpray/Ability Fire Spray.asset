@@ -22,10 +22,12 @@ MonoBehaviour:
   category: 4
   itemCooldown: 6
   consumable: 0
-  targetingStrategy: {fileID: 11400000, guid: 1ffa85931ae9a10458bd4aaa0f47497d, type: 2}
+  targetingStrategy: {fileID: 11400000, guid: 7f3ce2dd39028324889759ad9ea3b6c2, type: 2}
   filterStrategies:
   - {fileID: 11400000, guid: 1713c9a72079c184f97ee720c1b17cb1, type: 2}
   effectStrategies:
-  - {fileID: 11400000, guid: 2e20f0b56d0d03844a80249838cf758e, type: 2}
+  - {fileID: 11400000, guid: 8565a4807a5bbf545877b1aa0e212fb9, type: 2}
+  - {fileID: 11400000, guid: 7ccdf02ab1ab2b1498393331e03e8e72, type: 2}
+  - {fileID: 11400000, guid: c28bbacce0cc77844899d2049a13ebd8, type: 2}
   abiltyResource: 4
   resourceCost: 5

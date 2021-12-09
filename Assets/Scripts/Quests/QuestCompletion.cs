@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using RPG.Attributes;
+using RPG.Pools;
 using RPG.Core;
 using UnityEngine;
 using UnityEngine.Events;

@@ -1,5 +1,5 @@
 using UnityEngine;
-using RPG.Attributes;
+using RPG.Pools;
 
 
 //namespace RPG.Combat

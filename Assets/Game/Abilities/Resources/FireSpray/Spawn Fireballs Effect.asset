@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71ef4592e64f604498faec556f77f45, type: 3}
-  m_Name: Spawn Projectile Effect
+  m_Name: Spawn Fireballs Effect
   m_EditorClassIdentifier: 
   projectileToSpawn: {fileID: 461842104885028522, guid: cb77121d85970f8429571114303383b4,
     type: 3}
   damage: 20
   isRightHand: 1
+  useTargetPoint: 0

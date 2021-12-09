@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using GameDevTV.Inventories;
 using GameDevTV.Saving;
 using GameDevTV.Utils;
-using RPG.Attributes;
+using RPG.Pools;
 using RPG.Core;
 using RPG.Movement;
 using RPG.Stats;

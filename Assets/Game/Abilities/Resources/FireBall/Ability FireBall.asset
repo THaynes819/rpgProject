@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242bf1a2ae74d3244b30e622bc9a236d, type: 3}
+  m_Name: Ability FireBall
+  m_EditorClassIdentifier: 
+  itemID: 6309c357-522a-40cd-a8e1-b0ef2a7a10b5
+  displayName: FireBall
+  description: Hurls Firey Death toward a single target
+  iconSprite: {fileID: 21300000, guid: c289b67aac6646a46ba5acdcdfbf2ecf, type: 3}
+  pickup: {fileID: 8046940882698795307, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
+  stackable: 0
+  price: 50
+  category: 4
+  itemCooldown: 1
+  consumable: 0
+  targetingStrategy: {fileID: 11400000, guid: 0603a581b10862f4d87b9e90396b7060, type: 2}
+  filterStrategies:
+  - {fileID: 11400000, guid: 1713c9a72079c184f97ee720c1b17cb1, type: 2}
+  effectStrategies:
+  - {fileID: 11400000, guid: c985bc8d8bd98bd4bb94f027dcd68506, type: 2}
+  - {fileID: 11400000, guid: c28bbacce0cc77844899d2049a13ebd8, type: 2}
+  - {fileID: 11400000, guid: a32460d1bf7a7814380cf355c0d17f9d, type: 2}
+  abiltyResource: 4
+  resourceCost: 3
