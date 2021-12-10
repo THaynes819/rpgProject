@@ -16,13 +16,14 @@ MonoBehaviour:
   displayName: Fred's Goat
   description: Fred's goat somehow fits in your bag. You don't ask questions
   iconSprite: {fileID: 21300000, guid: a2c72f2e676bcad49a9b121b9a62c047, type: 3}
-  pickup: {fileID: 3030589592598308493, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
+  pickup: {fileID: 8046940882698795307, guid: 932d8e0bbdbfb6249881c4909d9acd13, type: 3}
   stackable: 0
+  price: 0
+  category: 0
+  itemCooldown: 4
   consumable: 0
   isQuestItem: 1
   questName: Goat Rescue
   questObjective: 
   condition:
-    predicate: 3
-    paremeters:
-    - -df42f4d6353c-4be4-bcb7-df42f4d6353c
+    and: []

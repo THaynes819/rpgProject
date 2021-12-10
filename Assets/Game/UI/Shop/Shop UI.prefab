@@ -3251,10 +3251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0754d6628fdc5724180899e7f82802ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopNameText: {fileID: 0}
+  shopNameText: {fileID: 8957487334800495405}
   quitButton: {fileID: 3948855337681609961}
-  listRoot: {fileID: 0}
-  rowPrefab: {fileID: 0}
+  listRoot: {fileID: 903440110165534407}
+  rowPrefab: {fileID: 7737050844121788370, guid: a74641a4b587bbd48bcf29575b6fd47c,
+    type: 3}
   quantityField: {fileID: 4588883756227288585}
   totalField: {fileID: 4759812589773466121}
   purseField: {fileID: 880084310652109899}
@@ -3629,7 +3630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1030.7207, y: 0}
+  m_AnchoredPosition: {x: 933.925, y: 0}
   m_SizeDelta: {x: 0, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &993475088471765884
@@ -4237,7 +4238,7 @@ PrefabInstance:
     - target: {fileID: 3021625463220313234, guid: a74641a4b587bbd48bcf29575b6fd47c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 128.68266
+      value: 113.331665
       objectReference: {fileID: 0}
     - target: {fileID: 3021625463220313234, guid: a74641a4b587bbd48bcf29575b6fd47c,
         type: 3}
@@ -4727,7 +4728,7 @@ PrefabInstance:
     - target: {fileID: 3021625463220313234, guid: a74641a4b587bbd48bcf29575b6fd47c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 128.68266
+      value: 113.331665
       objectReference: {fileID: 0}
     - target: {fileID: 3021625463220313234, guid: a74641a4b587bbd48bcf29575b6fd47c,
         type: 3}
@@ -5129,7 +5130,7 @@ PrefabInstance:
     - target: {fileID: 1035175357595770348, guid: 7f5702e505662a8488b3d9e4e414b4fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 106.52666
+      value: 91.17566
       objectReference: {fileID: 0}
     - target: {fileID: 1035175357595770348, guid: 7f5702e505662a8488b3d9e4e414b4fb,
         type: 3}

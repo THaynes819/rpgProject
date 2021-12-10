@@ -81,7 +81,11 @@ namespace RPG.Shops
             {
                 return "Null Name";
             }
-            return shopName;
+            else
+            {
+                return shopName;
+            }
+            
         }
 
         public void AddToTransaction (InventoryItem item, int quantity)
