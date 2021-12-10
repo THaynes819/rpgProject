@@ -72,18 +72,22 @@ namespace RPG.Dialogue
         public void CreateNode (DialogueNode parent)
         {
             DialogueNode newNode = MakeNode (parent);
+#if UNITY_EDITOR
             Undo.RegisterCreatedObjectUndo (newNode, "Created Dialogue Node");
             Undo.RecordObject (this, "Added Dialogue Node");
+#endif
             AddNode (newNode);
         }
 
         public void DeleteNode (DialogueNode nodeToDelete)
         {
+#if UNITY_EDITOR
             Undo.RecordObject (this, "Deleted Dialogue Node");
             nodes.Remove (nodeToDelete);
             OnValidate ();
             CleanDanglingChildren (nodeToDelete);
             Undo.DestroyObjectImmediate (nodeToDelete);
+#endif
         }
 
         private void AddNode (DialogueNode newNode)

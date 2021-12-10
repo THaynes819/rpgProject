@@ -67,45 +67,53 @@ namespace RPG.Dialogue
             return false;
         }
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         public void SetPosition (Vector2 newPosition)
         {
+#if UNITY_EDITOR
             Undo.RecordObject (this, "Move Dialogue Node");
             rect.position = newPosition;
             EditorUtility.SetDirty (this);
+#endif
         }
 
         public void SetIsPlayerSpeaking (bool newIsPlayerSpeaking)
         {
+#if UNITY_EDITOR
             Undo.RecordObject (this, "Change Dialogue Speaker");
             isPlayer = newIsPlayerSpeaking;
             EditorUtility.SetDirty (this);
+#endif
         }
 
         public void SetText (string newText)
         {
+#if UNITY_EDITOR
             if (newText != text)
             {
                 Undo.RecordObject (this, "Update Dialogue Text");
                 text = newText;
                 EditorUtility.SetDirty (this);
             }
+#endif
         }
 
         public void AddChild (string childID)
         {
+#if UNITY_EDITOR
             Undo.RecordObject (this, "Add Dialogue Link");
             children.Add (childID);
             EditorUtility.SetDirty (this);
+#endif
         }
 
         public void RemoveChild (string childID)
         {
+#if UNITY_EDITOR
             Undo.RecordObject (this, "Remove Dialogue Link");
             children.Remove (childID);
             EditorUtility.SetDirty (this);
-        }
-
 #endif
+        }
     }
 }
