@@ -11,28 +11,26 @@ namespace RPG.UI
         [SerializeField] TextMeshProUGUI valueText;
         [SerializeField] Button minusButton;
         [SerializeField] Button plusButton;
-
-        int value = 0;
+        AttributeStore playerAttributeStore = null;
 
         private void Start() 
         {
+            playerAttributeStore = GameObject.FindGameObjectWithTag ("Player").GetComponent<AttributeStore>();
             minusButton.onClick.AddListener(() => Allocate(-1));
             plusButton.onClick.AddListener(() => Allocate(1));
         }
 
         private void Update() 
         {
-            minusButton.interactable = value > 0;
-            valueText.text = value.ToString();
+            minusButton.interactable = playerAttributeStore.CanAssignPoints(attribute, -1);
+            plusButton.interactable = playerAttributeStore.CanAssignPoints(attribute, 1);
+            
+            valueText.text = playerAttributeStore.GetPoints(attribute).ToString();
         }
 
         public void Allocate(int points)
         {
-            value += points;
-            if (value < 0)
-            {
-                value = 0;
-            }
+            playerAttributeStore.AssignPoints(attribute, points);
         }
 
         
