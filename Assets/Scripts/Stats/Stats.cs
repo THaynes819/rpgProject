@@ -10,6 +10,7 @@ namespace RPG.Stats
         Mana,
         Fixation,
         ResourceRegenRate,
+        TotatTraitPoints,
         None,
     }
 }

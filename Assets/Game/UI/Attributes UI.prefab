@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 316761447169914638}
   - component: {fileID: 2078250213221486134}
+  - component: {fileID: 6282930159763347424}
   m_Layer: 5
   m_Name: Attributes UI
   m_TagString: Untagged
@@ -137,6 +138,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleKey: 99
   uiContainer: {fileID: 125532029520668043}
+--- !u!114 &6282930159763347424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138616985205217877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a562fc2f49a489b47bba0267d09acda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uncommitedPointText: {fileID: 7743813512992932479}
+  confirmButton: {fileID: 4758998179687173283}
 --- !u!1 &283463606317434210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 484802854831766162, guid: bef34a359ecd8554289da5e57a7d5007,
         type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Confirm Button
       objectReference: {fileID: 0}
     - target: {fileID: 849222886876028845, guid: bef34a359ecd8554289da5e57a7d5007,
         type: 3}
@@ -1299,6 +1314,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5860050442329495030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4758998179687173283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1393951448703146325, guid: bef34a359ecd8554289da5e57a7d5007,
+    type: 3}
+  m_PrefabInstance: {fileID: 5860050442329495030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7036410086842416666
 PrefabInstance:
   m_ObjectHideFlags: 0

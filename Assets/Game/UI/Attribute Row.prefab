@@ -320,7 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65f96989ad60694ba46cdbfae7b67d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attribute: 0
   valueText: {fileID: 6264430385828556787}
+  UncommitedPointsText: {fileID: 0}
   minusButton: {fileID: 8977106742947978629}
   plusButton: {fileID: 7567854910861913062}
 --- !u!1001 &1184276775648913946

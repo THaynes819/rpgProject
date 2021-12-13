@@ -22,7 +22,7 @@ namespace RPG.Stats
         public List<SkillTrees> skillTrees = new List<SkillTrees> ();
         [SerializeField] int skillTreeSize = 16;
 
-        public event Action skillTreeUpdated;
+        public event Action skillTreeUpdated; //TODO Remove this as it appears to do nothing
 
         void Awake ()
         {

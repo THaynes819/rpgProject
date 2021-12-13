@@ -13686,6 +13686,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5000638824374757185, guid: e310eb573724aa94586f261a5248e7c0,
+        type: 3}
+      propertyPath: bonusConfig.Array.data[0].stat
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000638824374757185, guid: e310eb573724aa94586f261a5248e7c0,
+        type: 3}
+      propertyPath: bonusConfig.Array.data[0].additiveBonusPerPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5025618912965733069, guid: e310eb573724aa94586f261a5248e7c0,
         type: 3}
       propertyPath: m_SizeDelta.x
