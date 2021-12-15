@@ -18,7 +18,11 @@ namespace RPG.Shops
 
         [SerializeField] StockItemConfig[] stockConfig;
 
-        [SerializeField][Range (0, 75)] float sellingDisadvantage;
+        [Tooltip("This configures how much lower prices will be in 'sell' mode. Lower creates less disadvantage for the player")]
+        [SerializeField][Range (2, 80)] float sellingDisadvantage;
+
+        [Tooltip("The Value equals the maximum percentage the merchant is willing to discount their stock")]
+        [SerializeField] float maximumBarterDiscount = 50; // The number equals the maximum percentage the merchant is willing to discount their stock
 
         [System.Serializable]
         class StockItemConfig
@@ -301,16 +305,24 @@ namespace RPG.Shops
                             prices[config.item] = config.item.GetItemPrice ();
                         }
 
-                        prices[config.item] *= (1 - config.buyingdiscountPercentage / 100);
+                        prices[config.item] *= (1 - config.buyingdiscountPercentage / 100) * GetBarterDiscount();
                     }
                     else
                     {
-                        prices[config.item] = config.item.GetItemPrice () * (1 - sellingDisadvantage / 100);
+                        prices[config.item] = config.item.GetItemPrice () * (1 - sellingDisadvantage / 100); //TODO Apply Barter Discount to selling
                     }
                 }
             }
 
             return prices;
+        }
+
+        private float GetBarterDiscount()
+        {
+            BaseStats baseStats = currentShopper.GetComponent<BaseStats>();
+            float discount = baseStats.GetStat(Stat.BuyingDiscountPercentage);
+            //maximumBarterDiscount = 100 - maximumBarterDiscount; // this makes the configuration of the Max Discount = the percentage it takes off the price
+            return (1 - Mathf.Min(discount, maximumBarterDiscount)  / 100);
         }
 
         private Dictionary<InventoryItem, int> GetAvailabilities ()

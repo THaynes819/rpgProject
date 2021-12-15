@@ -11,6 +11,8 @@ namespace RPG.Stats
         Fixation,
         ResourceRegenRate,
         TotatTraitPoints,
+        BuyingDiscountPercentage,
         None,
+        
     }
 }

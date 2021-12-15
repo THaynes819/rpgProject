@@ -15,6 +15,12 @@ namespace RPG.Stats
         {
             BuildLookup ();
 
+            if (!lookupTable[characterClass].ContainsKey(stat))
+            {
+                Debug.Log(stat + " - This stat was not in the lookupTable on Progression.cs");
+                return 0;
+            }
+
             float[] levels = lookupTable[characterClass][stat];
 
             if (levels.Length == 0)

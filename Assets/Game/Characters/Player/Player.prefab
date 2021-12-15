@@ -350,6 +350,10 @@ MonoBehaviour:
     stat: 7
     additiveBonusPerPoint: 5
     percentageBonusPerPoint: 2
+  - attribute: 4
+    stat: 9
+    additiveBonusPerPoint: 2
+    percentageBonusPerPoint: 0
   - attribute: 5
     stat: 0
     additiveBonusPerPoint: 0

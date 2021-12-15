@@ -1,24 +1,58 @@
 using System.Collections;
 using UnityEngine;
 using GameDevTV.Saving;
+using UnityEngine.SceneManagement;
+using System;
 
 namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
-        const string defaultSaveFile = "save";
-        float fadeintime = 0.5f;
+        private const string currentSaveKey = "currentSaveName";
+        [SerializeField] float fadeintime = 0.5f;
+        [SerializeField] float fadeOutTime = 0.2f;
+        [SerializeField] int levelOneScene = 1;
 
-        private void Awake()
+        public void ContinueGame()
         {
+            if (!PlayerPrefs.HasKey(currentSaveKey)) return;
+            if (!GetComponent<SavingSystem>().SaveFileExists(GetCurrentSave())) return;
             StartCoroutine (LoadLastScene());
+        }
+
+        public void CreateNewGame(string saveFile)
+        {
+            if (String.IsNullOrEmpty(saveFile)) return;
+            SetCurrentSave(saveFile);
+            StartCoroutine(LoadFirstScene (saveFile));
+        }
+
+        private void SetCurrentSave(string saveFile)
+        {
+            PlayerPrefs.SetString(currentSaveKey, saveFile);
+        }
+
+        private string GetCurrentSave()
+        {
+            return PlayerPrefs.GetString(currentSaveKey);
+        }
+
+        public IEnumerator LoadFirstScene (string saveFile)
+        {
+            Fader fader = FindObjectOfType<Fader>();
+            GetComponent<SavingSystem>().Save(saveFile);
+
+            yield return fader.FadeOut(fadeOutTime);  
+            yield return SceneManager.LoadSceneAsync (levelOneScene);
+            yield return fader.FadeIn(fadeintime);
         }
 
         IEnumerator LoadLastScene()
         {
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
             Fader fader = FindObjectOfType<Fader>();
-            fader.FadeOutImediate();
+            yield return fader.FadeOut(fadeOutTime);
+            yield return GetComponent<SavingSystem>().LoadLastScene(GetCurrentSave());      
+            
             yield return fader.FadeIn(fadeintime);
         }
 
@@ -42,17 +76,17 @@ namespace RPG.SceneManagement
 
         public void Save()
         {
-            GetComponent<SavingSystem>().Save(defaultSaveFile);
+            GetComponent<SavingSystem>().Save(GetCurrentSave());
         }
 
         public void Load()
         {
-            GetComponent<SavingSystem>().Load(defaultSaveFile);
+            GetComponent<SavingSystem>().Load(GetCurrentSave());
         }
 
         public void Delete()
         {
-            GetComponent<SavingSystem>().Delete(defaultSaveFile);
+            GetComponent<SavingSystem>().Delete(GetCurrentSave());
         }
     }
 }
