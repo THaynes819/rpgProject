@@ -57,7 +57,16 @@ namespace RPG.Stats
 
         public SkillTree GetSkillTree ()
         {
-            return player.GetComponent<SkillTree> ();
+            if (player.GetComponent<SkillTree> () != null)
+            {
+                return GetComponent<SkillTree> ();
+            }
+            else
+            {
+                Debug.Log("Player SkillTree is null");
+                return null;
+            }
+
         }
 
         public List<ActionSkill> GetSkillBook ()

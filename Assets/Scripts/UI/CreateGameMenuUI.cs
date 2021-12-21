@@ -14,7 +14,6 @@ namespace RPG.UI
         [SerializeField] Button createNewButton = null;
         [SerializeField] Button backButton = null;
         [SerializeField] UISwitcher switcher = null;
-        [SerializeField] GameObject mainMenu = null;
 
         [SerializeField] GameObject creationError = null;
 
@@ -28,18 +27,7 @@ namespace RPG.UI
             savingWrapper = new LazyValue<SavingWrapper>(GetSavingWrapper);
         }
 
-        private SavingWrapper GetSavingWrapper()
-        {
-            return FindObjectOfType<SavingWrapper>();
-        }
-
-        private void Start() 
-        {
-            createNewButton.onClick.AddListener(() => CreateNewGame());
-            backButton.onClick.AddListener(() => BackToMain());
-        }        
-
-        private void CreateNewGame()
+        public void CreateNewGame()
         {
             if (newGameNameField != null && !String.IsNullOrEmpty(newGameNameField.text) )
             {                
@@ -47,15 +35,13 @@ namespace RPG.UI
             }
             else
             {
-                Debug.Log("ErrorMessageUI Should Pop");
                 switcher.SwitchTo(creationError);
             }
         }
 
-        private void BackToMain()
+        private SavingWrapper GetSavingWrapper()
         {
-            switcher.SwitchTo(mainMenu);            
+            return FindObjectOfType<SavingWrapper>();
         }
     }
-
 }

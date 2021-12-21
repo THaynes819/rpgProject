@@ -30,6 +30,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: 7547948f64b68ea40b0339ee5e5d2048, type: 2}
   objectiveToComplete: Kill the bandit Leader
+  hasItemToRemove: 0
+  itemToRemove: {fileID: 0}
+  amountToRemove: 1
   condition:
     and:
     - or:
@@ -61,9 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f0c7bad2cc4ee4d8a3407b6bee1b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: b4295e3129d28bd4dbd0f8dc63e83284, type: 2}
+  dialogue: {fileID: 0}
   fighter: {fileID: 995178493135950426}
-  npcName: Filthy Bandit
+  npcName: None
 --- !u!114 &1256202482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: Aggro
+  actionTwo: 
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -104,6 +108,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onSecondTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1256202484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: 7547948f64b68ea40b0339ee5e5d2048, type: 2}
   objectiveToComplete: Talk to the first Guard.
+  hasItemToRemove: 0
+  itemToRemove: {fileID: 0}
+  amountToRemove: 1
   condition:
     and: []
 --- !u!114 &1256202485
@@ -133,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: First Guard
+  actionTwo: 
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -148,6 +159,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onSecondTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2718131105313669635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -392,6 +411,16 @@ PrefabInstance:
       propertyPath: condition.and.Array.data[0].or.Array.data[0].predicate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8011547710069436008}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -419,9 +448,19 @@ PrefabInstance:
       objectReference: {fileID: 8011547710069436008}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2718131105313669635}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RandomDrop
+      objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
       propertyPath: deathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -471,6 +510,16 @@ PrefabInstance:
         type: 3}
       propertyPath: condition.and.Array.data[0].or.Array.data[0].paremeters.Array.data[0]
       value: Goat Rescue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.Inventories.RandomDropper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4461957587208940611, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
@@ -584,9 +633,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8668689563766875569, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
         type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668689563766875569, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
+    - target: {fileID: 8668689563766875569, guid: 3b9bb7d8a6fde134f86b175bd4f6644d,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bb7d8a6fde134f86b175bd4f6644d, type: 3}

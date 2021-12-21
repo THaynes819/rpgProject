@@ -22,6 +22,7 @@ namespace RPG.UI
         void Start ()
         {
             player = GameObject.FindGameObjectWithTag ("Player");
+            
             skillTree = player.GetComponent<SkillTree> ().GetSkillTree ();
         }
 
@@ -29,7 +30,7 @@ namespace RPG.UI
         {
             this.skillTree = skillTree;
             this.index = index;
-            if (icon != null)
+            if (icon != null && skillTree != null)
             {
                 icon.SetItem (skillTree.GetSkillInSlot (index), index);
             }

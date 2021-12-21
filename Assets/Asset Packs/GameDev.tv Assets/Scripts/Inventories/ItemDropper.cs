@@ -25,6 +25,7 @@ namespace GameDevTV.Inventories
         /// </param>
         public void DropItem(InventoryItem item, int number)
         {
+            Debug.Log("Item Dropper dropping " + item.name);
             SpawnPickup(item, GetDropLocation(), number);
         }
 

@@ -56,3 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2dad994cf3b1849853b37ae6eee64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeintime: 0.5
+  fadeOutTime: 0.2
+  levelOneScene: 1
+  mainMenuScene: 0

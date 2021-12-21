@@ -37,7 +37,7 @@ namespace RPG.UI
 			}
 			else
 			{
-				Debug.Log("actionSkill is null");
+				Debug.Log("actionSkill is null. Parent is  " + transform.parent.gameObject.name);
 			}
 		}
 

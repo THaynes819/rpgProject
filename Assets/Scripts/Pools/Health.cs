@@ -13,11 +13,11 @@ namespace RPG.Pools
     {
         [Range (1, 100)]
         [SerializeField] float levelUpHealthPercent = 90f;
-        [SerializeField] TakeDamageEvent takeDamage;
-        [SerializeField] UnityEvent deathEvent;
+        [SerializeField] TakeDamageEvent takeDamage;        
         [SerializeField] bool isMobToKill = false;
         [SerializeField] string questName;
         [SerializeField] string questObjective;
+        public UnityEvent onDeath;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float> { }
@@ -26,7 +26,7 @@ namespace RPG.Pools
 
         LazyValue<float> healthPoints;
 
-        bool isDead = false;
+        bool wasDeadlastFrame = false;
         float experienceReward = 0;
 
         void Awake ()
@@ -57,28 +57,35 @@ namespace RPG.Pools
 
         public bool IsDead ()
         {
-            return isDead;
+            return healthPoints.value <= 0;
+        }
+
+        public void SetIsDead(bool value)
+        {
+            wasDeadlastFrame = value;
         }
 
         public void TakeDamage (GameObject instigator, float damage)
         {
             healthPoints.value = Mathf.Max (healthPoints.value - damage, 0);
 
-            if (Mathf.Approximately (healthPoints.value, 0))
+            if (IsDead())
             {
-                deathEvent.Invoke (); //TODO fix this so that the SFX doesn't instantiate on dead mobs
-                Die ();
+                Debug.Log("onDeath should invoke because this died: " + this.name);
+                onDeath.Invoke (); //TODO fix this so that the SFX doesn't instantiate on dead mobs
                 AwardExperience (instigator);
             }
             else
             {
                 takeDamage.Invoke (damage);
             }
+            UpdateState ();
         }
 
         public void Heal (float healthToRestore)
         {
             healthPoints.value = Mathf.Min (healthPoints.value + healthToRestore, GetMaxHealthPoints ());
+            UpdateState ();
         }
 
         public float GetPercentage ()
@@ -119,22 +126,33 @@ namespace RPG.Pools
 
         
 
-        private void Die ()
+        private void UpdateState ()
         {
-            if (isDead) return;
-            if (isMobToKill)
+            Animator animator = GetComponent<Animator> ();
+            if (isMobToKill) // if it's the quest mob to kill. This needs to be changed. It's not good. Check the code, This makes no sense. Death Aounouncer anounces the death to quest system?
             {
                 var player = GameObject.FindGameObjectWithTag("Player");
                 player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
             }
-            Collider collider = GetComponent<Collider> ();
-            Rigidbody rigidbody = GetComponent<Rigidbody> ();
-            Destroy (collider);
-            Destroy (rigidbody);
+            // Collider collider = GetComponent<Collider> ();
+            // Rigidbody rigidbody = GetComponent<Rigidbody> ();
+            // Destroy (collider);
+            // Destroy (rigidbody);
 
-            isDead = true;
-            GetComponent<Animator> ().SetTrigger ("die");
-            GetComponent<ActionScheduler> ().CancelCurrentACtion ();
+            if (!wasDeadlastFrame && IsDead())
+            {
+                animator.SetTrigger ("die");
+                GetComponent<ActionScheduler> ().CancelCurrentACtion ();
+            }
+
+            if (wasDeadlastFrame && !IsDead())
+            {
+                animator.Rebind();
+            }
+
+            
+
+            wasDeadlastFrame = IsDead();
         }
 
         private void AwardExperience (GameObject instigator)
@@ -167,10 +185,8 @@ namespace RPG.Pools
         public void RestoreState (object state)
         {
             healthPoints.value = (float) state;
-            if (Mathf.Approximately (healthPoints.value, 0))
-            {
-                Die ();
-            }
+            
+            UpdateState();
         }
 
     }

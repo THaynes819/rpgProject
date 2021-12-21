@@ -27,13 +27,15 @@ GameObject:
   - component: {fileID: 1219070882165676908}
   - component: {fileID: 7614359970217691437}
   - component: {fileID: 55118136827415719}
-  - component: {fileID: 2665441604261473864}
   - component: {fileID: 4631781389628393406}
-  - component: {fileID: 8415500263214838296}
   - component: {fileID: 5073365420400598414}
   - component: {fileID: 4990803316067923125}
   - component: {fileID: 5938127429277155436}
   - component: {fileID: 76662626304086759}
+  - component: {fileID: 3178001718471482509}
+  - component: {fileID: 8984506134226703563}
+  - component: {fileID: 6681644894424707343}
+  - component: {fileID: 718808054213668371}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -223,12 +225,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls: []
   isMobToKill: 0
   questName: 
   questObjective: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   condition:
     and: []
 --- !u!114 &3923232590597681389
@@ -437,24 +439,6 @@ MonoBehaviour:
   scatterDistance: 1
   dropLibrary: {fileID: 0}
   numberOfDrops: 2
---- !u!114 &2665441604261473864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4749071111288693219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9546fce68181ea94a95740a003861d77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 4749071111288693219}
-  spell: {fileID: 11400000, guid: eaf0aeff8f29a394bb4f666a8657328a, type: 2}
-  spellOrigin: {fileID: 761995594630208003}
-  preCastAnimation: {fileID: 0}
-  hasProjectile: 1
-  timeSinceLastCast: Infinity
 --- !u!114 &4631781389628393406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,26 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06808a64164f0d48b8aca46fd3f73aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8415500263214838296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4749071111288693219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca491dbb3a535cc4b8fbfe3c6cf3f9ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillTrees:
-  - playerClassSkillTree: {fileID: 11400000, guid: 6870e34c14c19af4da4e42f4bbfe158c,
-      type: 2}
-    skillTreeClass: 0
-  - playerClassSkillTree: {fileID: 11400000, guid: d51591b7c4490ba438a00236e16d9af9,
-      type: 2}
-    skillTreeClass: 1
-  skillTreeSize: 16
 --- !u!114 &5073365420400598414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +501,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBalance: 500
+--- !u!114 &3178001718471482509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a0dacbf1e528346aecc2639a845ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8984506134226703563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd3b0f89a4b27444b0f2e6d517c6599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6681644894424707343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca491dbb3a535cc4b8fbfe3c6cf3f9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTrees:
+  - playerClassSkillTree: {fileID: 11400000, guid: 6870e34c14c19af4da4e42f4bbfe158c,
+      type: 2}
+    skillTreeClass: 0
+  - playerClassSkillTree: {fileID: 11400000, guid: d51591b7c4490ba438a00236e16d9af9,
+      type: 2}
+    skillTreeClass: 0
+  skillTreeSize: 16
+--- !u!114 &718808054213668371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bc7fc13012a9b4da4990016b153486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnLocation: {fileID: 0}
+  respawnDelay: 3
+  fadeTime: 0.2
+  healthRegenPercentage: 20
 --- !u!1 &5707783629349445781
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,12 +654,6 @@ PrefabInstance:
 --- !u!4 &761995594630231429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 415802, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
-    type: 3}
-  m_PrefabInstance: {fileID: 761995594630606271}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &761995594630208003 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 407484, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
     type: 3}
   m_PrefabInstance: {fileID: 761995594630606271}
   m_PrefabAsset: {fileID: 0}

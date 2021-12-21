@@ -167,7 +167,7 @@ namespace RPG.Control
             return true;
         }
 
-        private void SetGameCursor (CursorType type)
+        public void SetGameCursor (CursorType type)
         {
             CursorMapping mapping = GetCursorMapping (type);
             Cursor.SetCursor (mapping.cursorTexture, mapping.hotSpot, CursorMode.Auto);

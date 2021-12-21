@@ -14,7 +14,6 @@ namespace RPG.UI
         [SerializeField] GameObject newGameMenu = null;
 
         [SerializeField] Button newGameBackButton = null;
-        [SerializeField] Button continueButton = null;
         [SerializeField] Button newButton = null;
         [SerializeField] Button saveButton = null;
         [SerializeField] Button loadButton = null;
@@ -35,62 +34,36 @@ namespace RPG.UI
             savingWrapper = new LazyValue<SavingWrapper>(GetSavingWrapper);
         }
 
-        private void Start() 
-        {
-            continueButton.onClick.AddListener(() => ContinueGame());
-            newButton.onClick.AddListener(() => CreateGame());
-            newGameBackButton.onClick.AddListener(() => CloseSecondaryMenu());
-            saveButton.onClick.AddListener(() => SaveGame());
-            loadButton.onClick.AddListener(() => LoadGame());
-            settingsButton.onClick.AddListener(() => OpenSettings());
-            settingsCloseButton.onClick.AddListener(() => CloseSecondaryMenu());
-            quitButton.onClick.AddListener(() => QuitGameConfirmation());
-            confirmQuitButton.onClick.AddListener(() => QuitConfirm());
-            doNotQuitButton.onClick.AddListener(() => CloseSecondaryMenu());            
-        }
-
         private SavingWrapper GetSavingWrapper()
         {
             return FindObjectOfType<SavingWrapper>();
         }
 
-        private void ContinueGame()
+        public void ContinueGame()
         {
             savingWrapper.value.ContinueGame();
         }
 
-        private void CreateGame()
+
+        public void SaveGame()
         {
-            switcher.SwitchTo(newGameMenu);
+            savingWrapper.value.Save(); // add ability to rename save here?
         }
 
-        private void SaveGame()
-        {
-            savingWrapper.value.Save();
-        }
-
-        private void LoadGame()
+        public void LoadGame()
         {
             savingWrapper.value.Load();
-        }
-        private void OpenSettings()
-        {
-            switcher.SwitchTo(settingsPopUp);
-        }
-
-        private void CloseSecondaryMenu()
-        {
-            switcher.SwitchTo(mainMenuPanel);
-        }
-        private void QuitGameConfirmation()
-        {
-            //Pop up an are you sure you want to quit window
-            switcher.SwitchTo(quitPopUp);
         }
 
         public void QuitConfirm()
         {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
+            Application.OpenURL(webplayerQuitURL)
+#else
             Application.Quit();
+#endif
         }
     }
 }

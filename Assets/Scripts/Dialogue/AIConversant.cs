@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using RPG.Combat;
 using RPG.Control;
+using RPG.Pools;
 using UnityEngine;
 
 namespace RPG.Dialogue
@@ -52,6 +53,9 @@ namespace RPG.Dialogue
             {
                 return false;
             }
+
+            if (GetComponent<Health>().IsDead()) return false;
+
             if (Input.GetMouseButtonDown (0) || Input.GetMouseButtonDown (1))
             {
                 callingController.GetComponent<PlayerConversant> ().StartDialogue (this, dialogue);

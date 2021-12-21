@@ -613,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 6723719342142056115, guid: ca64d05fed7c72247900e961b7a3c82c,
         type: 3}
       propertyPath: m_Name
-      value: Button
+      value: OK/close Button
       objectReference: {fileID: 0}
     - target: {fileID: 8867579041991453713, guid: ca64d05fed7c72247900e961b7a3c82c,
         type: 3}

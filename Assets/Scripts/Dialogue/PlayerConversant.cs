@@ -157,12 +157,10 @@ namespace RPG.Dialogue
 
         private void TriggerExitAction ()
         {
-
             if (currentNode != null)
             {
                 TriggerAction (currentNode.GetOnExitAction ());
-            }
-
+            }              
         }
 
         private void TriggerAction (string action)
