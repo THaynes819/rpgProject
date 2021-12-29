@@ -7,6 +7,7 @@ using RPG.Core;
 using RPG.Movement;
 using RPG.Stats;
 using UnityEngine;
+using System;
 
 namespace RPG.Combat
 {
@@ -17,7 +18,8 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
-        [SerializeField] Spell testSpell = null;
+        [SerializeField] float autoAttackRange = 4f;
+        
 
         Health target;
 
@@ -66,8 +68,20 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
 
-            if (target == null) { return; }
-            if (target.IsDead ()) { return; }
+            if (target == null) return;
+            //if (target.IsDead ()) return; 
+            
+            if (target.IsDead())
+            {
+                target = FindNewTargetInRange();
+                
+                if (target == null) 
+                {
+                    Debug.Log("Target is Null");
+                    return; 
+                }
+                Debug.Log("New Target found. It's " + target);
+            }
 
             if (!GetIsInRange (target.transform))
             {
@@ -122,6 +136,36 @@ namespace RPG.Combat
             }
         }
 
+        private Health FindNewTargetInRange()
+        {
+            Health bestEnemy = null;
+            float bestDistance = Mathf.Infinity;
+            foreach (var enemy in FindAllTargetsInRange())
+            {
+                float enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (enemyDistance < bestDistance)
+                {
+                    bestEnemy = enemy;
+                    bestDistance = enemyDistance;
+                }
+            }
+            return bestEnemy;
+        }
+
+        private IEnumerable<Health> FindAllTargetsInRange()
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, autoAttackRange, Vector3.up);
+            //Debug.Log("RayCast in FindAllTargets hit this many: " + hits.Length);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            foreach (var hit in hits)
+            {
+                Health health = hit.transform.GetComponent<Health>();
+                if (health == null) continue;                
+                if (!CanAttack(health.gameObject)) continue;
+                yield return health;                
+            }
+        }
+
         private void TriggerAttack ()
         {
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
@@ -163,8 +207,11 @@ namespace RPG.Combat
 
         public bool CanAttack (GameObject combatTarget)
         {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (combatTarget == null) { return false; }
             if (!combatTarget.GetComponent<Fighter>().enabled) {return false;}
+            if (this.gameObject == player && combatTarget == player) {return false;}
+            if (combatTarget == gameObject) {return false;}
 
             if (!GetComponent<Mover> ().CanMoveTo (combatTarget.transform.position) && !GetIsInRange (combatTarget.transform)) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health> ();

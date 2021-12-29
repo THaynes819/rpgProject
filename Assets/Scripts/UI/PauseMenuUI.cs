@@ -11,10 +11,14 @@ namespace RPG.UI
     {
         [SerializeField] Button saveButton = null;
         //[SerializeField] Button saveAndQuitButton = null;
+        [SerializeField] Button speedUpButton = null;
+        [SerializeField] float timeScaleOnSpeedUp = 5;
 
         [SerializeField] UISwitcher switcher = null;
 
         [SerializeField] GameObject quitConfirmUI = null;
+
+        bool isFast = false;
         PlayerController playerController;
         private void Awake() 
         {
@@ -29,6 +33,12 @@ namespace RPG.UI
             }
             
             PauseGame();
+        }
+
+        public void ToggleSpeedUp()
+        {
+            isFast = !isFast;
+            Debug.Log("Speeding up game. isFast is " + isFast);
         }
 
         private void PauseGame()
@@ -74,10 +84,15 @@ namespace RPG.UI
 
         private void OnDisable()
         {
-            Time.timeScale = 1;
+            if (isFast)
+            {
+                Time.timeScale = timeScaleOnSpeedUp;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }            
             playerController.enabled = true;
         }
-
-        
     }
 }

@@ -20,7 +20,6 @@ namespace RPG.Inventories
 
         public void RandomDrop ()
         {
-            Debug.Log("Randomr Drop Called");
             var baseStats = GetComponent<BaseStats>();
 
             var drops = dropLibrary.GetRandomDrops(baseStats.GetLevel());

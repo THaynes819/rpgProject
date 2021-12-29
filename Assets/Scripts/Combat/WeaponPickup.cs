@@ -28,7 +28,7 @@ namespace RPG.Combat
             }
             if (healthToRestore > 0)
             {
-                subject.GetComponent<Health>().Heal(healthToRestore);
+                subject.GetComponent<Health>().Heal(healthToRestore, false, false, 0, 0); 
             }
             StartCoroutine (HideForSeconds (respawnTime));
         }

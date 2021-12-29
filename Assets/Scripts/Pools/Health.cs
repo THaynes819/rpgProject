@@ -71,7 +71,7 @@ namespace RPG.Pools
 
             if (IsDead())
             {
-                Debug.Log("onDeath should invoke because this died: " + this.name);
+                //Debug.Log("onDeath should invoke because this died: " + this.name);
                 onDeath.Invoke (); //TODO fix this so that the SFX doesn't instantiate on dead mobs
                 AwardExperience (instigator);
             }
@@ -82,10 +82,90 @@ namespace RPG.Pools
             UpdateState ();
         }
 
-        public void Heal (float healthToRestore)
+        public void Heal (float healthToRestore, bool isOverTime, bool isSmooth, float duration, float tickSpeed) 
         {
-            healthPoints.value = Mathf.Min (healthPoints.value + healthToRestore, GetMaxHealthPoints ());
+            if (isOverTime && isSmooth)
+            {
+                //Smooth Heal Over Time
+                StartCoroutine(HealOverTime(isSmooth, healthToRestore, duration, tickSpeed));
+            }
+            if (isOverTime && !isSmooth)
+            {
+                // Ticking Heal Over Time
+                StartCoroutine(HealOverTime(isSmooth, healthToRestore, duration, tickSpeed));
+            }
+            if (!isOverTime && !isSmooth)
+            {
+                //Immediate Heal
+                healthPoints.value = Mathf.Min (healthPoints.value + healthToRestore, GetMaxHealthPoints ());
+            }
+            
             UpdateState ();
+        }
+
+        //Maybe configure this differently so the editor configuration makes more sense
+        IEnumerator HealOverTime(bool isSmooth, float healthToRestore, float duration, float tickSpeed) //
+        {
+            float totalHealedVal = Mathf.Min(healthPoints.value + healthToRestore, GetMaxHealthPoints()); 
+            float tickHealValue  = healthToRestore / duration;
+
+            if (isSmooth)
+            {
+                float smoothTickSpeed = tickSpeed * Time.deltaTime;
+                float preHealHealthPoints = healthPoints.value;
+                float smoothDuration = duration * 40;
+                float smoothTickHealValue = healthToRestore / smoothDuration;
+
+                for (int i = 0; i < smoothDuration; i++)
+                {
+                    float smoothTick = healthPoints.value + smoothTickHealValue;
+                    
+                    if (healthPoints.value >= totalHealedVal)
+                    {  
+                        Debug.Log("Total Healing cap hit so breaking");                      
+                        yield break;                        
+                    }
+                    
+                    
+
+                    //This catched a case where i rises above the smooth duration... Should never be called
+                    if (i >= smoothDuration && healthPoints.value < totalHealedVal)
+                    {
+                        RemainderHeal(i, duration, totalHealedVal);
+                        yield return new WaitForEndOfFrame();
+                    }
+                    
+                    healthPoints.value = Mathf.Lerp(healthPoints.value, smoothTick, smoothTickSpeed); 
+
+                    smoothTick += smoothTickHealValue;
+
+                    yield return new WaitForEndOfFrame();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < duration; i++)
+                {
+                    float tick = Mathf.Min(1, tickSpeed);
+                    healthPoints.value += tickHealValue;
+                    if (i >= duration && healthPoints.value < totalHealedVal)
+                    {
+                        RemainderHeal(i, duration, totalHealedVal);
+                    }
+                    // Debug.Log("HOT is healing " + tickHealValue + " per " + tick + " for " + duration + " seconds");
+                    yield return new WaitForSeconds(tick);
+                }
+            }    
+        }
+
+        private void RemainderHeal(int i, float duration, float totalHealedVal)
+        {
+            if (i >= duration && healthPoints.value < totalHealedVal)
+                    {
+                        float remainder = totalHealedVal - healthPoints.value;
+                        healthPoints.value += remainder;
+                        Debug.Log("Error: Healed with Remainder... Remainder amount was " + remainder);
+                    }
         }
 
         public float GetPercentage ()
@@ -128,16 +208,22 @@ namespace RPG.Pools
 
         private void UpdateState ()
         {
+            var player = GameObject.FindGameObjectWithTag("Player");
             Animator animator = GetComponent<Animator> ();
             if (isMobToKill) // if it's the quest mob to kill. This needs to be changed. It's not good. Check the code, This makes no sense. Death Aounouncer anounces the death to quest system?
-            {
-                var player = GameObject.FindGameObjectWithTag("Player");
+            {                
                 player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
             }
-            // Collider collider = GetComponent<Collider> ();
-            // Rigidbody rigidbody = GetComponent<Rigidbody> ();
-            // Destroy (collider);
-            // Destroy (rigidbody);
+
+            if (this.gameObject != player && IsDead())
+            {
+                //This fixes the floating corpse bug by destroying the Collider and Rigidbody on death
+                Collider collider = GetComponent<Collider> ();
+                Rigidbody rigidbody = GetComponent<Rigidbody> ();
+                Destroy (collider);
+                Destroy (rigidbody);
+            }
+            
 
             if (!wasDeadlastFrame && IsDead())
             {

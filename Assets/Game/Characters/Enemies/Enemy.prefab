@@ -81,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: Aggro
   actionTwo: 
+  actionThree: 
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -111,6 +112,9 @@ MonoBehaviour:
   onSecondTrigger:
     m_PersistentCalls:
       m_Calls: []
+  onThirdTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1256202484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,38 +134,6 @@ MonoBehaviour:
   amountToRemove: 1
   condition:
     and: []
---- !u!114 &1256202485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7616387723425787865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: First Guard
-  actionTwo: 
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1256202484}
-        m_TargetAssemblyTypeName: RPG.Quests.QuestCompletion, Assembly-CSharp
-        m_MethodName: CompleteObjective
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSecondTrigger:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2718131105313669635
 MonoBehaviour:
   m_ObjectHideFlags: 0

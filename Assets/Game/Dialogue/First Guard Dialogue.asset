@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8220737571318785432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 52b798a6-d069-4d51-92ed-aa303eeb5b93
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: See ya!
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2508
+    y: 384
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-7307817118182735512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,8 +51,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-7274133193078697301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,18 +68,16 @@ MonoBehaviour:
   text: We devote our lives to it. Meet the boss on the other side of town
   children:
   - 0e6b10b0-8ace-4f0a-b8dd-6df4d791e6d3
-  - e2df04cc-433e-4622-a6e0-45f17b647926
   rect:
     serializedVersion: 2
-    x: 1721
-    y: 329
+    x: 1718
+    y: 328
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-7093833549325329802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +103,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-6277903387956488142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,15 +121,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 2358
-    y: 528
+    x: 2584
+    y: 280
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: Aggro
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-6012251521295256646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,15 +147,14 @@ MonoBehaviour:
   - a7424968-74d1-4704-822c-0062332c56a3
   rect:
     serializedVersion: 2
-    x: 1353
-    y: 93
+    x: 1354
+    y: 92
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: Goodbye
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-4742474305120348371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,8 +181,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-4641184306768760360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,14 +202,13 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 174
-    y: 180
+    y: 178
     width: 200
     height: 100
   onEnterAction: First Guard
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-3204211948178392159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,15 +227,14 @@ MonoBehaviour:
   - a7424968-74d1-4704-822c-0062332c56a3
   rect:
     serializedVersion: 2
-    x: 2028
-    y: 65
+    x: 2138
+    y: 86
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: Goodbye
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &-3065329711633606530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,15 +254,14 @@ MonoBehaviour:
   - 73351a92-b534-4480-8093-ffd7a4ceef13
   rect:
     serializedVersion: 2
-    x: 609
+    x: 611
     y: 256
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,34 +288,8 @@ MonoBehaviour:
   - {fileID: -7274133193078697301}
   - {fileID: -3204211948178392159}
   - {fileID: 4831070568614777254}
-  - {fileID: 682075740442567165}
+  - {fileID: -8220737571318785432}
   newNodeOffset: {x: 250, y: 0}
---- !u!114 &682075740442567165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
-  m_Name: e2df04cc-433e-4622-a6e0-45f17b647926
-  m_EditorClassIdentifier: 
-  isPlayer: 1
-  text: Attack
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 2357
-    y: 382
-    width: 200
-    height: 100
-  onEnterAction: 
-  onExitAction: Aggro
-  condition:
-    predicate: 0
-    paremeters: []
 --- !u!114 &760413323041301114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,8 +315,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &4129600373801059371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,15 +334,14 @@ MonoBehaviour:
   - a7424968-74d1-4704-822c-0062332c56a3
   rect:
     serializedVersion: 2
-    x: 685
-    y: 461
+    x: 943
+    y: 650
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: Goodbye
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &4831070568614777254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,18 +356,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 1
   text: Oh I will! Goodbye friend.
-  children: []
+  children:
+  - 52b798a6-d069-4d51-92ed-aa303eeb5b93
   rect:
     serializedVersion: 2
-    x: 2124
-    y: 251
+    x: 2149
+    y: 387
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: Goodbye
   condition:
-    predicate: 0
-    paremeters: []
+    and: []
 --- !u!114 &6962796151682249975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,5 +393,4 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 0
-    paremeters: []
+    and: []

@@ -11,14 +11,24 @@ namespace RPG.Abilities.Effects
     {
         [SerializeField] bool isDamageEffect;        
         [SerializeField] bool isOverTimeEffect = false;
-        [SerializeField] float effectTimeSpan;
-        [SerializeField] float healthChangeAmount = 5f;
+
+        [Tooltip("Non smooth heals/Damage will tick each second at the fastest. Smooth Effects change health smoothly")]
+        [SerializeField] bool isSmoothEffect = false;
+
+        [Tooltip("Duration is seconds for Non Smooth. Smooth Effects are currently frame dependent")]
+        [SerializeField] float effectDuration;
+
+        [Tooltip("Damaging effects should be negative numbers. Test to ensure")]
+        [SerializeField] float healthChangeAmount = 5;
+
+        [Tooltip("100 appears to be the sweet spot")]
+        [SerializeField] float tickSpeed = 100;
 
         public override void StartEffect (AbilityData data, Action finished)
         {
-            Debug.Log("Health Effect Initiated");
+            //Debug.Log("Health Effect Initiated");
             if (!isOverTimeEffect)
-            {   Debug.Log("It is an Immediate effect");
+            {   //Debug.Log("It is an Immediate effect");
                 ImediateEffect(data, finished);
             }
             if (isOverTimeEffect)
@@ -28,32 +38,36 @@ namespace RPG.Abilities.Effects
         private void OverTimeEffect(AbilityData data, Action finished)
         {       
             Health targetHealth = data.GetUser().GetComponent<Health>();   
-            float tickVal = healthChangeAmount / effectTimeSpan;            
-
-            for (var i = 0; i < effectTimeSpan; i++)
+            foreach (var target in data.GetTargets())
             {
-                foreach (var target in data.GetTargets())
+                if (isDamageEffect) // need to make a DOT effect similar to HOT effect in Health Scipt
                 {
-                    Debug.Log("Trying to HoT or DoT. i = " + i + " amount of ticks is " + effectTimeSpan + " the tick value is " + tickVal + " The Effect Time Span is " + effectTimeSpan);
-
-                    if (isDamageEffect)
-                    {
-                        Debug.Log("Damaging a Tick");
-                        targetHealth = target.GetComponent<Health>();
-                        bool isHealing = false;
-                        
-                        targetHealth.StartCoroutine(Tick(isDamageEffect, effectTimeSpan, data, targetHealth, isHealing, tickVal, finished));
-                    }
-                    else
-                    {
-                        targetHealth = data.GetUser().GetComponent<Health>();
-                        bool ishealing = true;                            
-                        targetHealth.StartCoroutine(Tick(isDamageEffect, effectTimeSpan, data, targetHealth, ishealing, tickVal, finished));
-                    }
-                    
+                    Debug.Log("Damaging a Tick");
+                    targetHealth = target.GetComponent<Health>();                        
+                    Tick(isDamageEffect, data, targetHealth, healthChangeAmount, finished);
                 }
+                else
+                {
+                    HealOverTime(data, targetHealth, healthChangeAmount, finished );
+                }
+                
             }
             finished ();
+        }
+
+        private void HealOverTime(AbilityData data, Health targetHealth, float healthChangeAmount, Action finished)
+        {
+            isDamageEffect = false; 
+            if (isSmoothEffect)
+            {
+                targetHealth.Heal(healthChangeAmount, true, true, effectDuration, tickSpeed);
+            }
+            else
+            {
+                Tick(isDamageEffect, data, targetHealth, healthChangeAmount, finished);
+            }
+            
+            
         }
 
         private void ImediateEffect(AbilityData data, Action finished)
@@ -69,46 +83,29 @@ namespace RPG.Abilities.Effects
                     }
                     else
                     {
-                        health.Heal(healthChangeAmount);
+                        health.Heal(healthChangeAmount, false, false, 0, 0);
                     }
 
                 }
             }
             finished ();
         }  
-        public IEnumerator Tick(bool isDamageEffect, float effectTimeSpan, AbilityData data, Health health, bool isHealing, float tickVal, Action finished) //
+        public void Tick(bool isDamageEffect, AbilityData data, Health health, float healthChangeAmount, Action finished) //
         {
-            Debug.Log("Tick CoRoutine Started");
-            float tickTime = 1; // TODO add a haste stat from the character to increase the tick speed        
-            for (var i = 0; i < effectTimeSpan; i++)
+            if (isDamageEffect)
             {
-                if (i == 0)
-                {
-                    if (isHealing)
-                    {
-                        health.Heal(tickVal);
-                    }
-                    if (!isHealing)
-                    {
-                        health.TakeDamage(data.GetUser(), tickVal);
-                    }
-                }
-                else
-                {
-                    yield return new WaitForSeconds(tickTime);
-                    if (isHealing)
-                    {
-                        health.Heal(tickVal);                        
-                    }
-                    if (!isHealing)
-                    {
-                        health.TakeDamage(data.GetUser(), tickVal);
-                    }
-                }
+                float damagedHealth = health.GetHealthPoints() - healthChangeAmount;
+                health.TakeDamage(data.GetUser(), Mathf.Lerp(health.GetHealthPoints(), damagedHealth, tickSpeed));
+            }
+
+            if (!isDamageEffect)
+            {
+                float healedHealth = health.GetHealthPoints() + healthChangeAmount;
+                health.Heal(healthChangeAmount, true, false, effectDuration, tickSpeed); 
             }
             
-            
-            
-        }      
-    }
+            finished ();
+        }
+    }      
 }
+

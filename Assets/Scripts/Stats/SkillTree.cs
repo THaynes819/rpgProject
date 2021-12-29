@@ -22,7 +22,7 @@ namespace RPG.Stats
         public List<SkillTrees> skillTrees = new List<SkillTrees> ();
         [SerializeField] int skillTreeSize = 16;
 
-        public event Action skillTreeUpdated; //TODO Remove this as it appears to do nothing
+        //public event Action skillTreeUpdated; //TODO Remove this as it appears to do nothing... Maybe revamp this for leveling up???
 
         void Awake ()
         {
@@ -37,17 +37,17 @@ namespace RPG.Stats
 
         private void OnEnable ()
         {
-            if (baseStats != null)
-            {
-                baseStats.onLevelUp += skillTreeUpdated;
-            }
+            // if (baseStats != null)
+            // {
+            //     baseStats.onLevelUp += skillTreeUpdated;
+            // }
         }
         private void OnDisable ()
         {
-            if (baseStats != null)
-            {
-                baseStats.onLevelUp -= skillTreeUpdated;
-            }
+            // if (baseStats != null)
+            // {
+            //     baseStats.onLevelUp -= skillTreeUpdated;
+            // }
         }
 
         public int GetTreeSize ()
@@ -63,7 +63,7 @@ namespace RPG.Stats
             }
             else
             {
-                Debug.Log("Player SkillTree is null");
+                Debug.Log("Player SkillTree is null within itself...you know somehow");
                 return null;
             }
 
@@ -98,10 +98,10 @@ namespace RPG.Stats
                     AvailableSkills.Add (skill.skill);
                 }
             }
-            if (skillTreeUpdated != null)
-            {
-                skillTreeUpdated ();
-            }
+            // if (skillTreeUpdated != null)
+            // {
+            //     skillTreeUpdated ();
+            // }
 
         }
 

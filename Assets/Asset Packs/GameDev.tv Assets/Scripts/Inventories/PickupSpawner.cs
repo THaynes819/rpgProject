@@ -13,6 +13,7 @@ namespace GameDevTV.Inventories
         [SerializeField] InventoryItem item = null;
         [SerializeField] int number = 1;
 
+
         // LIFECYCLE METHODS
         private void Awake()
         {

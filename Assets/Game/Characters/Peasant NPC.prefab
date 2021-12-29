@@ -606,36 +606,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6643020804512093039}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6562302772259189184}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: RandomDrop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   isMobToKill: 0
   questName: 
   questObjective: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   condition:
     and: []
 --- !u!114 &3033059649852596607
@@ -672,6 +648,7 @@ MonoBehaviour:
   progression: {fileID: 11400000, guid: 39c69b2ce8c5f774b8b40f145a2aaa05, type: 2}
   levelupEffect: {fileID: 0}
   shouldUseModifiers: 0
+  maxLevel: 5
 --- !u!114 &8398186371235586942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,21 +742,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: '"Attack"'
+  action: GiveQuest
+  actionTwo: Goodbye
+  actionThree: Hello
   onTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4175068004169780722}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RPG.Quests.QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSecondTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RPG.UI.DialogueUI, Assembly-CSharp
+        m_MethodName: Goodbye
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onThirdTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RPG.UI.DialogueUI, Assembly-CSharp
+        m_MethodName: BuildResponseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1085756527
 MonoBehaviour:

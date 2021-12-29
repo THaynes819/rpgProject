@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDamageEffect: 0
   isOverTimeEffect: 1
-  effectTimeSpan: 10
-  healthChangeAmount: 30
+  isSmoothEffect: 1
+  effectDuration: 5
+  healthChangeAmount: 50
+  tickSpeed: 100

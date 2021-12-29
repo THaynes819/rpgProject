@@ -31,6 +31,8 @@ namespace RPG.Control
         [SerializeField] float raycastMaxDistance = 1;
         [SerializeField] float rayCastradius = 1;
         [SerializeField] int numberOfAbilities = 6;
+        [SerializeField] float lootDistance = 2f;
+        [SerializeField] bool isDebugMode = false;
 
         bool isDraggingUI = false;
 
@@ -165,6 +167,11 @@ namespace RPG.Control
             target = navMeshHit.position;
 
             return true;
+        }
+
+        public float GetLootDistance()
+        {
+            return lootDistance;
         }
 
         public void SetGameCursor (CursorType type)

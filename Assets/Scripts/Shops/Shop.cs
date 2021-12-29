@@ -6,6 +6,7 @@ using GameDevTV.Inventories;
 using GameDevTV.Saving;
 using RPG.Control;
 using RPG.Inventories;
+using RPG.Movement;
 using RPG.Stats;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ namespace RPG.Shops
 
         [Tooltip("The Value equals the maximum percentage the merchant is willing to discount their stock")]
         [SerializeField] float maximumBarterDiscount = 50; // The number equals the maximum percentage the merchant is willing to discount their stock
+        [SerializeField] float speakingDistance = 2f;
 
         [System.Serializable]
         class StockItemConfig
@@ -268,12 +270,38 @@ namespace RPG.Shops
 
         public bool HandleRaycast (PlayerController callingController)
         {
-            if (Input.GetMouseButtonDown (0) || Input.GetMouseButtonDown (1))
+            if (Input.GetMouseButtonDown (0) && GetIsCloseEnough())
             {
                 callingController.GetComponent<Shopper> ().SetActiveShop (this);
             }
 
+            if (Input.GetMouseButtonDown (0) && !GetIsCloseEnough())
+            {
+                callingController.GetComponent<Mover>().MoveTo(transform.position, 1f);
+                StartCoroutine(MoveToShop(callingController));
+            }
+
             return true;
+        }
+
+        IEnumerator MoveToShop(PlayerController callingController)
+        {
+            yield return new WaitUntil(() => GetIsCloseEnough());
+            callingController.GetComponent<Shopper> ().SetActiveShop (this);
+        }
+
+        private bool GetIsCloseEnough()
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (Vector3.Distance(player.transform.position, transform.position) < speakingDistance)
+            {
+                return true;
+            }
+            if (Vector3.Distance(player.transform.position, transform.position) > speakingDistance)
+            {
+                return false;
+            }
+            return false;
         }
 
         private int CountItemsInInventory (InventoryItem item)

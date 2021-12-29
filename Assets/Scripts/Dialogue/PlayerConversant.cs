@@ -33,7 +33,10 @@ namespace RPG.Dialogue
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode ();
             TriggerEnterAction ();
-            onConversationUpdated ();
+            if (onConversationUpdated != null)
+            {
+                onConversationUpdated ();
+            }
         }
 
         public void Quit ()
@@ -43,7 +46,10 @@ namespace RPG.Dialogue
             currentConversant = null;
             currentNode = null;
             isChoosing = false;
-            onConversationUpdated ();
+            if (onConversationUpdated != null)
+            {
+                onConversationUpdated ();
+            }
         }
 
         public bool IsActive ()
@@ -76,42 +82,51 @@ namespace RPG.Dialogue
             currentNode = chosenNode;
             TriggerEnterAction ();
             isChoosing = false;
-            NextHandler ();
+            ResponseHandler ();
         }
 
-        public void NextHandler ()
+        public void ResponseHandler ()
         {
-            int playerResponseChoices = FilterOnCondition (currentDialogue.GetPlayerChildren (currentNode)).Count ();
-
-            if (playerResponseChoices > 0)
+            if (currentDialogue != null)
             {
-                isChoosing = true;
+                int playerResponseChoices = FilterOnCondition (currentDialogue.GetPlayerChildren (currentNode)).Count ();
+
+                if (playerResponseChoices > 0)
+                {
+                    isChoosing = true;
+                    TriggerExitAction ();
+                    if (onConversationUpdated != null)
+                {
+                    onConversationUpdated ();
+                }
+                    return;
+                }
+
+                DialogueNode[] children = FilterOnCondition (currentDialogue.GetAllChildren (currentNode)).ToArray ();
+
+                int randomResponse = 0;
+
+                if (children.Count () > 1)
+                {
+                    randomResponse = UnityEngine.Random.Range (0, children.Count ());
+                }
+                if (children.Count() == 0)
+                {
+                    Debug.Log("Children Count error occured. child Count is " + children.Count());
+                    return;
+                }
+                if (children.Count() == 1)
+                {
+                    randomResponse = 0;
+                }
                 TriggerExitAction ();
-                onConversationUpdated ();
-                return;
+                currentNode = children[randomResponse];
+                TriggerEnterAction ();
+                if (onConversationUpdated != null)
+                {
+                    onConversationUpdated ();
+                }
             }
-
-            DialogueNode[] children = FilterOnCondition (currentDialogue.GetAllChildren (currentNode)).ToArray ();
-
-            int randomResponse = 0;
-
-            if (children.Count () > 1)
-            {
-                randomResponse = UnityEngine.Random.Range (0, children.Count ());
-            }
-            if (children.Count() == 0)
-            {
-                Debug.Log("Children Count error occured. child Count is " + children.Count());
-                return;
-            }
-            if (children.Count() == 1)
-            {
-                randomResponse = 0;
-            }
-            TriggerExitAction ();
-            currentNode = children[randomResponse];
-            TriggerEnterAction ();
-            onConversationUpdated ();
         }
 
         public string GetCurrentConversantName ()
@@ -126,8 +141,14 @@ namespace RPG.Dialogue
             }
         }
 
+        public DialogueNode GetCurrentNode()
+        {
+            return currentNode;
+        }
+
         public bool HasNext ()
         {
+            //Debug.Log("The Current Node is " + currentNode.GetText());
             return FilterOnCondition (currentDialogue.GetAllChildren (currentNode)).Count () > 0;
         }
 

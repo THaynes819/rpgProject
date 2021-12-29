@@ -14,19 +14,73 @@ namespace RPG.UI
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
         [SerializeField] Button quitButton;
-        [SerializeField] Button nextButton;
+        [SerializeField] Button playerResponseButton = null;
+        [SerializeField] Transform buttonParent = null;
+        [SerializeField] Button responseButtonPrefab = null;
+        [SerializeField] string nextText = "Next ->";
+        [SerializeField] string goodbyeText = "Goodbye";
         [SerializeField] GameObject aIResponse;
         [SerializeField] Transform choiceRoot;
         [SerializeField] GameObject choicePrefab;
         [SerializeField] TextMeshProUGUI conversantName;
 
+        TMP_Text buttonText;
+        
+        Button goodbyeButtonInstance = null;
+        Button nextButtonInstance = null;
+
+        bool isNext = true;
+
         void Start ()
         {
             playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
-            playerConversant.onConversationUpdated += UpdateUI;
+            
+            if (playerConversant == null)
+            {
+                playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
+                playerConversant.onConversationUpdated += UpdateUI;
+                buttonText = playerResponseButton.GetComponentInChildren<TMP_Text>();
+            }
+            if (playerConversant != null)
+            {
+                playerConversant.onConversationUpdated += UpdateUI;
+            }
 
             quitButton.onClick.AddListener (() => playerConversant.Quit ());
-            nextButton.onClick.AddListener (() =>
+
+            playerResponseButton.onClick.AddListener (() =>
+            {
+
+                if (playerConversant.IsChoosing())
+                {
+                    BuildChoiceList ();
+                }
+                else
+                {
+                    //playerConversant.ResponseHandler ();
+                    BuildResponseButton();                    
+                }
+                
+            });            
+            
+            UpdateUI ();
+        }
+
+        public void BuildResponseButton()
+        {
+            if (playerConversant == null)
+            {
+                Debug.Log("conversant was null");
+                playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
+            }
+
+            if (goodbyeButtonInstance != null && goodbyeButtonInstance.GetComponentInChildren<TMP_Text>().text != nextText)
+            {
+                
+                Destroy(goodbyeButtonInstance.gameObject);
+                nextButtonInstance = Instantiate(responseButtonPrefab, buttonParent);            
+                nextButtonInstance.GetComponentInChildren<TMP_Text>().text = nextText;
+                nextButtonInstance.onClick.AddListener (() =>
             {
                 if (playerConversant.IsChoosing ())
                 {
@@ -34,10 +88,16 @@ namespace RPG.UI
                 }
                 else
                 {
-                    playerConversant.NextHandler ();
+                    playerConversant.ResponseHandler ();
                 }
+                
             });
-            UpdateUI ();
+            }
+            if (playerConversant != null)
+            {
+                playerConversant.ResponseHandler ();
+            }
+            //playerConversant.ResponseHandler ();
         }
 
         private void BuildChoiceList ()
@@ -60,6 +120,47 @@ namespace RPG.UI
             }
         }
 
+
+        public void Goodbye()
+        {
+            //Debug.Log("Goodbye Called");
+            if (playerResponseButton != null)
+            {
+                Destroy(playerResponseButton.gameObject);
+            }
+
+            if (nextButtonInstance != null)
+            {
+                Destroy(nextButtonInstance.gameObject);
+            }   
+            
+            goodbyeButtonInstance = Instantiate(responseButtonPrefab, buttonParent);
+            
+            goodbyeButtonInstance.GetComponentInChildren<TMP_Text>().text = goodbyeText;
+
+            playerResponseButton.onClick.RemoveAllListeners();
+            goodbyeButtonInstance.onClick.AddListener (() =>  playerConversant.Quit ()); 
+            
+
+        }
+
+        private void OnDisable() 
+        {
+            if (playerConversant == null)
+            {
+                playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
+            }
+            BuildResponseButton();
+            // if (goodbyeButtonInstance != null)
+            // {
+            //     Destroy(goodbyeButtonInstance.gameObject);
+
+                
+            // }
+        }
+        
+
+
         void UpdateUI ()
         {
             gameObject.SetActive (playerConversant.IsActive ());
@@ -75,9 +176,7 @@ namespace RPG.UI
             else
             {
                 AIText.text = playerConversant.GetText ();
-                nextButton.gameObject.SetActive (playerConversant.HasNext ());
             }
-        }
-
+        }        
     }
 }
