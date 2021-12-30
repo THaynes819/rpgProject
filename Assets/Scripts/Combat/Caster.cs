@@ -15,6 +15,7 @@ namespace RPG.Combat
         [SerializeField] Spell spell = null;
         [SerializeField] Transform spellOrigin = null;
         [SerializeField] GameObject preCastAnimation = null;
+        [SerializeField] bool doesCancelActions = true;
         public bool hasProjectile = true;
 
         public float timeSinceLastCast = Mathf.Infinity;
@@ -196,6 +197,11 @@ namespace RPG.Combat
             target = null;
             GetComponent<Mover> ().Cancel ();
         }
+
+        public bool GetDoesCancel()
+    {
+        return doesCancelActions;
+    }
 
         private void StopSpell ()
         {

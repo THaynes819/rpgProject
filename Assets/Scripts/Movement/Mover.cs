@@ -11,6 +11,7 @@ namespace RPG.Movement
         [SerializeField] Transform target;
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxPathLength = 40f;
+        [SerializeField] bool doesCancelActions = true;
 
         Health health;
         NavMeshAgent navMeshAgent;
@@ -24,6 +25,10 @@ namespace RPG.Movement
         void Update ()
         {
             navMeshAgent.enabled = !health.IsDead ();
+            // if (health.IsDead())
+            // {
+            //     Debug.Log("Mover Says this is Dead " + this.name);
+            // }
             UpdateAnimator ();
         }
 
@@ -55,6 +60,11 @@ namespace RPG.Movement
         {
             navMeshAgent.isStopped = true;
         }
+
+    public bool GetDoesCancel()
+    {
+        return doesCancelActions;
+    }
 
         private void UpdateAnimator ()
         {

@@ -14,7 +14,7 @@ namespace RPG.Abilities
         [SerializeField] EffectStrategy[] effectStrategies;
         [SerializeField] Stat abiltyResource;
         [SerializeField] float resourceCost = 5;
-        
+        [SerializeField] bool doesCancelActions = true;
 
         public override void Use (GameObject user) // Make this more customizable and not just heal
         {   
@@ -33,6 +33,7 @@ namespace RPG.Abilities
             }
 
             AbilityData data = new AbilityData(user);
+            data.SetDoesCancel(doesCancelActions);
 
             ActionScheduler actionScheduler = user.GetComponent<ActionScheduler>();
             actionScheduler.StartAction(data);
@@ -45,7 +46,7 @@ namespace RPG.Abilities
 
         private void TargetAquired (AbilityData data)
         {   
-            if (data.GetIsCancelled()) return;
+            if (data.GetIsCancelled()) return; // This is having backward effect. Walking doesn't cancel drinking, but drinking still cancels walking.
 
             float currentResourcePoints = data.GetUser().GetComponent<ResourcePool>().GetCurrentResourcePoints();
             if (resourceCost > currentResourcePoints)

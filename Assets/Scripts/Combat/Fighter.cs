@@ -11,7 +11,7 @@ using System;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction
     {
 
         [SerializeField] float timeBetweenAttacks = 1f;
@@ -19,7 +19,7 @@ namespace RPG.Combat
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
         [SerializeField] float autoAttackRange = 4f;
-        
+        [SerializeField] bool doesCancelActions = true;
 
         Health target;
 
@@ -77,10 +77,10 @@ namespace RPG.Combat
                 
                 if (target == null) 
                 {
-                    Debug.Log("Target is Null");
+                    //Debug.Log("Target is Null");
                     return; 
                 }
-                Debug.Log("New Target found. It's " + target);
+                //Debug.Log("New Target found. It's " + target);
             }
 
             if (!GetIsInRange (target.transform))
@@ -176,8 +176,11 @@ namespace RPG.Combat
         void Hit ()
         {
             if (target == null) { return; }
-
+            
             float damage = GetComponent<BaseStats> ().GetStat (Stat.Damage);
+            float defense = target.gameObject.GetComponent<BaseStats> ().GetStat (Stat.Defense);
+
+            damage /= 1 + defense / damage;
 
             if (currentWeapon.value != null)
             {
@@ -229,8 +232,12 @@ namespace RPG.Combat
             StopAttack ();
             target = null;
             GetComponent<Mover> ().Cancel ();
-
         }
+
+    public bool GetDoesCancel()
+    {
+        return doesCancelActions;
+    }
 
         private void StopAttack ()
         {
@@ -238,16 +245,5 @@ namespace RPG.Combat
             GetComponent<Animator> ().SetTrigger ("stopAttack");
         }
 
-        public object CaptureState ()
-        {
-            return currentWeaponConfig.name;
-        }
-
-        public void RestoreState (object state)
-        {
-            string weaponName = (string) state;
-            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig> (weaponName);
-            EquipWeapon (weapon);
-        }
     }
 }

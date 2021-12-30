@@ -22,22 +22,25 @@ namespace RPG.Dialogue
         {
             if (actionTrigger == action && action != null)
             {
-                Debug.Log("Triggering " + actionTrigger); //To be removed, but good to know when unseen things are triggered
+                //Debug.Log("Triggering " + actionTrigger); //To be removed, but good to know when unseen things are triggered
                 onTrigger.Invoke();
             }
 
             if (actionTrigger == actionTwo && actionTwo != null)
             {
+                //Debug.Log("Triggering " + actionTrigger);
                 onSecondTrigger.Invoke();
             }
 
             if (actionTrigger == actionThree && actionThree != null)
             {
+                //Debug.Log("Triggering " + actionTrigger);
                 onThirdTrigger.Invoke();
             }
 
             if (actionTrigger == actionFour && actionFour != null)
             {
+                //Debug.Log("Triggering " + actionTrigger);
                 onFourthTrigger.Invoke();
             }
         }

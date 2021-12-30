@@ -9,21 +9,26 @@ namespace RPG.Core
         public void StartAction(IAction action)
         {
             if (currentAction == action) return;                   
-            if (currentAction != null)
+            if (currentAction != null && action.GetDoesCancel())
             {
                 currentAction.Cancel();
+            }
+            if (action == null)
+            {
+                CancelCurrentAction();
             }
             currentAction = action;            
         }
     
 
-        public void CancelCurrentACtion()
+        public void CancelCurrentAction()
         {
             if (currentAction != null)
             {
                 currentAction.Cancel();
             }
-            StartAction(null);
+            Debug.Log("Start Action Null");
+            //StartAction(null);
         }
 
     }

@@ -32,7 +32,7 @@ namespace RPG.Cinematics
         {
             
             GameObject player = GameObject.FindWithTag("Player");            
-            player.GetComponent<ActionScheduler>().CancelCurrentACtion();
+            player.GetComponent<ActionScheduler>().CancelCurrentAction();
             playerController.enabled = false;
 
         }

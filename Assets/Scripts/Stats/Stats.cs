@@ -13,6 +13,6 @@ namespace RPG.Stats
         TotatTraitPoints,
         BuyingDiscountPercentage,
         None,
-        
+        Defense,
     }
 }

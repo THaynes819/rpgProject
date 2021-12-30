@@ -140,7 +140,7 @@ namespace RPG.Control
 
         private void SuspicionBehaviour ()
         {
-            GetComponent<ActionScheduler> ().CancelCurrentACtion ();
+            GetComponent<ActionScheduler> ().CancelCurrentAction ();
         }
 
         private void AttackBehaviour ()

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b663dfaa5b9582042b328c662ef6e727, type: 3}
+  m_Name: BowRedProjectile
+  m_EditorClassIdentifier: 
+  itemID: 7f799613-122c-4f39-bf47-9a154c4affa7
+  displayName: Heat seeking Bow
+  description: You can't escape!!!
+  iconSprite: {fileID: 21300000, guid: 18e24b6864805e64580a0892fbefd1f8, type: 3}
+  pickup: {fileID: 7541943902792825942, guid: 4c6f3c501e3aa6f499b634b95f7a54fd, type: 3}
+  stackable: 0
+  price: 1000
+  category: 2
+  itemCooldown: 4
+  allowedEquipLocation: 5
+  animatorOverride: {fileID: 22100000, guid: e4151cc68c08f6c4ab26d82d0a82e797, type: 2}
+  eqqiuppedPrefab: {fileID: 4311022340090929531, guid: 6db2c864ff0fa894ab63ff6549173100,
+    type: 3}
+  weaponRange: 10
+  weaponDamage: 4
+  percentageBonus: 10
+  isRightHanded: 0
+  projectile: {fileID: 1785003238811767341, guid: 950ae11156a4a994c930348034950628,
+    type: 3}

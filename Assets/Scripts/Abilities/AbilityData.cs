@@ -11,6 +11,8 @@ Vector3 targetedPoint;
 IEnumerable<GameObject> targets;
 bool isCancelled = false;
 
+bool doesCancelActions = true;
+
     public AbilityData(GameObject user)
     {
         this.user = user;
@@ -54,5 +56,17 @@ bool isCancelled = false;
     public bool GetIsCancelled()
     {
         return isCancelled;
+    }
+
+    public bool SetDoesCancel(bool doesCancel)
+    {
+        doesCancelActions = doesCancel;
+
+        return doesCancelActions;
+    }
+
+    public bool GetDoesCancel()
+    {
+        return doesCancelActions;
     }
 }

@@ -26,7 +26,7 @@ namespace RPG.Pools
 
         LazyValue<float> healthPoints;
 
-        bool wasDeadlastFrame = false;
+        bool wasDeadLastFrame = false;
         float experienceReward = 0;
 
         void Awake ()
@@ -42,7 +42,6 @@ namespace RPG.Pools
         private void Start ()
         {
             healthPoints.ForceInit ();
-
         }
 
         private void OnEnable ()
@@ -60,26 +59,20 @@ namespace RPG.Pools
             return healthPoints.value <= 0;
         }
 
-        public void SetIsDead(bool value)
-        {
-            wasDeadlastFrame = value;
-        }
-
         public void TakeDamage (GameObject instigator, float damage)
         {
             healthPoints.value = Mathf.Max (healthPoints.value - damage, 0);
 
             if (IsDead())
-            {
-                //Debug.Log("onDeath should invoke because this died: " + this.name);
-                onDeath.Invoke (); //TODO fix this so that the SFX doesn't instantiate on dead mobs
-                AwardExperience (instigator);
+            {                
+                onDeath.Invoke(); //TODO fix this so that the SFX doesn't instantiate on dead mobs                
+                AwardExperience (instigator);                
             }
             else
             {
-                takeDamage.Invoke (damage);
+                takeDamage.Invoke(damage);
             }
-            UpdateState ();
+            UpdateState ();            
         }
 
         public void Heal (float healthToRestore, bool isOverTime, bool isSmooth, float duration, float tickSpeed) 
@@ -121,8 +114,7 @@ namespace RPG.Pools
                     float smoothTick = healthPoints.value + smoothTickHealValue;
                     
                     if (healthPoints.value >= totalHealedVal)
-                    {  
-                        Debug.Log("Total Healing cap hit so breaking");                      
+                    {                    
                         yield break;                        
                     }
                     
@@ -207,53 +199,52 @@ namespace RPG.Pools
         
 
         private void UpdateState ()
-        {
-            var player = GameObject.FindGameObjectWithTag("Player");
+        {     
             Animator animator = GetComponent<Animator> ();
-            if (isMobToKill) // if it's the quest mob to kill. This needs to be changed. It's not good. Check the code, This makes no sense. Death Aounouncer anounces the death to quest system?
-            {                
-                player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
-            }
+            var player = GameObject.FindGameObjectWithTag("Player");
 
-            if (this.gameObject != player && IsDead())
+            if (!wasDeadLastFrame && IsDead())
             {
-                //This fixes the floating corpse bug by destroying the Collider and Rigidbody on death
-                Collider collider = GetComponent<Collider> ();
-                Rigidbody rigidbody = GetComponent<Rigidbody> ();
-                Destroy (collider);
-                Destroy (rigidbody);
+                animator.SetTrigger("die");
+                GetComponent<ActionScheduler>().CancelCurrentAction();
+                if (this.gameObject != player)
+                {
+                    Collider collider = GetComponent<Collider> ();
+                    Rigidbody rigidbody = GetComponent<Rigidbody> ();
+                    Destroy (collider);
+                    Destroy (rigidbody);
+                }
             }
             
+            // if (isMobToKill) // if it's the quest mob to kill. This needs to be changed. It's not good. Check the code, This makes no sense. Death Aounouncer anounces the death to quest system?
+            // {                
+            //     player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
+            // }
 
-            if (!wasDeadlastFrame && IsDead())
-            {
-                animator.SetTrigger ("die");
-                GetComponent<ActionScheduler> ().CancelCurrentACtion ();
-            }
-
-            if (wasDeadlastFrame && !IsDead())
+            if (wasDeadLastFrame && !IsDead())
             {
                 animator.Rebind();
             }
-
             
-
-            wasDeadlastFrame = IsDead();
+            wasDeadLastFrame = IsDead();
         }
 
         private void AwardExperience (GameObject instigator)
         {
+            Debug.Log("AwardExperience Called");
             Experience experience = instigator.GetComponent<Experience> ();
             if (experience == null)
             {
+                Debug.Log("Edperience is nyll");
                 return;
             }
             BaseStats baseStats = instigator.GetComponent<BaseStats>();
             if (baseStats.GetLevel() >= baseStats.GetMaxLevel())
             {
+                Debug.Log("already at max level");
                 return;
             }
-
+            Debug.Log("Awarding XP");
             experience.GainExperience (GetComponent<BaseStats> ().GetStat (Stat.ExperienceReward));
         }
 

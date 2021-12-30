@@ -46,6 +46,7 @@ namespace RPG.Quests
 
         private void CompleteQuest ()
         {
+            //Debug.Log("Completing Objective");
             var player = GameObject.FindGameObjectWithTag ("Player");
             questList = player.GetComponent<QuestList> ();
             inventory = player.GetComponent<Inventory>();
