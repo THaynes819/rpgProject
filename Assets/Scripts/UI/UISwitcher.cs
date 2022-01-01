@@ -10,6 +10,7 @@ namespace RPG.UI
         {
             SwitchTo(entryPoint);
         }
+
         public void SwitchTo(GameObject toDisplay)
         {
             if (toDisplay.transform.parent != transform) return;

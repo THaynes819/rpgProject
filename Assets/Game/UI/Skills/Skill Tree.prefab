@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3138857058656540297}
   m_Layer: 5
-  m_Name: Hiding Panel
+  m_Name: Tree Hiding Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56.999878, y: 109.90794}
+  m_AnchoredPosition: {x: -57, y: 109.90796}
   m_SizeDelta: {x: -2482.687, y: -760.438}
   m_Pivot: {x: 0.50000006, y: 0.37680584}
 --- !u!1 &5593959198440093351

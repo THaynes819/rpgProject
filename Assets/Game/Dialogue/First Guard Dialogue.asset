@@ -201,8 +201,8 @@ MonoBehaviour:
   - 0c655756-1cdb-4784-a9a0-8cb9057d7c8a
   rect:
     serializedVersion: 2
-    x: 173
-    y: 178
+    x: 174
+    y: 177
     width: 200
     height: 100
   onEnterAction: Talk to the first Guard

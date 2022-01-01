@@ -77,7 +77,7 @@ namespace RPG.Dialogue
             callingController.GetComponent<PlayerConversant> ().StartDialogue (this, dialogue);
         }
 
-        private bool GetIsCloseEnough()
+        public bool GetIsCloseEnough()
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (Vector3.Distance(player.transform.position, transform.position) < speakingDistance)
@@ -89,6 +89,11 @@ namespace RPG.Dialogue
                 isCloseEnough = false;
             }
             return isCloseEnough;
+        }
+
+        public Dialogue GetDialogue()
+        {
+            return dialogue;
         }
     }
 }

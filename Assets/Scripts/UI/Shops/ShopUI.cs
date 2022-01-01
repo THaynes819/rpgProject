@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace RPG.UI.Shops
 {
-    public class ShopUI : MonoBehaviour
+    public class ShopUI : MonoBehaviour, IUICloser
     {
         [SerializeField] TextMeshProUGUI shopNameText;
         [SerializeField] Button quitButton;
@@ -137,5 +137,19 @@ namespace RPG.UI.Shops
             currentShop.SelectMode (!currentShop.IsBuyingMode ());
         }
 
+        public void CloseAll()
+        {
+            shopper.SetActiveShop (null);
+        }
+
+        public string GetGameObjectName()
+        {
+            return this.gameObject.name;
+        }
+
+        public bool GetIsActive()
+        {
+            return shopper.GetActiveShop() != null;
+        }
     }
 }

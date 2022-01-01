@@ -52,6 +52,13 @@ namespace RPG.Dialogue
             }
         }
 
+        public void SetIsActive(bool value)
+        {
+            if (value == false)
+            {
+                currentDialogue = null;
+            }
+        }
         public bool IsActive ()
         {
             return currentDialogue != null;

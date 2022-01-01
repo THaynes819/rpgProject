@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleKey: 27
-  uiContainer: {fileID: 5667400772661484672}
+  uiContainer: {fileID: 7355765973497405031}
+  isPauseMenu: 1
+  closeAll: {fileID: 0}
 --- !u!114 &515791409748767000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1062,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd671ebfb0be44489dade6f963db673, type: 3}
+--- !u!1 &7355765973497405031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 462822373977430899, guid: dcd671ebfb0be44489dade6f963db673,
+    type: 3}
+  m_PrefabInstance: {fileID: 6951491091064472852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4922517746019073847 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2605582652752083491, guid: dcd671ebfb0be44489dade6f963db673,
@@ -1072,7 +1080,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6951491091064472852}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7355765973497405031}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa10026c549290b40b4398bd10a67d28, type: 3}

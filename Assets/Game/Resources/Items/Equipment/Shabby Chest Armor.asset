@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83134f99ac8dadb4da00f3251ade4238, type: 3}
-  m_Name: First Armor
+  m_Name: Shabby Chest Armor
   m_EditorClassIdentifier: 
   itemID: c8c210b2-fee6-4c59-8d74-7a60d629cfd5
   displayName: Shabby Chest Armor
@@ -20,9 +20,9 @@ MonoBehaviour:
   stackable: 0
   price: 100
   category: 1
-  itemCooldown: 4
+  itemCooldown: 0
   allowedEquipLocation: 2
   additiveModifiers:
   - stat: 11
-    value: 10
+    value: 5
   percentageModifiers: []

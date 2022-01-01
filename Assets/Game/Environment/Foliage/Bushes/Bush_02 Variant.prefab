@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 845667587981630218, guid: fe625888523823e45ae92d6d9907e288,
         type: 3}
       propertyPath: m_Name
-      value: Bush_02
+      value: Bush_02 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 845667587981630218, guid: fe625888523823e45ae92d6d9907e288,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 845667587981630218, guid: fe625888523823e45ae92d6d9907e288,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4460591028468066585, guid: fe625888523823e45ae92d6d9907e288,
         type: 3}

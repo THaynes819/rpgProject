@@ -27,8 +27,6 @@ namespace RPG.Core
             {
                 currentAction.Cancel();
             }
-            Debug.Log("Start Action Null");
-            //StartAction(null);
         }
 
     }

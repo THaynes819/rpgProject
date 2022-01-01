@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace RPG.UI
 {
-    public class DialogueUI : MonoBehaviour
+    public class DialogueUI : MonoBehaviour, IUICloser
     {
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
@@ -30,6 +30,7 @@ namespace RPG.UI
         Button nextButtonInstance = null;
 
         bool isNext = true;
+        
 
         void Start ()
         {
@@ -151,12 +152,6 @@ namespace RPG.UI
                 playerConversant = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerConversant> ();
             }
             BuildResponseButton();
-            // if (goodbyeButtonInstance != null)
-            // {
-            //     Destroy(goodbyeButtonInstance.gameObject);
-
-                
-            // }
         }
         
 
@@ -177,6 +172,22 @@ namespace RPG.UI
             {
                 AIText.text = playerConversant.GetText ();
             }
-        }        
+        }
+
+        public void CloseAll()
+        {
+            Debug.Log("Close All setting player conversant as null");
+            playerConversant.Quit();
+        }
+
+        public string GetGameObjectName()
+        {
+            return this.gameObject.name;
+        }
+
+        public bool GetIsActive()
+        {
+            return gameObject.activeSelf;
+        }
     }
 }

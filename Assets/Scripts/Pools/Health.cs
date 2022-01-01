@@ -64,8 +64,8 @@ namespace RPG.Pools
             healthPoints.value = Mathf.Max (healthPoints.value - damage, 0);
 
             if (IsDead())
-            {                
-                onDeath.Invoke(); //TODO fix this so that the SFX doesn't instantiate on dead mobs                
+            {
+                onDeath.Invoke(); // Invokes Loot Drop and Death SFX that is set in the inspector               
                 AwardExperience (instigator);                
             }
             else
@@ -231,11 +231,10 @@ namespace RPG.Pools
 
         private void AwardExperience (GameObject instigator)
         {
-            Debug.Log("AwardExperience Called");
             Experience experience = instigator.GetComponent<Experience> ();
             if (experience == null)
             {
-                Debug.Log("Edperience is nyll");
+                Debug.Log("Error: Experience is null");
                 return;
             }
             BaseStats baseStats = instigator.GetComponent<BaseStats>();
@@ -244,7 +243,6 @@ namespace RPG.Pools
                 Debug.Log("already at max level");
                 return;
             }
-            Debug.Log("Awarding XP");
             experience.GainExperience (GetComponent<BaseStats> ().GetStat (Stat.ExperienceReward));
         }
 
