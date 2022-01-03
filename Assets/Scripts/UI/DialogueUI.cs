@@ -176,7 +176,6 @@ namespace RPG.UI
 
         public void CloseAll()
         {
-            Debug.Log("Close All setting player conversant as null");
             playerConversant.Quit();
         }
 

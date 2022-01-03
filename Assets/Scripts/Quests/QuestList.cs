@@ -18,6 +18,9 @@ namespace RPG.Quests
         List<Quest> completedQuest = new List<Quest> ();
 
         public event Action OnListUpdated;
+        public event Action OnAddQuest;
+        public event Action OnQuestUpdated;
+        public event Action OnQuestCompleted;
 
         public void AddQuest (Quest quest)
         {
@@ -31,6 +34,11 @@ namespace RPG.Quests
             if (OnListUpdated != null)
             {
                 OnListUpdated ();
+            }
+
+            if (OnAddQuest != null)
+            {
+                OnAddQuest();
             }
         }
 
@@ -67,6 +75,7 @@ namespace RPG.Quests
                     {
                         OnListUpdated ();
                     }
+                    
                 }
             }
         }
@@ -88,6 +97,12 @@ namespace RPG.Quests
 
                 if (status.isQuestComplete (status.GetQuest()))
                 {
+                    if (OnQuestCompleted != null)
+                    {
+                        Debug.Log("Quest Completed");
+                        OnQuestCompleted();
+                    }
+
                     GiveReward (quest);
                 }
 
@@ -95,6 +110,15 @@ namespace RPG.Quests
                 {
                     OnListUpdated ();
                 }
+                if (!status.isQuestComplete(status.GetQuest()))
+                {
+                    if (OnQuestUpdated != null)
+                    {
+                        Debug.Log("Quest Updated");
+                        OnQuestUpdated();
+                    }
+                }
+                
             }
 
             foreach (QuestStatus status in completedStatuses)
@@ -123,6 +147,7 @@ namespace RPG.Quests
             return null;
         }
 
+        // DeathAnnounce May not be necesarry. It needs tweeking regardless
         public void DeathAnnounce (string questName, string objective)
         {
             CompleteObjective (Quest.GetByName (questName), objective);
@@ -170,7 +195,6 @@ namespace RPG.Quests
                 {
                     GetComponent<ItemDropper> ().DropItem (reward.item, reward.number);
                 }
-
             }
         }
 

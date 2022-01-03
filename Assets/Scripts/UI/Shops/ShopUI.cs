@@ -139,7 +139,8 @@ namespace RPG.UI.Shops
 
         public void CloseAll()
         {
-            shopper.SetActiveShop (null);
+            shopper.Quit ();
+            //shopper.SetActiveShop (null);
         }
 
         public string GetGameObjectName()

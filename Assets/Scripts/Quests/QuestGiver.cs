@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +10,12 @@ namespace RPG.Quests
 
         [SerializeField] Quest quest;
 
+        
+
         public void GiveQuest ()
         {
             QuestList questList = GameObject.FindGameObjectWithTag ("Player").GetComponent<QuestList> ();
-            questList.AddQuest(quest);
+            questList.AddQuest(quest);            
         }
 
         public Quest GetGiversQuest()
