@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &355550531151428171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490471632869712895}
+  - component: {fileID: 311586392665022927}
+  m_Layer: 0
+  m_Name: Death Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490471632869712895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355550531151428171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1457483668633908914}
+  m_Father: {fileID: 5167303700904114947}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311586392665022927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355550531151428171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dcf7669e9dfdf4caf4f6b031038da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources: []
 --- !u!1 &2864329091657611410
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,11 +72,56 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1457483668633908914}
-  - {fileID: 3448264868232640508}
+  - {fileID: 490471632869712895}
+  - {fileID: 1488973132864668911}
   m_Father: {fileID: 6419058946325403027}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2995570688560589949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488973132864668911}
+  - component: {fileID: 5974668620825365840}
+  m_Layer: 0
+  m_Name: Damage Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1488973132864668911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995570688560589949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3448264868232640508}
+  m_Father: {fileID: 5167303700904114947}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5974668620825365840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995570688560589949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dcf7669e9dfdf4caf4f6b031038da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources: []
 --- !u!1 &8618209920550530965
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +344,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isMobToKill: 0
-  questName: 
-  questObjective: 
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -310,13 +397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084b858c7f7148f41a152bc969965183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  uniqueIdentifier: c6d87070-940a-4ab3-9c4f-c0ef1e87ae0e
 --- !u!1001 &69095735640359147
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5167303700904114947}
+    m_TransformParent: {fileID: 1488973132864668911}
     m_Modifications:
     - target: {fileID: 1000472260225221812, guid: 3ea27a6c3ab32b44b9bcb42b6fb18320,
         type: 3}
@@ -326,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 3400156783147333399, guid: 3ea27a6c3ab32b44b9bcb42b6fb18320,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3400156783147333399, guid: 3ea27a6c3ab32b44b9bcb42b6fb18320,
         type: 3}
@@ -397,7 +484,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5167303700904114947}
+    m_TransformParent: {fileID: 490471632869712895}
     m_Modifications:
     - target: {fileID: 4158466861027302677, guid: fd60887f2fa02674ea043c2046710542,
         type: 3}

@@ -56,7 +56,7 @@ namespace RPG.Quests
                 RemoveQuestItem();
             }
 
-            questList.RemoveQuest (quest);
+            questList.QueuQuestRemoval (quest);
         }
 
         private void RemoveQuestItem()

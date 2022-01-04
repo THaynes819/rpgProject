@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using RPG.Quests;
 using UnityEngine;
@@ -14,8 +15,6 @@ public class QuestListUI : MonoBehaviour
 
     QuestList questList;
 
-    
-
     // Start is called before the first frame update
     void Start ()
     {
@@ -27,7 +26,6 @@ public class QuestListUI : MonoBehaviour
         UpdateUI ();
         // Reset after updateUI to avoid Alerting on Start
         questAnimator.SetBool("giveQuest", false);
-        Debug.Log("Setting Initial Quest to false");
     }
 
     void UpdateUI ()
@@ -63,15 +61,19 @@ public class QuestListUI : MonoBehaviour
     }
 
     //Resets the Quest alert to clear when Clicked
-    public void AcknowledgeQuest()
+    public void AcknowledgeAlert()
     {
-        Debug.Log("Acknowledging Quest Alert");
         questAnimator.SetBool("giveQuest", false);
         questAnimator.SetBool("updateQuest", false);
         questAnimator.SetBool("completeQuest", false);
-        // var tempColor = animatedImage.color;
-        // tempColor.a = 0f;
-        // animatedImage.color = tempColor;
-        // Debug.Log("animated Image alpha is " + animatedImage.color.a);
+        List<Quest> tempQuests = new List<Quest>();
+        tempQuests = questList.GetRemovalQuests();
+        foreach (var quest in tempQuests)
+        {
+            questList.AlertRemoveQuest(quest);
+        }
+        
+
+        //TODO Add a "Complete Quest" Line where the recently completed Quest once was and make it fade away on Acknowledge
     }
 }

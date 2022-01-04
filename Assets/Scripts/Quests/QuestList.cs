@@ -11,12 +11,14 @@ using UnityEngine;
 
 namespace RPG.Quests
 {
-    public class QuestList : MonoBehaviour, ISaveable, IPredicateEvaluator, IDeathAnnouncer
+    public class QuestList : MonoBehaviour, ISaveable, IPredicateEvaluator
     {
+        [SerializeField] float questRemovalDelay = 5f;
+        [SerializeField] AudioSource completedSound = null;
         List<QuestStatus> statuses = new List<QuestStatus> ();
         List<QuestStatus> completedStatuses = new List<QuestStatus> ();
         List<Quest> completedQuest = new List<Quest> ();
-
+        List<Quest> removalQuests = new List<Quest> ();
         public event Action OnListUpdated;
         public event Action OnAddQuest;
         public event Action OnQuestUpdated;
@@ -42,6 +44,57 @@ namespace RPG.Quests
             }
         }
 
+        public List<Quest> GetRemovalQuests()
+        {
+            return removalQuests;
+        }
+
+        // QuestCompletion calls this function so the quest list knows what quests are done but not removed.
+        public void QueuQuestRemoval(Quest quest)
+        {
+            if (!removalQuests.Contains(quest) )
+            {
+                removalQuests.Add(quest); 
+            }
+        }
+
+        public void RemoveCompleted(Quest quest)
+        {
+            if (removalQuests.Contains(quest))
+            {
+                StartCoroutine(DelayedRemoveQuest(quest));
+                removalQuests.Remove(quest);
+            }
+        }
+
+        public void AlertRemoveQuest(Quest quest)
+        {
+            foreach (QuestStatus status in statuses)
+            {
+                if (quest == status.GetQuest())
+                {
+                    Debug.Log("Started Coroutine, Removing Quest from Removal List");
+                    StartCoroutine(DelayedRemoveQuest(quest));
+                }
+            }
+            // List<Quest> tempQuests = new List<Quest>();
+            // tempQuests = removalQuests;
+
+            // if (tempQuests.Contains(quest))
+            // {
+            //     StartCoroutine(DelayedRemoveQuest(quest));
+            //     Debug.Log("Started Coroutine, Removing Quest from Removal List");
+            //     //removalQuests.Remove(quest);
+            // }
+        }
+
+        IEnumerator DelayedRemoveQuest(Quest quest)
+        {
+            yield return new WaitForSeconds(questRemovalDelay);
+            RemoveQuest(quest);
+        }
+
+        // Delay this so that it shows completed on the UI for a short time. Interface or observer?
         public void RemoveQuest (Quest quest)
         {
 
@@ -98,11 +151,11 @@ namespace RPG.Quests
                 if (status.isQuestComplete (status.GetQuest()))
                 {
                     if (OnQuestCompleted != null)
-                    {
-                        Debug.Log("Quest Completed");
+                    {                        
                         OnQuestCompleted();
                     }
 
+                    completedSound.Play();
                     GiveReward (quest);
                 }
 
@@ -145,12 +198,6 @@ namespace RPG.Quests
                 }
             }
             return null;
-        }
-
-        // DeathAnnounce May not be necesarry. It needs tweeking regardless
-        public void DeathAnnounce (string questName, string objective)
-        {
-            CompleteObjective (Quest.GetByName (questName), objective);
         }
 
         public bool? Evaluate (Predicates predicate, string[] parameters)
@@ -219,5 +266,7 @@ namespace RPG.Quests
                 statuses.Add (new QuestStatus (objectState));
             }
         }
+
+        
     }
 }

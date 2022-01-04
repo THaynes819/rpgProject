@@ -9,14 +9,11 @@ using UnityEngine.Events;
 
 namespace RPG.Pools
 {
-    public class Health : MonoBehaviour, ISaveable, IPredicateEvaluator
+    public class Health : MonoBehaviour, ISaveable
     {
         [Range (1, 100)]
         [SerializeField] float levelUpHealthPercent = 90f;
         [SerializeField] TakeDamageEvent takeDamage;        
-        [SerializeField] bool isMobToKill = false;
-        [SerializeField] string questName;
-        [SerializeField] string questObjective;
         public UnityEvent onDeath;
 
         [System.Serializable]
@@ -185,18 +182,7 @@ namespace RPG.Pools
             return instigator;
         }
 
-        public bool? Evaluate (Predicates predicate, string[] parameters)
-        {
-            if (predicate == Predicates.KillForQuest && parameters[0] == questName)
-            {
 
-                return isMobToKill && IsDead ();
-            }
-
-            return null;
-        }
-
-        
 
         private void UpdateState ()
         {     
@@ -215,11 +201,6 @@ namespace RPG.Pools
                     Destroy (rigidbody);
                 }
             }
-            
-            // if (isMobToKill) // if it's the quest mob to kill. This needs to be changed. It's not good. Check the code, This makes no sense. Death Aounouncer anounces the death to quest system?
-            // {                
-            //     player.GetComponent<IDeathAnnouncer> ().DeathAnnounce (questName, questObjective);
-            // }
 
             if (wasDeadLastFrame && !IsDead())
             {

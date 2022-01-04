@@ -15,8 +15,17 @@ public class QuestItemUI : MonoBehaviour
     public void Setup(QuestStatus status)
     {
         this.status = status;
-        title.text = status.GetQuest().GetQuesttitle();
-        progress.text = status.GetCompletedCount() + "/" + status.GetQuest().GetObjectiveCount();
+        
+        if (status.isQuestComplete(status.GetQuest()))
+        {
+            title.text = status.GetQuest().GetQuesttitle() + "  - Quest Completed";
+            progress.text = status.GetCompletedCount() + "/" + status.GetQuest().GetObjectiveCount();
+        }
+        else
+        {
+            title.text = status.GetQuest().GetQuesttitle();
+            progress.text = status.GetCompletedCount() + "/" + status.GetQuest().GetObjectiveCount();
+        }
     }
 
     public QuestStatus GetQuestStatus()
