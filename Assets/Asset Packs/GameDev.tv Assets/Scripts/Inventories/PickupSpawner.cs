@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using GameDevTV.Saving;
-
 namespace GameDevTV.Inventories
 {
     /// <summary>
@@ -10,7 +9,7 @@ namespace GameDevTV.Inventories
     public class PickupSpawner : MonoBehaviour, ISaveable
     {
         // CONFIG DATA
-        [SerializeField] InventoryItem item = null;
+        [SerializeField] InventoryItem item = null;        
         [SerializeField] int number = 1;
 
 

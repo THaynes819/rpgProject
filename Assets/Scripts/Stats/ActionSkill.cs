@@ -46,10 +46,9 @@ namespace RPG.Stats
         void Awake ()
         {
             player = GameObject.FindGameObjectWithTag ("Player");
-
         }
 
-        public override void Use (GameObject user) // Make this more customizable and not just heal
+        public override bool Use (GameObject user) // Make this more customizable and not just heal
         {
             Debug.Log ("Using action: " + this);
 
@@ -57,19 +56,8 @@ namespace RPG.Stats
             {
                 //temporaryBuff.SetBuffTime (statToBuff, secondsActiveActive);
             }
-
+            return true;
         }
-
-
-        // public void CastAttackSkill (float skillCooldown, )
-        // {
-        //     if (!isCastable) return;
-        //     this.skillCooldown = skillCooldown;
-        //     this.skillRange = skillRange;
-        //     this.skillDamage = skillDamage;
-        //     this.skillRegeneration = skillRegeneration;
-        //     this.isPoolGenerating = isPoolGenerating;
-        // }
 
         public int GetLevelRequired ()
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Inventories;
+using RPG.Shops;
 using TMPro;
 using UnityEngine;
 
@@ -19,16 +20,21 @@ namespace GameDevTV.UI.Inventories
 
         // CACHE
         Inventory playerInventory;
-        Purse playerPurse = null;
+
+        Purse playerPurse;
+        Shopper shopper;
 
         // LIFECYCLE METHODS
 
         private void Awake ()
         {
+            GameObject player = GameObject.FindGameObjectWithTag ("Player");
             playerInventory = Inventory.GetPlayerInventory ();
             playerInventory.inventoryUpdated += Redraw;
-            playerPurse = GameObject.FindGameObjectWithTag ("Player").GetComponent<Purse> ();
-            purseField.text = $"{playerPurse.GetBalance ():N0}";
+            playerPurse = player.GetComponent<Purse>();
+            playerPurse.OnPurseUpdated += Redraw;
+            shopper = player.GetComponent<Shopper>();
+            purseField.text = $"{shopper.GetComponent <Purse>().GetBalance():N0}";
         }
 
         private void Start ()
@@ -51,7 +57,7 @@ namespace GameDevTV.UI.Inventories
                 itemUI.Setup (playerInventory, i);
             }
 
-            purseField.text = $"{playerPurse.GetBalance ():N0}";
+            purseField.text = $"{shopper.GetComponent <Purse>().GetBalance():N0}";
         }
     }
 }

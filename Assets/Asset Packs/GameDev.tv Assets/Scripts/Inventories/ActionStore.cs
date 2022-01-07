@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameDevTV.Saving;
-using RPG.Combat;
 using UnityEngine;
 
 namespace GameDevTV.Inventories
@@ -115,8 +114,8 @@ namespace GameDevTV.Inventories
         {
             if (dockedItems.ContainsKey (index))
             {
-                dockedItems[index].item.Use (user);
-                if (dockedItems[index].item.isConsumable ())
+                bool wasUsed = dockedItems[index].item.Use (user);
+                if (wasUsed && dockedItems[index].item.isConsumable ())
                 {
                     RemoveItems (index, 1);
                 }

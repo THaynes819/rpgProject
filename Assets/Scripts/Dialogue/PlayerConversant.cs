@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GameDevTV.Utils;
 using RPG.Core;
 using UnityEngine;
 
@@ -194,7 +195,6 @@ namespace RPG.Dialogue
         private void TriggerAction (string action)
         {
             if (action == "") return;
-
             foreach (DialogueTrigger trigger in currentConversant.GetComponents<DialogueTrigger> ())
             {
                 if (trigger != null)

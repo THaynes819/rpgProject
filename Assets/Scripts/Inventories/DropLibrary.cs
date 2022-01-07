@@ -11,7 +11,9 @@ namespace RPG.Inventories
 
         [SerializeField]
         DropConfig[] potentialDrops;
-        [SerializeField] float[] dropChancepercentage;
+
+        [Tooltip("Each element corresponds to the drop chance relative to enemy Level")]
+        [Range(1, 100)][SerializeField] float[] anyDropChancePercentage;
         [SerializeField] int[] minDrops;
         [SerializeField] int[] maxDrops;
 
@@ -22,7 +24,7 @@ namespace RPG.Inventories
             public float[] relativeChance;
             public int[] minNumber;
             public int[] maxNumber;
-            public int GetRandomNumber (int level)
+            public int GetRandomNumber (int level) //Returns a random int between min and max drops
             {
                 if (!item.IsStackable ())
                 {
@@ -40,9 +42,9 @@ namespace RPG.Inventories
             public int number;
         }
 
-        public IEnumerable<Dropped> GetRandomDrops (int level)
+        public IEnumerable<Dropped> GetRandomDrops (int level) //Random Dropper calls this function to know what to drop
         {
-            if (!ShouldRandomDrop (level))
+            if (!ShouldRandomDrop (level)) // Nothing Drops if ShouldRandomDrop returns false
             {
                 yield break;
             }
@@ -52,12 +54,12 @@ namespace RPG.Inventories
             }
         }
 
-        bool ShouldRandomDrop (int level)
+        bool ShouldRandomDrop (int level) // returns true if the random number is less than the dropChance roll from GetByLevel
         {
-            return Random.Range (0, 100) < GetByLevel (dropChancepercentage, level);
+            return Random.Range (0, 100) < GetByLevel (anyDropChancePercentage, level);
         }
 
-        int GetRandomNumberOfDrops (int level)
+        int GetRandomNumberOfDrops (int level) // returns an appropriate number of drops for the level
         {
             int min = GetByLevel (minDrops, level);
             int max = GetByLevel (maxDrops, level);
@@ -75,15 +77,15 @@ namespace RPG.Inventories
 
         }
 
-        DropConfig SelectRandomItem (int level)
+        DropConfig SelectRandomItem (int level) //chooses the (first or all?) random item that fits the criteria
         {
             float totalChance = GetTotalChance (level);
             float randomRoll = Random.Range (0, totalChance);
-            float chanceTotal = 0;
-            foreach (var drop in potentialDrops)
+            float chanceTotal = 0; 
+            foreach (var drop in potentialDrops) 
             {
                 chanceTotal += GetByLevel (drop.relativeChance, level);
-                if (chanceTotal > randomRoll)
+                if (chanceTotal > randomRoll) // if roll is Lower that chanceTotal, the drop occurs
                 {
                     return drop;
                 }
@@ -91,17 +93,17 @@ namespace RPG.Inventories
             return null;
         }
 
-        float GetTotalChance (int level)
+        float GetTotalChance (int level) //Return a Random float for SelectRandomItem
         {
             float total = 0;
             foreach (var drop in potentialDrops)
             {
                 total += GetByLevel (drop.relativeChance, level);
             }
-            return total;
+            return total; // Sum of all the drops relative chances for the player's level
         }
 
-        static T GetByLevel<T> (T[] values, int level)
+        static T GetByLevel<T> (T[] values, int level) // returns random from provided array if the player level is greater than the array length, else returns the value that coincides with the level
         {
             if (values.Length == 0)
             {

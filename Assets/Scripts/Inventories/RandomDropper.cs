@@ -12,7 +12,7 @@ namespace RPG.Inventories
         // CONFIG DATA
         [Tooltip ("How far the pickups will sacatter when dropped")]
         [SerializeField] float scatterDistance = 1;
-        [SerializeField] DropLibrary dropLibrary;
+        [SerializeField] DropLibrary[] dropLibraries;
         [SerializeField] int numberOfDrops = 2;
 
         // Constants
@@ -22,11 +22,15 @@ namespace RPG.Inventories
         {
             var baseStats = GetComponent<BaseStats>();
 
-            var drops = dropLibrary.GetRandomDrops(baseStats.GetLevel());
-            foreach (var drop in drops)
+            foreach (var library in dropLibraries)
             {
-                DropItem(drop.item , drop.number);
+                var drops = library.GetRandomDrops(baseStats.GetLevel());
+                foreach (var drop in drops)
+                {
+                    DropItem(drop.item , drop.number);
+                }
             }
+            
         }
 
 

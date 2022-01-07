@@ -7,14 +7,13 @@ using RPG.Core;
 using UnityEngine;
 using UnityEngine.Events;
 using GameDevTV.Inventories;
+using GameDevTV.Utils;
 
 namespace RPG.Quests
 {
     public class QuestCompletion : MonoBehaviour
     {
-        [SerializeField] Quest quest;
-        [SerializeField] string objectiveToComplete;
-
+        [SerializeField] QuestObjectivePair[] objectivePairs;
         [SerializeField] bool hasItemToRemove = false;
         [SerializeField] InventoryItem itemToRemove = null;
         [SerializeField] int amountToRemove = 1;
@@ -27,24 +26,30 @@ namespace RPG.Quests
         QuestList questList;
         Inventory inventory;
 
-        public void CompleteObjective ()
+        public void CompleteObjective (QuestObjectivePair objective)
         {
             var player = GameObject.FindGameObjectWithTag ("Player");
             questList = player.GetComponent<QuestList> ();
             inventory = player.GetComponent<Inventory>();
+            foreach (var pair in objectivePairs)
+            {
+                if (pair.GetPairedQuest() == null) return;
 
-            if (quest != null)
-            {
-                questList.CompleteObjective (quest, objectiveToComplete);
-                CompleteQuest ();
+                if (objective != null && objective == pair)
+                {
+                        Quest quest = objective.GetPairedQuest();
+                        string objectiveToComplete = objective.GetPairedObjective();
+                        questList.CompleteObjective (quest, objectiveToComplete );
+                        CompleteQuest (quest);
+                }
+                
             }
-            if (quest == null)
-            {
-                return;
-            }
+            
+
+            
         }
 
-        private void CompleteQuest ()
+        private void CompleteQuest (Quest completedQuest)
         {
             //Debug.Log("Completing Objective");
             var player = GameObject.FindGameObjectWithTag ("Player");
@@ -56,7 +61,7 @@ namespace RPG.Quests
                 RemoveQuestItem();
             }
 
-            questList.QueuQuestRemoval (quest);
+            questList.QueuQuestRemoval (completedQuest);
         }
 
         private void RemoveQuestItem()
@@ -64,12 +69,29 @@ namespace RPG.Quests
             if (hasItemToRemove)
             {
                 if (inventory.HasItem(itemToRemove))
-            {
-                inventory.RemoveItem(itemToRemove, amountToRemove);
-            }
+                {
+                    inventory.RemoveItem(itemToRemove, amountToRemove);
+                }
             }
             
             
+        }
+    }
+
+    [System.Serializable]
+    public class QuestObjectivePair
+    {
+        [SerializeField] Quest quest;
+        [SerializeField] string objective;
+
+        public Quest GetPairedQuest()
+        {
+            return quest;
+        }
+
+        public string GetPairedObjective()
+        {
+            return objective;
         }
     }
 

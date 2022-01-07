@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using GameDevTV.Saving;
+using GameDevTV.Utils;
 using UnityEngine;
 
 
 namespace RPG.Stats
 {
-    public class AttributeStore : MonoBehaviour, IModifierProvider, ISaveable
+    public class AttributeStore : MonoBehaviour, IModifierProvider, ISaveable, IPredicateEvaluator
     {
 
         [SerializeField] AttributeBonus[] bonusConfig;
@@ -158,6 +161,36 @@ namespace RPG.Stats
                 yield return bonus * GetPoints(attribute);
             }
         }
+        public bool? Evaluate(Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
+        {
+            if (predicate == Predicates.MinimumAttribute) //Checks to see if the player meets the required attributes for the equipment
+            {
+                if (attributes.Length == 0) return null;
+                {
+                    Attribute check;
+                    
+                    for (var i = 0; i < attributes.Length; i++)
+                    {
+                        check = attributes[i].GetAttribute();
+                        
+                        int requiredValue = attributes[i].GetRequiredValue();
+                        if(GetPoints(check) < requiredValue) return false;
+                        if(GetPoints(check) >= requiredValue) return true;
+                    }            
+                }                
+            }
+            return null;
+        }
+
+        public RPG.Stats.Attribute[] GetRequiredAttributes()
+            {
+                return null;
+            }
+
+        public float GetRequiredValue()
+        {
+            return 0f;
+        }
 
         public object CaptureState()
         {
@@ -168,5 +201,7 @@ namespace RPG.Stats
         {
             assignedPoints = new Dictionary<Attribute, int>((IDictionary<Attribute, int>)state);
         }
+
+        
     }
 }

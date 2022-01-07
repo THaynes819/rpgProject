@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Core
+namespace GameDevTV.Utils
 {
     public enum Predicates
     {
@@ -13,5 +13,6 @@ namespace RPG.Core
         Empty,
         KillForQuest,
         IsDead,
+        MinimumAttribute,
     }
 }

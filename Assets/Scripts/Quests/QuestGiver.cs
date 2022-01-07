@@ -8,14 +8,24 @@ namespace RPG.Quests
     public class QuestGiver : MonoBehaviour
     {
 
-        [SerializeField] Quest quest;
+        [SerializeField] Quest[] quests;
 
-        
+        Quest quest;
 
-        public void GiveQuest ()
+        public void GiveQuest (string questName)
         {
             QuestList questList = GameObject.FindGameObjectWithTag ("Player").GetComponent<QuestList> ();
-            questList.AddQuest(quest);            
+            foreach (Quest givenQuest in quests)
+            {
+                if (questName == givenQuest.name)
+                {
+                    questList.AddQuest(givenQuest);
+                }
+                if (quest == null)
+                {
+                    quest = givenQuest;
+                }
+            }
         }
 
         public Quest GetGiversQuest()

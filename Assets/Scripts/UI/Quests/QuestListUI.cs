@@ -47,7 +47,6 @@ public class QuestListUI : MonoBehaviour
     private void AddQuest()
     {
         questAnimator.SetBool("giveQuest", true);
-        Debug.Log("Giving Quest, Alerting UI");
     }
 
     private void UpdateQuestObjective()

@@ -10,23 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40096ac57f0b8254fa87dddc7ac5e68e, type: 3}
-  m_Name: Default Enemy Drops
+  m_Name: Grunt Drops
   m_EditorClassIdentifier: 
   potentialDrops:
   - item: {fileID: 11400000, guid: c7a7fdc758cf892408b2a6d4100b8fec, type: 2}
     relativeChance:
     - 30
     - 30
-    minNumber: 0100000002000000
-    maxNumber: 0500000005000000
-  - item: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706, type: 2}
+    minNumber: 01000000
+    maxNumber: 02000000
+  - item: {fileID: 11400000, guid: 985258bae7171be4bbef43b5f9963769, type: 2}
     relativeChance:
     - 20
     - 15
     minNumber: 0100000002000000
     maxNumber: 0200000003000000
-  dropChancepercentage:
+  - item: {fileID: 11400000, guid: add99e027d2a36346aaa3edbfd37d545, type: 2}
+    relativeChance:
+    - 80
+    minNumber: 0100000002000000
+    maxNumber: 0200000003000000
+  anyDropChancePercentage:
   - 50
   - 90
-  minDrops: 0300000006000000
-  maxDrops: 060000000c000000
+  minDrops: 0100000002000000
+  maxDrops: 0200000003000000

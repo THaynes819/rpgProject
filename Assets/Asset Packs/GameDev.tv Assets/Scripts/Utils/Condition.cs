@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using RPG.Core;
+using RPG.Stats;
 using UnityEngine;
 
-namespace RPG.Core
+namespace GameDevTV.Utils
 {
     [System.Serializable]
     public class Condition
@@ -47,16 +51,18 @@ namespace RPG.Core
         {
             [SerializeField] Predicates predicate;
             [SerializeField] string[] paremeters;
+            [SerializeField] RequiredAttribute[] requiredAttributes;
             [SerializeField] bool negate = false;
 
             public bool Check (IEnumerable<IPredicateEvaluator> evaluators)
             {
                 foreach (var evaluator in evaluators)
                 {
-                    bool? result = evaluator.Evaluate (predicate, paremeters);
+                    bool? result = evaluator.Evaluate (predicate, paremeters, requiredAttributes);
 
                     if (result == negate) return false;
                 }
+
                 return true;
             }
         }

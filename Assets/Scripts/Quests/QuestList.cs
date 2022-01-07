@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GameDevTV.Inventories;
 using GameDevTV.Saving;
+using GameDevTV.Utils;
 using RPG.Core;
 using UnityEngine;
 
@@ -200,7 +201,7 @@ namespace RPG.Quests
             return null;
         }
 
-        public bool? Evaluate (Predicates predicate, string[] parameters)
+        public bool? Evaluate (Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
         {
 
             if (predicate == Predicates.HasQuest)
@@ -230,6 +231,16 @@ namespace RPG.Quests
             }
 
             return null;
+        }
+
+        public RPG.Stats.Attribute[] GetRequiredAttributes()
+            {
+                return null;
+            }
+
+        public float GetRequiredValue()
+        {
+            return 0f;
         }
 
         private void GiveReward (Quest quest)

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using GameDevTV.Saving;
-using RPG.Core;
+using GameDevTV.Utils;
+using RPG.Core; // Need to remove this dependency
 using UnityEngine;
 
 namespace GameDevTV.Inventories
@@ -102,6 +103,13 @@ namespace GameDevTV.Inventories
         /// <returns>Whether or not the item could be added.</returns>
         public bool AddToFirstEmptySlot (InventoryItem item, int number)
         {
+            // Can auto add to Action Store or auto equip here Later
+
+            foreach (var store in GetComponents<IItemStore>())
+            {
+                number -= store.AddItems(item, number);
+            }
+            if (number <= 0) return true;
 
             int i = FindSlot (item);
 
@@ -225,7 +233,7 @@ namespace GameDevTV.Inventories
             return true;
         }
 
-        public bool? Evaluate (Predicates predicate, string[] parameters)
+        public bool? Evaluate (Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
         {
             switch (predicate)
             {
@@ -234,6 +242,16 @@ namespace GameDevTV.Inventories
             }
 
             return null;
+        }
+
+        public RPG.Stats.Attribute[] GetRequiredAttributes()
+            {
+                return null;
+            }
+        
+        public float GetRequiredValue()
+        {
+            return 2f;
         }
 
         // PRIVATE
@@ -328,6 +346,5 @@ namespace GameDevTV.Inventories
                 inventoryUpdated ();
             }
         }
-
     }
 }

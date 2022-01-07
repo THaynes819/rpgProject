@@ -124,7 +124,6 @@ namespace RPG.UI
 
         public void Goodbye()
         {
-            //Debug.Log("Goodbye Called");
             if (playerResponseButton != null)
             {
                 Destroy(playerResponseButton.gameObject);

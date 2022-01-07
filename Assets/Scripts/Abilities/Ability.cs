@@ -16,20 +16,20 @@ namespace RPG.Abilities
         [SerializeField] float resourceCost = 5;
         [SerializeField] bool doesCancelActions = true;
 
-        public override void Use (GameObject user) // Make this more customizable and not just heal
+        public override bool Use (GameObject user) // Make this more customizable and not just heal
         {   
             float currentResourcePoints = user.GetComponent<ResourcePool>().GetCurrentResourcePoints();
             if (resourceCost > currentResourcePoints)
             {
                 //add a not enough mana effect?
-                return;
+                return false;
             }
 
             CooldownStore cooldownStore = user.GetComponent<CooldownStore>();
             if (cooldownStore.GetTimeRemaining(this) > 0)
             {
                 //add an On CD effect?              
-                return;
+                return false;
             }
 
             AbilityData data = new AbilityData(user);
@@ -41,7 +41,8 @@ namespace RPG.Abilities
             targetingStrategy.StartTargeting (data, 
                 () => {
                     TargetAquired(data);
-                });            
+                });   
+            return true;
         }
 
         private void TargetAquired (AbilityData data)

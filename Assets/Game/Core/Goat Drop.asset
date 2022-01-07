@@ -18,7 +18,7 @@ MonoBehaviour:
     - 100
     minNumber: 01000000
     maxNumber: 01000000
-  dropChancepercentage:
+  anyDropChancePercentage:
   - 100
   minDrops: 01000000
   maxDrops: 01000000

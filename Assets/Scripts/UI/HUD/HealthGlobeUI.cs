@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace RPG.Pools
@@ -7,6 +8,8 @@ namespace RPG.Pools
     {
 
         [SerializeField] Slider slider = null;
+        [SerializeField] TextMeshProUGUI currentHealth;
+        [SerializeField] TextMeshProUGUI maxHealth;
 
         GameObject player;
 
@@ -18,6 +21,8 @@ namespace RPG.Pools
         void Update ()
         {
             slider.value = player.GetComponent<Health> ().GetFraction ();
+            currentHealth.text = player.GetComponent<Health>().GetHealthPoints().ToString("F0");
+            maxHealth.text = player.GetComponent<Health>().GetMaxHealthPoints().ToString("F0");
         }
     }
 }
