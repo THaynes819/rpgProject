@@ -136,6 +136,15 @@ namespace RPG.Combat
             }
         }
 
+        public void DialogueAttack()
+        {
+            target = FindNewTargetInRange();                
+            if (target == null) 
+            {
+                return; 
+            }
+        }
+
         private Health FindNewTargetInRange()
         {
             Health bestEnemy = null;
@@ -168,6 +177,11 @@ namespace RPG.Combat
 
         private void TriggerAttack ()
         {
+            if (this != GameObject.FindGameObjectWithTag("Player"))
+            {
+                Debug.Log("Triggering attack from " + this.name);
+            }
+            
             GetComponent<Animator> ().ResetTrigger ("stopAttack");
             GetComponent<Animator> ().SetTrigger ("attack"); //triggers animation event
         }
@@ -184,9 +198,6 @@ namespace RPG.Combat
                 float defense = targetBaseStats.GetStat (Stat.Defense);
                 damage /= 1 + defense / damage;
             }
-            
-
-            
 
             if (currentWeapon.value != null)
             {
@@ -211,6 +222,11 @@ namespace RPG.Combat
 
         private bool GetIsInRange (Transform targetTransform)
         {
+            if (Vector3.Distance (transform.position, targetTransform.position) > currentWeaponConfig.GetWeaponRange ())
+            {
+                Debug.Log("Target is not in range: " + targetTransform.name);
+                Debug.Log("The distance is " + Vector3.Distance (transform.position, targetTransform.position));
+            }
             return Vector3.Distance (transform.position, targetTransform.position) < currentWeaponConfig.GetWeaponRange ();
         }
 

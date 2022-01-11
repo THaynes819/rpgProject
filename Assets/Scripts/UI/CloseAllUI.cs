@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using GameDevTV.UI;
 using UnityEngine;
 
 namespace RPG.UI
@@ -9,42 +11,50 @@ namespace RPG.UI
     {
     [SerializeField] KeyCode closeKey = KeyCode.Escape;
     [SerializeField] GameObject pauseMenu;
-    [SerializeField] float pauseDisallowedTime = 1f;
+    [SerializeField] float extraPauseDelay = 0.1f;
+    IPauseEnabler pauseHider;
+    IUICloser[] panels;
 
-    bool closedRecently = false;
-
+        private void OnEnable() 
+        {
+            pauseHider = pauseMenu.GetComponent<IPauseEnabler>();
+            panels = GetComponentsInChildren<IUICloser>();
+        }
         void Update()
         {
             if (Input.GetKeyDown(closeKey))
             {
-                foreach (var panel in GetComponentsInChildren<IUICloser>())
+                foreach (var panel in panels) 
                 {
-                    //this finds the pause panel, Something can be done with this later if necesarry.
-                    if (panel.GetGameObjectName() == pauseMenu.name && panel.GetIsActive())
+                    if (pauseHider.GetPauseAvailability() && panel.GetIsActive())
                     {
-                        
+                        panel.CloseAll(); //Closes all non Pause Windows and dissalows Pause for a moment
+                        StartCoroutine(DisallowPause());
                     }
                     // closes panels open panels that are not the pause menu
-                    if (panel.GetGameObjectName() != pauseMenu.name && panel.GetIsActive())
+                    if (pauseHider.GetPauseAvailability())
                     {
-                        panel.CloseAll();
-                        StartCoroutine(DisallowPause()); 
+                        panel.CloseAll();                        
+                        pauseHider.ClosePauseNow();
                     }
                 }
             }
         }
 
+        
+
         //Dissallows pause for one frame so the pause screen doeswn't pop up when you close all with escape May be unecesarry
         IEnumerator DisallowPause()
         { 
-            closedRecently = true;
+            pauseHider.TogglePauseAvailability(false);            
             yield return new WaitForEndOfFrame();
-            closedRecently = false;     
+            StartCoroutine(DelayPauseLonger());     
         }
 
-        public bool GetRecentlyClosed()
+        IEnumerator DelayPauseLonger()
         {
-            return closedRecently;
+            yield return new WaitForSeconds(extraPauseDelay);
+            pauseHider.TogglePauseAvailability(true);
         }
     }
 }

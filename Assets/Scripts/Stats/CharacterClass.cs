@@ -6,6 +6,7 @@ namespace RPG.Stats
         Villager,
         Grunt,
         Archer,
-        Mage
+        Mage,
+        LargeSpider,
     }
 }

@@ -68,14 +68,6 @@ namespace GameDevTV.Inventories
             return 0;
         }
 
-        private void Update ()
-        {
-            if (Input.GetKeyDown (KeyCode.A))
-            {
-                Debug.Log ("The Docked Items are" + dockedItems.Values);
-            }
-        }
-
         /// <summary>
         /// Add an item to the given index.
         /// </summary>

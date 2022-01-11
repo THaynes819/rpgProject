@@ -285,8 +285,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5347819771414220032}
   m_HandleRect: {fileID: 7978012652207435060}
   m_Direction: 2
-  m_Value: 1.0000006
-  m_Size: 0.78521097
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -590,7 +590,7 @@ MonoBehaviour:
     type: 3}
   content: {fileID: 9091891589380387437}
   animatedImage: {fileID: 5451097937097507838}
-  questAnimator: {fileID: 0}
+  questAnimator: {fileID: 1921397003841015711}
 --- !u!1 &5513442646844439667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.040000003}
   m_AnchorMax: {x: 1, y: 0.9522171}
-  m_AnchoredPosition: {x: 0.000091552734, y: 19.210022}
+  m_AnchoredPosition: {x: 0.000091552734, y: 24.770569}
   m_SizeDelta: {x: -0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8462070111138144536
@@ -1174,6 +1174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questPrefab: {fileID: 2140937579149141670, guid: 3a2b407fb4057154c88006b1e1439f81,
     type: 3}
-  content: {fileID: 0}
-  animatedImage: {fileID: 0}
-  questAnimator: {fileID: 0}
+  content: {fileID: 9091891589380387437}
+  animatedImage: {fileID: 5451097937097507838}
+  questAnimator: {fileID: 1921397003841015711}

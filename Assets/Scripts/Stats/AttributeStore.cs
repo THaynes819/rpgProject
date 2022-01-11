@@ -102,7 +102,7 @@ namespace RPG.Stats
 
         public void Commit()
         {
-            Debug.Log("Commit was initiated");
+            Debug.Log("Commit was initiated"); // Set a notification Sound here
             foreach (Attribute attribute in stagedPoints.Keys)
             {
                 assignedPoints[attribute] = GetProposedPoints(attribute);                

@@ -23,6 +23,11 @@ PrefabInstance:
       propertyPath: characterClass
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2173215540818050769, guid: 821cd1634b5c08d4ba3289465006faa2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1dc894f9d649074a964df8b20b9ad8b, type: 2}
     - target: {fileID: 2396295059184535158, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -32,6 +37,11 @@ PrefabInstance:
         type: 3}
       propertyPath: chaseDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662102655137463510, guid: 821cd1634b5c08d4ba3289465006faa2,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 09c650aa-5e26-4447-93a0-216b3156e895
       objectReference: {fileID: 0}
     - target: {fileID: 5133474788305343967, guid: 821cd1634b5c08d4ba3289465006faa2,
         type: 3}

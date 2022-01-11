@@ -25,6 +25,48 @@ namespace RPG.Quests
         public event Action OnQuestUpdated;
         public event Action OnQuestCompleted;
 
+        private void Update() 
+        {
+            CompleteObjectivesByPredicates();
+        }
+
+        
+        public void ClearObjectives(Quest quest)
+        {
+            //Debug.Log("Clear Objective Called From in game");
+            if (statuses.Count <= 0 && completedQuest.Count <= 0)
+            {
+                Debug.Log("Status and Completed are 0, Calling SetObjectiveComplete");
+                foreach (var objective in quest.GetObjectives())
+                {
+                    objective.SetObjectiveComplete(objective.reference, false);
+                }
+                
+                //Debug.Log("Status should have been set");
+                return;
+            }
+
+            if (statuses.Count > 0)
+            {
+                foreach (var status in statuses)
+                {
+                    if (status.GetQuest() == quest)
+                    {
+                        foreach (var objective in quest.GetObjectives())
+                        {
+                            if (!status.isNamedObjectiveComplete(objective.reference))
+                            {
+                                //Debug.Log("Incomplete Objective found in statuses, it's " + objective.reference);
+                                objective.SetObjectiveComplete(objective.reference, false);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            Debug.Log("Incompleted no Objectives");
+        }
+
         public void AddQuest (Quest quest)
         {
             if (HasQuest (quest)) return;
@@ -74,19 +116,9 @@ namespace RPG.Quests
             {
                 if (quest == status.GetQuest())
                 {
-                    Debug.Log("Started Coroutine, Removing Quest from Removal List");
                     StartCoroutine(DelayedRemoveQuest(quest));
                 }
             }
-            // List<Quest> tempQuests = new List<Quest>();
-            // tempQuests = removalQuests;
-
-            // if (tempQuests.Contains(quest))
-            // {
-            //     StartCoroutine(DelayedRemoveQuest(quest));
-            //     Debug.Log("Started Coroutine, Removing Quest from Removal List");
-            //     //removalQuests.Remove(quest);
-            // }
         }
 
         IEnumerator DelayedRemoveQuest(Quest quest)
@@ -149,6 +181,11 @@ namespace RPG.Quests
 
                 status.CompleteObjective (status, objective);
 
+                Quest.Objective completedObjective = quest.GetObjective(objective);
+                //Debug.Log("Setting Objective " + objective + " as complete");
+                completedObjective.SetObjectiveComplete(objective, true);
+                
+
                 if (status.isQuestComplete (status.GetQuest()))
                 {
                     if (OnQuestCompleted != null)
@@ -158,6 +195,7 @@ namespace RPG.Quests
 
                     completedSound.Play();
                     GiveReward (quest);
+                    QueuQuestRemoval (quest);
                 }
 
                 if (OnListUpdated != null)
@@ -168,7 +206,7 @@ namespace RPG.Quests
                 {
                     if (OnQuestUpdated != null)
                     {
-                        Debug.Log("Quest Updated");
+                        Debug.Log("Quest Updated");   //TODO maybe add a sound here
                         OnQuestUpdated();
                     }
                 }
@@ -204,32 +242,62 @@ namespace RPG.Quests
         public bool? Evaluate (Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
         {
 
-            if (predicate == Predicates.HasQuest)
+            if (parameters.Length > 0)
             {
-                return HasQuest (Quest.GetByName (parameters[0]));
-            }
-
-            if (predicate == Predicates.QuestCompleted && parameters.Length > 0)
-            {
-                Quest questToCheck = Quest.GetByName (parameters[0]);
-                // QuestStatus statusToTest = GetQuestStatus(questToCheck);
-                // Debug.Log("Status to test is " + statusToTest);
-                if (GetActiveQuestStatus(questToCheck) != null)
+                    switch (predicate)
                 {
-                    return GetActiveQuestStatus(questToCheck).isQuestComplete(questToCheck);
-                }
-                if (GetActiveQuestStatus(questToCheck) == null)
-                {
-                    return false;
+                    case Predicates.HasQuest:
+                    return HasQuest (Quest.GetByName (parameters[0]));                
+                    case Predicates.ObjectiveComplete:
+                    return CheckObjectiveComplete(predicate, parameters);
+                    case Predicates.QuestCompleted:
+                    return CheckQuestComplete(predicate, parameters);
                 }
             }
-
+            
             if (predicate == Predicates.QuestCompleted && parameters.Length == 0)
             {
                 Debug.Log ("Parameters was zero...Need to fix this");
                 return false;
             }
+            return null;
+        }
 
+        private bool? CheckQuestComplete(Predicates predicate, string[] parameters)
+        {
+            if (predicate == Predicates.QuestCompleted && parameters.Length > 0 )
+            {
+                //Debug.Log("Checking Quest Parameter " + parameters[0]);
+                Quest quest = Quest.GetByName(parameters[0]);
+                QuestStatus status = GetActiveQuestStatus(quest);
+                if (status == null)
+                {
+                    return null;
+                }
+                //Debug.Log("the Status is " + status + ". The quest is " + quest);
+                bool isComplete = status.isQuestComplete(quest);
+                return isComplete;
+                //return GetActiveQuestStatus(Quest.GetByName(parameters[0])).isQuestComplete(Quest.GetByName(parameters[0]));
+            }
+            return null;
+        }
+        private bool? CheckObjectiveComplete(Predicates predicate, string[] parameters)
+        {
+            if (predicate == Predicates.ObjectiveComplete && parameters.Length > 0)
+            {
+                foreach (var status in statuses)
+                {
+                    Quest quest = status.GetQuest();
+                    Quest.Objective objective;
+                    if (quest.GetObjective(parameters[0]) != null)
+                    {
+                        objective = quest.GetObjective(parameters[0]);
+                        //Debug.Log("Returning" + parameters[0] + " Objective Complete as " + objective.GetIsComplete());
+                        return objective.GetIsComplete();
+                    }
+                }
+                
+            }
             return null;
         }
 
@@ -255,6 +323,29 @@ namespace RPG.Quests
                 }
             }
         }
+
+        private void CompleteObjectivesByPredicates()
+        {
+            if (statuses.Count > 0)
+            {
+                foreach (var status in statuses)
+                {
+                    if (status.IsComplete()) continue;
+                    Quest quest = status.GetQuest();
+                    foreach (var objective in quest.GetObjectives())
+                    {
+                        if (status.isNamedObjectiveComplete(objective.reference)) continue;
+                        if (!objective.usesCondition) continue;
+                         if (objective.completionCondition.Check(GetComponents<IPredicateEvaluator>())) // This GetComponent is in an Updated loop. Need to cache, but doesn't use much resource
+                        {
+                            CompleteObjective(quest, objective.reference);
+                        } 
+                    } 
+                    
+                }
+            }
+        }
+
 
         public object CaptureState ()
         {

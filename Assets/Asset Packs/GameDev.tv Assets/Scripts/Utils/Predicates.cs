@@ -8,11 +8,13 @@ namespace GameDevTV.Utils
     {
         None,
         HasQuest,
+        ObjectiveComplete,
         QuestCompleted,
         HasInventoryItem,
         Empty,
         KillForQuest,
         IsDead,
         MinimumAttribute,
+        HasMet,
     }
 }

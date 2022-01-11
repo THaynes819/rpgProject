@@ -16,12 +16,62 @@ MonoBehaviour:
   - number: 1
     item: {fileID: 11400000, guid: 30485dba4d0ac594bbf70b4c3ed94ded, type: 2}
   objectives:
-  - reference: Talk to the first Guard
+  - quest: {fileID: 11400000}
+    reference: Increase Might
+    description: Increase Might  to 3 or better
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: 8
+          paremeters: []
+          requiredAttributes:
+          - attribute: 0
+            requiredValue: 3
+          negate: 0
+    objectiveRewards: []
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Show Off
+    description: Show Fred Your new Musclularity
+    usesCondition: 0
+    completionCondition:
+      and: []
+    objectiveRewards:
+    - objectiveName: Return the Goat to Fred
+      item: {fileID: 11400000, guid: c5f447061d4c5d24abdbd9efdcc96706, type: 2}
+      number: 1
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Talk to the first Guard
     description: Speak to the quard just above Fred.
-    hasBossToKill: 0
-  - reference: Kill the bandit Leader
+    usesCondition: 0
+    completionCondition:
+      and: []
+    objectiveRewards: []
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Kill the bandit Leader
     description: Kill the Bandit leader and retrieve the goat.
-    hasBossToKill: 1
-  - reference: Return the Goat to Fred
+    usesCondition: 0
+    completionCondition:
+      and: []
+    objectiveRewards:
+    - objectiveName: Kill the bandit Leader
+      item: {fileID: 11400000, guid: cc863772ff2055047bccfddb13ae16fa, type: 2}
+      number: 50
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Return the Goat to Fred
     description: Speak to Fred to receive your reward,
-    hasBossToKill: 0
+    usesCondition: 0
+    completionCondition:
+      and: []
+    objectiveRewards:
+    - objectiveName: Return the Goat to Fred
+      item: {fileID: 11400000, guid: 30485dba4d0ac594bbf70b4c3ed94ded, type: 2}
+      number: 1
+    - objectiveName: Return the Goat to Fred
+      item: {fileID: 11400000, guid: c7a7fdc758cf892408b2a6d4100b8fec, type: 2}
+      number: 5
+    isComplete: 1

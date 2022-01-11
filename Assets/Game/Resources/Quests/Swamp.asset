@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbb8e188de36c3478e55b16266e97ac, type: 3}
+  m_Name: Swamp
+  m_EditorClassIdentifier: 
+  rewards:
+  - number: 1000
+    item: {fileID: 11400000, guid: cc863772ff2055047bccfddb13ae16fa, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: 914fdada1a308ca41a3af6d93635717a, type: 2}
+  objectives:
+  - quest: {fileID: 11400000}
+    reference: Train
+    description: Get Smart
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: 8
+          paremeters: []
+          requiredAttributes:
+          - attribute: 2
+            requiredValue: 3
+          negate: 0
+    objectiveRewards: []
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Equip armor
+    description: Get Equipped
+    usesCondition: 1
+    completionCondition:
+      and:
+      - or:
+        - predicate: 4
+          paremeters:
+          - c8c210b2-fee6-4c59-8d74-7a60d629cfd5
+          requiredAttributes: []
+          negate: 0
+    objectiveRewards: []
+    isComplete: 1
+  - quest: {fileID: 11400000}
+    reference: Kill the Baddy
+    description: Kill the Thing
+    usesCondition: 0
+    completionCondition:
+      and:
+      - or:
+        - predicate: 6
+          paremeters: []
+          requiredAttributes: []
+          negate: 0
+    objectiveRewards: []
+    isComplete: 0

@@ -9,7 +9,6 @@ namespace RPG.UI
         void CloseAll();
 
         string GetGameObjectName();
-
         bool GetIsActive();
     }
 }

@@ -20,6 +20,7 @@ namespace RPG.Pools
         public class TakeDamageEvent : UnityEvent<float> { }
 
         [SerializeField] Condition condition;
+        [SerializeField] string[] deathAnimationParams;
 
         LazyValue<float> healthPoints;
 
@@ -71,6 +72,8 @@ namespace RPG.Pools
             }
             UpdateState ();            
         }
+
+        
 
         public void Heal (float healthToRestore, bool isOverTime, bool isSmooth, float duration, float tickSpeed) 
         {
@@ -191,7 +194,7 @@ namespace RPG.Pools
 
             if (!wasDeadLastFrame && IsDead())
             {
-                animator.SetTrigger("die");
+                RandomDeathAnimation();
                 GetComponent<ActionScheduler>().CancelCurrentAction();
                 if (this.gameObject != player)
                 {
@@ -208,6 +211,21 @@ namespace RPG.Pools
             }
             
             wasDeadLastFrame = IsDead();
+        }
+
+        private void RandomDeathAnimation()
+        {
+            Animator animator = GetComponent<Animator> ();
+            int death = 0;
+            if (deathAnimationParams.Length >= 1)
+            {
+                death = UnityEngine.Random.Range(0, deathAnimationParams.Length - 1);
+                animator.SetTrigger(deathAnimationParams[death]);
+            }
+            else
+            {
+                animator.SetTrigger("die");
+            }
         }
 
         private void AwardExperience (GameObject instigator)

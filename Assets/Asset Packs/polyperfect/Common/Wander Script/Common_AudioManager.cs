@@ -40,11 +40,16 @@ namespace PolyPerfect
 
     public static void PlaySound(AudioClip clip, Vector3 pos)
     {
-      if (!instance)
-      {
-        Debug.LogError("No Audio Manager found in the scene.");
-        return;
-      }
+      // if (!instance)
+      // {
+      //   Common_AudioManager sourceInstance = new Common_AudioManager();
+      //   Common_AudioManager managerInstance = new Common_AudioManager();
+      //   GameObject player = GameObject.FindGameObjectWithTag("Player");
+      //   Debug.Log("No Audio Manager found in the scene. Made New One hopehully");
+      //   managerInstance = Instantiate((sourceInstance));
+      //   instance = managerInstance;
+      //   return;
+      // }
 
       if(instance.muteSound)
       {

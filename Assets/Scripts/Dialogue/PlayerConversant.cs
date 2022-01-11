@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace RPG.Dialogue
 {
-    public class PlayerConversant : MonoBehaviour
+    public class PlayerConversant : MonoBehaviour, IPredicateEvaluator
     {
         [SerializeField] string playerName = null;
 
@@ -202,6 +202,27 @@ namespace RPG.Dialogue
                     trigger.Trigger (action);
                 }
             }
+        }
+
+        public bool? Evaluate(Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
+        {
+            if (predicate == Predicates.HasMet ) //&& parameters.Length > 0
+            {
+                //Debug.Log("Player Conversant is returning the hasMet predicate as " + currentConversant.GetHasMet());
+                return currentConversant.GetHasMet();
+            }
+
+            return null;
+        }
+
+        public Stats.Attribute[] GetRequiredAttributes()
+        {
+            return null;
+        }
+
+        public float GetRequiredValue()
+        {
+            return 0f;
         }
     }
 }

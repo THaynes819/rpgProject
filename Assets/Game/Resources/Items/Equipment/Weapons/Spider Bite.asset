@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b663dfaa5b9582042b328c662ef6e727, type: 3}
+  m_Name: Spider Bite
+  m_EditorClassIdentifier: 
+  itemID: 2fb681e6-229a-488b-9e12-f526b73ad549
+  displayName: 
+  description: 
+  iconSprite: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  price: 0
+  category: 0
+  itemCooldown: 4
+  allowedEquipLocation: 5
+  equipCondition:
+    and: []
+  animatorOverride: {fileID: 0}
+  eqqiuppedPrefab: {fileID: 7704741415202272746, guid: 559c0a6c75e538248831114b6e1db0bb,
+    type: 3}
+  weaponRange: 4
+  weaponDamage: 1
+  percentageBonus: 0
+  isRightHanded: 1
+  projectile: {fileID: 0}

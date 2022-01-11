@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using RPG.Core;
+using RPG.Dialogue;
 using RPG.Stats;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace GameDevTV.Utils
 
             foreach (Disjunction disjunction in and)
             {
-                if (!disjunction.Check (evaluators))
+                if ((bool)!disjunction.Check (evaluators))
                 {
                     return false;
                 }
@@ -33,11 +34,11 @@ namespace GameDevTV.Utils
         {
             [SerializeField]
             Predicate[] or;
-            public bool Check (IEnumerable<IPredicateEvaluator> evaluators)
+            public bool? Check (IEnumerable<IPredicateEvaluator> evaluators)
             {
                 foreach (Predicate pred in or)
                 {
-                    if (pred.Check (evaluators))
+                    if ((bool)pred.Check (evaluators))
                     {
                         return true;
                     }
@@ -54,7 +55,7 @@ namespace GameDevTV.Utils
             [SerializeField] RequiredAttribute[] requiredAttributes;
             [SerializeField] bool negate = false;
 
-            public bool Check (IEnumerable<IPredicateEvaluator> evaluators)
+            public bool? Check (IEnumerable<IPredicateEvaluator> evaluators)
             {
                 foreach (var evaluator in evaluators)
                 {

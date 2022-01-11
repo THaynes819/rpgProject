@@ -13,85 +13,57 @@ namespace RPG.Quests
 {
     public class QuestCompletion : MonoBehaviour
     {
-        [SerializeField] QuestObjectivePair[] objectivePairs;
-        [SerializeField] bool hasItemToRemove = false;
-        [SerializeField] InventoryItem itemToRemove = null;
-        [SerializeField] int amountToRemove = 1;
-        [SerializeField] Condition condition;
+        [System.Serializable]
+        public class ObjectiveCompletion
+        {
+            public bool hasItemToRemove = false;
+            public InventoryItem itemToRemove = null;
+            public int amountToRemove = 1;
+            public Condition condition;
+            public Quest quest;
+            public Quest.Objective objective;
+        }
 
-        string questToCompare;
-
+        [SerializeField] ObjectiveCompletion[] objectiveCompletions;
         bool isObjectiveComplete = false;
 
         QuestList questList;
         Inventory inventory;
 
-        public void CompleteObjective (QuestObjectivePair objective)
+        // This is called by Unity Events, Not by code
+        public void CompleteObjective (String reference)
         {
+            
+            //Debug.Log("Completing Objective" + reference); //TODO maybe add the complete objective sound here instead?
+            
             var player = GameObject.FindGameObjectWithTag ("Player");
             questList = player.GetComponent<QuestList> ();
             inventory = player.GetComponent<Inventory>();
-            foreach (var pair in objectivePairs)
+            
+            foreach (var completion in objectiveCompletions)
             {
-                if (pair.GetPairedQuest() == null) return;
-
-                if (objective != null && objective == pair)
+                if (reference == completion.objective.reference)
                 {
-                        Quest quest = objective.GetPairedQuest();
-                        string objectiveToComplete = objective.GetPairedObjective();
-                        questList.CompleteObjective (quest, objectiveToComplete );
-                        CompleteQuest (quest);
+                    questList.CompleteObjective(completion.quest, completion.objective.reference);
                 }
-                
+                if (completion.hasItemToRemove && completion.itemToRemove != null)
+            {
+                RemoveQuestItem(completion);
             }
-            
-
-            
+            }
         }
 
-        private void CompleteQuest (Quest completedQuest)
+        private void RemoveQuestItem(ObjectiveCompletion completion)
         {
-            //Debug.Log("Completing Objective");
-            var player = GameObject.FindGameObjectWithTag ("Player");
-            questList = player.GetComponent<QuestList> ();
-            inventory = player.GetComponent<Inventory>();
-
-            if (hasItemToRemove && itemToRemove != null)
+            if (completion.hasItemToRemove && completion.itemToRemove != null)
             {
-                RemoveQuestItem();
-            }
-
-            questList.QueuQuestRemoval (completedQuest);
-        }
-
-        private void RemoveQuestItem()
-        {
-            if (hasItemToRemove)
-            {
-                if (inventory.HasItem(itemToRemove))
+                if (inventory.HasItem(completion.itemToRemove))
                 {
-                    inventory.RemoveItem(itemToRemove, amountToRemove);
+                    inventory.RemoveItem(completion.itemToRemove, completion.amountToRemove);
                 }
             }
             
             
-        }
-    }
-
-    [System.Serializable]
-    public class QuestObjectivePair
-    {
-        [SerializeField] Quest quest;
-        [SerializeField] string objective;
-
-        public Quest GetPairedQuest()
-        {
-            return quest;
-        }
-
-        public string GetPairedObjective()
-        {
-            return objective;
         }
     }
 

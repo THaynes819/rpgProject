@@ -47,7 +47,7 @@ namespace RPG.UI.Quests
             foreach (var objective in statusToUpdate.GetQuest ().GetObjectives ())
             {
                 GameObject prefab = objectiveIncompletePrefab;
-                if (statusToUpdate.isObjectiveComplete (objective.reference))
+                if (statusToUpdate.isNamedObjectiveComplete (objective.reference))
                 {
                     prefab = objectivePrefab;
                 }

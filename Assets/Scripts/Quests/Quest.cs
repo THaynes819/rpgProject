@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using GameDevTV.Inventories;
+using GameDevTV.Saving;
+using GameDevTV.Utils;
 using UnityEngine;
 
 namespace RPG.Quests
 {
     [CreateAssetMenu (fileName = "Quest", menuName = "Quest", order = 0)]
-    public class Quest : ScriptableObject
+    public class Quest : ScriptableObject, ISaveable
     {
         [SerializeField] List<Reward> rewards = new List<Reward> ();
         [SerializeField] List<Objective> objectives = new List<Objective> ();
@@ -20,12 +22,67 @@ namespace RPG.Quests
         }
 
         [System.Serializable]
-        public class Objective
+        public class Objective 
         {
+            [SerializeField] Quest quest;
+            QuestList questList;
+            QuestStatus status;
             public string reference;
             public string description;
+            public bool usesCondition = false;
+            public Condition completionCondition;
+            [SerializeField] ObjectiveReward[] objectiveRewards;
+
+            [SerializeField] bool isComplete = false;
+            public ObjectiveReward[] GetObjectiveRewards(string check)
+            {
+                if (check == reference)
+                {
+                    return objectiveRewards;
+                }
+                return null;
+            }
             //public QuestItem itemToRetrieve;
-            public bool hasBossToKill = false;
+            public void SetObjectiveComplete(string objective, bool value)
+            {
+                if (reference == objective && value != isComplete)
+                {
+                    isComplete = value;
+                }
+            }
+
+            public bool GetIsComplete()
+            {
+                return isComplete;
+            }
+
+            public Quest GetObjectivesQuest(string objective)
+            {
+                if (objective == reference)
+                {
+                    return quest;
+                }
+                return null;
+            }
+
+            public Objective GetObjectiveByname(string objective)
+            {
+                if (objective == reference)
+                {
+                    return this;
+                }
+                return null;
+            }
+
+            
+        }
+
+        [System.Serializable]
+        public class ObjectiveReward
+        {
+            public string objectiveName;
+            public InventoryItem item;
+            public int number;
         }
 
         public string GetQuesttitle ()
@@ -55,19 +112,17 @@ namespace RPG.Quests
             return false;
         }
 
-        // public InventoryItem GetItemToRetrieve(Quest questToCheck)
-        // {
-        //     foreach (var objective in questToCheck.GetObjectives())
-        //     {
-        //         if (objective.itemToRetrieve != null)
-        //         {
-        //             return objective.itemToRetrieve;
-        //         }
-        //     }
-        //     return null;
-        // }
-
-
+        public Objective GetObjective(string objectiveToCheck)
+        {
+            foreach (Objective objective in objectives) 
+            {
+                if (objective.reference == objectiveToCheck)
+                {
+                    return objective;
+                }
+            }
+            return null;
+        }
 
         public IEnumerable<Reward> GetRewards ()
         {
@@ -86,6 +141,26 @@ namespace RPG.Quests
             }
             return null;
         }
+
+        public object CaptureState()
+            {
+                List<Objective> saveState = new List<Objective> ();
+                foreach (Objective objective in objectives)
+                {
+                    saveState.Add(objective);
+                }
+                return saveState;
+            }
+
+            public void RestoreState(object state)
+            {
+                List<Objective> restoreState = state as List<Objective>;
+                objectives.Clear();
+                foreach (Objective objective in restoreState)
+                {
+                    objectives.Add(objective);
+                }
+            }
 
     }
 }

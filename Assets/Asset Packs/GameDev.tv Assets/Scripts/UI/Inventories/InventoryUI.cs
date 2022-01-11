@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Inventories;
 using RPG.Shops;
+using RPG.UI;
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace GameDevTV.UI.Inventories
     /// To be placed on the root of the inventory UI. Handles spawning all the
     /// inventory slot prefabs.
     /// </summary>
-    public class InventoryUI : MonoBehaviour
+    public class InventoryUI : MonoBehaviour//, IUICloser
     {
         // CONFIG DATA
         [SerializeField] InventorySlotUI InventoryItemPrefab = null;
@@ -59,5 +60,20 @@ namespace GameDevTV.UI.Inventories
 
             purseField.text = $"{shopper.GetComponent <Purse>().GetBalance():N0}";
         }
+
+        // public void CloseAll()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
+
+        // public string GetGameObjectName()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
+
+        // public bool GetIsActive()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
     }
 }

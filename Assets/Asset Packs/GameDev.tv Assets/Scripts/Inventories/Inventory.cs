@@ -235,11 +235,10 @@ namespace GameDevTV.Inventories
 
         public bool? Evaluate (Predicates predicate, string[] parameters, RequiredAttribute[] attributes)
         {
-            switch (predicate)
+            if (predicate == Predicates.HasInventoryItem && parameters.Length > 0)
             {
-                case Predicates.HasInventoryItem:
-                    return HasItem (InventoryItem.GetFromID (parameters[0]));
-            }
+                return HasItem (InventoryItem.GetFromID (parameters[0]));
+            }            
 
             return null;
         }

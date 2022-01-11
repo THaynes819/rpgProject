@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 3219092036485833738}
   - component: {fileID: 8794552137268239038}
   - component: {fileID: 5121616093177861297}
+  - component: {fileID: 475423405154002819}
   - component: {fileID: 717491267728815476}
   - component: {fileID: 5907758675581552972}
   - component: {fileID: 1219070882165676908}
@@ -118,7 +119,7 @@ Animator:
   m_GameObject: {fileID: 4749071111288693219}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8ec17859bce54af4a91cec7b7853980f, type: 2}
+  m_Controller: {fileID: 9100000, guid: c1dc894f9d649074a964df8b20b9ad8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -423,6 +424,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experiencePoints: 0
   experienceDebugAmount: 100
+--- !u!114 &475423405154002819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749071111288693219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPairs:
+  - quest: {fileID: 0}
+    isReward: 0
+    action: Aggro
+    pairedTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2708170623760473184}
+          m_TargetAssemblyTypeName: RPG.Combat.Fighter, Assembly-CSharp
+          m_MethodName: DialogueAttack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &717491267728815476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scatterDistance: 1
-  dropLibrary: {fileID: 0}
+  dropLibraries: []
   numberOfDrops: 2
 --- !u!114 &4631781389628393406
 MonoBehaviour:
@@ -704,6 +736,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9583940, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b, type: 3}
+--- !u!4 &761995594630231429 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 415802, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
+    type: 3}
+  m_PrefabInstance: {fileID: 761995594630606271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &761995594630174821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439770, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
@@ -713,12 +751,6 @@ Transform:
 --- !u!4 &761995594630191175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456184, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
-    type: 3}
-  m_PrefabInstance: {fileID: 761995594630606271}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &761995594630231429 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 415802, guid: 3b8c3b6dee6c92d4bb9953c1bbede39b,
     type: 3}
   m_PrefabInstance: {fileID: 761995594630606271}
   m_PrefabAsset: {fileID: 0}

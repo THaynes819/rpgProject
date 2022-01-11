@@ -15,6 +15,8 @@ MonoBehaviour:
   shopName: 
   stockConfig: []
   sellingDisadvantage: 0
+  maximumBarterDiscount: 50
+  speakingDistance: 2
 --- !u!1001 &1266654306121426514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,6 +28,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3033059649852596601, guid: 1a63f23248b435d4ba08d02e8a6d14f5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1dc894f9d649074a964df8b20b9ad8b, type: 2}
     - target: {fileID: 4648483526364020809, guid: 1a63f23248b435d4ba08d02e8a6d14f5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

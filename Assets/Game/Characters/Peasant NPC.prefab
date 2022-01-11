@@ -451,7 +451,7 @@ Animator:
   m_GameObject: {fileID: 6741220054692081777}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8ec17859bce54af4a91cec7b7853980f, type: 2}
+  m_Controller: {fileID: 9100000, guid: c1dc894f9d649074a964df8b20b9ad8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -553,7 +553,8 @@ MonoBehaviour:
   rightHandTransform: {fileID: 4648483526377328981}
   leftHandTransform: {fileID: 4648483526377328931}
   defaultWeapon: {fileID: 11400000, guid: 41c55289ae139fc4390c2684ba85add1, type: 2}
-  testSpell: {fileID: 0}
+  autoAttackRange: 4
+  doesCancelActions: 1
 --- !u!114 &1728143546851193767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,9 +607,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isMobToKill: 0
-  questName: 
-  questObjective: 
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -629,6 +627,7 @@ MonoBehaviour:
   target: {fileID: 0}
   maxSpeed: 6
   maxPathLength: 40
+  doesCancelActions: 1
 --- !u!114 &2918093614319870863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scatterDistance: 1
-  dropLibrary: {fileID: 11400000, guid: a0ff4ff352d155e40a816929369f4978, type: 2}
+  dropLibraries: []
   numberOfDrops: 2
 --- !u!114 &6363226170615692691
 MonoBehaviour:
@@ -730,6 +729,8 @@ MonoBehaviour:
   dialogue: {fileID: 11400000, guid: 4ed81d1c32ca44549b782a5f7e57ef18, type: 2}
   fighter: {fileID: 4175068004169780722}
   npcName: 
+  speakingDistance: 2
+  hasMet: 0
 --- !u!114 &1085756512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,54 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc602e67e6dd98e42b9ee6a40bcad42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: GiveQuest
-  actionTwo: Goodbye
-  actionThree: Hello
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RPG.Quests.QuestGiver, Assembly-CSharp
-        m_MethodName: GiveQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSecondTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RPG.UI.DialogueUI, Assembly-CSharp
-        m_MethodName: Goodbye
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onThirdTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RPG.UI.DialogueUI, Assembly-CSharp
-        m_MethodName: BuildResponseButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  triggerPairs: []
 --- !u!114 &1085756527
 MonoBehaviour:
   m_ObjectHideFlags: 0

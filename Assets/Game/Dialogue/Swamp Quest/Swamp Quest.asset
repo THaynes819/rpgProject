@@ -1,0 +1,816 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8248873320631653045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 415c09a1-4538-4ad8-b20f-5d1cb3a081de
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I punch things. I don't need mgic.
+  children:
+  - fec99fee-9ebc-43e3-be95-002e4a45d342
+  - c419a4e4-069d-4dcc-9b8c-7e7db9931095
+  rect:
+    serializedVersion: 2
+    x: 982
+    y: 138
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-7951324876116152789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 250d5318-f225-4eec-9b66-2584a4ace99e
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Wonderful. I hope to see you again.
+  children:
+  - f23b4c5a-65ae-4737-aa3f-b1872eedacff
+  rect:
+    serializedVersion: 2
+    x: 916
+    y: 793
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-6960619400245972522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 74e51bcd-4507-4313-8b15-874d16b6fb15
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Attain more knowledge and I will teach you some
+  children:
+  - 80cbb288-4dd3-4099-832f-6a16132305a7
+  rect:
+    serializedVersion: 2
+    x: 1729
+    y: 59
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-6719837831680536433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: a011cdd8-1a24-43d4-a58d-25598dee632f
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Have you killed the Monster?
+  children:
+  - d7c0d05f-d7c0-46fc-ba28-d3e026178837
+  rect:
+    serializedVersion: 2
+    x: 518
+    y: 550
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Swamp
+        requiredAttributes: []
+        negate: 0
+    - or:
+      - predicate: 3
+        paremeters:
+        - Swamp
+        requiredAttributes: []
+        negate: 1
+--- !u!114 &-6463556015699942599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 53eba5c2-15d1-40bb-bc2a-6ab492a82423
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Yes
+  children:
+  - 36ad4296-9aef-4faa-a0b0-8140e87698d7
+  rect:
+    serializedVersion: 2
+    x: 2582
+    y: 144
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Goodbye
+  condition:
+    and: []
+--- !u!114 &-5981125030148185335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 74161188-6d14-4245-8e96-72fb05aba5c5
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Hi
+  children:
+  - b3e4b236-3398-4157-99ce-dc955a12c03a
+  - a011cdd8-1a24-43d4-a58d-25598dee632f
+  - 5021165a-1029-47c0-9932-1ac5e51ddff1
+  rect:
+    serializedVersion: 2
+    x: 244
+    y: 172
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5173874375539711123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: c14c8a50-ddbb-45e7-bf1a-76ef091c63ec
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Goodbye then
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2823
+    y: 349
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-5011501245490764860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 36ad4296-9aef-4faa-a0b0-8140e87698d7
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: It is in the swamp just west of town. Good Luck.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2828
+    y: 148
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveSwampQuest
+  condition:
+    and: []
+--- !u!114 &-4957402426513921075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 19428ec2-b162-4e3e-a067-ac0a610e0a80
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: How goes the magic learning?
+  children:
+  - 99f6ef23-5b4b-4b38-8013-798f9ca78c77
+  rect:
+    serializedVersion: 2
+    x: 469
+    y: 762
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 3
+        paremeters:
+        - Swamp
+        requiredAttributes: []
+        negate: 0
+    - or:
+      - predicate: 8
+        paremeters:
+        - 
+        requiredAttributes:
+        - attribute: 2
+          requiredValue: 3
+        negate: 0
+--- !u!114 &-3446962117986791541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: b4232f6f-6952-4032-8587-50909b702a2b
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: 'You must kill the Swamp Monster with fire hurled from your hand. I will
+    teach you this provided you can learn it. You will learn a stronger Fire spell
+    from killing the monster. Will you do this? '
+  children:
+  - 53eba5c2-15d1-40bb-bc2a-6ab492a82423
+  - d51920ee-2028-4aea-a5f5-cf6c48a0c369
+  rect:
+    serializedVersion: 2
+    x: 2262
+    y: 231
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-2518640528824986018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: fec99fee-9ebc-43e3-be95-002e4a45d342
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You need to become more knowledgable so you realize you need magic
+  children:
+  - fb71394a-46df-4ddc-93a6-fcad6601a3fa
+  rect:
+    serializedVersion: 2
+    x: 1241
+    y: 133
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 8
+        paremeters: []
+        requiredAttributes:
+        - attribute: 2
+          requiredValue: 3
+        negate: 1
+--- !u!114 &-788245774876131256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: f0545443-781a-4880-a0d3-d0f66bad825b
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You need to increase your knowledge if you want to learn magic
+  children:
+  - 36a24cfc-1aaa-4bdc-8480-593f87706800
+  - 415c09a1-4538-4ad8-b20f-5d1cb3a081de
+  rect:
+    serializedVersion: 2
+    x: 917
+    y: 10
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &-390913410123754264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 5021165a-1029-47c0-9932-1ac5e51ddff1
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Do you know any magic?
+  children:
+  - 8d4e1cf7-df92-4d55-8c2e-ee509d0fa742
+  rect:
+    serializedVersion: 2
+    x: 482
+    y: 18
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 8
+        paremeters: []
+        requiredAttributes:
+        - attribute: 2
+          requiredValue: 3
+        negate: 1
+    - or:
+      - predicate: 1
+        paremeters:
+        - Swamp
+        requiredAttributes: []
+        negate: 1
+--- !u!114 &-56376422932670413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: f23b4c5a-65ae-4737-aa3f-b1872eedacff
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Goodbye!
+  children:
+  - 61a6bea2-7f35-4823-b989-e46d46782cb7
+  rect:
+    serializedVersion: 2
+    x: 1157
+    y: 803
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Goodbye
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9927a006834059240b328865fb7f781d, type: 3}
+  m_Name: Swamp Quest
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 8663016024042858093}
+  - {fileID: -5981125030148185335}
+  - {fileID: -788245774876131256}
+  - {fileID: 8717143366766655546}
+  - {fileID: -8248873320631653045}
+  - {fileID: -2518640528824986018}
+  - {fileID: -6960619400245972522}
+  - {fileID: 5707081062569490473}
+  - {fileID: 1756152326432507137}
+  - {fileID: 1444924170270700974}
+  - {fileID: -3446962117986791541}
+  - {fileID: -6463556015699942599}
+  - {fileID: 8317223263837816460}
+  - {fileID: -5173874375539711123}
+  - {fileID: -5011501245490764860}
+  - {fileID: -4957402426513921075}
+  - {fileID: 4616195266353140161}
+  - {fileID: -7951324876116152789}
+  - {fileID: -56376422932670413}
+  - {fileID: 1061299444792000708}
+  - {fileID: -6719837831680536433}
+  - {fileID: 8143273988850886330}
+  - {fileID: 177750044710938565}
+  - {fileID: 692306624899314184}
+  - {fileID: 5170345511329525696}
+  - {fileID: -390913410123754264}
+  - {fileID: 7866334827930512841}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &177750044710938565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: c419a4e4-069d-4dcc-9b8c-7e7db9931095
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You can do much more than punch things young one.
+  children:
+  - b4232f6f-6952-4032-8587-50909b702a2b
+  rect:
+    serializedVersion: 2
+    x: 1256
+    y: 276
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 8
+        paremeters: []
+        requiredAttributes:
+        - attribute: 2
+          requiredValue: 3
+        negate: 0
+--- !u!114 &692306624899314184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: d7c0d05f-d7c0-46fc-ba28-d3e026178837
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Not yet, but I will
+  children:
+  - b68f8668-e789-4c6f-aef3-a144faf0021b
+  rect:
+    serializedVersion: 2
+    x: 758
+    y: 555
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Goodbye
+  condition:
+    and: []
+--- !u!114 &1061299444792000708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 61a6bea2-7f35-4823-b989-e46d46782cb7
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Goodbye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1401
+    y: 810
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1444924170270700974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 2ecde8a2-d4c5-41d6-80b7-4a7646b63f78
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Why yes, I would.
+  children:
+  - b4232f6f-6952-4032-8587-50909b702a2b
+  rect:
+    serializedVersion: 2
+    x: 1292
+    y: 411
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &1756152326432507137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: b3e4b236-3398-4157-99ce-dc955a12c03a
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You seem bright, would you like to learn some magic?
+  children:
+  - 415c09a1-4538-4ad8-b20f-5d1cb3a081de
+  - 2ecde8a2-d4c5-41d6-80b7-4a7646b63f78
+  rect:
+    serializedVersion: 2
+    x: 659
+    y: 256
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        paremeters:
+        - Swamp
+        requiredAttributes: []
+        negate: 1
+    - or:
+      - predicate: 8
+        paremeters:
+        - 
+        requiredAttributes:
+        - attribute: 2
+          requiredValue: 3
+        negate: 0
+--- !u!114 &4616195266353140161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 99f6ef23-5b4b-4b38-8013-798f9ca78c77
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: It goes well, Thank you!
+  children:
+  - 250d5318-f225-4eec-9b66-2584a4ace99e
+  rect:
+    serializedVersion: 2
+    x: 688
+    y: 786
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5170345511329525696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: b68f8668-e789-4c6f-aef3-a144faf0021b
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Please do.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1008
+    y: 555
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &5707081062569490473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: fb71394a-46df-4ddc-93a6-fcad6601a3fa
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Well, ok.
+  children:
+  - 74e51bcd-4507-4313-8b15-874d16b6fb15
+  rect:
+    serializedVersion: 2
+    x: 1483
+    y: 145
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &7866334827930512841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 8d4e1cf7-df92-4d55-8c2e-ee509d0fa742
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: No
+  children:
+  - f0545443-781a-4880-a0d3-d0f66bad825b
+  rect:
+    serializedVersion: 2
+    x: 709
+    y: 11
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8143273988850886330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 80cbb288-4dd3-4099-832f-6a16132305a7
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I will get smarter!
+  children:
+  - b4232f6f-6952-4032-8587-50909b702a2b
+  rect:
+    serializedVersion: 2
+    x: 1999
+    y: 159
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8317223263837816460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: d51920ee-2028-4aea-a5f5-cf6c48a0c369
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: No
+  children:
+  - c14c8a50-ddbb-45e7-bf1a-76ef091c63ec
+  rect:
+    serializedVersion: 2
+    x: 2562
+    y: 316
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: Goodbye
+  condition:
+    and: []
+--- !u!114 &8663016024042858093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: e6a59861-75b8-43d3-83d7-af952b5aa9d6
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Oy! hey There
+  children:
+  - 74161188-6d14-4245-8e96-72fb05aba5c5
+  rect:
+    serializedVersion: 2
+    x: 2
+    y: 170
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []
+--- !u!114 &8717143366766655546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d271f119cde34da3d5837de0f3aa5, type: 3}
+  m_Name: 36a24cfc-1aaa-4bdc-8480-593f87706800
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: That sounds amazing!
+  children:
+  - 74e51bcd-4507-4313-8b15-874d16b6fb15
+  rect:
+    serializedVersion: 2
+    x: 1177
+    y: 8
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    and: []

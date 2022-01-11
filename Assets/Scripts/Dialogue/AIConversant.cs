@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameDevTV.Utils;
 using RPG.Combat;
 using RPG.Control;
 using RPG.Movement;
 using RPG.Pools;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Dialogue
 {
-    public class AIConversant : MonoBehaviour, IRaycastable
+    public class AIConversant : MonoBehaviour, IRaycastable 
     {
 
         [SerializeField] Dialogue dialogue = null;
@@ -18,10 +20,11 @@ namespace RPG.Dialogue
 
         PlayerConversant playerConversant;
         bool isCloseEnough = false;
+        [SerializeField] bool hasMet = false;
 
         void Start ()
         {
-
+            
         }
 
         public string GetNPCName ()
@@ -52,6 +55,7 @@ namespace RPG.Dialogue
 
         public bool HandleRaycast (PlayerController callingController)
         {
+            
             if (dialogue == null)
             {
                 return false;
@@ -94,6 +98,17 @@ namespace RPG.Dialogue
         public Dialogue GetDialogue()
         {
             return dialogue;
+        }
+
+        public void SetHasMet(bool setMet)
+        {
+            hasMet = setMet;
+        }
+        
+
+        public bool GetHasMet()
+        {
+            return hasMet;
         }
     }
 }

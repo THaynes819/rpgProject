@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameDevTV.Inventories;
 using GameDevTV.Saving;
 using UnityEngine;
 
 namespace RPG.Quests
 {
 
-    public class QuestStatus
+    public class QuestStatus : ISaveable
     {
         Quest quest;
         List<string> completedObjectives = new List<string> ();
@@ -21,6 +22,7 @@ namespace RPG.Quests
             public string questName;
             public List<string> completedObjectives = new List<string> ();
         }
+
 
         public QuestStatus (Quest quest)
         {
@@ -49,7 +51,19 @@ namespace RPG.Quests
             return completedObjectives;
         }
 
-        public bool isObjectiveComplete (string objective)
+        public bool IsComplete()
+        {
+            foreach (var objective in quest.GetObjectives())
+            {
+                if (!completedObjectives.Contains(objective.reference))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool isNamedObjectiveComplete (string objective)
         {
             if (quest != null)
             {
@@ -64,8 +78,17 @@ namespace RPG.Quests
         public void CompleteObjective (QuestStatus status, string objective)
         {
             if (!completedObjectives.Contains (objective) && status.GetQuest ().HasObjective (objective))
-            {
+            {                
                 completedObjectives.Add (objective);
+                Quest.Objective objectiveToCheck = status.GetQuest().GetObjective(objective);
+                if (objectiveToCheck.GetObjectiveRewards(objective) != null)
+                {
+                    Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+                    foreach (Quest.ObjectiveReward reward in objectiveToCheck.GetObjectiveRewards(objective))
+                    {
+                        inventory.AddToFirstEmptySlot(reward.item, reward.number);
+                    }
+                }
             }
 
             if (objective == null)
@@ -82,6 +105,7 @@ namespace RPG.Quests
 
         public bool isQuestComplete (Quest questToCheck)
         {
+            //Debug.Log("IsQuestComplete Called for " + questToCheck);
             foreach (var objective in questToCheck.GetObjectives ())
             {
                 if (!completedObjectives.Contains (objective.reference))
@@ -94,10 +118,18 @@ namespace RPG.Quests
 
         public object CaptureState ()
         {
-            QuestStatusRecord state = new QuestStatusRecord ();
-            state.questName = quest.name;
-            state.completedObjectives = completedObjectives;
-            return state;
+            QuestStatusRecord captureState = new QuestStatusRecord ();
+            captureState.questName = quest.name;
+            captureState.completedObjectives = completedObjectives;
+            return captureState;
+        }
+
+        public void RestoreState(object state)
+        {
+            QuestStatusRecord restoreState = new QuestStatusRecord ();
+            restoreState = state as QuestStatusRecord;
+            quest.name = restoreState.questName;
+            completedObjectives = restoreState.completedObjectives;
         }
     }
 
